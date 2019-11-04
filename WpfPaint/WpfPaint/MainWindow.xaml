@@ -1,0 +1,22 @@
+﻿<Window x:Class="WpfPaint.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center">
+            <Image
+                Name="CanvasImage" 
+                MouseDown="CanvasImage_MouseDown"
+                MouseMove="CanvasImage_MouseMove"
+                Width="320"
+                Height="200"
+                Source="{Binding CanvasImageSource}" >
+            </Image>
+        </Border>
+        <Button Name="SaveButton"  Grid.Row="1" HorizontalAlignment="Center" Content="Save"
+                Command="{Binding SaveCommand}" />
+    </StackPanel>
+    <Window.InputBindings>
+        <MouseBinding  Command="ApplicationCommands.Open" Gesture="Control+WheelClick"/>
+    </Window.InputBindings>
+</Window>

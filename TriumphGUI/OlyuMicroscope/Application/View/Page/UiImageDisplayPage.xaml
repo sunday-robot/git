@@ -1,0 +1,326 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/composite-font"
+    xmlns:utility="clr-namespace:Olympus.LI.Triumph.Application.View.Utility"
+    xmlns:CustomControl="clr-namespace:Olympus.LI.Triumph.Application.View.CustomControl"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="d"
+	x:Class="Olympus.LI.Triumph.Application.View.UiImageDisplayPage"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight"
+	Width="1024" Height="1024"
+	WindowWidth="640" WindowHeight="480">
+
+    <Page.Resources>
+        <utility:EnumBooleanConverter x:Key="cnvEnumBoolean"/>
+        <utility:LineListToLineConverter x:Key="cnvLineListToLine"/>
+        <utility:BooleanVisibilityConverter x:Key="cnvBooleanVisibility"/>
+        <!-- ステージ制御用８方向ボタンスタイル -->
+        <Style x:Key="EightButtonStyle" BasedOn="{x:Null}" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <Rectangle d:LayoutOverrides="Width, Height" Fill="#02696969" Stroke="#FF000000" StrokeThickness="0"/>
+                            <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle SnapsToDevicePixels="true" Stroke="Black" StrokeDashArray="1 2" StrokeThickness="1" Margin="2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <LinearGradientBrush x:Key="ButtonNormalBackground" EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#F3F3F3" Offset="0"/>
+            <GradientStop Color="#EBEBEB" Offset="0.5"/>
+            <GradientStop Color="#DDDDDD" Offset="0.5"/>
+            <GradientStop Color="#CDCDCD" Offset="1"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="ButtonNormalBorder" Color="#FF707070"/>
+    </Page.Resources>
+    <Grid x:Name="grdImageDisplay" Stylus.IsPressAndHoldEnabled="False" Stylus.IsFlicksEnabled="False" Width="1024" Height="1024" Visibility="{Binding sUiController.Display.ImageDisplayVisibility, Mode=Default}" IsEnabled="{Binding sUiController.Display.ImageDisplayEnable, Mode=Default}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.5*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="0.5*" />
+        </Grid.ColumnDefinitions>
+        <ScrollViewer x:Name="scvScrollLiveCCD" Width="{Binding sUiController.Display.NormalDisplayWidth}" Height="{Binding sUiController.Display.NormalDisplayHeight}" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" 
+                      Grid.Column="{Binding sUiController.Display.ScrollLiveCCDScrollBarGridColumn, Mode=Default}" Grid.Row="{Binding sUiController.Display.ScrollLiveCCDScrollBarGridRow, Mode=Default}" 
+                      HorizontalScrollBarVisibility="{Binding sUiController.Display.ScrollLiveCCDHorizontalScrollBarVisibility, Mode=Default}" VerticalScrollBarVisibility="{Binding sUiController.Display.ScrollLiveCCDVerticalScrollBarVisibility, Mode=Default}" 
+                      Grid.RowSpan="{Binding sUiController.Display.ScrollLiveCCDScrollBarGridRowSpan, Mode=Default}" Grid.ColumnSpan="{Binding sUiController.Display.ScrollLiveCCDScrollBarGridColumnSpan, Mode=Default}" Visibility="{Binding sUiController.Display.ScrollLiveCCDScrollBarVisibility, Mode=Default}" 
+					  Loaded="ScrollLiveCCDLoadedHandler" Panel.ZIndex="{Binding sUiController.Display.ScrollLiveCCDScrollBarZIndex, Mode=Default}" Margin="{Binding sUiController.Display.LiveCCDScrollBarMargin, Mode=Default}">
+            <Grid x:Name="grdVisibleLiveCCD" Width="{Binding sUiController.Display.VisibleWidth, Mode=Default}" Height="{Binding sUiController.Display.VisibleHeight, Mode=Default}" ClipToBounds="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+               <Grid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="{Binding sUiController.Display.MenuHeaderZMoveRough, Mode=Default}" Command="{Binding sUiController.Display.ZMoveRoughHandler, Mode=Default}" IsChecked="{Binding sUiController.Display.SelectedContextItem, ConverterParameter=ZRoughMove, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" IsEnabled="{Binding sUiController.Display.ContextMenuZMoveRoughEnable, Mode=Default}"/>
+                        <MenuItem Header="{Binding sUiController.Display.MenuHeaderZMoveDetail, Mode=Default}" Command="{Binding sUiController.Display.ZMoveDetailHandler, Mode=Default}" IsChecked="{Binding sUiController.Display.SelectedContextItem, ConverterParameter=ZDetailMove, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" IsEnabled="{Binding sUiController.Display.ContextMenuZMoveDetailEnable, Mode=Default}"/>
+                        <Separator />
+                        <MenuItem Header="{Binding sUiController.Display.MenuHeaderBrightness, Mode=Default}" Command="{Binding sUiController.Display.BrightnessHandler, Mode=Default}" IsChecked="{Binding sUiController.Display.SelectedContextItem, ConverterParameter=Brightness, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" IsEnabled="{Binding sUiController.Display.ContextMenuBrightnessEnable, Mode=Default}"/>
+                        <Separator />
+                        <MenuItem Header="{Binding sUiController.Display.MenuHeaderZoom, Mode=Default}" Command="{Binding sUiController.Display.ZoomHandler, Mode=Default}" IsChecked="{Binding sUiController.Display.SelectedContextItem, ConverterParameter=Zoom, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" IsEnabled="{Binding sUiController.Display.ContextMenuZoomEnable, Mode=Default}"/>
+                        <Separator Visibility="{Binding sUiController.Display.LatticeGridListNormalLiveCCDVisibility, Mode=Default}"/>
+                        <MenuItem Header="{Binding sUiController.Display.MenuHeaderLatticeGridLarge, Mode=Default}" Visibility="{Binding sUiController.Display.LatticeGridListNormalLiveCCDVisibility, Mode=Default}" Command="{Binding sUiController.Display.LatticeGridLargeHandler, Mode=Default}"/>
+                        <MenuItem Header="{Binding sUiController.Display.MenuHeaderLatticeGridMiddle, Mode=Default}" Visibility="{Binding sUiController.Display.LatticeGridListNormalLiveCCDVisibility, Mode=Default}" Command="{Binding sUiController.Display.LatticeGridMiddleHandler, Mode=Default}"/>
+                        <MenuItem Header="{Binding sUiController.Display.MenuHeaderLatticeGridSmall, Mode=Default}" Visibility="{Binding sUiController.Display.LatticeGridListNormalLiveCCDVisibility, Mode=Default}" Command="{Binding sUiController.Display.LatticeGridSmallHandler, Mode=Default}"/>
+                        <MenuItem Header="{Binding sUiController.Display.MenuHeaderLatticeGridTiny, Mode=Default}" Visibility="{Binding sUiController.Display.LatticeGridListNormalLiveCCDVisibility, Mode=Default}" Command="{Binding sUiController.Display.LatticeGridTinyHandler, Mode=Default}"/>
+                    </ContextMenu>
+                </Grid.ContextMenu>
+                <Grid x:Name="grdImageLiveCCD" Width="{Binding sUiController.Display.ImageWidth, Mode=Default}" Height="{Binding sUiController.Display.ImageHeight, Mode=Default}" Margin="{Binding sUiController.Display.ImagePosition}">
+                    <Image x:Name="imgImageLiveCCD" Width="{Binding sUiController.Display.BitmapWidth, Mode=Default}" Height="{Binding sUiController.Display.BitmapHeight, Mode=Default}" Source="{Binding sUiController.Display.ImageUpdateNormal, Mode=Default}" Stretch="Uniform" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                </Grid>
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="grdUtilityLiveCCD"  Cursor="{Binding sUiController.Display.MouseCursor, Mode=Default}">
+                    <Grid Visibility="{Binding sUiController.Display.IsImageFrameScaleVisible, Converter={StaticResource cnvBooleanVisibility}, Mode=Default}" x:Name="grdImageFrameScaleLiveCCD">
+                        <ContentControl Content="{Binding sUiController.Display.ImageFrameScale, Mode=Default}"/>
+                    </Grid>
+                    <Grid Visibility="{Binding sUiController.Display.ProfileVisible, Mode=Default}" HorizontalAlignment="Stretch" x:Name="grdProfileLineLiveCCD" VerticalAlignment="Stretch">
+                        <ContentControl Content="{Binding sUiController.Display.ProfileLine, Mode=Default}"/>
+                        <ContentControl RenderTransformOrigin="0.5,0.5" VerticalAlignment="Bottom" Height="256" Content="{Binding sUiController.Display.ProfileData, Mode=Default}">
+                            <ContentControl.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1" ScaleY="-1"/>
+                                    <SkewTransform AngleX="0" AngleY="0"/>
+                                    <RotateTransform Angle="0"/>
+                                    <TranslateTransform X="0" Y="0"/>
+                                </TransformGroup>
+                            </ContentControl.RenderTransform>
+                        </ContentControl>
+                    </Grid>
+                    <Grid Visibility="{Binding sUiController.Display.CrossLineLiveCCDVisibility, Mode=Default}" x:Name="grdCrossLineLiveCCD">
+                        <ContentControl Content="{Binding sUiController.Display.CrossLineHorizontalNormal, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.CrossLineVerticalNormal, Mode=Default}"/>
+                    </Grid>
+                    <Grid Visibility="{Binding sUiController.Display.CircleGridLiveCCDVisibility, Mode=Default}" x:Name="grdCircleGridLiveCCD">
+                        <ContentControl Content="{Binding sUiController.Display.CircleGridHorizontalNormal, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.CircleGridVerticalNormal, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.Circle1Normal, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.Circle2Normal, Mode=Default}"/>
+                    </Grid>
+                    <Grid Visibility="{Binding sUiController.Display.LatticeGridListNormalLiveCCDVisibility, Mode=Default}" x:Name="grdLatticeGridListNormalLiveCCD">
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=0, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=1, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=2, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=3, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=4, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=5, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=6, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=7, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=8, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=9, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=10, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=11, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=12, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=13, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=14, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=15, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=16, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=17, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=18, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=19, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=20, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=21, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridHorizontalListNormal, ConverterParameter=22, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=0, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=1, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=2, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=3, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=4, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=5, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=6, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=7, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=8, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=9, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=10, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=11, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=12, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=13, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=14, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=15, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=16, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=17, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=18, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=19, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=20, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=21, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=22, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=23, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=24, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=25, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=26, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=27, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=28, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=29, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LatticeGridVerticalListNormal, ConverterParameter=30, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                    </Grid>
+                    <Grid Visibility="{Binding sUiController.Display.IsScaleDisplay, Converter={StaticResource cnvBooleanVisibility}, Mode=Default}" x:Name="grdScaleLiveCCD">
+                        <ContentControl Content="{Binding sUiController.Display.ScaleLineHorizontalNormal, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.ScaleLineVerticalNormal, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.ScaleSeparateHorizontalNormal, ConverterParameter=0, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.ScaleSeparateHorizontalNormal, ConverterParameter=1, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.ScaleSeparateHorizontalNormal, ConverterParameter=2, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.ScaleSeparateHorizontalNormal, ConverterParameter=3, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.ScaleSeparateHorizontalNormal, ConverterParameter=4, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.ScaleSeparateVerticalNormal, ConverterParameter=0, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.ScaleSeparateVerticalNormal, ConverterParameter=1, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.ScaleSeparateVerticalNormal, ConverterParameter=2, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.ScaleSeparateVerticalNormal, ConverterParameter=3, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.ScaleSeparateVerticalNormal, ConverterParameter=4, Converter={StaticResource cnvLineListToLine}, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.ScaleLabelNormal, Mode=Default}" />
+                    </Grid>
+                    <Grid x:Name="grdAFRoiLiveCCD">
+                        <ContentControl Content="{Binding sUiController.Display.AFRoiRectangleNormal, Mode=Default}" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Visibility="{Binding sUiController.Focus.AFRoiVisibility, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.AFRoiCrossLineHorizontalNormal, Mode=Default}" Visibility="{Binding sUiController.Focus.AFRoiCrossLineVisibility, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.AFRoiCrossLineVerticalNormal, Mode=Default}" Visibility="{Binding sUiController.Focus.AFRoiCrossLineVisibility, Mode=Default}"/>
+                    </Grid>
+                    <Grid x:Name="grdAERoiLiveCCD">
+                        <ContentControl Content="{Binding sUiController.Display.AERoiRectangleNormal, Mode=Default}" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Visibility="{Binding sUiController.Exposure.AERoiVisibility, Mode=Default}"/>
+                    </Grid>
+                    <Grid Visibility="{Binding sUiController.ImageProcess.WhiteBalanceRoiVisibility, Mode=Default}" x:Name="grdWhiteBalanceRoiLiveCCD">
+                        <ContentControl Content="{Binding sUiController.Display.WhiteBalanceRoiRectangleNormal, Mode=Default}"/>
+                    </Grid>
+                    <Grid Visibility="{Binding sUiController.Magnification.ZoomFinalRoiVisibility, Mode=Default}" x:Name="grdZoomRoiLiveCCD">
+                        <ContentControl Content="{Binding sUiController.Display.ZoomProvisionalRoiRectangle, Mode=Default}" Visibility="{Binding sUiController.Display.ZoomProvisionalRoiVisibility, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.ZoomFinalRoiRectangleNormal, Mode=Default}"/>
+                        <Label Content="{Binding sUiController.Display.ZoomRoiString, Mode=Default}" Margin="{Binding sUiController.Display.ZoomRoiLabelMargin, Mode=Default}" HorizontalAlignment="{Binding sUiController.Display.ZoomRoiLabelHorizontalAlignment, Mode=Default}" VerticalAlignment="{Binding sUiController.Display.ZoomRoiLabelVerticalAlignment, Mode=Default}" Opacity="0.8" FontWeight="Bold" Foreground="Red" Background="Gray"/>
+                    </Grid>
+                    <Grid Visibility="{Binding sUiController.Measurement.LiveMeasurementChecked, Converter={StaticResource cnvBooleanVisibility}, Mode=Default}" x:Name="grdLiveMeasurementLiveCCD">
+                        <ContentControl Content="{Binding sUiController.Display.MeasurementResultCanvas, Mode=Default}" />
+                        <ContentControl Content="{Binding sUiController.Display.TempMeasurementResultCanvas, Mode=Default}" />
+                    </Grid>
+                    <Grid Visibility="{Binding sUiController.Magnification.CalibrationHorizontalGuideLineVisibility, Mode=Default}" x:Name="grdCalibrationHorizontalGuideLineLiveCCD">
+                        <ContentControl Content="{Binding sUiController.Display.UpperGuideLine, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.LowerGuideLine, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.XCenterGuideLine, Mode=Default}"/>
+                    </Grid>
+                    <Grid Visibility="{Binding sUiController.Magnification.CalibrationVerticalGuideLineVisibility, Mode=Default}" x:Name="grdCalibrationVerticalGuideLineLiveCCD">
+                        <ContentControl Content="{Binding sUiController.Display.LeftGuideLine, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.RightGuideLine, Mode=Default}"/>
+                        <ContentControl Content="{Binding sUiController.Display.YCenterGuideLine, Mode=Default}"/>
+                    </Grid>
+                    <Grid x:Name="grdCanNotRoiZoom" Margin="{Binding sUiController.Magnification.CanNotRoiZoomLabelMargin, Mode=Default}" Background="#00000000" HorizontalAlignment="Left" VerticalAlignment="Top" Height ="65" Width="160" Visibility="{Binding sUiController.Magnification.CanNotRoiZoomLabelVisibility, Mode=Default}">
+                        <Grid.Effect>
+                            <DropShadowEffect BlurRadius="15"/>
+                        </Grid.Effect>
+                        <Label x:Name="lblCanNotRoiZoom" Content="{Binding sUiController.Magnification.CanNotRoiZoomString, Mode=Default}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="55" Width="150" Foreground="Red" Background="#C0FFFF60" BorderThickness="4"/>
+                    </Grid>
+                    <Grid x:Name="grdMouseEventAreaLiveCCD" MouseMove="MouseMoveHandler" MouseLeftButtonDown="MouseLeftButtonDownHandler" MouseUp="MouseUpHandler" MouseWheel="MouseWheelHandler" Opacity="0" MouseLeave="MouseLeaveHandler" Background="#FF000000"
+                          IsManipulationEnabled="True" ManipulationDelta="MultiTouchDeltaHandler" ManipulationInertiaStarting="ManipulationInertiaStartingHandler" TouchDown="TouchDownHandler"
+                          IsEnabled="{Binding sUiController.Display.MouseEventEnabled, Mode=Default}"
+                          />
+                    <Grid Visibility="{Binding sUiController.Magnification.ZoomRoiExecuteButtonVisibility, Mode=Default}" Margin="{Binding sUiController.Display.ZoomRoiButtonMargin, Mode=Default}" HorizontalAlignment="{Binding sUiController.Display.ZoomRoiButtonHorizontalAlignment, Mode=Default}" VerticalAlignment="{Binding sUiController.Display.ZoomRoiButtonVerticalAlignment, Mode=Default}" Width="{Binding sUiController.Display.ZoomRoiButtonWidth, Mode=Default}" Height="{Binding sUiController.Display.ZoomRoiButtonHeight, Mode=Default}" x:Name="grdRoiZoomExecuteHandlerLiveCCD">
+                        <Button x:Name="btnOK" Content="OK" Command="{Binding sUiController.Magnification.RoiZoomExecuteHandler, Mode=Default}" Width="80" Height="30" Margin="-100,0,0,0" Cursor="Arrow" />
+                        <Button x:Name="btnCancel" Content="Cancel" Command="{Binding sUiController.Magnification.RoiZoomCancelHandler, Mode=Default}" Width="80" Height="30" Margin="100,0,0,0" Cursor="Arrow" />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+        <ScrollViewer x:Name="scvScrollStillImage" Width="{Binding sUiController.Display.NormalDisplayStillImageWidth}" Height="{Binding sUiController.Display.NormalDisplayStillImageHeight}" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" 
+                      HorizontalScrollBarVisibility="{Binding sUiController.Display.ScrollStillImageHorizontalScrollBarVisibility, Mode=Default}" VerticalScrollBarVisibility="{Binding sUiController.Display.ScrollStillImageVerticalScrollBarVisibility, Mode=Default}" 
+                      Grid.ColumnSpan="{Binding sUiController.Display.ScrollStillImageScrollBarGridColumnSpan, Mode=Default}" Grid.RowSpan="{Binding sUiController.Display.ScrollStillImageScrollBarGridRowSpan, Mode=Default}" 
+                      Visibility="{Binding sUiController.Display.ScrollStillImageScrollBarVisibility, Mode=Default}" 
+                      Grid.Column="{Binding sUiController.Display.ScrollStillImageScrollBarGridColumn, Mode=Default}" Grid.Row="{Binding sUiController.Display.ScrollStillImageScrollBarGridRow, Mode=Default}" Loaded="ScrollStillLoadedHandler" Panel.ZIndex="{Binding sUiController.Display.ScrollStillImageScrollBarZIndex, Mode=Default}" 
+					  Margin="{Binding sUiController.Display.StillImageScrollBarMargin, Mode=Default}">
+            <Grid x:Name="grdVisibleStillImage" Width="{Binding sUiController.Display.StillImageVisibleWidth, Mode=Default}" Height="{Binding sUiController.Display.StillImageVisibleHeight, Mode=Default}" ClipToBounds="True" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid x:Name="grdImageStill" Width="{Binding sUiController.Display.StillImageWidth, Mode=Default}" Height="{Binding sUiController.Display.StillImageHeight, Mode=Default}" Margin="{Binding sUiController.Display.StillImagePosition}">
+                    <Image x:Name="imgImageStill" Width="{Binding sUiController.Display.StillBitmapWidth, Mode=Default}" Height="{Binding sUiController.Display.StillBitmapHeight, Mode=Default}" Source="{Binding sUiController.Display.StillImageUpdateNormal, Mode=Default}" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                </Grid>
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="grdUtilityStillImage"  Cursor="{Binding sUiController.Display.MouseCursor, Mode=Default}">
+                	<Grid x:Name="grdMouseEventAreaStillImage" MouseMove="StillImageMouseMoveHandler" MouseLeftButtonDown="StillImageMouseLeftButtonDownHandler" MouseUp="StillImageMouseUpHandler" Opacity="0" MouseLeave="StillImageMouseLeaveHandler" Background="#FF000000"
+                		IsEnabled="{Binding sUiController.Display.MouseEventEnabled, Mode=Default}"
+                          />
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+        <!-- ステージ制御用８方向ボタン -->
+        <Grid Margin="0,0,0,0" Grid.ColumnSpan="2" Grid.RowSpan="2" Visibility="{Binding sUiController.Stage.StageControllerVisibility, Mode=Default}" IsEnabled="{Binding sUiController.Stage.StageControllerEnable, Mode=Default}" Panel.ZIndex="10">
+            <!--Grid x:Name="grdEightStageMove" Visibility="Hidden" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="165" Height="165"-->
+            <!--Grid x:Name="grdEightStageMove" Visibility="Hidden" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="165" Height="165"-->
+            <!--Grid x:Name="grdEightStageMove" Visibility="Hidden" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="165" Height="165"-->
+            <Grid HorizontalAlignment="Right" Height="165" Margin="0,0,20,20" VerticalAlignment="Bottom" Width="165" Visibility="{Binding sUiController.Layout.EightStageLightStrokeVisibility, Mode=Default}">
+        		<Rectangle Stroke="{DynamicResource OverStrokeBrush}" VerticalAlignment="Top" Height="165" RadiusX="2" RadiusY="2" StrokeThickness="5" HorizontalAlignment="Left" Width="165">
+        			<Rectangle.Effect>
+        				<BlurEffect KernelType="Box" Radius="20"/>
+        			</Rectangle.Effect>
+        			<Rectangle.Fill>
+        				<RadialGradientBrush>
+        					<GradientStop Color="#FF787878"/>
+        					<GradientStop Color="#FF00CCFF" Offset="1"/>
+        					<GradientStop Color="#FF009BC2" Offset="1"/>
+        					<GradientStop Color="#FF0081A2" Offset="1"/>
+        					<GradientStop Color="#7F787878" Offset="0.295"/>
+        					<GradientStop Color="#7F3CA1BA" Offset="1"/>
+        				</RadialGradientBrush>
+        			</Rectangle.Fill>
+        		</Rectangle>
+        		<Rectangle Stroke="{DynamicResource OverStrokeBrush}" VerticalAlignment="Top" Height="165" RadiusX="2" RadiusY="2" StrokeThickness="5" HorizontalAlignment="Left" Width="165">
+        			<Rectangle.Effect>
+        				<BlurEffect KernelType="Box" Radius="20"/>
+        			</Rectangle.Effect>
+        			<Rectangle.Fill>
+        				<RadialGradientBrush>
+        					<GradientStop Color="#FF787878"/>
+        					<GradientStop Color="#FF00CCFF" Offset="1"/>
+        					<GradientStop Color="#FF009BC2" Offset="1"/>
+        					<GradientStop Color="#FF0081A2" Offset="1"/>
+        					<GradientStop Color="#7F787878" Offset="0.295"/>
+        					<GradientStop Color="#7F3CA1BA" Offset="1"/>
+        				</RadialGradientBrush>
+        			</Rectangle.Fill>
+        		</Rectangle>
+            <!--Grid x:Name="grdEightStageMove" Visibility="Hidden" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="165" Height="165"-->
+        		<Rectangle x:Name="rtgEightStageLightStroke" Fill="#1900CCFF" Stroke="{DynamicResource OverStrokeBrush}" VerticalAlignment="Top" Height="165" RadiusX="2" RadiusY="2" StrokeThickness="3" HorizontalAlignment="Left" Width="165" Visibility="Collapsed">
+        			<Rectangle.Effect>
+        				<DropShadowEffect Color="{DynamicResource OverBrillianceColor}" BlurRadius="20" Direction="0" ShadowDepth="0"/>
+        			</Rectangle.Effect>
+        		</Rectangle>
+        	</Grid>
+<!--Grid x:Name="grdEightStageMove" Visibility="Hidden" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="165" Height="165"-->
+            <Grid x:Name="grdEightStageMove" Visibility="{Binding sUiController.Stage.StageEightwayCtrlVisibility, Mode=Default}" HorizontalAlignment="Right" Margin="0,839,20,20" Width="165">
+                <Path Stretch="Fill" Fill="#FF5AD3FA" Data="F1 M 1102.37,892.026L 1102.69,910.142L 1084.57,909.827L 1102.37,892.026 Z " StrokeThickness="0.632996" StrokeMiterLimit="2.75" Stroke="#FF000000" Width="18.746" Height="18.748" Visibility="Hidden" HorizontalAlignment="Right" x:Name="pthOnSpeed" VerticalAlignment="Bottom"/>
+                <Path Stretch="Fill" Fill="#80696969" Data="F1 M 1120.8,910.454L 1121.11,928.569L 1103,928.255L 1120.8,910.454 Z " Visibility="Hidden" HorizontalAlignment="Right" x:Name="pthOffSpeed" VerticalAlignment="Bottom" Width="18.111" Height="18.114"/>
+                <Path Stretch="Fill" Fill="{Binding sUiController.Stage.StageCtrlSpeedHigh, Mode=Default}" Data="M-1.4650158E-05,13.03098 L12.581463,-1.416015E-05 25.172941,13.03098 -1.4650158E-05,13.03098 z M25.172941,148.85302 L12.581463,161.88299 -1.4650158E-05,148.85302 25.172941,148.85302 z M-56.848004,30.154018 L-57.161004,12.038984 -39.047018,12.353968 -56.848004,30.154018 z M82.011022,133.41501 L82.321039,151.52899 64.210024,151.21499 82.011022,133.41501 z M-56.169971,94.371014 L-69.201988,81.783001 -56.169971,69.197988 -56.169971,94.371014 z M81.34002,69.197988 L94.367,81.785001 81.34002,94.371014 81.34002,69.197988 z M-39.048018,151.21297 L-57.16299,151.52797 -56.847008,133.41398 -39.048018,151.21297 z M64.210024,12.352011 L82.323029,12.041994 82.003153,30.153008 64.210024,12.352011 z" x:Name="pthSpeed3"/>
+                <Path Stretch="Fill" Fill="{Binding sUiController.Stage.StageCtrlSpeedMiddle, Mode=Default}" Data="M-1.4650158E-05,13.030012 L12.581463,-2.001958E-05 25.172941,13.030012 -1.4650158E-05,13.030012 z M25.172941,122.79301 L12.581463,135.82302 -1.4650158E-05,122.79301 25.172941,122.79301 z M-47.633994,26.337005 L-47.946993,8.2230186 -29.83403,8.5370183 -47.633994,26.337005 z M72.802948,111.17 L73.113,129.28401 54.999985,128.97002 72.802948,111.17 z M-43.14,81.340014 L-56.169971,68.752001 -43.14,56.166988 -43.14,81.340014 z M68.310049,56.165002 L81.34002,68.753508 68.310049,81.339014 68.310049,56.165002 z M-29.83403,128.96897 L-47.948017,129.28097 -47.633017,111.16897 -29.83403,128.96897 z M54.999985,8.5340186 L73.115,8.2230186 72.804914,26.335019 54.999985,8.5340186 z" Margin="13.032,13.031,13.027,13.029" x:Name="pthSpeed2"/>
+                <Path Stretch="Fill" Fill="{Binding sUiController.Stage.StageCtrlSpeedLow, Mode=Default}" Data="M-1.4650158E-05,13.031006 L12.581463,1.1718745E-05 25.172941,13.031006 -1.4650158E-05,13.031006 z M25.172941,96.732017 L12.581463,109.76301 -1.4650158E-05,96.732017 25.172941,96.732017 z M-38.420023,22.519992 L-38.734006,4.4060059 -20.62102,4.7210056 -38.420023,22.519992 z M63.583081,88.925986 L63.892961,107.041 45.779956,106.726 63.583081,88.925986 z M-30.110029,68.310014 L-43.14,55.722001 -30.110029,43.136988 -30.110029,68.310014 z M55.279956,43.135002 L68.310049,55.723508 55.279956,68.309014 55.279956,43.135002 z M-20.62102,106.72499 L-38.735029,107.03799 -38.420047,88.925986 -20.62102,106.72499 z M45.779956,4.7190287 L63.894961,4.4070293 63.585046,22.519992 45.779956,4.7190287 z" Margin="26.062,26.061,26.057,26.059" x:Name="pthSpeed1"/>
+                <Button Style="{DynamicResource EightButtonStyle}" x:Name="cmdLeftUp" Content="" Width="54.523" Height="53.961" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#006EBCFF" PreviewMouseLeftButtonDown="DirectionLeftUpMouseDownHandler" PreviewMouseLeftButtonUp="DirectionLeftUpMouseUpHandler" MouseLeave="DirectionLeftUpMouseLeaveHandler"/>
+                <Button Style="{DynamicResource EightButtonStyle}" x:Name="cmdUp" Content="" Width="54.523" Height="53.961" Margin="54.523,0,54.523,0" VerticalAlignment="Top" Background="#006EBCFF" PreviewMouseLeftButtonDown="DirectionUpMouseDownHandler" PreviewMouseLeftButtonUp="DirectionUpMouseUpHandler" MouseLeave="DirectionUpMouseLeaveHandler"/>
+                <Button Style="{DynamicResource EightButtonStyle}" x:Name="cmdRightUp" Content="" Width="54.523" Height="53.961" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#006EBCFF" PreviewMouseLeftButtonDown="DirectionRightUpMouseDownHandler" PreviewMouseLeftButtonUp="DirectionRightUpMouseUpHandler" MouseLeave="DirectionRightUpMouseLeaveHandler"/>
+                <Button Style="{DynamicResource EightButtonStyle}" x:Name="cmdLeft" Content="" Width="54.523" Height="53.961" HorizontalAlignment="Left" Margin="0,53.961,0,53.961" Background="#006EBCFF" PreviewMouseLeftButtonDown="DirectionLeftMouseDownHandler" PreviewMouseLeftButtonUp="DirectionLeftMouseUpHandler" MouseLeave="DirectionLeftMouseLeaveHandler"/>
+                <!--<Button Style="{DynamicResource EightButtonStyle}" HorizontalAlignment="Left" x:Name="cmdLeftUp" VerticalAlignment="Top" Width="54.523" Height="53.961" Content="" PreviewMouseLeftButtonDown="" PreviewMouseLeftButtonUp="" Background="#006EBCFF" MouseLeave=""/-->
+                <Button Style="{DynamicResource EightButtonStyle}" x:Name="cmdRight" Content="" Width="54.523" Height="53.961" HorizontalAlignment="Right" Margin="0,53.961,0,53.961" Background="#006EBCFF" PreviewMouseLeftButtonDown="DirectionRightMouseDownHandler" PreviewMouseLeftButtonUp="DirectionRightMouseUpHandler" MouseLeave="DirectionRightMouseLeaveHandler"/>
+                <Button Style="{DynamicResource EightButtonStyle}" x:Name="cmdLeftDown" Content="" Width="54.523" Height="53.961" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="#006EBCFF" PreviewMouseLeftButtonDown="DirectionLeftDownMouseDownHandler" PreviewMouseLeftButtonUp="DirectionLeftDownMouseUpHandler" MouseLeave="DirectionLeftDownMouseLeaveHandler"/>
+                <Button Style="{DynamicResource EightButtonStyle}" x:Name="cmdDown" Content="" Width="54.523" Height="53.961" Margin="54.523,0,54.523,0" VerticalAlignment="Bottom" Background="#006EBCFF" PreviewMouseLeftButtonDown="DirectionDownMouseDownHandler" PreviewMouseLeftButtonUp="DirectionDownMouseUpHandler" MouseLeave="DirectionDownMouseLeaveHandler"/>
+                <Button Style="{DynamicResource EightButtonStyle}" x:Name="cmdRightDown" Content="" Width="54.523" Height="53.961" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#006EBCFF" PreviewMouseLeftButtonDown="DirectionRightDownMouseDownHandler" PreviewMouseLeftButtonUp="DirectionRightDownMouseUpHandler" MouseLeave="DirectionRightDownMouseLeaveHandler"/>
+            </Grid>
+            <Grid x:Name="grdEightStageSpeed" Visibility="Visible" HorizontalAlignment="Right" Margin="0,0,20,20" VerticalAlignment="Bottom" Width="165" Height="165">
+                <Button Content="{Binding sUiController.Stage.StageCtrlSpeedContent, Mode=Default}" FontSize="{Binding sUiController.Stage.StageCtrlSpeedContentFontSize, Mode=Default}" Style="{DynamicResource EightButtonCenterStyle}" Width="42.757" Height="42.757" BorderThickness="4,4,4,4" Padding="1,1,1,1" VerticalContentAlignment="Center" x:Name="cmdSpeed" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Normal" Click="OnStageCommandSpeedChange"/>
+            </Grid>
+            <Grid x:Name="grdEightStageMoveSpecificationDistance" Visibility="Visible" HorizontalAlignment="Right" Margin="0,0,20,186" VerticalAlignment="Bottom" Width="165" Height="26">
+                <Grid.ColumnDefinitions>
+                	<ColumnDefinition Width="101*" />
+                	<ColumnDefinition Width="64*" />
+                </Grid.ColumnDefinitions>
+                <CustomControl:ValidateTextBox Width="121" Height="26" Visibility="{Binding sUiController.Stage.StageInputByStepCtrlVisibility, Mode=Default}" IsReadOnly="False" HorizontalAlignment="Left" Margin="6,0,0,0" FontSize="14" Padding="1,0,1,1" Text="{Binding sUiController.Stage.StageCtrlStepDistance, Mode=Default, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" FontFamily="Meiryo" x:Name="txbSpecificationDistance" TextAlignment="Right" Opacity="0.6" VerticalAlignment="Bottom" Grid.ColumnSpan="2"  IsRangeCheck="True" RangeMax="{Binding Path=sUiController.Stage.SpecificationDistanceMax, Mode=OneWay}" MaxLength="{Binding Path=sUiController.Stage.StageCtrlStepDistanceMaxLength, Mode=OneWay}" InputType="{Binding Path=sUiController.Stage.StageCtrlStepDistanceInputType, Mode=OneWay}" InputMethod.IsInputMethodEnabled="False" MaxNumberOfDecimalPlaces="{Binding Path=sUiController.Stage.StageCtrlStepDistanceMaxNumberOfDecimalPlaces, Mode=OneWay}" />
+                <Label Width="33" Height="26" Visibility="{Binding sUiController.Stage.StageInputByStepCtrlVisibility, Mode=Default}" Content="{Binding Path=sUiController.Layout.CommonUnit, Mode=Default}" FontFamily="Meiryo" Foreground="#FFFFFFFF" x:Name="lblSpecificationDistanceUnit" FontSize="12" Margin="0,0,4,0" Opacity="1.0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1" />
+            </Grid>
+        </Grid>
+        <Grid Margin="0,0,0,0" Grid.ColumnSpan="2" Grid.RowSpan="2" Width="1024" Height="1024" Panel.ZIndex="100" Background="#000000" Opacity="0" Visibility="{Binding sUiController.Display.ImageDisplayShield, Mode=Default}"/>
+    </Grid>
+</Page>

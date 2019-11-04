@@ -1,0 +1,671 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<title>ファイルフォーマット</title>
+</head>
+
+<body bgcolor="#000018" text="#ffffff" link="#00ffff" vlink="#ff00ff">
+
+<h2 align="center">Metasequoia ファイルフォーマット</h2>
+<p align="center">Feb, 2014<br>Text by tetraface Inc.</p>
+<center>
+<table width="100%" cellpadding="4" cellspacing="2">
+	<tr>
+		<td>　このドキュメントはMetasequoia Ver1.0～4.1の仕様に基づいています。<br><br>
+		 <b><font color="#ff8040">注意</font></b><br>
+		　このファイルフォーマットは将来互換性を維持できない形で仕様変更される可能性があります。<br>
+		　MQOフォーマット自体、作者のメンテナンスのしやすさを優先し、他のソフトで読み込むことをほとんど考慮していないので、MQO入力プログラムを作るよりMetasequoia側でプラグインを作って出力する方が賢明です。<br>
+		　プラグインSDKにはMQOを読み込むサンプルが入っていますので、そちらもご参照下さい。 
+		<br><br></td>
+	</tr>
+	<tr bgcolor="#004040">
+		<td><b>共通事項</b></td>
+	</tr>
+	<tr>
+		<td>
+		<ul>
+			<li>改行コードはWindows標準の0x0D0x0A </li>
+			<li>チャンク名は原則として大文字と小文字を区別しない </li>
+			<li>一つの文字列は全体を""でくくる </li>
+			<li>一行内のチャンクやデータは、通常スペースまたはタブで区切るが、カッコなど記号文字の中にも区切り文字として扱われるものがある </li>
+			<li>バイナリデータのバイトオーダーはIntel形式である </li>
+			<li>バイナリデータの浮動小数点データはIEEE標準形式である </li>
+		</ul>
+		<br></td>
+	</tr>
+	<tr bgcolor="#004040">
+		<td><b>チャンク</b></td>
+	</tr>
+	<tr>
+		<td>　チャンクとは、ひとまとまりのデータ群であり、行の先頭または末端に特定の文字列をもったものを指す。以下のルールがある。 
+		<ul>
+			<li>チャンクが複数行にまたがる場合、先頭行の最後は { で終わっている。その後、行の先頭に } があると、チャンクを終了する。 </li>
+			<li>チャンク内に、階層的にチャンクが存在することがある。 </li>
+			<li>バイナリデータを持つチャンクの場合、行の最後は [データサイズ] で終わる。その後、バイナリデータがサイズ分だけ続く。 </li>
+		</ul>
+		<br></td>
+	</tr>
+	<tr bgcolor="#004040">
+		<td><b>拡張子</b></td>
+	</tr>
+	<tr>
+		<td>
+		<table border="1" bgcolor="#202040">
+			<tr>
+				<td>MQO</td>
+				<td>オブジェクト（ドキュメント）</td>
+			</tr>
+			<tr>
+				<td>MQM</td>
+				<td>材質</td>
+			</tr>
+			<tr>
+				<td>MQP</td>
+				<td>画像ペイントのパレット</td>
+			</tr>
+			<tr>
+				<td>MQB</td>
+				<td>画像ペイントの模様ブラシ</td>
+			</tr>
+		</table>
+		<br></td>
+	</tr>
+	<tr bgcolor="#004040">
+		<td><b>MQO オブジェクト（ドキュメント）ファイル</b></td>
+	</tr>
+	<tr>
+		<td>　MQOファイル内は、ヘッダ、Scene、Material、Object、Blobなどの親チャンクで構成される。 
+		<dl>
+			<dt><font color="#ffff80"><b>ヘッダ</b></font> </dt>
+			<dd><br>　ファイルの先頭の２行には以下のヘッダを持つ。 
+			<dl>
+				<dd>
+				<pre>Metasequoia Document
+Format %s Ver %.1f</pre>
+				</dd>
+			</dl>
+			<table border="1" bgcolor="#202040">
+				<tr>
+					<td>Format %s</td>
+					<td>形式</td>
+					<td>[Text] テキスト<br>
+					[Compress] 圧縮（現バージョンでは非サポート）</td>
+				</tr>
+				<tr>
+					<td>Ver %.1f</td>
+					<td>バージョン</td>
+					<td>[1.0] 多角形をサポートせず4角以下<br>
+				  [1.1] 5角以上の多角形をサポート (Ver4.0以降）</td>
+				</tr>
+			</table>
+			　形式またはメジャーバージョンが認識できない場合は、ファイルの読込を中止すべきである。マイナーバージョンは、チャンク構造を正しく解釈できるなら無視してもおそらく問題ない。 </dd>
+		</dl>
+		<dl>
+			<dt><font color="#ffff80"><b>TrialNoiseチャンク</b></font> </dt>
+			<dd>
+			　Ver1.0でユーザー登録を行わない状態で保存したMQOファイルの先頭の方に記録される。このチャンクを検出したら、直ちに読み込みを中止すること。読み込みを継続してもおかしなデータしか得られない。詳細は非公開。<br>
+			　Ver2.0以降ではこのチャンクは廃止されている。 </dd>
+		</dl>
+		<dl>
+			<dt><font color="#ffff80"><b>IncludeXmlチャンク</b></font> </dt>
+			<dd>　プラグイン独自の情報を保存するために、以下のようにXMLファイルを記述する。プラグインから情報が出力されない場合は、このチャンクも出力されない。 
+			<dl>
+				<dd>
+				<pre>IncludeXml "%s"</pre>
+				</dd>
+			</dl>
+			<table border="1" bgcolor="#202040">
+				<tr>
+					<td>InlcudeXml %s</td>
+					<td>ファイル名</td>
+					<td>外部XMLファイルの拡張子は.mqx</td>
+				</tr>
+			</table>
+			</dd>
+		</dl>
+		<dl>
+			<dt><font color="#ffff80"><b>Sceneチャンク</b></font> </dt>
+			<dd>　視点情報などのためのチャンク。詳細は省略。 </dd>
+		</dl>
+		<dl>
+			<dt><font color="#ffff80"><b>BackImageチャンク （Ver2.0以降）</b></font> </dt>
+			<dd>　下絵情報などのためのチャンク。詳細は省略。 </dd>
+		</dl>
+		<dl>
+			<dt><font color="#ffff80"><b>Materialチャンク</b></font> </dt>
+			<dd><br>　材質を示すチャンクは、次のように開始する。<br>
+			<dl>
+				<dd>
+				<pre>Material %d {</pre>
+				</dd>
+			</dl>
+			<table border="1" bgcolor="#202040">
+				<tr>
+					<td>%d</td>
+					<td>材質数</td>
+				</tr>
+			</table>
+			<br>　以下、チャンク内には一行ごとに材質データがある。材質名より後のパラメータは、必要なければ省略することができる。<br>
+			<dl>
+				<dd>
+				<pre>%s shader(%d) vcol(%d) dbls(%d) col(%.3f %.3f %.3f %.3f) dif(%.3f) amb(%.3f) emi(%.3f) spc(%.3f)
+power(%.2f) reflect(%.3f) refract(%.3f) tex(%s) alpha(%s) bump(%s) proj_type(%d) proj_pos(%.3f %.3f %.3f)
+proj_scale(%.3f %.3f %.3f) proj_angle(%.3f %.3f %.3f)</pre>
+				</dd>
+			</dl>
+			<table border="1" bgcolor="#202040">
+				<tr>
+					<td>%s</td>
+					<td>材質名</td>
+					<td>31Byte以内</td>
+				</tr>
+				<tr>
+					<td>shader(%d)</td>
+					<td>シェーダ</td>
+					<td>[0] Classic<br>
+					[1] Constant<br>
+					[2] Lambert<br>
+					[3] Phong<br>
+					[4] Blinn</td>
+				</tr>
+				<tr>
+					<td>vcol(%d)</td>
+					<td>頂点カラー</td>
+					<td>[0] なし<br>
+					[1] あり</td>
+				</tr>
+				<tr>
+					<td>dbls(%d)</td>
+					<td>両面表示</td>
+					<td>[0] 片面<br>
+					[1] 両面</td>
+				</tr>
+				<tr>
+					<td>col(%.3f %.3f %.3f %.3f)</td>
+					<td>色（ＲＧＢ）、不透明度</td>
+					<td>それぞれ0～1</td>
+				</tr>
+				<tr>
+					<td>dif(%.3f)</td>
+					<td>拡散光</td>
+					<td>0～1</td>
+				</tr>
+				<tr>
+					<td>amb(%.3f)</td>
+					<td>周囲光</td>
+					<td>0～1</td>
+				</tr>
+				<tr>
+					<td>emi(%.3f)</td>
+					<td>自己照明</td>
+					<td>0～1</td>
+				</tr>
+				<tr>
+					<td>spc(%.3f)</td>
+					<td>反射光</td>
+					<td>0～1</td>
+				</tr>
+				<tr>
+					<td>power(%.2f)</td>
+					<td>反射光の強さ</td>
+					<td>0～100</td>
+				</tr>
+				<tr>
+					<td>reflect(%.3f)</td>
+					<td>鏡面反射 （Ver4.0以降)</td>
+					<td>0～1</td>
+				</tr>
+				<tr>
+					<td>refract(%.3f)</td>
+				  <td>屈折率 （Ver4.0以降)</td>
+					<td>1～5</td>
+				</tr>
+				<tr>
+					<td>tex(%s)</td>
+					<td>模様マッピング名</td>
+					<td>相対パスまたは絶対パスで記述</td>
+				</tr>
+				<tr>
+					<td>aplane(%s)</td>
+					<td>透明マッピング名</td>
+					<td>相対パスまたは絶対パスで記述</td>
+				</tr>
+				<tr>
+					<td>bump(%s)</td>
+					<td>凹凸マッピング名</td>
+					<td>相対パスまたは絶対パスで記述</td>
+				</tr>
+				<tr>
+					<td>proj_type(%d)</td>
+					<td>マッピング方式</td>
+					<td>[0] UV<br>
+					[1] 平面<br>
+					[2] 円筒<br>
+					[3] 球</td>
+				</tr>
+				<tr>
+					<td>proj_pos(%.3f %.3f %.3f)</td>
+					<td>投影位置（ＸＹＺ）</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>proj_scale(%.3f %.3f %.3f)</td>
+					<td>投影拡大率（ＸＹＺ）</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>proj_angle(%.3f %.3f %.3f)</td>
+					<td>投影角度（ＨＰＢ）</td>
+					<td>-180～180</td>
+				</tr>
+			</table>
+			<br>　材質用のチャンクは将来Material2チャンクに変更され、Materialチャンクは廃止される可能性がある。Material2チャンクの定義は未定。 </dd>
+		</dl>
+		<dl>
+			<dt><font color="#ffff80"><b>Objectチャンク</b></font> </dt>
+			<dd><br>　オブジェクトを示すチャンクは、次のように開始する。<br>
+			<dl>
+				<dd>
+				<pre>Object %s {</pre>
+				</dd>
+			</dl>
+			<table border="1" bgcolor="#202040">
+				<tr>
+					<td>%s</td>
+					<td>オブジェクト名</td>
+					<td>63Byte以内</td>
+				</tr>
+			</table>
+			<br>　チャンク内には、以下のチャンクが存在する。必要なければ省略することができる。<br>
+			<dl>
+				<dd>
+				<pre>uid %d
+depth %d
+folding %d
+scale %.6f %.6f %.6f
+rotation %.6f %.6f %.6f
+translation %.6f %.6f %.6f
+patch %d
+patchtri %d
+segment %d
+visible %d
+locking %d
+shading %d
+facet %.1f
+color %.3f %.3f %.3f
+color_type %d
+mirror %d
+mirror_axis %d
+mirror_dis %.3f
+vertex %d {
+}
+BVertex %d {
+}
+face %d {
+}</pre>
+				</dd>
+			</dl>
+			<table border="1" bgcolor="#202040">
+				<tr>
+					<td nowrap>uid %d</td>
+					<td>ユニークID</td>
+					<td>プラグインで利用されるユニークID。指定されない場合、自動的に連番が割り当てられる。</td>
+				</tr>
+				<tr>
+					<td nowrap>depth %d</td>
+					<td>階層の深さ</td>
+					<td>ルート直下を0として深くなるごとに+1</td>
+				</tr>
+				<tr>
+					<td nowrap>folding %d</td>
+					<td>オブジェクトパネル上の<br>階層の折りたたみ</td>
+					<td>[0] 通常表示<br>
+					[1] 子オブジェクトを折りたたんで非表示に</td>
+				</tr>
+				<tr>
+					<td nowrap>scale %.6f %.6f %.6f</td>
+					<td>ローカル座標の拡大率</td>
+					<td>XYZ</td>
+				</tr>
+				<tr>
+					<td nowrap>rotation %.6f %.6f %.6f</td>
+					<td>ローカル座標の回転角</td>
+					<td>HPB</td>
+				</tr>
+				<tr>
+					<td nowrap>translation %.6f %.6f %.6f</td>
+					<td>ローカル座標の平行移動量</td>
+					<td>XYZ</td>
+				</tr>
+				<tr>
+					<td nowrap>patch %d</td>
+					<td>曲面の形式</td>
+					<td>[0] 平面(曲面指定をしない)<br>
+					  [1] 曲面タイプ１ （スプライン Type1）<br>
+					  [2] 曲面タイプ２ （スプライン Type2）<br>
+					  [3] Catmull-Clark （Ver2.2以降）<br>
+					  [4] OpenSubdiv  （Ver4.0以降）</td>
+				</tr>
+				<tr>
+					<td nowrap>patchtri %d</td>
+					<td>Catmull-Clark曲面の三角形面の処理</td>
+					<td>[0] 四角形に分割<br>
+					[1] 三角形のまま分割</td>
+				</tr>
+				<tr>
+					<td nowrap>segment %d</td>
+					<td>曲面の分割数</td>
+					<td>1～16<br>
+					(Catmull-Clark/OpenSubdivの場合、再帰分割数を示すため1～4となる）</td>
+				</tr>
+				<tr>
+					<td>visible %d</td>
+					<td>表示・非表示</td>
+					<td>[0] 非表示<br>
+					[15] 表示</td>
+				</tr>
+				<tr>
+					<td>locking</td>
+					<td>オブジェクトの固定</td>
+					<td>[0] 編集可能<br>
+					[1] 編集禁止</td>
+				</tr>
+				<tr>
+					<td nowrap>shading %d</td>
+					<td>シェーディング</td>
+					<td>[0] フラットシェーディング<br>
+					[1] グローシェーディング</td>
+				</tr>
+				<tr>
+					<td nowrap>facet %.1f</td>
+					<td>スムージング角度</td>
+					<td>0～180</td>
+				</tr>
+				<tr>
+					<td nowrap>color %.3f %.3f %.3f</td>
+					<td>色（ＲＧＢ）</td>
+					<td>それぞれ0～1</td>
+				</tr>
+				<tr>
+					<td nowrap>color_type %d</td>
+					<td>辺の色タイプ</td>
+					<td>[0] 環境設定での色を使用<br>
+					[1] オブジェクト固有の色を使用</td>
+				</tr>
+				<tr>
+					<td nowrap>mirror %d</td>
+					<td>鏡面のタイプ</td>
+					<td>[0] なし<br>
+					[1] 左右を分離<br>
+					[2] 左右を接続</td>
+				</tr>
+				<tr>
+					<td nowrap>mirror_axis %d</td>
+					<td>鏡面の適用軸</td>
+					<td>[1] X軸<br>
+					  [2] Y軸<br>
+					  [4] Z軸</td>
+				</tr>
+				<tr>
+					<td nowrap>mirror_dis %.3f</td>
+					<td>接続距離</td>
+					<td>0～</td>
+				</tr>
+				<tr>
+					<td nowrap>lathe %d</td>
+					<td>回転体のタイプ</td>
+					<td>[0] なし<br>
+					[3] 両面</td>
+				</tr>
+				<tr>
+					<td nowrap>lathe_axis %d</td>
+					<td>回転体の軸</td>
+					<td>[0] X軸<br>
+					[1] Y軸<br>
+					[2] Z軸</td>
+				</tr>
+				<tr>
+					<td nowrap>lathe_seg %d</td>
+					<td>回転体の分割数</td>
+					<td>3～</td>
+				</tr>
+				<tr>
+					<td nowrap>vertex %d</td>
+					<td>vertexチャンク（頂点群）</td>
+					<td>頂点数</td>
+				</tr>
+				<tr>
+					<td nowrap>BVertex %d</td>
+					<td>BVertexチャンク<br>（バイナリ頂点群）</td>
+					<td>頂点数</td>
+				</tr>
+				<tr>
+					<td nowrap>face %d</td>
+					<td>faceチャンク（面群）</td>
+					<td>面数</td>
+				</tr>
+			</table>
+			<br>
+			<dl>
+				<dt><font color="#ffcf80"><b>vertexチャンク</b></font> </dt>
+				<dd>　頂点群を示すチャンク内には、一行ごとに以下の頂点データが存在する。<br>
+				<dl>
+					<dd>
+					<pre>%.4f %.4f %.4f</pre>
+					</dd>
+				</dl>
+				<table border="1" bgcolor="#202040">
+					<tr>
+						<td>%.4f %.4f %.4f</td>
+						<td>ＸＹＺ方向の位置</td>
+					</tr>
+				</table>
+				<br><b>例</b><br>
+				<pre>vertex {
+  0.5000 1.0000 10.0000
+  -2.0000 -20.0000 45.5000
+}</pre>
+				</dd>
+				<dd><br>補足：<br>　頂点用のチャンクはVer2.2からは"vertex"が標準であるが、どちらも使用することができる。Ver2.0/2.1ではmetaseq.iniの[System]項の 
+				"AsciiMQO=1"、Ver2.2からは "MQOFormat=0" とすることでvertexで保存することが出来る。<br></dd>
+			</dl>
+			<br>
+			<dl>
+				<dt><font color="#ffcf80"><b>vertexattrチャンク （Ver2.2以降）</b></font> </dt>
+				<dd>　頂点ごとの属性を記録する。子チャンクとして以下を持つ。<br>
+				<dl>
+					<dt><font color="#ff9f80"><b>uidチャンク</b></font>&nbsp; (Ver3.1以降)</dt>
+					<dd>　頂点ごとのユニークID。頂点の個数分のIDが記述される。<br>
+					<dl>
+						<dd>
+						<pre>%d</pre>
+						</dd>
+					</dl>
+					<table border="1" bgcolor="#202040">
+						<tr>
+							<td>%d</td>
+							<td>ユニークID</td>
+						</tr>
+						</table>
+					<br><b>例</b><br>
+					<pre>uid {
+  1
+  2
+  4
+}</pre>
+					</dd>
+				</dl>
+				<dl>
+					<dt><font color="#ff9f80"><b>weitチャンク</b></font> </dt>
+					<dd>　頂点ごとの曲面の重み係数を示す。重み係数が割り当てられていない頂点は0.000がセットされることを意味する。<br>
+					<dl>
+						<dd>
+						<pre>%d %.3f</pre>
+						</dd>
+					</dl>
+					<table border="1" bgcolor="#202040">
+						<tr>
+							<td>%d</td>
+							<td>頂点インデックス</td>
+						</tr>
+						<tr>
+							<td>%.3f</td>
+							<td>重み係数</td>
+						</tr>
+					</table>
+					<br><b>例</b><br>
+					<pre>weit {
+  0 1.000
+  2 0.621
+  7 0.121
+}</pre>
+					</dd>
+				</dl>
+				<dl>
+					<dt><font color="#ff9f80"><b>colorチャンク</b></font> </dt>
+					<dd>　頂点カラーを示す。<br>　Ver2.3以降では頂点カラーは面内頂点として保持するため、実質的に廃止。<br>
+					<dl>
+						<dd>
+						<pre>%d %u</pre>
+						</dd>
+					</dl>
+					<table border="1" bgcolor="#202040">
+						<tr>
+							<td>%d</td>
+							<td>頂点インデックス</td>
+						</tr>
+						<tr>
+							<td>%u</td>
+							<td>頂点カラー<br>以下のマスクにより各色要素が決定される<br>0x000000FF 赤<br>0x0000FF00 緑<br>0x00FF0000 青<br>
+							0xFF000000 不透明度</td>
+						</tr>
+					</table>
+					<br><b>例</b><br>
+					<pre>color {
+  0 4278255360
+  2 4278190335
+}</pre>
+					</dd>
+				</dl>
+				<pre><br></pre>
+				</dd>
+			</dl>
+			<br>
+			<dl>
+				<dt><font color="#ffcf80"><b>BVertexチャンク</b></font> </dt>
+				<dd>　バイナリデータでの頂点群を示すチャンク内には、現在では以下のチャンクが存在する。<br>
+				<dl>
+					<dd>
+					<pre>Vector %d [%d]</pre>
+					</dd>
+				</dl>
+				<table border="1" bgcolor="#202040">
+					<tr>
+						<td>Vector %d</td>
+						<td>頂点数<br>データサイズ</td>
+					</tr>
+				</table>
+				<br>
+				<dl>
+					<dt><font color="#ff9f80"><b>Vectorチャンク</b></font> </dt>
+					<dd>　ＸＹＺの順で３つのfloat型浮動小数点数（32bit）が１頂点となり、それが頂点数分だけ存在する。データサイズは頂点数×12Byteとなる。<br>
+					　Intel形式の処理系ではデータサイズ分を頂点配列にデータをダイレクトに読み込むことで格納することが可能である。<br>
+					<br></dd>
+				</dl>
+				<dl>
+					<dt><font color="#ff9f80"><b>weitチャンク （Ver2.0以降）</b></font> </dt>
+					<dd>　頂点ごとの曲面の重み係数を示す。内容はvertexattrチャンク内のものと同一。<br></dd>
+				</dl>
+				<dl>
+					<dt><font color="#ff9f80"><b>colorチャンク （Ver2.0以降）</b></font> </dt>
+					<dd>　頂点カラーを示す。内容はvertexattrチャンク内のものと同一。<br></dd>
+				</dl>
+				<br>補足：<br>　頂点用のチャンクはVer1.0～2.1では"BVertex"チャンクが標準であるが、Ver2.2以降はvertexチャンクが標準である。<br>
+				Ver2.0/2.1ではmetaseq.iniの[System]項で "AsciiMQO=0"、Ver2.2からは "MQOFormat=1" とすることでBVertexで保存することが出来る。<br></dd>
+			</dl>
+			<br>
+			<dl>
+				<dt><font color="#ffcf80"><b>faceチャンク</b></font> </dt>
+				<dd>　面群を示すチャンク内には、一行ごとに以下の面データが存在する。<br>
+				<dl>
+					<dd>
+					<pre>%d V(%d ...) M(%d) UV(%.5f %.5f ...) COL(%u ...) CRS(%f ...)</pre>
+					</dd>
+				</dl>
+				<table border="1" bgcolor="#202040">
+					<tr>
+						<td nowrap>%d</td>
+						<td nowrap>頂点数</td>
+						<td>2以上の値<br>
+						  フォーマットバージョンが1.0のときは常に4以下</td>
+					</tr>
+					<tr>
+						<td nowrap>V(%d ...)</td>
+						<td nowrap>頂点インデックス<br>（頂点数分の数が存在）</td>
+						<td>0～頂点数-1</td>
+					</tr>
+					<tr>
+						<td nowrap>M(%d)</td>
+						<td nowrap>材質インデックス</td>
+						<td>-1（未着色面）または0～材質数-1</td>
+					</tr>
+					<tr>
+						<td nowrap>UV(%.5f %.5f ...)</td>
+						<td nowrap>ＵＶ値<br>（頂点数×２の数が存在）</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td nowrap>COL(%u)</td>
+						<td nowrap>頂点カラー<br>（頂点数分の数が存在）</td>
+						<td>以下のマスクにより各色要素が決定される<br>
+						&nbsp;[0x000000FF] 赤<br>
+						&nbsp;[0x0000FF00] 緑<br>
+						&nbsp;[0x00FF0000] 青<br>
+						&nbsp;[0xFF000000] 不透明度</td>
+					</tr>
+					<tr>
+						<td nowrap>CRS(%f ...)</td>
+						<td nowrap>Catmull-Clark/OpenSubdiv曲面用のエッジの折れ目<br>（頂点数分の数が存在）</td>
+						<td>Catmull-Clarkの場合<br>
+						  &nbsp;[0] OFF<br>
+						  &nbsp;[1] ON<br>
+						  OpenSubdivの場合0以上の値</td>
+					</tr>
+				</table>
+				</dd>
+			</dl>
+			</dd>
+		</dl>
+		<dl>
+			<dt><font color="#ffff80"><b>Blobチャンク</b></font> </dt>
+			<dd>　メタボール（粘土）用のチャンク。詳細は省略。 </dd>
+		</dl>
+		<br></td>
+	</tr>
+	<tr bgcolor="#004040">
+		<td><b>MQM 材質ファイル</b></td>
+	</tr>
+	<tr>
+		<td>　内容はMQOと同じであり、Materialチャンクのみを持つ。<br><br></td>
+	</tr>
+	<tr bgcolor="#004040">
+		<td><b>MQP パレットファイル</b></td>
+	</tr>
+	<tr>
+		<td>　マッピング画像のペイントに用いられるパレットを定義する。詳細は省略。<br><br></td>
+	</tr>
+	<tr bgcolor="#004040">
+		<td><b>MQB ブラシファイル</b></td>
+	</tr>
+	<tr>
+		<td>　マッピング画像のペイントに用いられるブラシを定義する。詳細は省略。<br><br></td>
+	</tr>
+</table>
+</center>
+
+</body>
+
+</html>

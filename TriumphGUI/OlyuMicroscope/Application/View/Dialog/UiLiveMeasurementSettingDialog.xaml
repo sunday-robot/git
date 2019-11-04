@@ -1,0 +1,1257 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2006" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+    xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/composite-font"
+    xmlns:utility="clr-namespace:Olympus.LI.Triumph.Application.View.Utility"
+    x:Class="Olympus.LI.Triumph.Application.View.UiLiveMeasurementSetting"
+    x:Name="wndLiveMeasurementSetting"
+    Title="UiLiveMeasurementSetting"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}" Width="567" Height="268" WindowStartupLocation="CenterScreen"
+    IsEnabled="{Binding Path=sUiController.Measurement.LiveMeasurementSettingDialogWindowEnable}"
+    Closing="WindowClosing">
+
+    <Window.Resources>
+        <utility:EnumBooleanConverter x:Key="cnvEnumBoolean"/>
+        <utility:EnumInt32Converter x:Key="cnvEnumInt32"/>
+
+        <Style x:Key="STY_promngpn2_TGL" TargetType="{x:Type ToggleButton}" >
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Grid Width="Auto" Height="Auto">
+                            <Path x:Name="PATH_StLnRot2Pt" Width="48.1653" Height="48.168" Canvas.Left="617.947" Canvas.Top="281.843" Stretch="Fill" Data="F1 M 666.112,326.305C 666.112,328.352 664.455,330.011 662.408,330.011L 621.651,330.011C 619.606,330.011 617.947,328.352 617.947,326.305L 617.947,285.548C 617.947,283.503 619.606,281.843 621.651,281.843L 662.408,281.843C 664.455,281.843 666.112,283.503 666.112,285.548L 666.112,326.305 Z ">
+                                <Path.Fill>
+                                    <LinearGradientBrush StartPoint="0.499994,1.02769" EndPoint="0.499994,0.0276944">
+                                        <GradientStop Color="#FFE8E8E8" Offset="0"/>
+                                        <GradientStop Color="#FFE8E8E8" Offset="0.005618"/>
+                                        <GradientStop Color="#FFADADAD" Offset="0.162921"/>
+                                        <GradientStop Color="#FFBFBFBF" Offset="0.477528"/>
+                                        <GradientStop Color="#FFCFCFCE" Offset="0.505618"/>
+                                        <GradientStop Color="#FFD9D9D9" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                                <Path.Effect>
+                                    <DropShadowEffect BlurRadius="9" ShadowDepth="3.77953" Opacity="0.599998" Color="#FF000000" Direction="315" />
+                                </Path.Effect>
+                            </Path>
+                            <Path x:Name="Border_Path" Width="49.4654" Height="49.468" Canvas.Left="617.297" Canvas.Top="281.193" Stretch="Fill" StrokeThickness="1.3" StrokeMiterLimit="2.75" Stroke="#FF5E5E5E" Data="F1 M 666.112,326.305C 666.112,328.352 664.455,330.011 662.408,330.011L 621.651,330.011C 619.606,330.011 617.947,328.352 617.947,326.305L 617.947,285.548C 617.947,283.503 619.606,281.843 621.651,281.843L 662.408,281.843C 664.455,281.843 666.112,283.503 666.112,285.548L 666.112,326.305 Z "/>
+                            <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Stretch" TargetName="PATH_StLnRot2Pt" Value="Fill" />
+                                <Setter Property="Stroke" TargetName="Border_Path" Value="#FF7F9FBC"/>
+                                <Setter Property="Data" TargetName="Border_Path" Value="F1 M 940.15,326.305C 940.15,328.352 938.492,330.011 936.445,330.011L 895.689,330.011C 893.643,330.011 891.985,328.352 891.985,326.305L 891.985,285.548C 891.985,283.503 893.643,281.843 895.689,281.843L 936.445,281.843C 938.492,281.843 940.15,283.503 940.15,285.548L 940.15,326.305 Z "/>
+                                <Setter Property="Data" TargetName="PATH_StLnRot2Pt" Value="F1 M 940.15,326.305C 940.15,328.352 938.492,330.011 936.445,330.011L 895.689,330.011C 893.643,330.011 891.985,328.352 891.985,326.305L 891.985,285.548C 891.985,283.503 893.643,281.843 895.689,281.843L 936.445,281.843C 938.492,281.843 940.15,283.503 940.15,285.548L 940.15,326.305 Z  "/>
+                                <Setter Property="Fill" TargetName="PATH_StLnRot2Pt">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0.499993,1.02769" EndPoint="0.499993,0.0276944">
+                                            <GradientStop Color="#FFE8E8E8" Offset="0"/>
+                                            <GradientStop Color="#FFD9F7FF" Offset="0.005618"/>
+                                            <GradientStop Color="#FF68B8DC" Offset="0.477528"/>
+                                            <GradientStop Color="#FFA2CFE1" Offset="0.505618"/>
+                                            <GradientStop Color="#FFBDF7FA" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsPressed" Value="True"/>
+                                    <Condition Property="IsChecked" Value="False"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Stretch" TargetName="PATH_StLnRot2Pt" Value="Fill" />
+                                <Setter Property="Stroke" TargetName="Border_Path" Value="#FF363636"/>
+                                <Setter Property="Data" TargetName="Border_Path" Value="F1 M 895.705,384.305C 895.705,386.352 894.048,388.011 892.001,388.011L 851.244,388.011C 849.199,388.011 847.54,386.352 847.54,384.305L 847.54,343.548C 847.54,341.503 849.199,339.843 851.244,339.843L 892.001,339.843C 894.048,339.843 895.705,341.503 895.705,343.548L 895.705,384.305 Z "/>
+                                <Setter Property="Data" TargetName="PATH_StLnRot2Pt" Value="F1 M 849.705,326.305C 849.705,328.352 848.048,330.011 846.001,330.011L 805.244,330.011C 803.199,330.011 801.54,328.352 801.54,326.305L 801.54,285.548C 801.54,283.503 803.199,281.843 805.244,281.843L 846.001,281.843C 848.048,281.843 849.705,283.503 849.705,285.548L 849.705,326.305 Z "/>
+                                <Setter Property="Fill" TargetName="PATH_StLnRot2Pt">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0.499996,1.02769" EndPoint="0.499996,0.0276944">
+                                            <GradientStop Color="#FFE8E8E8" Offset="0"/>
+                                            <GradientStop Color="#FF243438" Offset="0.005618"/>
+                                            <GradientStop Color="#FF72B4BC" Offset="0.733051"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Effect" TargetName="PATH_StLnRot2Pt">
+                                    <Setter.Value>
+                                        <DropShadowEffect BlurRadius="9" ShadowDepth="3.77953" Opacity="0.599998" Color="#FF000000" Direction="315" />
+                                    </Setter.Value>
+                                </Setter>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsPressed" Value="True"/>
+                                    <Condition Property="IsChecked" Value="True"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Stretch" TargetName="PATH_StLnRot2Pt" Value="Fill" />
+                                <Setter Property="Stroke" TargetName="Border_Path" Value="#FF363636"/>
+                                <Setter Property="Data" TargetName="Border_Path" Value="F1 M 895.705,384.305C 895.705,386.352 894.048,388.011 892.001,388.011L 851.244,388.011C 849.199,388.011 847.54,386.352 847.54,384.305L 847.54,343.548C 847.54,341.503 849.199,339.843 851.244,339.843L 892.001,339.843C 894.048,339.843 895.705,341.503 895.705,343.548L 895.705,384.305 Z "/>
+                                <Setter Property="Data" TargetName="PATH_StLnRot2Pt" Value="F1 M 849.705,326.305C 849.705,328.352 848.048,330.011 846.001,330.011L 805.244,330.011C 803.199,330.011 801.54,328.352 801.54,326.305L 801.54,285.548C 801.54,283.503 803.199,281.843 805.244,281.843L 846.001,281.843C 848.048,281.843 849.705,283.503 849.705,285.548L 849.705,326.305 Z "/>
+                                <Setter Property="Fill" TargetName="PATH_StLnRot2Pt">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0.499996,1.02769" EndPoint="0.499996,0.0276944">
+                                            <GradientStop Color="#FFE8E8E8" Offset="0"/>
+                                            <GradientStop Color="#FF243438" Offset="0.005618"/>
+                                            <GradientStop Color="#FF72B4BC" Offset="0.733051"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Effect" TargetName="PATH_StLnRot2Pt">
+                                    <Setter.Value>
+                                        <DropShadowEffect BlurRadius="9" ShadowDepth="3.77953" Opacity="0.599998" Color="#FF000000" Direction="315" />
+                                    </Setter.Value>
+                                </Setter>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsMouseOver" Value="True"/>
+                                    <Condition Property="IsChecked" Value="True"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Stretch" TargetName="PATH_StLnRot2Pt" Value="Fill" />
+                                <Setter Property="Height" TargetName="PATH_StLnRot2Pt" Value="48.1679" />
+                                <Setter Property="Stroke" TargetName="Border_Path" Value="#FF7F9FBC"/>
+                                <Setter Property="Data" TargetName="Border_Path" Value="F1 M 825.484,382.305C 825.484,384.352 823.826,386.011 821.779,386.011L 781.023,386.011C 778.977,386.011 777.318,384.352 777.318,382.305L 777.318,341.548C 777.318,339.503 778.977,337.843 781.023,337.843L 821.779,337.843C 823.826,337.843 825.484,339.503 825.484,341.548L 825.484,382.305 Z "/>
+                                <Setter Property="Data" TargetName="PATH_StLnRot2Pt" Value="F1 M 761.484,326.305C 761.484,328.352 759.826,330.011 757.779,330.011L 717.023,330.011C 714.977,330.011 713.318,328.352 713.318,326.305L 713.318,285.548C 713.318,283.503 714.977,281.843 717.023,281.843L 757.779,281.843C 759.826,281.843 761.484,283.503 761.484,285.548L 761.484,326.305 Z "/>
+                                <Setter Property="Fill" TargetName="PATH_StLnRot2Pt">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0.499996,1.02769" EndPoint="0.499996,0.0276944">
+                                            <GradientStop Color="#FFE8E8E8" Offset="0"/>
+                                            <GradientStop Color="#FFD9F7FF" Offset="0.005618"/>
+                                            <GradientStop Color="#FF68B8DC" Offset="0.477528"/>
+                                            <GradientStop Color="#FFA2CFE1" Offset="0.505618"/>
+                                            <GradientStop Color="#FFBDF7FA" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Effect" TargetName="PATH_StLnRot2Pt">
+                                    <Setter.Value>
+                                        <DropShadowEffect BlurRadius="9" ShadowDepth="3.77953" Opacity="0.599998" Color="#FF000000" Direction="315" />
+                                    </Setter.Value>
+                                </Setter>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsMouseOver" Value="True"/>
+                                    <Condition Property="IsChecked" Value="False"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Stretch" TargetName="PATH_StLnRot2Pt" Value="Fill" />
+                                <Setter Property="Height" TargetName="PATH_StLnRot2Pt" Value="48.1679" />
+                                <Setter Property="Stroke" TargetName="Border_Path" Value="#FF7F9FBC"/>
+                                <Setter Property="Data" TargetName="Border_Path" Value="F1 M 825.484,382.305C 825.484,384.352 823.826,386.011 821.779,386.011L 781.023,386.011C 778.977,386.011 777.318,384.352 777.318,382.305L 777.318,341.548C 777.318,339.503 778.977,337.843 781.023,337.843L 821.779,337.843C 823.826,337.843 825.484,339.503 825.484,341.548L 825.484,382.305 Z "/>
+                                <Setter Property="Data" TargetName="PATH_StLnRot2Pt" Value="F1 M 761.484,326.305C 761.484,328.352 759.826,330.011 757.779,330.011L 717.023,330.011C 714.977,330.011 713.318,328.352 713.318,326.305L 713.318,285.548C 713.318,283.503 714.977,281.843 717.023,281.843L 757.779,281.843C 759.826,281.843 761.484,283.503 761.484,285.548L 761.484,326.305 Z "/>
+                                <Setter Property="Fill" TargetName="PATH_StLnRot2Pt">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0.499996,1.02769" EndPoint="0.499996,0.0276944">
+                                            <GradientStop Color="#FFE8E8E8" Offset="0"/>
+                                            <GradientStop Color="#FFD9F7FF" Offset="0.005618"/>
+                                            <GradientStop Color="#FF68B8DC" Offset="0.477528"/>
+                                            <GradientStop Color="#FFA2CFE1" Offset="0.505618"/>
+                                            <GradientStop Color="#FFBDF7FA" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Effect" TargetName="PATH_StLnRot2Pt">
+                                    <Setter.Value>
+                                        <DropShadowEffect BlurRadius="9" ShadowDepth="3.77953" Opacity="0.599998" Color="#FF000000" Direction="315" />
+                                    </Setter.Value>
+                                </Setter>
+                            </MultiTrigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Fill" TargetName="PATH_StLnRot2Pt">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0.499995,1.02769" EndPoint="0.499995,0.0276944">
+                                            <LinearGradientBrush.GradientStops>
+                                                <GradientStop Color="#67E8E8E8" Offset="0"/>
+                                                <GradientStop Color="#67E8E8E8" Offset="0.005618"/>
+                                                <GradientStop Color="#67ADADAD" Offset="0.162921"/>
+                                                <GradientStop Color="#67BFBFBF" Offset="0.477528"/>
+                                                <GradientStop Color="#67CFCFCE" Offset="0.505618"/>
+                                                <GradientStop Color="#67D9D9D9" Offset="1"/>
+                                            </LinearGradientBrush.GradientStops>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Stretch" TargetName="PATH_StLnRot2Pt" Value="Fill" />
+                                <Setter Property="Stroke" TargetName="Border_Path" Value="#FF363636"/>
+                                <Setter Property="Data" TargetName="Border_Path" Value="F1 M 895.705,384.305C 895.705,386.352 894.048,388.011 892.001,388.011L 851.244,388.011C 849.199,388.011 847.54,386.352 847.54,384.305L 847.54,343.548C 847.54,341.503 849.199,339.843 851.244,339.843L 892.001,339.843C 894.048,339.843 895.705,341.503 895.705,343.548L 895.705,384.305 Z "/>
+                                <Setter Property="Data" TargetName="PATH_StLnRot2Pt" Value="F1 M 849.705,326.305C 849.705,328.352 848.048,330.011 846.001,330.011L 805.244,330.011C 803.199,330.011 801.54,328.352 801.54,326.305L 801.54,285.548C 801.54,283.503 803.199,281.843 805.244,281.843L 846.001,281.843C 848.048,281.843 849.705,283.503 849.705,285.548L 849.705,326.305 Z "/>
+                                <Setter Property="Fill" TargetName="PATH_StLnRot2Pt">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0.5,3.14381" EndPoint="0.5,-1.98264">
+                                            <GradientStop Color="#FF000000" Offset="0"/>
+                                            <GradientStop Color="#FF72B4BC" Offset="0.516949"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Effect" TargetName="PATH_StLnRot2Pt">
+                                    <Setter.Value>
+                                        <DropShadowEffect BlurRadius="9" ShadowDepth="3.77953" Opacity="0.599998" Color="#FF000000" Direction="315" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ToggleButtonFocusVisualStyle">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle SnapsToDevicePixels="true" Stroke="Black" StrokeDashArray="1 2" StrokeThickness="1" Margin="2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ColorToggleButtonStyle" TargetType="{x:Type ToggleButton}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ToggleButtonFocusVisualStyle}"/>
+            <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Grid x:Name="pthGridProfile2">
+                            <Rectangle x:Name="rectProfile2" Margin="-2,-3,2,3"/>
+                            <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Left" VerticalAlignment="Center" RecognizesAccessKey="True" Margin="3,0,0,0"/>
+                            <Path x:Name="pthProfile2" Width="12.592" Height="11.301" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Fill="{StaticResource AcquisitionBlackButtonNormalBackgroundBrush}" Data="F1 M 6.297,11.3008L 0,0L 12.5922,0L 6.297,11.3008 Z " HorizontalAlignment="Right" Margin="0,0,4.204,0" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter Property="Fill" TargetName="pthProfile2" Value="#FF838B8D"/>
+                                <Setter Property="Fill" TargetName="rectProfile2" Value="#FF4FBDD9"/>
+                                <Setter Property="Stroke" TargetName="rectProfile2" Value="#FF7F8081"/>
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsMouseOver" Value="True"/>
+                                    <Condition Property="IsChecked" Value="False"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Fill" TargetName="pthProfile2" Value="#FF4FBDD9"/>
+                                <Setter Property="Fill" TargetName="rectProfile2">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="1.30558,3.28721" EndPoint="4.75874,3.28721">
+                                            <LinearGradientBrush.RelativeTransform>
+                                                <TransformGroup>
+                                                    <SkewTransform CenterX="1.30558" CenterY="3.28721" AngleX="-0.0514971" AngleY="0"/>
+                                                    <RotateTransform CenterX="1.30558" CenterY="3.28721" Angle="-89.9138"/>
+                                                </TransformGroup>
+                                            </LinearGradientBrush.RelativeTransform>
+                                            <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                                            <GradientStop Color="#FFF0F0F0" Offset="0.614407"/>
+                                            <GradientStop Color="#FF98D2E1" Offset="0.75"/>
+                                            <GradientStop Color="#FFA9EDFE" Offset="0.855932"/>
+                                            <GradientStop Color="#FF8FD5E7" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ColorPaletteComboBoxStyle" TargetType="{x:Type ComboBox}">
+            <Setter Property="FocusVisualStyle" Value="{DynamicResource ComboBoxFocusVisual}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <WrapPanel IsItemsHost="True" Orientation="Horizontal" Height="102"/>
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ComboBox}">
+                        <Grid SnapsToDevicePixels="true" x:Name="Grid" HorizontalAlignment="Left" VerticalAlignment="Top" Height="33.091">
+                            <Border x:Name="Bd" BorderThickness="{TemplateBinding BorderThickness}" Margin="-1,4,-3,-4">
+                                <Grid Grid.IsSharedSizeScope="true" Height="32.091" HorizontalAlignment="Left" VerticalAlignment="Top" Width="47">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="ComboBoxButton"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ToggleButton x:Name="tgColorPalette"  Style="{DynamicResource ColorToggleButtonStyle}" IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"  BorderBrush="{x:Null}" Height="Auto" Content="{TemplateBinding SelectionBoxItem}" d:LayoutOverrides="Height" Background="{x:Null}" Width="Auto" Grid.ColumnSpan="2" />
+                                </Grid>
+                            </Border>
+
+                            <Popup Focusable="false" AllowsTransparency="True" IsOpen="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}" Placement="Bottom" x:Name="PART_Popup" OpacityMask="#FF000000" HorizontalAlignment="Left" Margin="-32,-1.909,0,0" VerticalAlignment="Top" Width="180">
+                                <Grid Background="#FFFFFFFF" Width="187">
+                                    <Path x:Name="Path" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FFFFFFFF" Data="F1 M 1679.94,664.781L 1817.79,665.043L 1817.53,803.01L 1631.3,802.657L 1631.57,664.743" HorizontalAlignment="Left" Margin="3,0,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto">
+                                        <Path.Fill>
+                                            <LinearGradientBrush StartPoint="0.345688,0.656802" EndPoint="1.31504,0.656802">
+                                                <LinearGradientBrush.RelativeTransform>
+                                                    <TransformGroup>
+                                                        <SkewTransform CenterX="0.345688" CenterY="0.656802" AngleX="-0.0655878" AngleY="0"/>
+                                                        <RotateTransform CenterX="0.345688" CenterY="0.656802" Angle="-89.9184"/>
+                                                    </TransformGroup>
+                                                </LinearGradientBrush.RelativeTransform>
+                                                <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                                                <GradientStop Color="#FFF0F0F0" Offset="0.614407"/>
+                                                <GradientStop Color="#FF98D2E1" Offset="0.75"/>
+                                                <GradientStop Color="#FFA9EDFE" Offset="0.855932"/>
+                                                <GradientStop Color="#FF8FD5E7" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Path.Fill>
+                                        <Path.Effect>
+                                            <DropShadowEffect BlurRadius="9" ShadowDepth="3.77953" Opacity="0.599998" Color="#FF000000" Direction="315"/>
+                                        </Path.Effect>
+                                    </Path>
+                                    <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" KeyboardNavigation.DirectionalNavigation="Contained" Width="167" Height="109.455" OpacityMask="#FFFFFFFF" Margin="4,13.906,16,15.906"/>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="MinWidth" Value="0"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsEditable" Value="true">
+                    <Setter Property="IsTabStop" Value="false"/>
+                    <Setter Property="Padding" Value="0,1"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid x:Name="LayoutRoot" Width="556" Height="250" Stylus.IsPressAndHoldEnabled="False">
+        <Path x:Name="pthSettingConditions" Canvas.Left="455.87" Canvas.Top="317.986" Stretch="Fill" Data="F1 M 1181.03,317.986L 1181.03,671.255C 1181.03,674.201 1178.65,676.589 1175.7,676.589L 461.204,676.589C 458.258,676.589 455.87,674.201 455.87,671.255L 455.87,317.986L 1181.03,317.986 Z " Margin="0,40,200,0" VerticalAlignment="Stretch">
+            <Path.Fill>
+                <Custom:LinearGradientBrush StartPoint="0.5,1.51388" EndPoint="0.5,-0.513885">
+                    <Custom:GradientStop Color="#FFFFFFFF" Offset="0.005618"/>
+                    <Custom:GradientStop Color="#FFB6EEFC" Offset="1"/>
+                    <Custom:GradientStop Color="#FFC6F1FC" Offset="0.781"/>
+                    <Custom:GradientStop Color="#FFC4F0FC" Offset="0.805"/>
+                    <Custom:GradientStop Color="#FFC1EFFC" Offset="0.842"/>
+                    <Custom:GradientStop Color="#FFBEEEFC" Offset="0.879"/>
+                </Custom:LinearGradientBrush>
+            </Path.Fill>
+            <Path.Effect>
+                <DropShadowEffect/>
+            </Path.Effect>
+        </Path>
+
+        <Grid Height="40" VerticalAlignment="Top" MouseLeftButtonDown="MouseLeftButtonDownHandler">
+            <Path x:Name="pthHeaderCondition" Canvas.Left="551.403" Canvas.Top="127.965" Margin="0,0,200,0" Stretch="Fill" StrokeLineJoin="Round" Stroke="#CDFFFFFF" Data="F1 M 555.903,128.465L 1091.78,128.465C 1093.99,128.465 1095.78,130.256 1095.78,132.465L 1095.78,164.489L 551.903,164.489L 551.903,132.465C 551.903,130.256 553.694,128.465 555.903,128.465 Z ">
+                <Path.Fill>
+                    <Custom:LinearGradientBrush StartPoint="0.58864,9.15936" EndPoint="0.58864,-8.15937">
+                        <Custom:GradientStop Color="#CDEFFCFF" Offset="0.40678"/>
+                        <Custom:GradientStop Color="#CD192C34" Offset="0.495763"/>
+                        <Custom:GradientStop Color="#CDE9F9FF" Offset="0.584746"/>
+                    </Custom:LinearGradientBrush>
+                </Path.Fill>
+                <Path.Effect>
+                    <DropShadowEffect BlurRadius="12" Direction="315" />
+                </Path.Effect>
+            </Path>
+            <Label x:Name="Label_LiveMesurement" Content="Simple measurement" BorderThickness="20,0,0,0" Margin="0,0,200,0" FontSize="22" FontWeight="Bold" Foreground="#FFFFFFFF"/>
+        </Grid>
+
+        <GroupBox Style="{DynamicResource GroupBoxCenterStyle}" Margin="8,42,274,6" Foreground="#FF000000" FontSize="14.667" x:Name="grpbMeasurementItem" Background="{StaticResource HorizontalSliderThumbPressedBackground}" />
+
+        <ToggleButton x:Name="btnMeasurementEdit" Width="58.333" Height="33.111" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="290,111.111,0,0" Style="{DynamicResource ToggleButtonStyle}" IsChecked="{Binding Path=sUiController.Measurement.LiveMeasurementEditing, Mode=Default}">
+        	<Viewbox Height="23.29" Width="28.301" Margin="0,3,0,0">
+        		<Canvas Width="28.3013" Height="31.2899">
+        			<Path Width="28.3013" Height="28.8633" Canvas.Left="0" Canvas.Top="2.4267" Stretch="Fill" Fill="#FF343434" Data="F1 M 22.837,11.7198L 0,2.4267L 8.78735,25.4634L 12.3527,18.3084L 25.0496,31.29L 28.3013,28.1087L 15.6033,15.129L 22.837,11.7198 Z "/>
+        			<Path Width="28.3013" Height="28.8633" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 22.837,9.29315L 0,0L 8.78735,23.0368L 12.3527,15.8818L 25.0496,28.8633L 28.3013,25.6821L 15.6033,12.7023L 22.837,9.29315 Z "/>
+        		</Canvas>
+        	</Viewbox>
+        </ToggleButton>
+
+        <Button x:Name="btnLiveMeasurementDelete" Width="58.333" Height="33.111" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="290,156,0,0" Style="{StaticResource NormalButtonStyle}" Command="{Binding Path=sUiController.Measurement.MeasurementDeleteHandler, Mode=Default}" IsEnabled="{Binding sUiController.Measurement.LiveMeasurementDeleteButtonEnable, Mode=Default}" >
+        	<Viewbox Height="25.111" Width="28.826" Margin="0,-3,0,0">
+        		<Canvas Width="28.826" Height="37.7544">
+        			<Path Width="22.5447" Height="7.88745" Canvas.Left="3.14258" Canvas.Top="29.608" Stretch="Fill" Fill="#FF4D4D4D" Data="F1 M 25.6873,33.5517C 25.6873,35.7284 20.6411,37.4955 14.4155,37.4955C 8.18689,37.4955 3.14258,35.7284 3.14258,33.5517C 3.14258,31.3716 8.18689,29.608 14.4155,29.608C 20.6411,29.608 25.6873,31.3716 25.6873,33.5517 Z "/>
+        			<Path Width="23.0625" Height="8.4054" Canvas.Left="2.88354" Canvas.Top="29.349" Stretch="Fill" Fill="#FF999999" Data="F1 M 2.88354,33.5517C 2.88354,35.9086 7.94897,37.7544 14.4155,37.7544C 20.8806,37.7544 25.946,35.9086 25.946,33.5517C 25.946,31.1949 20.8806,29.349 14.4155,29.349C 7.94897,29.349 2.88354,31.1949 2.88354,33.5517 Z M 3.40149,33.5517C 3.40149,31.5536 8.4458,29.8669 14.4155,29.8669C 20.3856,29.8669 25.4281,31.5536 25.4281,33.5517C 25.4281,35.5499 20.3856,37.2366 14.4155,37.2366C 8.4458,37.2366 3.40149,35.5499 3.40149,33.5517 Z "/>
+        			<Path Width="28.1787" Height="9.86121" Canvas.Left="0.32373" Canvas.Top="3.90869" Stretch="Fill" Data="F1 M 28.5024,8.84277C 28.5024,11.5652 22.1946,13.7699 14.4155,13.7699C 6.63135,13.7699 0.32373,11.5652 0.32373,8.84277C 0.32373,6.11682 6.63135,3.90869 14.4155,3.90869C 22.1946,3.90869 28.5024,6.11682 28.5024,8.84277 Z ">
+        				<Path.Fill>
+        					<LinearGradientBrush StartPoint="-0.447405,-0.771808" EndPoint="0.552621,-0.771808">
+        						<GradientStop Color="#FFFFFFFF" Offset="0"/>
+        						<GradientStop Color="#FF000000" Offset="1"/>
+        					</LinearGradientBrush>
+        				</Path.Fill>
+        			</Path>
+        			<Path Width="28.826" Height="10.5087" Canvas.Left="0" Canvas.Top="3.58496" Stretch="Fill" Fill="#FFE5E5E5" Data="F1 M 0,8.84277C 0,11.7876 6.33228,14.0937 14.4155,14.0937C 22.4956,14.0937 28.826,11.7876 28.826,8.84277C 28.826,5.89465 22.4956,3.58496 14.4155,3.58496C 6.33228,3.58496 0,5.89465 0,8.84277 Z M 0.647461,8.84277C 0.647461,6.34424 6.95154,4.23254 14.4155,4.23254C 21.8763,4.23254 28.1786,6.34424 28.1786,8.84277C 28.1786,11.3379 21.8763,13.4463 14.4155,13.4463C 6.95154,13.4463 0.647461,11.3379 0.647461,8.84277 Z "/>
+        			<Path Width="20.5763" Height="12.6503" Canvas.Left="1.39624" Canvas.Top="0.479248" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 1.39624,8.19891L 3.96838,0.479248L 7.39783,3.90869L 12.3265,8.83936L 18.97,3.90869L 21.9725,6.91113L 19.1854,9.69672L 15.7559,13.1296L 8.25513,13.1296L 1.39624,8.19891 Z "/>
+        			<Path Width="21.2482" Height="13.3884" Canvas.Left="1.09009" Canvas.Top="0" Stretch="Fill" Fill="#FF565656" Data="F1 M 3.72339,0.397095L 1.09009,8.29871L 8.10461,13.3395L 15.7559,13.3884L 19.369,9.8786L 22.3383,6.91113L 18.9946,3.56763C 18.9946,3.56763 12.6907,8.24622 12.3511,8.49805C 12.0554,8.20251 3.85474,0 3.85474,0L 3.72339,0.397095 Z M 4.08228,0.95874C 4.57568,1.45215 12.3022,9.18054 12.3022,9.18054C 12.3022,9.18054 18.6062,4.50195 18.9457,4.24988C 19.2098,4.51416 21.3025,6.60681 21.6068,6.91113C 21.2866,7.22961 15.5723,12.9475 15.5723,12.9475L 8.25513,12.8706C 8.25513,12.8706 1.99646,8.31628 1.70093,8.10101C 1.80933,7.77728 3.84937,1.65515 4.08228,0.95874 Z "/>
+        			<Path Width="14.3595" Height="10.5645" Canvas.Left="8.25513" Canvas.Top="4.1012" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 8.25513,14.6657L 10.5525,4.1012L 16.1477,9.69672L 22.6146,9.69672L 22.6146,14.3893L 8.25513,14.6657 Z "/>
+        			<Path Width="14.9404" Height="11.3467" Canvas.Left="7.93311" Canvas.Top="3.58337" Stretch="Fill" Fill="#FF565656" Data="F1 M 10.3005,4.04706L 7.93311,14.9301L 22.8735,14.6429L 22.8735,9.43762L 16.1477,9.43762L 10.7361,3.91748L 10.4001,3.58337L 10.3005,4.04706 Z M 10.7047,4.61914C 11.2959,5.21057 15.9641,9.88031 15.9641,9.88031C 15.9641,9.88031 21.8781,9.94678 22.3557,9.95215C 22.3557,10.3825 22.3557,13.707 22.3557,14.1355C 21.8781,14.1444 9.19116,14.3893 8.57715,14.4016C 8.70313,13.8259 10.5261,5.43793 10.7047,4.61914 Z "/>
+        			<Path Width="4.66797" Height="1.95624" Canvas.Left="11.4797" Canvas.Top="9.62665" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 16.1477,9.69672L 13.4359,11.5829L 11.4797,9.62665"/>
+        			<Path Width="4.9989" Height="2.47577" Canvas.Left="11.2959" Canvas.Top="9.44305" Stretch="Fill" Fill="#FF565656" Data="F1 M 11.2959,9.81049L 13.4063,11.9188L 16.2948,9.90833L 16.0009,9.48486C 16.0009,9.48486 13.7753,11.0317 13.4656,11.2469C 13.2065,10.988 11.6635,9.44305 11.6635,9.44305L 11.2959,9.81049 Z "/>
+        			<Path Width="28.1787" Height="28.6527" Canvas.Left="0.32373" Canvas.Top="8.84277" Stretch="Fill" Data="F1 M 14.4155,13.7699C 6.63135,13.7699 0.32373,11.5652 0.32373,8.84277L 3.14258,33.5517C 3.14258,35.7284 8.18689,37.4955 14.4155,37.4955C 20.6411,37.4955 25.6873,35.7284 25.6873,33.5517L 28.5024,8.84277C 28.5024,11.5652 22.1946,13.7699 14.4155,13.7699 Z ">
+        				<Path.Fill>
+        					<LinearGradientBrush StartPoint="-0.447405,0.0624119" EndPoint="0.552621,0.0624119">
+        						<GradientStop Color="#FFE0E0E0" Offset="0.0112305"/>
+        						<GradientStop Color="#FFEFEFEF" Offset="0.0753573"/>
+        						<GradientStop Color="#FEFFFFFF" Offset="0.205479"/>
+        						<GradientStop Color="#FFB9B9B9" Offset="0.777077"/>
+        						<GradientStop Color="#FF737373" Offset="1"/>
+        					</LinearGradientBrush>
+        				</Path.Fill>
+        			</Path>
+        			<Path Width="28.6964" Height="28.9414" Canvas.Left="0.0648193" Canvas.Top="8.81299" Stretch="Fill" Fill="#FFE5E5E5" Data="F1 M 0.0737305,8.8725L 0.0666504,8.8725L 2.88525,33.5814C 2.88525,35.9086 7.95056,37.7544 14.4155,37.7544C 20.8806,37.7544 25.946,35.9086 25.946,33.5517L 28.7595,8.8725L 28.7612,8.84277L 28.2451,8.81299L 28.2416,8.85156C 28.226,11.3782 21.9026,13.5109 14.4155,13.5109C 6.92529,13.5109 0.600342,11.3782 0.584473,8.85156L 0.581055,8.81299L 0.0648193,8.84277 Z M 3.40149,33.5517C 3.40149,33.5517 1.07446,13.1436 0.759521,10.386C 2.54578,12.512 7.87366,14.0287 14.4155,14.0287C 20.9558,14.0287 26.2803,12.512 28.0667,10.386C 27.7517,13.1436 25.4299,33.5219 25.4299,33.5219C 25.4281,35.5499 20.3856,37.2366 14.4155,37.2366C 8.4458,37.2366 3.40149,35.5499 3.40149,33.5517 Z "/>
+        		</Canvas>
+        	</Viewbox>
+        </Button>
+
+        <Button x:Name="btnLiveMeasurementAlldelete" Width="58.333" Height="33.111" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="290,200.889,0,0" Style="{StaticResource NormalButtonStyle}" Command="{Binding Path=sUiController.Measurement.MeasurementsAllDeleteHandler, Mode=Default}">
+        	<Viewbox Height="36.681" Width="57.07" Margin="0,3,0,0">
+        		<Canvas Width="29.446" Height="41.514" Margin="32,0,0,0">
+        			<Path Width="17.7872" Height="6.22308" Canvas.Left="3.80615" Canvas.Top="23.3602" Stretch="Fill" Fill="#FF4D4D4D" Data="F1 M 21.5934,26.4717C 21.5934,28.189 17.6121,29.5833 12.7002,29.5833C 7.78577,29.5833 3.80615,28.189 3.80615,26.4717C 3.80615,24.7516 7.78577,23.3602 12.7002,23.3602C 17.6121,23.3602 21.5934,24.7516 21.5934,26.4717 Z "/>
+        			<Path Width="18.1958" Height="6.63177" Canvas.Left="3.60168" Canvas.Top="23.1558" Stretch="Fill" Fill="#FF999999" Data="F1 M 3.60168,26.4717C 3.60168,28.3312 7.59814,29.7876 12.7002,29.7876C 17.801,29.7876 21.7975,28.3312 21.7975,26.4717C 21.7975,24.6122 17.801,23.1558 12.7002,23.1558C 7.59814,23.1558 3.60168,24.6122 3.60168,26.4717 Z M 4.01025,26.4717C 4.01025,24.8953 7.99023,23.5645 12.7002,23.5645C 17.4104,23.5645 21.3889,24.8953 21.3889,26.4717C 21.3889,28.0482 17.4104,29.379 12.7002,29.379C 7.99023,29.379 4.01025,28.0482 4.01025,26.4717 Z "/>
+        			<Path Width="22.2325" Height="7.78027" Canvas.Left="1.58203" Canvas.Top="3.08386" Stretch="Fill" Data="F1 M 23.8146,6.97668C 23.8146,9.12476 18.8376,10.8641 12.7002,10.8641C 6.55859,10.8641 1.58203,9.12476 1.58203,6.97668C 1.58203,4.82599 6.55859,3.08386 12.7002,3.08386C 18.8376,3.08386 23.8146,4.82599 23.8146,6.97668 Z ">
+        				<Path.Fill>
+        					<LinearGradientBrush StartPoint="-0.447408,-0.771824" EndPoint="0.552619,-0.771824">
+        						<GradientStop Color="#FFFFFFFF" Offset="0"/>
+        						<GradientStop Color="#FF000000" Offset="1"/>
+        					</LinearGradientBrush>
+        				</Path.Fill>
+        			</Path>
+        			<Path Width="22.7432" Height="8.2912" Canvas.Left="1.32666" Canvas.Top="2.82843" Stretch="Fill" Fill="#FFE5E5E5" Data="F1 M 1.32666,6.97668C 1.32666,9.30017 6.32251,11.1196 12.7002,11.1196C 19.0753,11.1196 24.0698,9.30017 24.0698,6.97668C 24.0698,4.6507 19.0753,2.82843 12.7002,2.82843C 6.32251,2.82843 1.32666,4.6507 1.32666,6.97668 Z M 1.8374,6.97668C 1.8374,5.00549 6.81116,3.33936 12.7002,3.33936C 18.5865,3.33936 23.5591,5.00549 23.5591,6.97668C 23.5591,8.94531 18.5865,10.6089 12.7002,10.6089C 6.81116,10.6089 1.8374,8.94531 1.8374,6.97668 Z "/>
+        			<Path Width="16.2344" Height="9.9809" Canvas.Left="2.42822" Canvas.Top="0.378052" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 2.42822,6.46875L 4.45752,0.378052L 7.16333,3.08386L 11.052,6.97412L 16.2936,3.08386L 18.6626,5.45276L 16.4635,7.65051L 13.7578,10.3589L 7.83984,10.3589L 2.42822,6.46875 Z "/>
+        			<Path Width="16.7643" Height="10.5632" Canvas.Left="2.18665" Canvas.Top="0" Stretch="Fill" Fill="#FF565656" Data="F1 M 4.26428,0.313232L 2.18665,6.54742L 7.72095,10.5247L 13.7578,10.5632L 16.6084,7.79401L 18.9509,5.45276L 16.313,2.81476C 16.313,2.81476 11.3394,6.5061 11.0714,6.70483C 10.8381,6.4715 4.3678,0 4.3678,0L 4.26428,0.313232 Z M 4.54736,0.756409C 4.93665,1.14563 11.0328,7.24323 11.0328,7.24323C 11.0328,7.24323 16.0065,3.55188 16.2744,3.35303C 16.4827,3.56152 18.1338,5.21265 18.374,5.45276C 18.1213,5.70392 13.6129,10.2153 13.6129,10.2153L 7.83984,10.1547C 7.83984,10.1547 2.90186,6.56134 2.66858,6.39148C 2.75403,6.13605 4.36377,1.30579 4.54736,0.756409 Z "/>
+        			<Path Width="11.3292" Height="8.33527" Canvas.Left="7.83984" Canvas.Top="3.23566" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 7.83984,11.5709L 9.65234,3.23566L 14.0669,7.65051L 19.1691,7.65051L 19.1691,11.3528L 7.83984,11.5709 Z "/>
+        			<Path Width="11.7876" Height="8.95227" Canvas.Left="7.58569" Canvas.Top="2.82715" Stretch="Fill" Fill="#FF565656" Data="F1 M 9.45337,3.19299L 7.58569,11.7794L 19.3733,11.553L 19.3733,7.44604L 14.0669,7.44604L 9.79712,3.09082L 9.53198,2.82715L 9.45337,3.19299 Z M 9.77246,3.64435C 10.2389,4.11096 13.922,7.79541 13.922,7.79541C 13.922,7.79541 18.588,7.84778 18.9648,7.85205C 18.9648,8.19165 18.9648,10.8145 18.9648,11.1526C 18.588,11.1595 8.57825,11.3528 8.09375,11.3625C 8.19312,10.9084 9.63147,4.29034 9.77246,3.64435 Z "/>
+        			<Path Width="3.68298" Height="1.54333" Canvas.Left="10.3839" Canvas.Top="7.59521" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 14.0669,7.65051L 11.9272,9.13855L 10.3839,7.59521"/>
+        			<Path Width="3.94397" Height="1.95331" Canvas.Left="10.2389" Canvas.Top="7.45032" Stretch="Fill" Fill="#FF565656" Data="F1 M 10.2389,7.74023L 11.9039,9.40363L 14.1829,7.81744L 13.9509,7.4834C 13.9509,7.4834 12.1951,8.70374 11.9507,8.87354C 11.7463,8.66925 10.5288,7.45032 10.5288,7.45032L 10.2389,7.74023 Z "/>
+        			<Path Width="22.2325" Height="22.6066" Canvas.Left="1.58203" Canvas.Top="6.97668" Stretch="Fill" Data="F1 M 12.7002,10.8641C 6.55859,10.8641 1.58203,9.12476 1.58203,6.97668L 3.80615,26.4717C 3.80615,28.189 7.78577,29.5833 12.7002,29.5833C 17.6121,29.5833 21.5934,28.189 21.5934,26.4717L 23.8146,6.97668C 23.8146,9.12476 18.8376,10.8641 12.7002,10.8641 Z ">
+        				<Path.Fill>
+        					<LinearGradientBrush StartPoint="-0.447408,0.0624106" EndPoint="0.552619,0.0624106">
+        						<GradientStop Color="#FFE0E0E0" Offset="0.0112305"/>
+        						<GradientStop Color="#FFEFEFEF" Offset="0.0753573"/>
+        						<GradientStop Color="#FEFFFFFF" Offset="0.205479"/>
+        						<GradientStop Color="#FFB9B9B9" Offset="0.777077"/>
+        						<GradientStop Color="#FF737373" Offset="1"/>
+        					</LinearGradientBrush>
+        				</Path.Fill>
+        			</Path>
+        			<Path Width="22.641" Height="22.8344" Canvas.Left="1.37769" Canvas.Top="6.95325" Stretch="Fill" Fill="#FFE5E5E5" Data="F1 M 1.38477,7.00024L 1.37915,7.00024L 3.60303,26.4951C 3.60303,28.3312 7.59937,29.7876 12.7002,29.7876C 17.801,29.7876 21.7975,28.3312 21.7975,26.4717L 24.0173,7.00024L 24.0187,6.97668L 23.6115,6.95325L 23.6086,6.9837C 23.5963,8.97711 18.6074,10.6599 12.7002,10.6599C 6.79053,10.6599 1.80005,8.97711 1.78772,6.9837L 1.78516,6.95325L 1.37769,6.97668 Z M 4.01025,26.4717C 4.01025,26.4717 2.17432,10.3699 1.92578,8.19434C 3.33508,9.87164 7.5387,11.0684 12.7002,11.0684C 17.8604,11.0684 22.0612,9.87164 23.4707,8.19434C 23.2222,10.3699 21.3903,26.4482 21.3903,26.4482C 21.3889,28.0482 17.4104,29.379 12.7002,29.379C 7.99023,29.379 4.01025,28.0482 4.01025,26.4717 Z "/>
+        			<TextBlock TextAlignment="Center" FontFamily="メイリオ" FontSize="10.2764" VerticalAlignment="Top" HorizontalAlignment="Left" Canvas.Top="-14.75" FontWeight="Bold" Canvas.Left="-27.25"><TextBlock.RenderTransform>
+        					<TransformGroup>
+        						<MatrixTransform Matrix="1.33333,0,0,1.33333,0.264852,27.1271"/>
+        					</TransformGroup>
+        				</TextBlock.RenderTransform><Run Text="ALL" Foreground="#FFFFFFFF"/></TextBlock>
+        		</Canvas>
+        	</Viewbox>
+        </Button>
+
+        <Grid Focusable="False" Width="327" x:Name="grdMeasurementItems" ShowGridLines="False" Margin="17,62,0,0" VerticalAlignment="Top" Height="190" HorizontalAlignment="Left" IsEnabled="{Binding sUiController.Measurement.LiveMeasurementItemsEnable, Mode=Default}" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*" x:Name="colDef0"/>
+                <ColumnDefinition Width="0.1*" x:Name="colDef1"/>
+                <ColumnDefinition Width="0.1*" x:Name="colDef2"/>
+                <ColumnDefinition Width="0.1*" x:Name="colDef3"/>
+                <ColumnDefinition Width="0.1*" x:Name="colDef4"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="59.317" x:Name="rowDef0" MinHeight="40"/>
+                <RowDefinition Height="59.317" x:Name="rowDef1" MinHeight="40"/>
+                <RowDefinition Height="59.317" x:Name="rowDef2"/>
+            </Grid.RowDefinitions>
+
+            <RadioButton x:Name="rdbTwoPoint" Style="{StaticResource STY_promngpn2_TGL}" Width="Auto" Margin="5,0,0,0" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="VerticalAlignment" IsChecked="{Binding Path=sUiController.Measurement.SelectedMeasurementItem, Mode=Default, Converter={StaticResource cnvEnumBoolean}, ConverterParameter=DistanceTwoPoints}">
+                <RadioButton.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        <SkewTransform AngleX="0" AngleY="0"/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform X="0" Y="0"/>
+                    </TransformGroup>
+                </RadioButton.RenderTransform>
+                <Viewbox x:Name="GroupTwoPoint" Width="33.2866" Height="33.2864" Canvas.Left="267.357" Canvas.Top="288.69" HorizontalAlignment="Center" Margin="8,12,0,0" VerticalAlignment="Center">
+                    <Canvas Width="33.2866" Height="33.2864" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Path x:Name="Line_TwoPoint" Width="26.3333" Height="26.3333" Canvas.Left="3.54108" Canvas.Top="3.47266" Stretch="Fill" StrokeThickness="3" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeLineJoin="Round" Stroke="#FF0000FF" Data="F1 M 28.3744,4.97266L 5.04108,28.306" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Path x:Name="Path_TwoPoint0" Width="9.38614" Height="9.388" Canvas.Left="23.9004" Canvas.Top="0" Stretch="Fill" Fill="#FF666666" Data="F1 M 33.2866,4.69269C 33.2866,7.28644 31.1863,9.388 28.5951,9.388C 26.0013,9.388 23.9004,7.28644 23.9004,4.69269C 23.9004,2.10022 26.0013,0 28.5951,0C 31.1863,0 33.2866,2.10022 33.2866,4.69269" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Path x:Name="Path_TwoPoint1" Width="9.38617" Height="9.388" Canvas.Left="0" Canvas.Top="23.8984" Stretch="Fill" Fill="#FF666666" Data="F1 M 9.38617,28.5924C 9.38617,31.1861 7.28656,33.2864 4.69467,33.2864C 2.10095,33.2864 0,31.1861 0,28.5924C 0,26 2.10095,23.8984 4.69467,23.8984C 7.28656,23.8984 9.38617,26 9.38617,28.5924"/>
+                        <Path x:Name="Path_TwoPoint_Num1" Width="2.781" Height="6.39" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 34.8566,41.4808L 35.0364,41.4808C 36.2511,41.4808 36.5754,40.8506 36.6028,40.374L 37.6379,40.374L 37.6379,46.764L 36.3776,46.764L 36.3776,42.363L 34.8566,42.363L 34.8566,41.4808 Z " Canvas.Left="2.791" Canvas.Top="25.398"/>
+                        <Path x:Name="Path_TwoPoint_Num2" Width="4.365" Height="6.39" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 3.20953,42.643C 3.20953,40.5641 4.73038,40.3838 5.2981,40.3838C 6.52213,40.3838 7.49341,41.1039 7.49341,42.4C 7.49341,43.4977 6.78247,44.0556 6.16266,44.4789C 5.31641,45.0726 4.87491,45.361 4.73038,45.6579L 7.5025,45.6579L 7.5025,46.7738L 3.13794,46.7738C 3.18219,46.0265 3.2356,45.2438 4.62354,44.236C 5.77466,43.3989 6.23419,43.0746 6.23419,42.3546C 6.23419,41.9313 5.96344,41.4457 5.35147,41.4457C 4.46997,41.4457 4.444,42.1748 4.43359,42.643L 3.20953,42.643 Z " Canvas.Left="26.259" Canvas.Top="1.498"/>
+                    </Canvas>
+                </Viewbox>
+            </RadioButton>
+
+            <RadioButton x:Name="rdbParallelLineDistance" Style="{StaticResource STY_promngpn2_TGL}"  Width="Auto"  HorizontalAlignment="Left" Margin="5,0,0,0" Grid.Column="1" TabIndex="2"  IsChecked="{Binding Path=sUiController.Measurement.SelectedMeasurementItem, Mode=Default, Converter={StaticResource cnvEnumBoolean}, ConverterParameter=DistanceParallelLines}">
+                <Viewbox x:Name="GroupParallelLineDistance" Width="37.8463" Height="31.4569" Canvas.Left="333.41" Canvas.Top="292.147" Margin="5,13,0,0">
+                    <Canvas Width="37.8463" Height="31.4569">
+                        <Path x:Name="Line_ParallelLineDistance0" Width="37.8463" Height="2" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" StrokeThickness="2" StrokeLineJoin="Round" Stroke="#FF666666" Data="F1 M 1,1L 36.8463,1"/>
+                        <Path x:Name="Line_ParallelLineDistance1" Width="37.8463" Height="2" Canvas.Left="0" Canvas.Top="25.9205" Stretch="Fill" StrokeThickness="2" StrokeLineJoin="Round" Stroke="#FF666666" Data="F1 M 1,26.9205L 36.8463,26.9205"/>
+                        <Rectangle x:Name="Rectangle_ParallelLineDistance" Width="3" Height="24.4219" Canvas.Left="17.6985" Canvas.Top="1.73425" Stretch="Fill" Fill="#FF0000FF"/>
+                        <Path x:Name="Path_ParallelLineDistance" Width="9.38611" Height="9.38794" Canvas.Left="4.3092" Canvas.Top="22.069" Stretch="Fill" Fill="#FF666666" Data="F1 M 13.6953,26.7616C 13.6953,29.3555 11.5951,31.4569 9.00388,31.4569C 6.41013,31.4569 4.3092,29.3555 4.3092,26.7616C 4.3092,24.1692 6.41013,22.069 9.00388,22.069C 11.5951,22.069 13.6953,24.1692 13.6953,26.7616"/>
+                        <Path x:Name="Path_ParallelLineDistance_Num1" Width="2.781" Height="6.39" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 34.8566,41.4808L 35.0364,41.4808C 36.2511,41.4808 36.5754,40.8506 36.6028,40.374L 37.6379,40.374L 37.6379,46.764L 36.3776,46.764L 36.3776,42.363L 34.8566,42.363L 34.8566,41.4808 Z " Canvas.Left="7.042" Canvas.Top="23.391"/>
+                    </Canvas>
+                </Viewbox>
+            </RadioButton>
+
+            <RadioButton x:Name="rdbMultipointDistance" Style="{StaticResource STY_promngpn2_TGL}"  Width="49.468" Grid.Column="2"  HorizontalAlignment="Left" Margin="5,0,0,0" TabIndex="3"  IsChecked="{Binding Path=sUiController.Measurement.SelectedMeasurementItem, Mode=Default, Converter={StaticResource cnvEnumBoolean}, ConverterParameter=DistanceManyPoints}">
+                <Viewbox x:Name="GroupMultipointDistance" Width="41.1764" Height="31.5287" Canvas.Left="398.745" Canvas.Top="290.236" Margin="3,13,0,0">
+                    <Canvas Width="41.1764" Height="31.5287">
+                        <Path x:Name="Path_MultipointDistance0" Width="35.2931" Height="25.3568" Canvas.Left="3.04163" Canvas.Top="2.97656" Stretch="Fill" StrokeThickness="3" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeLineJoin="Round" Stroke="#FF0000FF" Data="F1 M 4.54163,26.8334L 12.8223,8.2019L 27.7266,21.0364L 36.8347,4.47656"/>
+                        <Path x:Name="Path_MultipointDistance1" Width="9.38602" Height="9.388" Canvas.Left="0" Canvas.Top="22.1407" Stretch="Fill" Fill="#FF666666" Data="F1 M 9.38602,26.8334C 9.38602,29.4271 7.28574,31.5287 4.69467,31.5287C 2.10095,31.5287 0,29.4271 0,26.8334C 0,24.241 2.10095,22.1407 4.69467,22.1407C 7.28574,22.1407 9.38602,24.241 9.38602,26.8334"/>
+                        <Path x:Name="Path_MultipointDistance2" Width="9.38611" Height="9.388" Canvas.Left="8.32095" Canvas.Top="3.90497" Stretch="Fill" Fill="#FF666666" Data="F1 M 17.7071,8.59766C 17.7071,11.1915 15.6068,13.293 13.0156,13.293C 10.4219,13.293 8.32095,11.1915 8.32095,8.59766C 8.32095,6.00525 10.4219,3.90497 13.0156,3.90497C 15.6068,3.90497 17.7071,6.00525 17.7071,8.59766"/>
+                        <Path x:Name="Path_MultipointDistance3" Width="9.38605" Height="9.38806" Canvas.Left="22.9889" Canvas.Top="15.7096" Stretch="Fill" Fill="#FF666666" Data="F1 M 32.375,20.4024C 32.375,22.9962 30.2747,25.0977 27.6836,25.0977C 25.0899,25.0977 22.9889,22.9962 22.9889,20.4024C 22.9889,17.8099 25.0899,15.7096 27.6836,15.7096C 30.2747,15.7096 32.375,17.8099 32.375,20.4024"/>
+                        <Path x:Name="Path_MultipointDistance4" Width="9.38602" Height="9.388" Canvas.Left="31.7904" Canvas.Top="0" Stretch="Fill" Fill="#FF666666" Data="F1 M 41.1764,4.69269C 41.1764,7.28638 39.0761,9.388 36.4851,9.388C 33.8912,9.388 31.7904,7.28638 31.7904,4.69269C 31.7904,2.10028 33.8912,0 36.4851,0C 39.0761,0 41.1764,2.10028 41.1764,4.69269"/>
+                        <Path x:Name="Path_MultipointDistance_Num1" Width="2.781" Height="6.39" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 34.8566,41.4808L 35.0364,41.4808C 36.2511,41.4808 36.5754,40.8506 36.6028,40.374L 37.6379,40.374L 37.6379,46.764L 36.3776,46.764L 36.3776,42.363L 34.8566,42.363L 34.8566,41.4808 Z " Canvas.Left="2.792" Canvas.Top="23.641"/>
+                        <Path x:Name="Path_MultipointDistance_Num2" Width="4.365" Height="6.39" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 3.20953,42.643C 3.20953,40.5641 4.73038,40.3838 5.2981,40.3838C 6.52213,40.3838 7.49341,41.1039 7.49341,42.4C 7.49341,43.4977 6.78247,44.0556 6.16266,44.4789C 5.31641,45.0726 4.87491,45.361 4.73038,45.6579L 7.5025,45.6579L 7.5025,46.7738L 3.13794,46.7738C 3.18219,46.0265 3.2356,45.2438 4.62354,44.236C 5.77466,43.3989 6.23419,43.0746 6.23419,42.3546C 6.23419,41.9313 5.96344,41.4457 5.35147,41.4457C 4.46997,41.4457 4.444,42.1748 4.43359,42.643L 3.20953,42.643 Z " Canvas.Left="10.842" Canvas.Top="5.153"/>
+                        <Path x:Name="Path_MultipointDistance_Num3" Width="4.402" Height="6.561" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 20.3098,15.7712L 20.509,15.7712C 20.8853,15.7712 21.5793,15.736 21.5793,14.9079C 21.5793,14.6735 21.4713,14.0888 20.7785,14.0888C 19.914,14.0888 19.914,14.9079 19.914,15.1326L 18.7434,15.1326C 18.7434,13.9352 19.4192,13.0804 20.858,13.0804C 21.7134,13.0804 22.8385,13.5127 22.8385,14.8623C 22.8385,15.5107 22.4348,15.9158 22.0741,16.0771L 22.0741,16.0954C 22.2995,16.1586 23.0377,16.4912 23.0377,17.5804C 23.0377,18.7868 22.1457,19.6416 20.858,19.6416C 20.2563,19.6416 18.6353,19.5068 18.6353,17.5088L 19.8684,17.5088L 19.8607,17.5173C 19.8607,17.8598 19.9503,18.6338 20.7954,18.6338C 21.2995,18.6338 21.7408,18.2914 21.7408,17.5804C 21.7408,16.7074 20.8957,16.6715 20.3098,16.6715L 20.3098,15.7712 Z " Canvas.Left="25.538" Canvas.Top="16.968"/>
+                        <Path x:Name="Path_MultipointDistance_Num4" Width="7.319" Height="10.413" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 1140.09,716.892L 1138.93,716.892L 1138.93,719.194L 1136.88,719.194L 1136.88,716.892L 1132.77,716.892L 1132.77,715.117L 1136.6,708.781L 1138.93,708.781L 1138.93,715.293L 1140.09,715.293L 1140.09,716.892 Z M 1136.88,715.293C 1136.88,712.77 1136.92,711.142 1136.92,710.819L 1136.89,710.819L 1134.28,715.293L 1136.88,715.293 Z " RenderTransformOrigin="0.5,0.5" Canvas.Left="32.529" Canvas.Top="-0.442">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.6" ScaleY="0.6"/>
+                                    <SkewTransform AngleX="0" AngleY="0"/>
+                                    <RotateTransform Angle="0"/>
+                                    <TranslateTransform X="0" Y="0"/>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Canvas>
+                </Viewbox>
+            </RadioButton>
+
+            <RadioButton x:Name="rdbMultipointParallelDistance" Style="{StaticResource STY_promngpn2_TGL}"  Width="49.468" Grid.Column="3"  HorizontalAlignment="Left" Margin="5,0,0,0" TabIndex="4" IsChecked="{Binding Path=sUiController.Measurement.SelectedMeasurementItem, Mode=Default, Converter={StaticResource cnvEnumBoolean}, ConverterParameter=DistancePerpendicularLine}">
+                <Viewbox x:Name="GroupMultipointParallelDistance" Width="38.9974" Height="34.7186" Canvas.Left="468.835" Canvas.Top="287.974" Margin="5,12,0,0">
+                    <Canvas Width="38.9974" Height="34.7186">
+                        <Rectangle x:Name="Rectangle_MultipointParallelDistance" Width="1.5" Height="34.3931" Canvas.Left="0" Canvas.Top="0.325439" Stretch="Fill" Fill="#FF666666"/>
+                        <Path x:Name="Line_MultipointParallelDistance0" Width="21.7922" Height="3" Canvas.Left="1.54047" Canvas.Top="2.72644" Stretch="Fill" StrokeThickness="3" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeLineJoin="Round" Stroke="#FF0000FF" Data="F1 M 3.04047,4.22644L 21.8327,4.22644"/>
+                        <Path x:Name="Line_MultipointParallelDistance1" Width="31.3651" Height="3" Canvas.Left="1.54047" Canvas.Top="15.4907" Stretch="Fill" StrokeThickness="3" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeLineJoin="Round" Stroke="#FF0000FF" Data="F1 M 3.04047,16.9907L 31.4056,16.9907"/>
+                        <Path x:Name="Line_MultipointParallelDistance2" Width="24.9837" Height="3" Canvas.Left="1.54047" Canvas.Top="28.2551" Stretch="Fill" StrokeThickness="3" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeLineJoin="Round" Stroke="#FF0000FF" Data="F1 M 3.04047,29.7551L 25.0242,29.7551"/>
+                        <Path x:Name="Path_MultipointParallelDistance0" Width="9.38614" Height="9.38794" Canvas.Left="17.4922" Canvas.Top="0" Stretch="Fill" Fill="#FF666666" Data="F1 M 26.8783,4.69263C 26.8783,7.28638 24.778,9.38794 22.1868,9.38794C 19.5931,9.38794 17.4922,7.28638 17.4922,4.69263C 17.4922,2.10022 19.5931,0 22.1868,0C 24.778,0 26.8783,2.10022 26.8783,4.69263"/>
+                        <Path x:Name="Path_MultipointParallelDistance1" Width="9.38599" Height="9.388" Canvas.Left="29.6114" Canvas.Top="12.1185" Stretch="Fill" Fill="#FF666666" Data="F1 M 38.9974,16.8112C 38.9974,19.4048 36.8971,21.5065 34.306,21.5065C 31.7123,21.5065 29.6114,19.4048 29.6114,16.8112C 29.6114,14.2186 31.7123,12.1185 34.306,12.1185C 36.8971,12.1185 38.9974,14.2186 38.9974,16.8112"/>
+                        <Path x:Name="Path_MultipointParallelDistance2" Width="9.38614" Height="9.388" Canvas.Left="21.5742" Canvas.Top="24.7734" Stretch="Fill" Fill="#FF666666" Data="F1 M 30.9603,29.4661C 30.9603,32.0598 28.86,34.1614 26.2688,34.1614C 23.6751,34.1614 21.5742,32.0598 21.5742,29.4661C 21.5742,26.8737 23.6751,24.7734 26.2688,24.7734C 28.86,24.7734 30.9603,26.8737 30.9603,29.4661"/>
+                    </Canvas>
+                </Viewbox>
+            </RadioButton>
+
+            <RadioButton x:Name="rdbTwoCircleDistance" Style="{StaticResource STY_promngpn2_TGL}"  Width="49.468" Margin="5,0,0,0"  Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" TabIndex="5" IsChecked="{Binding Path=sUiController.Measurement.SelectedMeasurementItem, Mode=Default, Converter={StaticResource cnvEnumBoolean}, ConverterParameter=DistanceCircles}">
+                <Viewbox x:Name="GroupTwoCircleDistance" Width="38.5143" Height="38.2213" Canvas.Left="264.743" Canvas.Top="345.889" Margin="5,10,0,0">
+                    <Canvas Width="38.5143" Height="38.2213">
+                        <Path x:Name="Path_TwoCircleDistance0" Width="19.9584" Height="19.9583" Canvas.Left="18.5559" Canvas.Top="0" Stretch="Fill" Fill="#FF666666" Data="F1 M 18.5559,9.97906C 18.5559,15.4817 23.0325,19.9583 28.5351,19.9583C 34.0378,19.9583 38.5143,15.4817 38.5143,9.97906C 38.5143,4.4765 34.0378,0 28.5351,0C 23.0325,0 18.5559,4.4765 18.5559,9.97906 Z M 20.0559,9.97906C 20.0559,5.30334 23.86,1.5 28.5351,1.5C 33.2103,1.5 37.0143,5.30334 37.0143,9.97906C 37.0143,14.6549 33.2103,18.4583 28.5351,18.4583C 23.86,18.4583 20.0559,14.6549 20.0559,9.97906 Z "/>
+                        <Path x:Name="Path_TwoCircleDistance1" Width="14.2903" Height="14.2904" Canvas.Left="0" Canvas.Top="23.9309" Stretch="Fill" Fill="#FF666666" Data="F1 M 0,31.0754C 0,35.0156 3.20508,38.2213 7.14508,38.2213C 11.0852,38.2213 14.2903,35.0156 14.2903,31.0754C 14.2903,27.1353 11.0852,23.9309 7.14508,23.9309C 3.20508,23.9309 0,27.1353 0,31.0754 Z M 1.5,31.0754C 1.5,27.9634 4.03253,25.4309 7.14508,25.4309C 10.2577,25.4309 12.7903,27.9634 12.7903,31.0754C 12.7903,34.1888 10.2577,36.7213 7.14508,36.7213C 4.03253,36.7213 1.5,34.1888 1.5,31.0754 Z "/>
+                        <Path x:Name="Path_TwoCircleDistance2" Width="23.9636" Height="23.9635" Canvas.Left="5.6972" Canvas.Top="8.98303" Stretch="Fill" Fill="#FF0000FF" Data="F1 M 26.4791,10.0429L 5.6972,30.8254L 7.81827,32.9465L 29.6608,11.1041L 27.5396,8.98303L 26.4791,10.0429 Z "/>
+                    </Canvas>
+                </Viewbox>
+            </RadioButton>
+
+            <RadioButton x:Name="rdbRectangleArea" Style="{StaticResource STY_promngpn2_TGL}"  Width="Auto"  HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" Margin="5,0,0,0" TabIndex="6" IsChecked="{Binding Path=sUiController.Measurement.SelectedMeasurementItem, Mode=Default, Converter={StaticResource cnvEnumBoolean}, ConverterParameter=DistanceXY}">
+                <Viewbox x:Name="GroupRectangleArea" Width="42.8918" Height="42.8918" Canvas.Left="330.439" Canvas.Top="344.788" Margin="5,8,0,0">
+                    <Canvas Width="42.8918" Height="42.8918">
+                        <Path x:Name="Line_RectangleArea0" Width="2" Height="42.8918" Canvas.Left="4.8132" Canvas.Top="0" Stretch="Fill" StrokeThickness="2" StrokeLineJoin="Round" Stroke="#FF666666" Data="F1 M 5.8132,1L 5.8132,41.8918"/>
+                        <Path x:Name="Line_RectangleArea1" Width="2" Height="42.8918" Canvas.Left="36.056" Canvas.Top="0" Stretch="Fill" StrokeThickness="2" StrokeLineJoin="Round" Stroke="#FF666666" Data="F1 M 37.056,1L 37.056,41.8918"/>
+                        <Path x:Name="Line_RectangleArea2" Width="42.8918" Height="2" Canvas.Left="0" Canvas.Top="31.4844" Stretch="Fill" StrokeThickness="2" StrokeLineJoin="Round" Stroke="#FF666666" Data="F1 M 1,32.4844L 41.8918,32.4844"/>
+                        <Path x:Name="Line_RectangleArea3" Width="42.8918" Height="2" Canvas.Left="0" Canvas.Top="9.48956" Stretch="Fill" StrokeThickness="2" StrokeLineJoin="Round" Stroke="#FF666666" Data="F1 M 1,10.4896L 41.8918,10.4896"/>
+                        <Path x:Name="Path_RectangleArea0" Width="34.2428" Height="24.9948" Canvas.Left="4.3132" Canvas.Top="8.98956" Stretch="Fill" StrokeThickness="3" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeLineJoin="Round" Stroke="#FF0000FF" Data="F1 M 37.056,10.4896L 5.8132,32.4844L 37.056,32.4844L 37.056,10.4896 Z "/>
+                        <Path x:Name="Path_RectangleArea1" Width="6.71024" Height="10.8881" Canvas.Left="15.5163" Canvas.Top="23.0963" Stretch="Fill" StrokeThickness="3" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" Stroke="#FF0000FF" Data="F1 M 17.0163,24.5963C 17.0163,24.5963 20.7265,27.0716 20.7265,32.4844"/>
+                    </Canvas>
+                </Viewbox>
+            </RadioButton>
+
+            <RadioButton x:Name="rdbThreePointAngle" Style="{StaticResource STY_promngpn2_TGL}"  Width="49.468" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="2" Margin="5,0,0,0"  TabIndex="7" IsChecked="{Binding Path=sUiController.Measurement.SelectedMeasurementItem, Mode=Default, Converter={StaticResource cnvEnumBoolean}, ConverterParameter=AngleThreePoints}">
+                <Viewbox x:Name="GroupThreePointAngle" Width="40.6523" Height="36.6946" Canvas.Left="399.007" Canvas.Top="346.658" Margin="5,10,0,0">
+                    <Canvas Width="40.6523" Height="36.6946">
+                        <Path x:Name="Path_ThreePointAngle0" Width="33.6589" Height="29.6672" Canvas.Left="3.72388" Canvas.Top="3.58984" Stretch="Fill" StrokeThickness="2" StrokeLineJoin="Round" Stroke="#FF666666" Data="F1 M 27.19,4.58984L 4.72388,32.2571L 36.3828,32.2571"/>
+                        <Path x:Name="Path_ThreePointAngle1" Width="10.429" Height="10.4298" Canvas.Left="0" Canvas.Top="26.1085" Stretch="Fill" Fill="#FF666666" Data="F1 M 10.429,31.3235C 10.429,34.205 8.09561,36.5383 5.21481,36.5383C 2.33334,36.5383 0,34.205 0,31.3235C 0,28.4432 2.33334,26.1085 5.21481,26.1085C 8.09561,26.1085 10.429,28.4432 10.429,31.3235"/>
+                        <Path x:Name="Path_ThreePointAngle2" Width="10.4323" Height="10.4309" Canvas.Left="30.22" Canvas.Top="26.2637" Stretch="Fill" Fill="#FF666666" Data="F1 M 40.6523,31.4784C 40.6523,34.3585 38.3176,36.6946 35.4362,36.6946C 32.5547,36.6946 30.22,34.3585 30.22,31.4784C 30.22,28.5981 32.5547,26.2637 35.4362,26.2637C 38.3176,26.2637 40.6523,28.5981 40.6523,31.4784"/>
+                        <Path x:Name="Path_ThreePointAngle3" Width="10.4291" Height="10.4296" Canvas.Left="22.578" Canvas.Top="0" Stretch="Fill" Fill="#FF666666" Data="F1 M 33.0071,5.21484C 33.0071,8.09503 30.6738,10.4296 27.793,10.4296C 24.9114,10.4296 22.578,8.09503 22.578,5.21484C 22.578,2.33453 24.9114,0 27.793,0C 30.6738,0 33.0071,2.33453 33.0071,5.21484"/>
+                        <Path x:Name="Path_ThreePointAngle4" Width="8.32614" Height="14.4271" Canvas.Left="13.3632" Canvas.Top="18.5396" Stretch="Fill" Fill="#FF0000FF" Data="F1 M 18.5963,32.9667L 21.5963,32.9667L 21.6893,31.1073C 21.6893,26.2505 19.4766,21.7675 15.6178,18.8104L 15.2649,18.5396L 13.3632,20.8625L 13.7923,21.1907C 16.9043,23.576 18.6893,27.1907 18.6893,31.1073L 18.5963,32.9667 Z "/>
+                        <Path x:Name="Path_ThreePointAngle_Num1" Width="2.781" Height="6.39" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 34.8566,41.4808L 35.0364,41.4808C 36.2511,41.4808 36.5754,40.8506 36.6028,40.374L 37.6379,40.374L 37.6379,46.764L 36.3776,46.764L 36.3776,42.363L 34.8566,42.363L 34.8566,41.4808 Z " Canvas.Left="3.224" Canvas.Top="28.196"/>
+                        <Path x:Name="Path_ThreePointAngle_Num2" Width="4.365" Height="6.39" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 3.20953,42.643C 3.20953,40.5641 4.73038,40.3838 5.2981,40.3838C 6.52213,40.3838 7.49341,41.1039 7.49341,42.4C 7.49341,43.4977 6.78247,44.0556 6.16266,44.4789C 5.31641,45.0726 4.87491,45.361 4.73038,45.6579L 7.5025,45.6579L 7.5025,46.7738L 3.13794,46.7738C 3.18219,46.0265 3.2356,45.2438 4.62354,44.236C 5.77466,43.3989 6.23419,43.0746 6.23419,42.3546C 6.23419,41.9313 5.96344,41.4457 5.35147,41.4457C 4.46997,41.4457 4.444,42.1748 4.43359,42.643L 3.20953,42.643 Z " Canvas.Left="25.537" Canvas.Top="1.84"/>
+                        <Path x:Name="Path_ThreePointAngle_Num3" Width="4.402" Height="6.561" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 20.3098,15.7712L 20.509,15.7712C 20.8853,15.7712 21.5793,15.736 21.5793,14.9079C 21.5793,14.6735 21.4713,14.0888 20.7785,14.0888C 19.914,14.0888 19.914,14.9079 19.914,15.1326L 18.7434,15.1326C 18.7434,13.9352 19.4192,13.0804 20.858,13.0804C 21.7134,13.0804 22.8385,13.5127 22.8385,14.8623C 22.8385,15.5107 22.4348,15.9158 22.0741,16.0771L 22.0741,16.0954C 22.2995,16.1586 23.0377,16.4912 23.0377,17.5804C 23.0377,18.7868 22.1457,19.6416 20.858,19.6416C 20.2563,19.6416 18.6353,19.5068 18.6353,17.5088L 19.8684,17.5088L 19.8607,17.5173C 19.8607,17.8598 19.9503,18.6338 20.7954,18.6338C 21.2995,18.6338 21.7408,18.2914 21.7408,17.5804C 21.7408,16.7074 20.8957,16.6715 20.3098,16.6715L 20.3098,15.7712 Z " Canvas.Left="33.231" Canvas.Top="28.196"/>
+                    </Canvas>
+                </Viewbox>
+            </RadioButton>
+
+            <RadioButton x:Name="rdbFourPointAngle" Style="{StaticResource STY_promngpn2_TGL}"  Width="49.468" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="3" Margin="5,0,0,0"  TabIndex="8" IsChecked="{Binding Path=sUiController.Measurement.SelectedMeasurementItem, Mode=Default, Converter={StaticResource cnvEnumBoolean}, ConverterParameter=AngleFourPoints}">
+                <Viewbox x:Name="GroupFourPointAngle" Width="36.8055" Height="37.845" Canvas.Left="468.931" Canvas.Top="347.744" Margin="5,10,0,0">
+                    <Canvas Width="36.8055" Height="37.845">
+                        <Path x:Name="Path_FourPointAngle0" Width="9.38611" Height="9.388" Canvas.Left="27.002" Canvas.Top="0" Stretch="Fill" Fill="#FF666666" Data="F1 M 36.3882,4.69269C 36.3882,7.2865 34.2879,9.388 31.6967,9.388C 29.103,9.388 27.002,7.2865 27.002,4.69269C 27.002,2.10028 29.103,0 31.6967,0C 34.2879,0 36.3882,2.10028 36.3882,4.69269"/>
+                        <Path x:Name="Path_FourPointAngle1" Width="9.38617" Height="9.388" Canvas.Left="0" Canvas.Top="27.8333" Stretch="Fill" Fill="#FF666666" Data="F1 M 9.38617,32.5259C 9.38617,35.1199 7.28589,37.2213 4.69467,37.2213C 2.10095,37.2213 0,35.1199 0,32.5259C 0,29.9336 2.10095,27.8333 4.69467,27.8333C 7.28589,27.8333 9.38617,29.9336 9.38617,32.5259"/>
+                        <Path x:Name="Path_FourPointAngle2" Width="9.38614" Height="9.388" Canvas.Left="27.4194" Canvas.Top="28.457" Stretch="Fill" Fill="#FF666666" Data="F1 M 36.8055,33.1497C 36.8055,35.7435 34.7053,37.845 32.114,37.845C 29.5203,37.845 27.4194,35.7435 27.4194,33.1497C 27.4194,30.5573 29.5203,28.457 32.114,28.457C 34.7053,28.457 36.8055,30.5573 36.8055,33.1497"/>
+                        <Path x:Name="Path_FourPointAngle3" Width="9.38605" Height="9.388" Canvas.Left="0.369873" Canvas.Top="1.40759" Stretch="Fill" Fill="#FF666666" Data="F1 M 9.75592,6.10028C 9.75592,8.69397 7.65561,10.7956 5.06454,10.7956C 2.47083,10.7956 0.369873,8.69397 0.369873,6.10028C 0.369873,3.50787 2.47083,1.40759 5.06454,1.40759C 7.65561,1.40759 9.75592,3.50787 9.75592,6.10028"/>
+                        <Path x:Name="Line_FourPointAngle0" Width="28.8412" Height="28.841" Canvas.Left="4.09711" Canvas.Top="4.89069" Stretch="Fill" StrokeThickness="2" StrokeLineJoin="Round" Stroke="#FF666666" Data="F1 M 31.9383,5.89069L 5.09711,32.7317"/>
+                        <Path x:Name="Line_FourPointAngle1" Width="28.8411" Height="28.8411" Canvas.Left="4.09845" Canvas.Top="4.89197" Stretch="Fill" StrokeThickness="2" StrokeLineJoin="Round" Stroke="#FF666666" Data="F1 M 5.09845,5.89197L 31.9395,32.7331"/>
+                        <Path x:Name="Path_FourPointAngle4" Width="17.1074" Height="5.46625" Canvas.Left="9.93762" Canvas.Top="8.46478" Stretch="Fill" Fill="#FF0000FF" Data="F1 M 18.5176,8.46478C 15.3094,8.46478 12.2898,9.65625 9.93762,11.8087L 12.0594,13.931C 13.8425,12.3423 16.1102,11.4648 18.5176,11.4648C 20.8868,11.4648 23.1219,12.3138 24.892,13.8541L 27.045,11.7617C 24.7006,9.63934 21.7026,8.46478 18.5176,8.46478 Z "/>
+                        <Path x:Name="Path_FourPointAngle5" Width="7.31897" Height="10.4128" Canvas.Left="0.529" Canvas.Top="27.308" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 1140.09,716.892L 1138.93,716.892L 1138.93,719.194L 1136.88,719.194L 1136.88,716.892L 1132.77,716.892L 1132.77,715.117L 1136.6,708.781L 1138.93,708.781L 1138.93,715.293L 1140.09,715.293L 1140.09,716.892 Z M 1136.88,715.293C 1136.88,712.77 1136.92,711.142 1136.92,710.819L 1136.89,710.819L 1134.28,715.293L 1136.88,715.293 Z " RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.6" ScaleY="0.6"/>
+                                    <SkewTransform AngleX="0" AngleY="0"/>
+                                    <RotateTransform Angle="0"/>
+                                    <TranslateTransform X="0" Y="0"/>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                        <Path x:Name="Path_FourPointAngle_Num1" Width="2.781" Height="6.39" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 34.8566,41.4808L 35.0364,41.4808C 36.2511,41.4808 36.5754,40.8506 36.6028,40.374L 37.6379,40.374L 37.6379,46.764L 36.3776,46.764L 36.3776,42.363L 34.8566,42.363L 34.8566,41.4808 Z " Canvas.Left="3.157" Canvas.Top="2.998"/>
+                        <Path x:Name="Path_FourPointAngle_Num2" Width="4.365" Height="6.39" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 3.20953,42.643C 3.20953,40.5641 4.73038,40.3838 5.2981,40.3838C 6.52213,40.3838 7.49341,41.1039 7.49341,42.4C 7.49341,43.4977 6.78247,44.0556 6.16266,44.4789C 5.31641,45.0726 4.87491,45.361 4.73038,45.6579L 7.5025,45.6579L 7.5025,46.7738L 3.13794,46.7738C 3.18219,46.0265 3.2356,45.2438 4.62354,44.236C 5.77466,43.3989 6.23419,43.0746 6.23419,42.3546C 6.23419,41.9313 5.96344,41.4457 5.35147,41.4457C 4.46997,41.4457 4.444,42.1748 4.43359,42.643L 3.20953,42.643 Z " Canvas.Left="29.68" Canvas.Top="29.831"/>
+                        <Path x:Name="Path_FourPointAngle_Num3" Width="4.402" Height="6.561" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 20.3098,15.7712L 20.509,15.7712C 20.8853,15.7712 21.5793,15.736 21.5793,14.9079C 21.5793,14.6735 21.4713,14.0888 20.7785,14.0888C 19.914,14.0888 19.914,14.9079 19.914,15.1326L 18.7434,15.1326C 18.7434,13.9352 19.4192,13.0804 20.858,13.0804C 21.7134,13.0804 22.8385,13.5127 22.8385,14.8623C 22.8385,15.5107 22.4348,15.9158 22.0741,16.0771L 22.0741,16.0954C 22.2995,16.1586 23.0377,16.4912 23.0377,17.5804C 23.0377,18.7868 22.1457,19.6416 20.858,19.6416C 20.2563,19.6416 18.6353,19.5068 18.6353,17.5088L 19.8684,17.5088L 19.8607,17.5173C 19.8607,17.8598 19.9503,18.6338 20.7954,18.6338C 21.2995,18.6338 21.7408,18.2914 21.7408,17.5804C 21.7408,16.7074 20.8957,16.6715 20.3098,16.6715L 20.3098,15.7712 Z " Canvas.Left="29.538" Canvas.Top="1.25"/>
+                    </Canvas>
+                </Viewbox>
+            </RadioButton>
+
+            <RadioButton x:Name="rdbThreePointCircle" Style="{StaticResource STY_promngpn2_TGL}"  Width="49.468" Margin="5,0,0,0" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="0" TabIndex="9" IsChecked="{Binding Path=sUiController.Measurement.SelectedMeasurementItem, Mode=Default, Converter={StaticResource cnvEnumBoolean}, ConverterParameter=Circle}">
+                <Viewbox x:Name="GroupThreePointCircle" Width="40.0852" Height="39.5937" Canvas.Left="263.957" Canvas.Top="404.648" Margin="5,10,0,0">
+                    <Canvas Width="40.0852" Height="39.5937">
+                        <Path x:Name="Path_ThreePointCircle0" Width="34.1093" Height="34.1093" Canvas.Left="3.12372" Canvas.Top="2.47" Stretch="Fill" Fill="#9A0000FF" Data="F1 M 37.2331,19.5247C 37.2331,28.944 29.5976,36.5793 20.1784,36.5793C 10.7591,36.5793 3.12372,28.944 3.12372,19.5247C 3.12372,10.1055 10.7591,2.47 20.1784,2.47C 29.5976,2.47 37.2331,10.1055 37.2331,19.5247 Z "/>
+                        <Viewbox x:Name="Group_ThreePointCircle_Circle" Width="39.4694" Height="39.4661" Canvas.Left="0.615845" Canvas.Top="0">
+                            <Canvas Width="39.4694" Height="39.4661">
+                                <Path x:Name="Path_ThreePointCircle_Circle0" Width="39.4694" Height="39.4661" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Fill="#FF0000FF" Data="F1 M 0,19.7344C 0,30.6145 8.85349,39.4661 19.7363,39.4661C 30.6179,39.4661 39.4694,30.6145 39.4694,19.7344C 39.4694,8.85144 30.6179,0 19.7363,0C 8.85349,0 0,8.85144 0,19.7344 Z M 3,19.7344C 3,10.5066 10.5079,3 19.7363,3C 28.963,3 36.4694,10.5066 36.4694,19.7344C 36.4694,28.9596 28.963,36.4661 19.7363,36.4661C 10.5079,36.4661 3,28.9596 3,19.7344"/>
+                                <Path x:Name="Path_ThreePointCircle_Circle1" Width="21.2363" Height="3" Canvas.Left="18.2109" Canvas.Top="18.7956" Stretch="Fill" Fill="#FF0000FF" Data="F1 M 37.9472,18.7956L 18.2109,18.7956L 18.2109,21.7956L 39.4472,21.7956L 39.4472,18.7956L 37.9472,18.7956"/>
+                            </Canvas>
+                        </Viewbox>
+                        <Path x:Name="Path_ThreePointCircle1" Width="9.38614" Height="9.388" Canvas.Left="28.2577" Canvas.Top="1.80466" Stretch="Fill" Fill="#FF666666" Data="F1 M 37.6439,6.49734C 37.6439,9.09106 35.5436,11.1927 32.9524,11.1927C 30.3586,11.1927 28.2577,9.09106 28.2577,6.49734C 28.2577,3.90491 30.3586,1.80466 32.9524,1.80466C 35.5436,1.80466 37.6439,3.90491 37.6439,6.49734"/>
+                        <Path x:Name="Path_ThreePointCircle2" Width="9.38599" Height="9.38803" Canvas.Left="0" Canvas.Top="5.70438" Stretch="Fill" Fill="#FF666666" Data="F1 M 9.38599,10.3984C 9.38599,12.9922 7.28638,15.0924 4.69467,15.0924C 2.10092,15.0924 0,12.9922 0,10.3984C 0,7.806 2.10092,5.70438 4.69467,5.70438C 7.28638,5.70438 9.38599,7.806 9.38599,10.3984"/>
+                        <Path x:Name="Path_ThreePointCircle3" Width="9.38614" Height="9.388" Canvas.Left="6.59692" Canvas.Top="30.2057" Stretch="Fill" Fill="#FF666666" Data="F1 M 15.9831,34.8997C 15.9831,37.4934 13.8835,39.5937 11.2916,39.5937C 8.69788,39.5937 6.59692,37.4934 6.59692,34.8997C 6.59692,32.3072 8.69788,30.2057 11.2916,30.2057C 13.8835,30.2057 15.9831,32.3072 15.9831,34.8997"/>
+                        <Path x:Name="Path_ThreePointCircle_Num1" Width="2.781" Height="6.39" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 34.8566,41.4808L 35.0364,41.4808C 36.2511,41.4808 36.5754,40.8506 36.6028,40.374L 37.6379,40.374L 37.6379,46.764L 36.3776,46.764L 36.3776,42.363L 34.8566,42.363L 34.8566,41.4808 Z " Canvas.Left="2.624" Canvas.Top="7.452"/>
+                        <Path x:Name="Path_ThreePointCircle_Num2" Width="4.365" Height="6.39" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 3.20953,42.643C 3.20953,40.5641 4.73038,40.3838 5.2981,40.3838C 6.52213,40.3838 7.49341,41.1039 7.49341,42.4C 7.49341,43.4977 6.78247,44.0556 6.16266,44.4789C 5.31641,45.0726 4.87491,45.361 4.73038,45.6579L 7.5025,45.6579L 7.5025,46.7738L 3.13794,46.7738C 3.18219,46.0265 3.2356,45.2438 4.62354,44.236C 5.77466,43.3989 6.23419,43.0746 6.23419,42.3546C 6.23419,41.9313 5.96344,41.4457 5.35147,41.4457C 4.46997,41.4457 4.444,42.1748 4.43359,42.643L 3.20953,42.643 Z " Canvas.Left="30.868" Canvas.Top="3.22"/>
+                        <Path x:Name="Path_ThreePointCircle_Num3" Width="4.402" Height="6.561" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 20.3098,15.7712L 20.509,15.7712C 20.8853,15.7712 21.5793,15.736 21.5793,14.9079C 21.5793,14.6735 21.4713,14.0888 20.7785,14.0888C 19.914,14.0888 19.914,14.9079 19.914,15.1326L 18.7434,15.1326C 18.7434,13.9352 19.4192,13.0804 20.858,13.0804C 21.7134,13.0804 22.8385,13.5127 22.8385,14.8623C 22.8385,15.5107 22.4348,15.9158 22.0741,16.0771L 22.0741,16.0954C 22.2995,16.1586 23.0377,16.4912 23.0377,17.5804C 23.0377,18.7868 22.1457,19.6416 20.858,19.6416C 20.2563,19.6416 18.6353,19.5068 18.6353,17.5088L 19.8684,17.5088L 19.8607,17.5173C 19.8607,17.8598 19.9503,18.6338 20.7954,18.6338C 21.2995,18.6338 21.7408,18.2914 21.7408,17.5804C 21.7408,16.7074 20.8957,16.6715 20.3098,16.6715L 20.3098,15.7712 Z " Canvas.Left="9" Canvas.Top="31.706"/>
+                    </Canvas>
+                </Viewbox>
+            </RadioButton>
+
+            <RadioButton x:Name="rdbArc" Style="{StaticResource STY_promngpn2_TGL}"  Width="49.468"  HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1" Margin="5,0,0,0" TabIndex="10" IsChecked="{Binding Path=sUiController.Measurement.SelectedMeasurementItem, Mode=Default, Converter={StaticResource cnvEnumBoolean}, ConverterParameter=DistanceArc}">
+                <Viewbox x:Name="GroupArc" Width="44.0689" Height="41.2252" Canvas.Left="330.299" Canvas.Top="405.026" Margin="3,10,0,0">
+                    <Canvas Width="44.0689" Height="41.2252">
+                        <Path x:Name="Path_Arc0" Width="37.182" Height="37.1361" Canvas.Left="3.21188" Canvas.Top="2.08908" Stretch="Fill" Fill="#FF666666" Data="F1 M 39.5125,25.9843L 38.931,27.8577L 38.5317,28.5934L 37.3036,28.0741L 37.7029,27.3383L 38.2062,25.717L 39.5125,25.9843 Z M 37.1924,31.0469L 35.4953,33.1038L 34.3905,32.3574L 36.0876,30.3005L 37.1924,31.0469 Z M 33.4574,34.9991L 32.1883,36.0462L 31.1787,36.5942L 30.4323,35.4893L 31.4418,34.9414L 32.5146,34.0563L 33.4574,34.9991 Z M 28.6951,37.8652L 26.1483,38.6557L 25.6289,37.4277L 28.1757,36.6372L 28.6951,37.8652 Z M 23.3895,39.063L 21.7812,39.2252L 20.6027,39.1064L 20.6027,37.773L 21.7812,37.8918L 23.1223,37.7568L 23.3895,39.063 Z M 17.8244,38.783L 15.2776,37.9925L 15.5449,36.6863L 18.0917,37.4768L 17.8244,38.783 Z M 12.7587,36.7977L 11.3741,36.0462L 10.4328,35.2695L 11.1792,34.1647L 12.1205,34.9414L 13.2781,35.5697L 12.7587,36.7977 Z M 8.33752,33.4315L 6.64044,31.3746L 7.58322,30.4318L 9.28033,32.4887L 8.33752,33.4315 Z M 5.23428,28.9685L 4.63141,27.8577L 4.17731,26.3946L 5.40533,25.8752L 5.85944,27.3383L 6.33914,28.2221L 5.23428,28.9685 Z M 3.47931,23.6949L 3.21188,21.0417L 4.51816,20.7745L 4.78558,23.4277L 3.47931,23.6949 Z M 3.40616,18.2549L 3.54663,16.8619L 3.96198,15.524L 5.26825,15.7913L 4.85291,17.1292L 4.7395,18.2549L 3.40616,18.2549 Z M 4.88934,12.8923L 6.16147,10.5486L 7.38947,11.0681L 6.11731,13.4117L 4.88934,12.8923 Z M 7.87857,8.35016L 8.62,7.4516L 9.87653,6.41486L 10.8193,7.35764L 9.56277,8.39438L 8.9834,9.09656L 7.87857,8.35016 Z M 12.1233,4.77258L 14.536,3.46298L 14.5844,3.448L 15.1037,4.67603L 15.0554,4.69101L 12.8697,5.87741L 12.1233,4.77258 Z M 17.1311,2.65744L 18.0308,2.37817L 19.8781,2.19196L 20.1454,3.49817L 18.2981,3.68442L 17.6505,3.88547L 17.1311,2.65744 Z M 22.6649,2.08908L 25.3181,2.35657L 25.3181,3.68991L 22.6649,3.42242L 22.6649,2.08908 Z M 28.0017,3.14496L 29.0263,3.46298L 30.5431,4.28625L 30.0237,5.51428L 28.507,4.69101L 27.7344,4.45117L 28.0017,3.14496 Z M 32.9009,5.76727L 34.9424,7.4516L 35.0362,7.56528L 34.0934,8.50806L 33.9996,8.39438L 32.1545,6.87207L 32.9009,5.76727 Z M 36.7333,9.62216L 37.2148,10.2057L 38.1867,11.9963L 37.0819,12.7428L 36.1099,10.9521L 35.7905,10.5649L 36.7333,9.62216 Z M 39.2973,14.5476L 40.0157,16.8619L 40.0533,17.2354L 38.7471,17.5028L 38.7095,17.1292L 38.0693,15.0671L 39.2973,14.5476 Z M 40.3208,19.8887L 40.3939,20.612L 40.1265,23.2652L 38.7931,23.2652L 39.0605,20.612L 39.0146,20.156L 40.3208,19.8887 Z "/>
+                        <Path x:Name="Path_Arc1" Width="38.5018" Height="19.2798" Canvas.Left="2.55875" Canvas.Top="20.612" Stretch="Fill" Fill="#FF4D4D4D" Data="F1 M 40.1656,26.1179L 39.545,28.1174L 39.1457,28.8531L 36.6896,27.8144L 37.0889,27.0787L 37.553,25.5834L 40.1656,26.1179 Z M 37.7449,31.42L 36.0478,33.477L 33.838,31.9842L 35.5352,29.9273L 37.7449,31.42 Z M 33.9288,35.4706L 32.5614,36.5987L 31.5519,37.1466L 30.0591,34.9369L 31.0687,34.389L 32.0432,33.5849L 33.9288,35.4706 Z M 28.9548,38.4792L 26.408,39.2697L 25.3693,36.8137L 27.916,36.0232L 28.9548,38.4792 Z M 23.5232,39.7162L 21.7812,39.8918L 20.6027,39.773L 20.6027,37.1064L 21.7812,37.2252L 22.9886,37.1036L 23.5232,39.7162 Z M 17.6907,39.4362L 15.144,38.6457L 15.6785,36.0331L 18.2253,36.8236L 17.6907,39.4362 Z M 12.4991,37.4117L 11.0009,36.5986L 10.0596,35.822L 11.5524,33.6123L 12.4937,34.3889L 13.5378,34.9557L 12.4991,37.4117 Z M 7.86612,33.903L 6.16901,31.846L 8.05463,29.9604L 9.75174,32.0173L 7.86612,33.903 Z M 4.68188,29.3417L 4.0174,28.1174L 3.56329,26.6543L 6.01935,25.6155L 6.47345,27.0786L 6.89154,27.8489L 4.68188,29.3417 Z M 2.82617,23.8286L 2.55875,21.1754L 5.1713,20.6408L 5.43872,23.2941L 2.82617,23.8286 Z M 41.0605,20.612L 40.7931,23.2652L 38.1265,23.2652L 38.3939,20.612L 41.0605,20.612 Z "/>
+                        <Path x:Name="Path_Arc2" Width="9.38599" Height="9.38797" Canvas.Left="34.6829" Canvas.Top="15.8749" Stretch="Fill" Fill="#FF666666" Data="F1 M 44.0689,20.5677C 44.0689,23.1615 41.9687,25.2629 39.3776,25.2629C 36.7838,25.2629 34.6829,23.1615 34.6829,20.5677C 34.6829,17.9752 36.7838,15.8749 39.3776,15.8749C 41.9687,15.8749 44.0689,17.9752 44.0689,20.5677"/>
+                        <Path x:Name="Path_Arc3" Width="9.38617" Height="9.38803" Canvas.Left="17.358" Canvas.Top="16.4817" Stretch="Fill" Fill="#FF666666" Data="F1 M 26.7441,21.1757C 26.7441,23.7695 24.6445,25.8697 22.0526,25.8697C 19.4589,25.8697 17.358,23.7695 17.358,21.1757C 17.358,18.5833 19.4589,16.4817 22.0526,16.4817C 24.6445,16.4817 26.7441,18.5833 26.7441,21.1757"/>
+                        <Path x:Name="Path_Arc4" Width="41.2272" Height="22.4167" Canvas.Left="0" Canvas.Top="1.16669" Stretch="Fill" Fill="#FF0000FF" Data="F1 M 41.1511,19.112C 40.3808,9.08984 31.9973,1.16669 21.7812,1.16669C 12.3372,1.16669 4.35999,7.84372 2.66785,17.0845L 0,17.0845L 4.08264,23.5833L 8.33331,17.0845L 5.73108,17.0845C 7.36972,9.55466 13.9804,4.16669 21.7812,4.16669C 30.343,4.16669 37.3898,10.746 38.1511,19.112L 20.2812,19.112L 20.2812,22.112L 41.2272,22.112L 41.2272,19.112L 41.1511,19.112 Z "/>
+                        <Path x:Name="Path_Arc_Num1" Width="2.781" Height="6.39" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 34.8566,41.4808L 35.0364,41.4808C 36.2511,41.4808 36.5754,40.8506 36.6028,40.374L 37.6379,40.374L 37.6379,46.764L 36.3776,46.764L 36.3776,42.363L 34.8566,42.363L 34.8566,41.4808 Z " Canvas.Left="19.974" Canvas.Top="17.873"/>
+                        <Path x:Name="Path_Arc_Num2" Width="4.365" Height="6.39" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 3.20953,42.643C 3.20953,40.5641 4.73038,40.3838 5.2981,40.3838C 6.52213,40.3838 7.49341,41.1039 7.49341,42.4C 7.49341,43.4977 6.78247,44.0556 6.16266,44.4789C 5.31641,45.0726 4.87491,45.361 4.73038,45.6579L 7.5025,45.6579L 7.5025,46.7738L 3.13794,46.7738C 3.18219,46.0265 3.2356,45.2438 4.62354,44.236C 5.77466,43.3989 6.23419,43.0746 6.23419,42.3546C 6.23419,41.9313 5.96344,41.4457 5.35147,41.4457C 4.46997,41.4457 4.444,42.1748 4.43359,42.643L 3.20953,42.643 Z " Canvas.Left="37.362" Canvas.Top="17.232"/>
+                    </Canvas>
+                </Viewbox>
+            </RadioButton>
+
+            <RadioButton x:Name="rdbPolygon" Style="{StaticResource STY_promngpn2_TGL}"  Width="49.468" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="2" Margin="5,0,0,0" TabIndex="11" IsChecked="{Binding Path=sUiController.Measurement.SelectedMeasurementItem, Mode=Default, Converter={StaticResource cnvEnumBoolean}, ConverterParameter=Polygon}">
+                <Viewbox x:Name="GroupPolygon" Width="41.1764" Height="41.5287" Canvas.Left="398.745" Canvas.Top="290.236" Margin="3,8,0,0">
+                    <Canvas Width="41.1764" Height="41.5287">
+                        <Path x:Name="Path_Polygon0" Width="35.2931" Height="33" Canvas.Left="3" Canvas.Top="4" Stretch="Fill" StrokeThickness="3" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeLineJoin="Round" Stroke="#FF0000FF" Data="F1 M 6,4 L 17, 2 L 14, 11 L 20, 19 L 2, 18 L 6, 4" />
+                        <Path x:Name="Path_Polygon1" Width="9.38611" Height="9.388" Canvas.Left="8" Canvas.Top="5" Stretch="Fill" Fill="#FF666666" Data="F1 M 9.38602,26.8334C 9.38602,29.4271 7.28574,31.5287 4.69467,31.5287C 2.10095,31.5287 0,29.4271 0,26.8334C 0,24.241 2.10095,22.1407 4.69467,22.1407C 7.28574,22.1407 9.38602,24.241 9.38602,26.8334" />
+                        <Path x:Name="Path_Polygon2" Width="9.38611" Height="9.388" Canvas.Left="26" Canvas.Top="1" Stretch="Fill" Fill="#FF666666" Data="F1 M 17.7071,8.59766C 17.7071,11.1915 15.6068,13.293 13.0156,13.293C 10.4219,13.293 8.32095,11.1915 8.32095,8.59766C 8.32095,6.00525 10.4219,3.90497 13.0156,3.90497C 15.6068,3.90497 17.7071,6.00525 17.7071,8.59766" />
+                        <Path x:Name="Path_Polygon3" Width="9.38611" Height="9.388" Canvas.Left="21" Canvas.Top="17" Stretch="Fill" Fill="#FF666666" Data="F1 M 32.375,20.4024C 32.375,22.9962 30.2747,25.0977 27.6836,25.0977C 25.0899,25.0977 22.9889,22.9962 22.9889,20.4024C 22.9889,17.8099 25.0899,15.7096 27.6836,15.7096C 30.2747,15.7096 32.375,17.8099 32.375,20.4024" />
+                        <Path x:Name="Path_Polygon4" Width="9.38611" Height="9.388" Canvas.Left="31" Canvas.Top="30" Stretch="Fill" Fill="#FF666666" Data="F1 M 41.1764,4.69269C 41.1764,7.28638 39.0761,9.388 36.4851,9.388C 33.8912,9.388 31.7904,7.28638 31.7904,4.69269C 31.7904,2.10028 33.8912,0 36.4851,0C 39.0761,0 41.1764,2.10028 41.1764,4.69269" />
+                        <Path x:Name="Path_Polygon5" Width="9.38611" Height="9.388" Canvas.Left="0" Canvas.Top="28" Stretch="Fill" Fill="#FF666666" Data="F1 M 41.1764,4.69269C 41.1764,7.28638 39.0761,9.388 36.4851,9.388C 33.8912,9.388 31.7904,7.28638 31.7904,4.69269C 31.7904,2.10028 33.8912,0 36.4851,0C 39.0761,0 41.1764,2.10028 41.1764,4.69269" />
+                    </Canvas>
+                </Viewbox>
+            </RadioButton>
+
+            <RadioButton x:Name="rdbMultipoint" Style="{StaticResource STY_promngpn2_TGL}"  Width="49.468" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="3" Margin="5,0,0,0" TabIndex="12" IsChecked="{Binding Path=sUiController.Measurement.SelectedMeasurementItem, Mode=Default, Converter={StaticResource cnvEnumBoolean}, ConverterParameter=Count}">
+                <Viewbox x:Name="GroupMultipoint" Width="40.1479" Height="38.3217" Canvas.Left="465.371" Canvas.Top="405.284" Margin="5,10,0,0">
+                    <Canvas Width="40.1479" Height="38.3217">
+                        <Path x:Name="Path_Multipoint0" Width="10.4324" Height="10.4296" Canvas.Left="29.7155" Canvas.Top="4.73187" Stretch="Fill" Fill="#FF0000FF" Data="F1 M 40.1479,9.94662C 40.1479,12.8269 37.8119,15.1615 34.9304,15.1615C 32.0515,15.1615 29.7155,12.8269 29.7155,9.94662C 29.7155,7.0665 32.0515,4.73187 34.9304,4.73187C 37.8119,4.73187 40.1479,7.0665 40.1479,9.94662"/>
+                        <Path x:Name="Path_Multipoint1" Width="10.4324" Height="10.4297" Canvas.Left="29.7155" Canvas.Top="27.892" Stretch="Fill" Fill="#FF0000FF" Data="F1 M 40.1479,33.1068C 40.1479,35.9871 37.8119,38.3217 34.9304,38.3217C 32.0515,38.3217 29.7155,35.9871 29.7155,33.1068C 29.7155,30.2267 32.0515,27.892 34.9304,27.892C 37.8119,27.892 40.1479,30.2267 40.1479,33.1068"/>
+                        <Path x:Name="Path_Multipoint2" Width="10.429" Height="10.4297" Canvas.Left="0" Canvas.Top="15.4675" Stretch="Fill" Fill="#FF0000FF" Data="F1 M 10.429,20.6824C 10.429,23.5625 8.0957,25.8972 5.21478,25.8972C 2.33334,25.8972 0,23.5625 0,20.6824C 0,17.8021 2.33334,15.4675 5.21478,15.4675C 8.0957,15.4675 10.429,17.8021 10.429,20.6824"/>
+                        <Path x:Name="Path_Multipoint3" Width="10.4291" Height="10.4311" Canvas.Left="5.41534" Canvas.Top="0" Stretch="Fill" Fill="#FF0000FF" Data="F1 M 15.8444,5.21494C 15.8444,8.09637 13.5111,10.4311 10.6314,10.4311C 7.75,10.4311 5.41534,8.09637 5.41534,5.21494C 5.41534,2.33466 7.75,0 10.6314,0C 13.5111,0 15.8444,2.33466 15.8444,5.21494"/>
+                        <Path x:Name="Path_Multipoint4" Width="10.4289" Height="10.4309" Canvas.Left="17.0417" Canvas.Top="16.6537" Stretch="Fill" Fill="#FF0000FF" Data="F1 M 27.4706,21.8685C 27.4706,24.75 25.1373,27.0847 22.2579,27.0847C 19.3762,27.0847 17.0417,24.75 17.0417,21.8685C 17.0417,18.9884 19.3762,16.6537 22.2579,16.6537C 25.1373,16.6537 27.4706,18.9884 27.4706,21.8685"/>
+                    </Canvas>
+                </Viewbox>
+            </RadioButton>
+        </Grid>
+
+        <Grid Margin="356,0,0,0" Visibility="{Binding Path=sUiController.Measurement.MeasurementsSettingVisibility, Mode=Default}" x:Name="grdSubGrid">
+            <Path x:Name="pthSubSettingConditions" Canvas.Left="455.87" Canvas.Top="317.986" Stretch="Fill" Data="F1 M 1181.03,317.986 L 1181.03,971.255C 1181.03,974.201 1178.65,976.589 1175.7,976.589L 461.204,976.589C 458.258,976.589 455.87,974.201 455.87,971.255L 455.87,317.986 L 1181.03,317.986 Z " Margin="4,41,3,0" VerticalAlignment="Stretch" Fill="{StaticResource VerticalSliderThumbHoverBackground}">
+                <Path.Effect>
+                    <DropShadowEffect />
+                </Path.Effect>
+            </Path>
+            <ComboBox Style="{DynamicResource ColorPaletteComboBoxStyle}" IsSynchronizedWithCurrentItem="True" Width="48" x:Name="cmbLineColor" Visibility="Visible" SelectedIndex="{Binding Path=sUiController.Measurement.LineColorIndex, Mode=Default}" MaxDropDownHeight="176" Height="33.091" HorizontalAlignment="Left" Margin="143,0,0,175" VerticalAlignment="Bottom">
+                <ComboBoxItem Margin="0,0,0,0" Width="Auto" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor0" Width="17.0908" Height="17.0909" Canvas.Left="1285.76" Canvas.Top="89.1006" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FFA70000" />
+                </ComboBoxItem>
+                <ComboBoxItem Width="Auto" Height="Auto" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor1" Width="17.0909" Height="17.0908" Canvas.Left="1309.45" Canvas.Top="135.075" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FFD25B00" />
+                </ComboBoxItem>
+                <ComboBoxItem Width="Auto" Height="Auto" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor2" Width="17.0909" Height="17.0909" Canvas.Left="1309.45" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FF007E00" />
+                </ComboBoxItem>
+                <ComboBoxItem Width="Auto" Height="Auto" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor3" Width="17.0909" Height="17.0908" Canvas.Left="1309.45" Canvas.Top="135.075" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FF00287F" />
+                </ComboBoxItem>
+                <ComboBoxItem Width="Auto" Height="Auto" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor4" Width="17.0908" Height="17.0909" Canvas.Left="1333.14" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FF351F83" />
+                </ComboBoxItem>
+                <ComboBoxItem Width="Auto" Height="Auto" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor5" Width="17.0908" Height="17.0909" Canvas.Left="1262.08" Canvas.Top="89.1006" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FF601777" />
+                </ComboBoxItem>
+                <ComboBoxItem Width="Auto" Height="Auto" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor6" Width="17.0908" Height="17.0909" Canvas.Left="1380.51" Canvas.Top="89.1006" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FF000000" />
+                </ComboBoxItem>
+                <ComboBoxItem Width="Auto" Height="Auto" Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor7" Width="17.0908" Height="17.0909" Canvas.Left="1380.51" Canvas.Top="89.1006" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FFFF0000" />
+                </ComboBoxItem>
+                <ComboBoxItem Width="Auto" Height="Auto" Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor8" Width="17.0908" Height="17.0909" Canvas.Left="1380.51" Canvas.Top="89.1006" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FFFF7F00" />
+                </ComboBoxItem>
+                <ComboBoxItem Width="Auto" Height="Auto" Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor9" Width="17.0908" Height="17.0909" Canvas.Left="1380.51" Canvas.Top="89.1006" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FF35DF00" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor10" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FF004E4E" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor11" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FF351FFF" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor12" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FF811788" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor13" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FF474747" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor14" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FFFC4128" />
+                </ComboBoxItem>
+                <!--Third Row-->
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor15" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FFFEC034" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor16" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FFB1FF00" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor17" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FF197362" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor18" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FF1973D9" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor19" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FFFD1FFF" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor20" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FF666666" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor21" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FFFB805F" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor22" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FFFFFF00" />
+                </ComboBoxItem>
+                <!--Fourth Row-->
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor23" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FF99D47F" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor24" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FF00BFAE" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor25" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FF239FD1" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor26" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FFCB7FFF" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor27" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FF999999" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor28" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FFFCC0A7" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor29" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FFFFFFBF" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor30" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FFCCEBB9" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor31" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FF86D9ED" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor32" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FF99D9E8" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor33" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#FFE5BFFF" />
+                </ComboBoxItem>
+                <ComboBoxItem Margin="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle x:Name="Rectangle_LineColor34" Width="17.0908" Height="17.0909" Canvas.Left="1404.2" Canvas.Top="43.1266" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF666666" Fill="#ffffff" />
+                </ComboBoxItem>
+            </ComboBox>
+            <Label Height="25" HorizontalAlignment="Left" Margin="11,50,0,0" x:Name="lblLineColor" Content="LineColor" VerticalAlignment="Top" />
+            <Label Height="25" HorizontalAlignment="Left" Margin="11,79,0,0" x:Name="lblTempLineColor" Content="TempLineColor" VerticalAlignment="Top"/>
+            <Label Height="25" HorizontalAlignment="Left" Margin="11,108,0,0" x:Name="lblPointColor" Content="PointColor" VerticalAlignment="Top"/>
+            <Label Height="25" HorizontalAlignment="Left" Margin="11,137,0,0" x:Name="lblLabelColor" Content="LabelColor" VerticalAlignment="Top"/>
+            <ComboBox Height="33.091" HorizontalAlignment="Left" IsSynchronizedWithCurrentItem="True" Margin="143,0,0,146" MaxDropDownHeight="176" x:Name="cmbTempLineColor" SelectedIndex="{Binding Path=sUiController.Measurement.TempLineColorIndex, Mode=Default}" Style="{DynamicResource ColorPaletteComboBoxStyle}" VerticalAlignment="Bottom" Visibility="Visible" Width="48">
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1285.76" Canvas.Top="89.1006" Fill="#FFA70000" Height="17.0909" Name="Rectangle_TempLineColor0" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1309.45" Canvas.Top="135.075" Fill="#FFD25B00" Height="17.0908" Name="Rectangle_TempLineColor1" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0909" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1309.45" Canvas.Top="43.1266" Fill="#FF007E00" Height="17.0909" Name="Rectangle_TempLineColor2" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0909" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1309.45" Canvas.Top="135.075" Fill="#FF00287F" Height="17.0908" Name="Rectangle_TempLineColor3" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0909" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1333.14" Canvas.Top="43.1266" Fill="#FF351F83" Height="17.0909" Name="Rectangle_TempLineColor4" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1262.08" Canvas.Top="89.1006" Fill="#FF601777" Height="17.0909" Name="Rectangle_TempLineColor5" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1380.51" Canvas.Top="89.1006" Fill="#FF000000" Height="17.0909" Name="Rectangle_TempLineColor6" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1380.51" Canvas.Top="89.1006" Fill="#FFFF0000" Height="17.0909" Name="Rectangle_TempLineColor7" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1380.51" Canvas.Top="89.1006" Fill="#FFFF7F00" Height="17.0909" Name="Rectangle_TempLineColor8" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1380.51" Canvas.Top="89.1006" Fill="#FF35DF00" Height="17.0909" Name="Rectangle_TempLineColor9" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF004E4E" Height="17.0909" Name="Rectangle_TempLineColor10" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF351FFF" Height="17.0909" Name="Rectangle_TempLineColor11" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF811788" Height="17.0909" Name="Rectangle_TempLineColor12" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF474747" Height="17.0909" Name="Rectangle_TempLineColor13" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFC4128" Height="17.0909" Name="Rectangle_TempLineColor14" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFEC034" Height="17.0909" Name="Rectangle_TempLineColor15" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFB1FF00" Height="17.0909" Name="Rectangle_TempLineColor16" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF197362" Height="17.0909" Name="Rectangle_TempLineColor17" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF1973D9" Height="17.0909" Name="Rectangle_TempLineColor18" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFD1FFF" Height="17.0909" Name="Rectangle_TempLineColor19" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF666666" Height="17.0909" Name="Rectangle_TempLineColor20" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFB805F" Height="17.0909" Name="Rectangle_TempLineColor21" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFFFF00" Height="17.0909" Name="Rectangle_TempLineColor22" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF99D47F" Height="17.0909" Name="Rectangle_TempLineColor23" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF00BFAE" Height="17.0909" Name="Rectangle_TempLineColor24" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF239FD1" Height="17.0909" Name="Rectangle_TempLineColor25" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFCB7FFF" Height="17.0909" Name="Rectangle_TempLineColor26" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF999999" Height="17.0909" Name="Rectangle_TempLineColor27" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFCC0A7" Height="17.0909" Name="Rectangle_TempLineColor28" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFFFFBF" Height="17.0909" Name="Rectangle_TempLineColor29" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFCCEBB9" Height="17.0909" Name="Rectangle_TempLineColor30" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF86D9ED" Height="17.0909" Name="Rectangle_TempLineColor31" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF99D9E8" Height="17.0909" Name="Rectangle_TempLineColor32" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFE5BFFF" Height="17.0909" Name="Rectangle_TempLineColor33" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#ffffff" Height="17.0909" Name="Rectangle_TempLineColor34" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+            </ComboBox>
+            <ComboBox Height="33.091" HorizontalAlignment="Left" IsSynchronizedWithCurrentItem="True" Margin="143,0,0,117" MaxDropDownHeight="176" Name="cmbPointColor" SelectedIndex="{Binding Path=sUiController.Measurement.PointColorIndex, Mode=Default}" Style="{DynamicResource ColorPaletteComboBoxStyle}" VerticalAlignment="Bottom" Visibility="Visible" Width="48">
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1285.76" Canvas.Top="89.1006" Fill="#FFA70000" Height="17.0909" Name="Rectangle_PointColor0" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1309.45" Canvas.Top="135.075" Fill="#FFD25B00" Height="17.0908" Name="Rectangle_PointColor1" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0909" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1309.45" Canvas.Top="43.1266" Fill="#FF007E00" Height="17.0909" Name="Rectangle_PointColor2" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0909" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1309.45" Canvas.Top="135.075" Fill="#FF00287F" Height="17.0908" Name="Rectangle_PointColor3" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0909" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1333.14" Canvas.Top="43.1266" Fill="#FF351F83" Height="17.0909" Name="Rectangle_PointColor4" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1262.08" Canvas.Top="89.1006" Fill="#FF601777" Height="17.0909" Name="Rectangle_PointColor5" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1380.51" Canvas.Top="89.1006" Fill="#FF000000" Height="17.0909" Name="Rectangle_PointColor6" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1380.51" Canvas.Top="89.1006" Fill="#FFFF0000" Height="17.0909" Name="Rectangle_PointColor7" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1380.51" Canvas.Top="89.1006" Fill="#FFFF7F00" Height="17.0909" Name="Rectangle_PointColor8" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1380.51" Canvas.Top="89.1006" Fill="#FF35DF00" Height="17.0909" Name="Rectangle_PointColor9" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF004E4E" Height="17.0909" Name="Rectangle_PointColor10" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF351FFF" Height="17.0909" Name="Rectangle_PointColor11" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF811788" Height="17.0909" Name="Rectangle_PointColor12" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF474747" Height="17.0909" Name="Rectangle_PointColor13" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFC4128" Height="17.0909" Name="Rectangle_PointColor14" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFEC034" Height="17.0909" Name="Rectangle_PointColor15" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFB1FF00" Height="17.0909" Name="Rectangle_PointColor16" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF197362" Height="17.0909" Name="Rectangle_PointColor17" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF1973D9" Height="17.0909" Name="Rectangle_PointColor18" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFD1FFF" Height="17.0909" Name="Rectangle_PointColor19" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF666666" Height="17.0909" Name="Rectangle_PointColor20" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFB805F" Height="17.0909" Name="Rectangle_PointColor21" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFFFF00" Height="17.0909" Name="Rectangle_PointColor22" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF99D47F" Height="17.0909" Name="Rectangle_PointColor23" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF00BFAE" Height="17.0909" Name="Rectangle_PointColor24" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF239FD1" Height="17.0909" Name="Rectangle_PointColor25" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFCB7FFF" Height="17.0909" Name="Rectangle_PointColor26" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF999999" Height="17.0909" Name="Rectangle_PointColor27" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFCC0A7" Height="17.0909" Name="Rectangle_PointColor28" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFFFFBF" Height="17.0909" Name="Rectangle_PointColor29" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFCCEBB9" Height="17.0909" Name="Rectangle_PointColor30" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF86D9ED" Height="17.0909" Name="Rectangle_PointColor31" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF99D9E8" Height="17.0909" Name="Rectangle_PointColor32" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFE5BFFF" Height="17.0909" Name="Rectangle_PointColor33" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#ffffff" Height="17.0909" Name="Rectangle_PointColor34" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+            </ComboBox>
+            <ComboBox Height="33.091" HorizontalAlignment="Left" IsSynchronizedWithCurrentItem="True" Margin="143,0,0,88" MaxDropDownHeight="176" Name="cmbLabelColor" SelectedIndex="{Binding Path=sUiController.Measurement.MeasurementsColorIndex, Mode=Default}" Style="{DynamicResource ColorPaletteComboBoxStyle}" VerticalAlignment="Bottom" Visibility="Visible" Width="48">
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1285.76" Canvas.Top="89.1006" Fill="#FFA70000" Height="17.0909" Name="Rectangle_LabelColor0" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1309.45" Canvas.Top="135.075" Fill="#FFD25B00" Height="17.0908" Name="Rectangle_LabelColor1" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0909" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1309.45" Canvas.Top="43.1266" Fill="#FF007E00" Height="17.0909" Name="Rectangle_LabelColor2" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0909" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1309.45" Canvas.Top="135.075" Fill="#FF00287F" Height="17.0908" Name="Rectangle_LabelColor3" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0909" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1333.14" Canvas.Top="43.1266" Fill="#FF351F83" Height="17.0909" Name="Rectangle_LabelColor4" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1262.08" Canvas.Top="89.1006" Fill="#FF601777" Height="17.0909" Name="Rectangle_LabelColor5" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1380.51" Canvas.Top="89.1006" Fill="#FF000000" Height="17.0909" Name="Rectangle_LabelColor6" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1380.51" Canvas.Top="89.1006" Fill="#FFFF0000" Height="17.0909" Name="Rectangle_LabelColor7" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1380.51" Canvas.Top="89.1006" Fill="#FFFF7F00" Height="17.0909" Name="Rectangle_LabelColor8" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1380.51" Canvas.Top="89.1006" Fill="#FF35DF00" Height="17.0909" Name="Rectangle_LabelColor9" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF004E4E" Height="17.0909" Name="Rectangle_LabelColor10" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF351FFF" Height="17.0909" Name="Rectangle_LabelColor11" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF811788" Height="17.0909" Name="Rectangle_LabelColor12" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF474747" Height="17.0909" Name="Rectangle_LabelColor13" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFC4128" Height="17.0909" Name="Rectangle_LabelColor14" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFEC034" Height="17.0909" Name="Rectangle_LabelColor15" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFB1FF00" Height="17.0909" Name="Rectangle_LabelColor16" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF197362" Height="17.0909" Name="Rectangle_LabelColor17" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF1973D9" Height="17.0909" Name="Rectangle_LabelColor18" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFD1FFF" Height="17.0909" Name="Rectangle_LabelColor19" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF666666" Height="17.0909" Name="Rectangle_LabelColor20" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFB805F" Height="17.0909" Name="Rectangle_LabelColor21" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFFFF00" Height="17.0909" Name="Rectangle_LabelColor22" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF99D47F" Height="17.0909" Name="Rectangle_LabelColor23" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF00BFAE" Height="17.0909" Name="Rectangle_LabelColor24" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF239FD1" Height="17.0909" Name="Rectangle_LabelColor25" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFCB7FFF" Height="17.0909" Name="Rectangle_LabelColor26" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF999999" Height="17.0909" Name="Rectangle_LabelColor27" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFCC0A7" Height="17.0909" Name="Rectangle_LabelColor28" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFFFFBF" Height="17.0909" Name="Rectangle_LabelColor29" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFCCEBB9" Height="17.0909" Name="Rectangle_LabelColor30" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF86D9ED" Height="17.0909" Name="Rectangle_LabelColor31" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF99D9E8" Height="17.0909" Name="Rectangle_LabelColor32" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFE5BFFF" Height="17.0909" Name="Rectangle_LabelColor33" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#ffffff" Height="17.0909" Name="Rectangle_LabelColor34" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+            </ComboBox>
+            <ComboBox Height="33.091" HorizontalAlignment="Left" IsSynchronizedWithCurrentItem="True" Margin="143,0,0,12" MaxDropDownHeight="176" Name="cmbLabelBackColor" SelectedIndex="{Binding Path=sUiController.Measurement.MeasurementsBackColorIndex, Mode=Default}" Style="{DynamicResource ColorPaletteComboBoxStyle}" VerticalAlignment="Bottom" Visibility="Visible" Width="48" IsEnabled="{Binding IsChecked, ElementName=lblLabelBackColorVisible}" >
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1285.76" Canvas.Top="89.1006" Fill="#FFA70000" Height="17.0909" Name="Rectangle_LabelBackColor0" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1309.45" Canvas.Top="135.075" Fill="#FFD25B00" Height="17.0908" Name="Rectangle_LabelBackColor1" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0909" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1309.45" Canvas.Top="43.1266" Fill="#FF007E00" Height="17.0909" Name="Rectangle_LabelBackColor2" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0909" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1309.45" Canvas.Top="135.075" Fill="#FF00287F" Height="17.0908" Name="Rectangle_LabelBackColor3" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0909" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1333.14" Canvas.Top="43.1266" Fill="#FF351F83" Height="17.0909" Name="Rectangle_LabelBackColor4" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1262.08" Canvas.Top="89.1006" Fill="#FF601777" Height="17.0909" Name="Rectangle_LabelBackColor5" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1380.51" Canvas.Top="89.1006" Fill="#FF000000" Height="17.0909" Name="Rectangle_LabelBackColor6" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1380.51" Canvas.Top="89.1006" Fill="#FFFF0000" Height="17.0909" Name="Rectangle_LabelBackColor7" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1380.51" Canvas.Top="89.1006" Fill="#FFFF7F00" Height="17.0909" Name="Rectangle_LabelBackColor8" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem Height="Auto" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Width="Auto">
+                    <Rectangle Canvas.Left="1380.51" Canvas.Top="89.1006" Fill="#FF35DF00" Height="17.0909" Name="Rectangle_LabelBackColor9" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF004E4E" Height="17.0909" Name="Rectangle_LabelBackColor10" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF351FFF" Height="17.0909" Name="Rectangle_LabelBackColor11" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF811788" Height="17.0909" Name="Rectangle_LabelBackColor12" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF474747" Height="17.0909" Name="Rectangle_LabelBackColor13" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFC4128" Height="17.0909" Name="Rectangle_LabelBackColor14" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFEC034" Height="17.0909" Name="Rectangle_LabelBackColor15" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFB1FF00" Height="17.0909" Name="Rectangle_LabelBackColor16" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF197362" Height="17.0909" Name="Rectangle_LabelBackColor17" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF1973D9" Height="17.0909" Name="Rectangle_LabelBackColor18" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFD1FFF" Height="17.0909" Name="Rectangle_LabelBackColor19" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF666666" Height="17.0909" Name="Rectangle_LabelBackColor20" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFB805F" Height="17.0909" Name="Rectangle_LabelBackColor21" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFFFF00" Height="17.0909" Name="Rectangle_LabelBackColor22" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF99D47F" Height="17.0909" Name="Rectangle_LabelBackColor23" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF00BFAE" Height="17.0909" Name="Rectangle_LabelBackColor24" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF239FD1" Height="17.0909" Name="Rectangle_LabelBackColor25" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFCB7FFF" Height="17.0909" Name="Rectangle_LabelBackColor26" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF999999" Height="17.0909" Name="Rectangle_LabelBackColor27" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFCC0A7" Height="17.0909" Name="Rectangle_LabelBackColor28" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFFFFFBF" Height="17.0909" Name="Rectangle_LabelBackColor29" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFCCEBB9" Height="17.0909" Name="Rectangle_LabelBackColor30" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF86D9ED" Height="17.0909" Name="Rectangle_LabelBackColor31" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FF99D9E8" Height="17.0909" Name="Rectangle_LabelBackColor32" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#FFE5BFFF" Height="17.0909" Name="Rectangle_LabelBackColor33" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top">
+                    <Rectangle Canvas.Left="1404.2" Canvas.Top="43.1266" Fill="#ffffff" Height="17.0909" Name="Rectangle_LabelBackColor34" Stretch="Fill" Stroke="#FF666666" StrokeMiterLimit="2.75" Width="17.0908" />
+                </ComboBoxItem>
+            </ComboBox>
+            <CheckBox HorizontalAlignment="Left" Margin="15,195,0,0" x:Name="lblLabelBackColorVisible" Content="LabelBackColorVisible" VerticalAlignment="Top" IsChecked="{Binding Path=sUiController.Measurement.MeasurementsBackColorVisible, Mode=Default}" />
+            <Label Height="25" HorizontalAlignment="Left" Margin="11,165,0,0" x:Name="lblLabelLocation" Content="LabelLocation" VerticalAlignment="Top"/>
+            <ComboBox Style="{DynamicResource ComboBoxStyle}" Width="89" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="103,168,0,0" SelectedIndex="{Binding Path=sUiController.Measurement.MeasurementsPosition, Mode=Default, Converter={StaticResource cnvEnumInt32 }}" ItemsSource="{Binding Path=sUiController.Measurement.MeasurementsPositionList, Mode=Default}" x:Name="cmbLabelLocation" />
+            <Label Height="25" HorizontalAlignment="Left" Margin="27,213,0,0" x:Name="lblLabelBackColor" Content="LabelBackColor" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=lblLabelBackColorVisible}" />
+            <Grid Height="40" VerticalAlignment="Top"  x:Name="grdSubHeaderCondition">
+                <Path x:Name="pthSubHeaderCondition" Canvas.Left="551.403" Canvas.Top="127.965" Margin="4,0,3,0" Stretch="Fill" StrokeLineJoin="Round" Stroke="#CDFFFFFF" Data="F1 M 555.903,128.465L 1091.78,128.465C 1093.99,128.465 1095.78,130.256 1095.78,132.465L 1095.78,164.489L 551.903,164.489L 551.903,132.465C 551.903,130.256 553.694,128.465 555.903,128.465 Z ">
+                    <Path.Fill>
+                        <Custom:LinearGradientBrush StartPoint="0.58864,9.15936" EndPoint="0.58864,-8.15937">
+                            <Custom:GradientStop Color="#CDEFFCFF" Offset="0.40678"/>
+                            <Custom:GradientStop Color="#CD192C34" Offset="0.495763"/>
+                            <Custom:GradientStop Color="#CDE9F9FF" Offset="0.584746"/>
+                        </Custom:LinearGradientBrush>
+                    </Path.Fill>
+                    <Path.Effect>
+                        <DropShadowEffect BlurRadius="12" Direction="315" />
+                    </Path.Effect>
+                </Path>
+                <Label x:Name="Label_LiveSetting" Content="Setting" BorderThickness="20,0,0,0" Margin="4,0,3,0" FontSize="22" FontWeight="Bold" Foreground="#FFFFFFFF"/>
+            </Grid>
+            <Grid Panel.ZIndex="100" Background="#000000" Opacity="0.5" Visibility="{Binding Path=sUiController.Measurement.LiveMeasurementSettingDialogWindowShield, Mode=Default}"/>
+        </Grid>
+        <Button Command="{Binding sUiController.Measurement.MeasurementDialogCloseHandler, Mode=Default}" IsEnabled="{Binding sUiController.Acquisition.IsStitchingAreaSettings, Mode=Default}" Style="{DynamicResource HeaderButtonStyle}" Width="29" Height="21.2" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,206,0" d:LayoutOverrides="GridBox" >
+            <Canvas Height="12.607" Width="12">
+                <Path x:Name="Path_154" Width="12.608" Height="12.607" Stretch="Fill" Fill="#FF181919" Data="F1 M 1909.65,6.81262L 1908.01,5.17468L 1903.35,9.84106L 1898.68,5.17468L 1897.04,6.81238L 1901.71,11.4791L 1897.04,16.1443L 1898.68,17.782L 1903.35,13.1166L 1908.01,17.7815L 1909.65,16.1443L 1904.98,11.4791L 1909.65,6.81262 Z " Canvas.Left="0.7" Canvas.Top="0.7">
+                    <Path.Effect>
+                        <BlurEffect Radius="0"/>
+                    </Path.Effect>
+                </Path>
+                <Path x:Name="Path_156" Width="12.608" Height="12.607" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 1908.9,6.06262L 1907.26,4.42468L 1902.6,9.09106L 1897.93,4.42468L 1896.29,6.06238L 1900.96,10.7291L 1896.29,15.3943L 1897.93,17.032L 1902.6,12.3666L 1907.26,17.0315L 1908.9,15.3943L 1904.23,10.7291L 1908.9,6.06262 Z " Canvas.Left="0" Canvas.Top="0"/>
+            </Canvas>
+        </Button>
+        <Expander HorizontalAlignment="Right" Margin="0,0,192,170" VerticalAlignment="Bottom" ExpandDirection="Right" Name="expSettingPage" Height="32" Width="60" Style="{StaticResource ExpanderDetailStyle}" Collapsed="expSettingPage_Collapsed" Expanded="expSettingPage_Expanded">
+            <Expander.Effect>
+                <DropShadowEffect BlurRadius="12" Direction="315" />
+            </Expander.Effect>
+        </Expander>
+        <Grid HorizontalAlignment="Left" Width="357" Height="252" Panel.ZIndex="100" Background="#000000" Opacity="0.5" Visibility="{Binding Path=sUiController.Measurement.LiveMeasurementSettingDialogWindowShield, Mode=Default}"/>
+    </Grid>
+</Window>

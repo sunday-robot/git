@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="300.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.tabpane.fxml.TabPaneSample2Controller">
+   <children>
+      <VBox>
+         <children>
+            <TabPane tabClosingPolicy="UNAVAILABLE">
+               <tabs>
+                  <Tab text="%donmonoTabName">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0">
+                           <children>
+                              <ListView fx:id="donmonoListView" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="%noodleTabName">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0">
+                           <children>
+                              <ListView fx:id="noodleListView" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+            <Label text="Label" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,485 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:utility="clr-namespace:Olympus.LI.Triumph.Application.View.Utility"
+    xmlns:CustomControl="clr-namespace:Olympus.LI.Triumph.Application.View.CustomControl"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="d"
+ 	x:Class="Olympus.LI.Triumph.Application.View.UiDetailSettingPage"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight" HorizontalAlignment="Center" VerticalAlignment="Top">
+    
+    <Page.Resources>
+        <utility:EnumBooleanConverter x:Key="cnvEnumBoolean"/>
+        <utility:EnumInt32Converter x:Key="cnvEnumInt32"/>
+        <utility:EnumlistBooleanConverter x:Key="cnvEnumlistBoolean"/>
+		<utility:EnumBoooleanConverterForToggle x:Key="cnvEnumBooleanToggle"/>
+    </Page.Resources>
+
+    <Grid Stylus.IsPressAndHoldEnabled="False">
+        <Grid x:Name="grdZPosiotionSettingPage" Background="{DynamicResource AcquisitionNormalBackgroundBrush}" Visibility="{Binding sUiController.DetailSetting.SettingZPositionSettingPageVisibility, Mode=Default}">
+			<StackPanel x:Name="stpZPosiotionSettingPage" Width="345" VerticalAlignment="Top" Margin="3,0,0,0">
+                <Label x:Name="lblZPosiotionSettingTitle" HorizontalAlignment="Left" Foreground="White" FontSize="16"/>
+                <Expander x:Name="expAFPage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingAFPageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingAFPageVisibility, Mode=Default}" Margin="0,5,0,0">
+					<GroupBox x:Name="grbAF" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="120">
+						<Grid Margin="0,5,0,0" IsEnabled="{Binding Path=sUiController.Focus.AFRoiSettingEnable, Mode=Default}">
+                            <ToggleButton Width="100" x:Name="lblRoiAdj" IsChecked="{Binding sUiController.Focus.AFRoiSwitch, Mode=Default}" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource ToggleButtonStyle}" Margin="10,0,0,0" Height="32"/>
+                            <Button Width="100" x:Name="lblBtnDefault" IsEnabled="{Binding sUiController.Focus.AFRoiSwitch, Mode=Default}" Command="{Binding sUiController.Focus.AFRoiDefaultSetHandler, Mode=Default}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0" Style="{DynamicResource NormalButtonStyle}" Height="32"/>
+                            <ToggleButton Width="100" x:Name="lblRoiDisp" IsChecked="{Binding sUiController.Focus.AFRoiDisplaySettingEnable, Mode=Default}" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource ToggleButtonStyle}" Margin="10,45,0,0" Height="32"/>
+                        </Grid>
+					</GroupBox>
+				</Expander>
+                <Expander x:Name="expZPositionRegistPage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Margin="0,5,0,0" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingZPositionRegistPageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingZPositionRegistPageVisibility, Mode=Default}">
+					<GroupBox x:Name="grbZPositionRegist" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="100">
+						<Grid d:LayoutOverrides="Height">
+                            <CheckBox x:Name="lblCheckBoxZposAct" Margin="5,7,0,0" Height="18" Foreground="#FFFFFFFF" IsChecked="{Binding sUiController.Focus.ZHomePosEnable, Mode=Default}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <Label Content="{Binding sUiController.Focus.ZHomePos, Mode=Default}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,34,263,0" Foreground="White" />
+                            <Label x:Name="lblZPositionUnit" Content="{Binding Path=sUiController.Layout.CommonUnit, Mode=Default}" Foreground="#FFFFFFFF" VerticalAlignment="Top" Margin="55,33,0,0" HorizontalAlignment="Left" />
+                            <Button x:Name="lblBtnZposRegist" Command="{Binding sUiController.Focus.ZHomePosSetHandler, Mode=Default}" Style="{DynamicResource NormalButtonStyle}" VerticalAlignment="Top" Width="100" Height="32" Margin="150,33,0,0"  HorizontalAlignment="Left"/>
+						</Grid>
+					</GroupBox>
+				</Expander>
+                <Expander x:Name="expLowerLimitRegistPage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Margin="0,5,0,0" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingLowerLimitRegistPageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingLowerLimitRegistPageVisibility, Mode=Default}">
+					<GroupBox x:Name="grbLowerLimitRegist" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="100">
+						<Grid>
+							<CheckBox x:Name="lblCheckBoxLimitAct" Margin="5,7,0,0" Height="18" Foreground="#FFFFFFFF" IsChecked="{Binding sUiController.Focus.ZNearSampleLimitSwitch, Mode=Default}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <Label x:Name="lblLimitAlerm" Margin="220,7,0,0" Visibility="{Binding sUiController.Focus.ZNearSampleLimitWarningVisible, Mode=Default}" Foreground="#FFFFFFFF" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+							<Label Content="{Binding sUiController.Focus.ZNearSampleLimitPos, Mode=Default}"  Foreground="#FFFFFFFF" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,34,263,0"/>
+                            <Label x:Name="lblZPositionLimitUnit" Content="{Binding Path=sUiController.Layout.CommonUnit, Mode=Default}" Foreground="#FFFFFFFF" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="55,33,0,0" />
+							<Button x:Name="lblBtnLowLmtregist" VerticalAlignment="Top" Command="{Binding sUiController.Focus.ZNearSampleLimitPosSetHandler, Mode=Default}" Style="{DynamicResource NormalButtonStyle}" Width="100" Height="32" Margin="150,33,0,0" HorizontalAlignment="Left"/>
+						</Grid>
+					</GroupBox>
+				</Expander>
+			</StackPanel>
+		</Grid>
+        <Grid x:Name="grdObservationSettingPage" Background="{DynamicResource AcquisitionNormalBackgroundBrush}" Visibility="{Binding sUiController.DetailSetting.SettingObservationSettingPageVisibility, Mode=Default}">
+			<StackPanel x:Name="stpObservationSettingPage" Width="345" VerticalAlignment="Top" Margin="3,0,0,0">
+                <Label x:Name="lblObservationSettingTitle" HorizontalAlignment="Left" Foreground="White" FontSize="16" Background="{x:Null}"/>
+                <Expander x:Name="expBlurCorrectionPage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingBlurCorrectionPageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingBlurCorrectionPageVisibility, Mode=Default}" Margin="0,5,0,0">
+					<GroupBox x:Name="grbBlurCorrection" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="65">
+						<Grid>
+							<CheckBox IsChecked="{Binding sUiController.Observation.BlurCorrectionOperation, Mode=Default}" Height="18" HorizontalAlignment="Left" Margin="5,3,0,0" x:Name="checkBox1" VerticalAlignment="Top" Width="17" />
+							<Label Height="25" HorizontalAlignment="Left" Margin="25,-2,0,0" x:Name="label1" VerticalAlignment="Top" FontSize="13.333" Foreground="White" Padding="5,5,5,0" />
+						</Grid>
+					</GroupBox>
+				</Expander>
+                <Expander x:Name="expASPage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Margin="0,5,0,0" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingASPageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingASPageVisibility, Mode=Default}">
+                    <GroupBox x:Name="grbAS" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="70">
+                        <Grid IsEnabled="{Binding Path=sUiController.Microscope.ApertureStopEnable, Mode=Default}">
+                            <ToggleButton x:Name="lblToggleBtnAS" IsChecked="{Binding sUiController.Microscope.ApertureStopState, ConverterParameter=IN, Converter={StaticResource cnvEnumBooleanToggle}, Mode=Default}" Height="32" Width="100" Margin="0,3,0,0" Style="{DynamicResource ToggleButtonStyle}" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        </Grid>
+                    </GroupBox>
+                </Expander>
+                <Expander x:Name="expAEPage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Margin="0,5,0,0" FontSize="13.333" IsEnabled="{Binding sUiController.DetailSetting.SettingAESettingPageIsExpanded, Mode=Default}"  IsExpanded="{Binding sUiController.DetailSetting.SettingAEPageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingAEPageVisibility, Mode=Default}">
+					<GroupBox x:Name="grbAE" BorderThickness="0.5" Foreground="White" Width="335" Height="145" VerticalAlignment="Top">
+						<Grid Margin="0,5,0,0">
+							<Label x:Name="lblAETarget" Content="Target" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Foreground="White" Margin="0,2,0,0"/>
+							<Label Content="{Binding sUiController.Exposure.AETarget, Mode=Default}" HorizontalAlignment="Left" Foreground="#FFFFFFFF" VerticalAlignment="Top" Margin="80,2,0,0"/>
+                            <Slider VerticalAlignment="Top" Maximum="{Binding sUiController.Exposure.AETargetMaximum, Mode=Default}" SmallChange="1" Minimum="{Binding sUiController.Exposure.AETargetMinimum, Mode=Default}" Value="{Binding sUiController.Exposure.AETarget, Mode=Default}" IsEnabled="{Binding sUiController.Exposure.AutoExposureEnable, Mode=Default}" Width="200" Style="{DynamicResource SliderStyle}" Margin="0" IsSnapToTickEnabled="True" HorizontalAlignment="Right" LargeChange="10"/>
+                            <GroupBox x:Name="grbAERange" BorderThickness="0.5" Foreground="White" Width="320" Height="70" VerticalAlignment="Bottom" Margin="0,0,0,5" Header="範囲設定">
+                            	<Grid>
+                            		<ToggleButton x:Name="lblTglBtnAE" Width="100" Height="32" IsChecked="{Binding sUiController.Exposure.AERoiSwitch, Mode=Default}" IsEnabled="{Binding sUiController.Exposure.AEAreaAdjustmentEnable, Mode=Default}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30,2,0,0" Style="{DynamicResource ToggleButtonStyle}"/>
+                                    <Button x:Name="lblBtnIniAE" Width="100" Height="32" IsEnabled="{Binding sUiController.Exposure.AEAreaDefaultEnable, Mode=Default}" Command="{Binding sUiController.Exposure.AERoiDefaultSetHandler, Mode=Default}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,2,30,0" Style="{DynamicResource NormalButtonStyle}"/>
+                            	</Grid>
+                            </GroupBox>
+						</Grid>
+					</GroupBox>
+				</Expander>
+                <Expander x:Name="expAspectPage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Margin="0,5,0,0" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingAspectPageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingAspectPageVisibility, Mode=Default}">
+					<GroupBox x:Name="grbAspect" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="65">
+                        <Grid Height="28" Margin="0" IsEnabled="{Binding Path=sUiController.Observation.ObservationAspectRatioIsEnable, Mode=Default}" HorizontalAlignment="Left">
+							<RadioButton x:Name="lblRBtnAspect1to1" HorizontalAlignment="Left" Margin="5,0,0,0" Width="74" Height="18" Content="1:1" Foreground="#FFFFFFFF" IsChecked="{Binding sUiController.Observation.ObservationAspectRatio, ConverterParameter=AspectRatioNormal, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" Style="{DynamicResource RadioButtonStyle}" />
+                            <RadioButton x:Name="lblRBtnAspect4to3" HorizontalAlignment="Left" Margin="100,0,0,0" Width="74" Height="18" Content="4:3" Foreground="#FFFFFFFF" IsChecked="{Binding sUiController.Observation.ObservationAspectRatio, ConverterParameter=AspectRatioWide, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" Style="{DynamicResource RadioButtonStyle}" />                                
+						</Grid>
+					</GroupBox>
+				</Expander>
+                <Expander x:Name="expBinningPage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Margin="0,5,0,0" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingBinningPageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingBinningPageVisibility, Mode=Default}">
+					<GroupBox x:Name="grbBinning" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="65">
+		        		<ComboBox VerticalAlignment="Stretch" IsSynchronizedWithCurrentItem="True" SelectedIndex="{Binding sUiController.Observation.LiveBinningMode, Mode=Default}" Width="180" Height="30" Style="{DynamicResource ComboBoxStyle}">
+		        			<ComboBoxItem x:Name="lblCombBoxOFF" Content="OFF"/>
+                            <ComboBoxItem x:Name="lblCombBox2x2" Content="2x2"/>
+		        		</ComboBox>
+		        	</GroupBox>
+				</Expander>
+                <Expander x:Name="expMonochromeModePage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Margin="0,5,0,0" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingMonochromeModePageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingMonochromeModePageVisibility, Mode=Default}">
+                    <GroupBox x:Name="grbMonochromeMode" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="70">
+                        <ToggleButton x:Name="lblToggleBtnMonochromeMode" IsChecked="{Binding Path=sUiController.ImageProcess.MonochromeModeEnable, Mode=Default}" Height="32" Width="100" Style="{DynamicResource ToggleButtonStyle}" IsEnabled="{Binding sUiController.ImageProcess.MonochromeModeStateEnable, Mode=Default}" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,2,0,0"/>
+                    </GroupBox>
+                </Expander>
+            </StackPanel>
+		</Grid>
+        <Grid
+            x:Name="grdMagnificationSettingPage" Background="{DynamicResource AcquisitionNormalBackgroundBrush}"
+            Visibility="{Binding sUiController.DetailSetting.SettingMagnificationSettingPageVisibility, Mode=Default}">
+            <StackPanel x:Name="stpMagnificationSettingPage" Width="345" VerticalAlignment="Top" Margin="3,0,0,0">
+                <Label x:Name="lblMagnificationSettingTitle" HorizontalAlignment="Left" Foreground="White" FontSize="16" Background="{x:Null}"/>
+                <Expander
+                    x:Name="expMagnificationModeSettingPage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" FontSize="13.333"
+                    Visibility="{Binding sUiController.DetailSetting.SettingMagnificationModeSettingPageVisibility, Mode=Default}"
+                    IsExpanded="{Binding sUiController.DetailSetting.SettingMagnificationModeSettingPageIsExpanded, Mode=Default}" Margin="0,5,0,0">
+                    <GroupBox x:Name="grbMagnificationModeSetting" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top">
+                        <StackPanel VerticalAlignment="Top" Margin="0,5,0,0" >
+                            <RadioButton
+                                x:Name="rbtnZoomMagnificationMode" HorizontalAlignment="Left" Margin="5,5,0,0" Height="21" Foreground="#FFFFFFFF"
+                                IsChecked="{Binding sUiController.Magnification.MagnificationSpecifyMode, ConverterParameter=Zoom, Converter={StaticResource cnvEnumBoolean}, Mode=Default}"
+                                Style="{DynamicResource RadioButtonStyle}"/>
+                            <RadioButton
+                                x:Name="rbtnTotalMagnificationMode" HorizontalAlignment="Left" Margin="5,5,0,0" Height="21" Foreground="#FFFFFFFF"
+                                IsChecked="{Binding sUiController.Magnification.MagnificationSpecifyMode, ConverterParameter=Overall, Converter={StaticResource cnvEnumBoolean}, Mode=Default}"
+                                Style="{DynamicResource RadioButtonStyle}"/>
+                        </StackPanel>
+                    </GroupBox>
+                </Expander>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="grdImageRevisionSettingPage" Background="{DynamicResource AcquisitionNormalBackgroundBrush}" Visibility="{Binding sUiController.DetailSetting.SettingImageRevisionSettingPageVisibility, Mode=Default}">
+			<StackPanel x:Name="stpImageRevisionSettingPage" Width="345" VerticalAlignment="Top" Margin="3,0,0,0">
+                <Label x:Name="lblImageRevisionSettingTitle" HorizontalAlignment="Left" Foreground="White" FontSize="16" Background="{x:Null}" Margin="-3,0,0,0"/>
+                <Expander x:Name="expHDRPage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingHDRPageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingHDRPageVisibility, Mode=Default}" Margin="0,5,0,0">
+		        	<GroupBox Width="335" Height="280" VerticalAlignment="Top" Margin="0,5,0,0" Foreground="White" BorderThickness="0.5" x:Name="grbHDR">
+		        		<StackPanel Margin="5,0,0,0">
+		        			<Grid x:Name="grdHDRAutoTuning" Height="37" VerticalAlignment="Top" Margin="0,8,0,0">
+                                <CheckBox Content="マニュアル設定を固定する" IsChecked="{Binding sUiController.ImageProcess.HdrParamLock, Mode=Default}" Width="300" Height="25" VerticalAlignment="Top" Margin="8,0,0,0" FontSize="13" x:Name="tglbHDRParamLock" HorizontalAlignment="Left" d:LayoutOverrides="Width" Foreground="#FFFFFFFF" IsEnabled="{Binding Path=sUiController.ImageProcess.HdrParamLockEnable, Mode=Default}"/>
+                            </Grid>
+		        			<Grid x:Name="grdHDRBrightness" Height="37" VerticalAlignment="Top" IsEnabled="{Binding sUiController.ImageProcess.HdrParamEnable, Mode=Default}" Margin="0,6,0,0">
+                                <Label x:Name="lblHDRBrightness" FontSize="12" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" />
+		        				<Label Content="{Binding sUiController.ImageProcess.HdrBrightness, Mode=Default}" HorizontalAlignment="Left" Foreground="#FFFFFFFF" x:Name="lblHDRBrightnessValue" Margin="98,0,0,0" VerticalAlignment="Center" />
+                                <Slider Style="{DynamicResource SliderStyle}" Maximum="{Binding sUiController.ImageProcess.HdrBrightnessMaximum, Mode=Default}" SmallChange="1" Minimum="{Binding sUiController.ImageProcess.HdrBrightnessMinimum, Mode=Default}" Value="{Binding sUiController.ImageProcess.HdrBrightness, Mode=Default}" x:Name="sldHDRBrightness" HorizontalAlignment="Right" VerticalAlignment="Center" Width="172" Margin="0,0,8,0" IsSnapToTickEnabled="True" LargeChange="10"/>
+		        			</Grid>
+                            <Grid x:Name="grdHDRTexture" Height="37" VerticalAlignment="Top" IsEnabled="{Binding sUiController.ImageProcess.HdrParamEnable, Mode=Default}" Margin="0,10,0,0">
+		        				<Label x:Name="lblHDRTexture" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontSize="12" />
+		        				<Label Content="{Binding sUiController.ImageProcess.HdrTexture, Mode=Default}" HorizontalAlignment="Left" Foreground="#FFFFFFFF" x:Name="lblHDRTextureValue" VerticalAlignment="Center" Margin="98,0,0,0" />
+                                <Slider Style="{DynamicResource SliderStyle}" VerticalAlignment="Center" Maximum="{Binding sUiController.ImageProcess.HdrTextureMaximum, Mode=Default}" SmallChange="1" Minimum="{Binding sUiController.ImageProcess.HdrTextureMinimum, Mode=Default}" Value="{Binding sUiController.ImageProcess.HdrTexture, Mode=Default}" x:Name="sldHDRTexture" HorizontalAlignment="Right" Width="172" Margin="0,0,8,0" IsSnapToTickEnabled="True" LargeChange="10"/>
+		        			</Grid>
+                            <Grid x:Name="grdHDRContrast" Height="37" VerticalAlignment="Top" IsEnabled="{Binding sUiController.ImageProcess.HdrParamEnable, Mode=Default}" Margin="0,10,0,0">
+		        				<Label x:Name="lblHDRContrast" FontSize="12" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" />
+		        				<Label Content="{Binding sUiController.ImageProcess.HdrContrast, Mode=Default}" HorizontalAlignment="Left" Foreground="#FFFFFFFF" x:Name="lblHDRContrastValue" VerticalAlignment="Center" Margin="98,0,0,0" />
+                                <Slider Style="{DynamicResource SliderStyle}" Margin="0,0,8,0" VerticalAlignment="Center" Maximum="{Binding sUiController.ImageProcess.HdrContrastMaximum, Mode=Default}" SmallChange="1" Minimum="{Binding sUiController.ImageProcess.HdrContrastMinimum, Mode=Default}" Value="{Binding sUiController.ImageProcess.HdrContrast, Mode=Default}" x:Name="sldHDRContrast" Width="172" HorizontalAlignment="Right" IsSnapToTickEnabled="True" LargeChange="10"/>
+		        			</Grid>
+		        			<Grid x:Name="grdHDRChrome" Height="37" VerticalAlignment="Top" IsEnabled="{Binding sUiController.ImageProcess.HdrParamEnable, Mode=Default}" Margin="0,10,0,0">
+                                <Label x:Name="lblHDRChrome" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" Foreground="White" />
+		        				<Label Content="{Binding sUiController.ImageProcess.HdrChrome, Mode=Default}" HorizontalAlignment="Left" Foreground="#FFFFFFFF" x:Name="lblHDRChromeValue" VerticalAlignment="Center" Margin="98,0,0,0" />
+                                <Slider Style="{DynamicResource SliderStyle}" VerticalAlignment="Center" Maximum="{Binding sUiController.ImageProcess.HdrChromeMaximum, Mode=Default}" SmallChange="1" Minimum="{Binding sUiController.ImageProcess.HdrChromeMinimum, Mode=Default}" Value="{Binding sUiController.ImageProcess.HdrChrome, Mode=Default}" x:Name="sldHDRChrome" Width="172" HorizontalAlignment="Right" Margin="0,0,8,0" IsSnapToTickEnabled="True" LargeChange="10"/>
+		        			</Grid>
+		        		</StackPanel>
+		        	</GroupBox>
+				</Expander>
+                <Expander x:Name="expContrastPage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Margin="0,5,0,0" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingContrastPageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingContrastPageVisibility, Mode=Default}">
+					<GroupBox x:Name="grbContrast" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="65">
+						<Grid Height="35" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <RadioButton Style="{StaticResource RadioButtonStyle}" x:Name="lblRadioBtnL" Foreground="White" IsChecked="{Binding sUiController.ImageProcess.ContrastEmphasisMode, ConverterParameter=Low, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" IsEnabled="{Binding sUiController.ImageProcess.ContrastEmphasisEnable, Mode=Default}" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                            <RadioButton Style="{StaticResource RadioButtonStyle}" x:Name="lblRadioBtnM" Foreground="White" IsChecked="{Binding sUiController.ImageProcess.ContrastEmphasisMode, ConverterParameter=Normal, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" IsEnabled="{Binding sUiController.ImageProcess.ContrastEmphasisEnable, Mode=Default}" Margin="105,-1,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                            <RadioButton Style="{StaticResource RadioButtonStyle}" x:Name="lblRadioBtnH" Foreground="White" IsChecked="{Binding sUiController.ImageProcess.ContrastEmphasisMode, ConverterParameter=High, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" IsEnabled="{Binding sUiController.ImageProcess.ContrastEmphasisEnable, Mode=Default}" Margin="215,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+						</Grid>
+					</GroupBox>
+				</Expander>
+                <Expander x:Name="expAntiHalationStandardPage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Margin="0,5,0,0" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingAntiHalationStandardPageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingAntiHalationStandardPageVisibility, Mode=Default}">
+					<GroupBox x:Name="grbAntiHalationStandard" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="280">
+						<StackPanel Margin="5,0,0,0">
+                            <Grid x:Name="grdHDRAntiHalationAutoTuning" Height="37" VerticalAlignment="Top" Margin="0,8,0,0">
+                                <CheckBox Content="マニュアル設定を固定する" IsChecked="{Binding sUiController.ImageProcess.HdrAntiHalationParamLock, Mode=Default}" Width="300" Height="25" VerticalAlignment="Top" Margin="8,0,0,0" FontSize="13" x:Name="tglbHDRAntiHalationParamLock" HorizontalAlignment="Left" d:LayoutOverrides="Width" Foreground="#FFFFFFFF" IsEnabled="{Binding Path=sUiController.ImageProcess.HdrAntiHalationParamLockEnable, Mode=Default}"/>
+                            </Grid>
+                            <Grid x:Name="grdHDRAntiHalationBrightness" Height="37" VerticalAlignment="Top" IsEnabled="{Binding sUiController.ImageProcess.HdrAntiHalationParamEnable, Mode=Default}" Margin="0,6,0,0">
+                                <Label x:Name="lblHDRAntiHalationBrightness" FontSize="12" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                <Label Content="{Binding sUiController.ImageProcess.HdrAntiHalationBrightness, Mode=Default}" HorizontalAlignment="Left" Foreground="#FFFFFFFF" x:Name="lblHDRAntiHalationBrightnessValue" Margin="98,0,0,0" VerticalAlignment="Center" />
+                                <Slider Style="{DynamicResource SliderStyle}" Maximum="{Binding sUiController.ImageProcess.HdrBrightnessMaximum, Mode=Default}" SmallChange="1" Minimum="{Binding sUiController.ImageProcess.HdrBrightnessMinimum, Mode=Default}" Value="{Binding sUiController.ImageProcess.HdrAntiHalationBrightness, Mode=Default}" x:Name="sldHDRAntiHalationBrightness" HorizontalAlignment="Right" VerticalAlignment="Center" Width="172" Margin="0,0,8,0" IsSnapToTickEnabled="True" LargeChange="10"/>
+							</Grid>
+                            <Grid x:Name="grdHDRAntiHalationTexture" Height="37" VerticalAlignment="Top" IsEnabled="{Binding sUiController.ImageProcess.HdrAntiHalationParamEnable, Mode=Default}" Margin="0,10,0,0">
+                                <Label x:Name="lblHDRAntiHalationTexture" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontSize="12" />
+                                <Label Content="{Binding sUiController.ImageProcess.HdrAntiHalationTexture, Mode=Default}" HorizontalAlignment="Left" Foreground="#FFFFFFFF" x:Name="lblHDRAntiHalationTextureValue" VerticalAlignment="Center" Margin="98,0,0,0" />
+                                <Slider Style="{DynamicResource SliderStyle}" VerticalAlignment="Center" Maximum="{Binding sUiController.ImageProcess.HdrTextureMaximum, Mode=Default}" SmallChange="1" Minimum="{Binding sUiController.ImageProcess.HdrTextureMinimum, Mode=Default}" Value="{Binding sUiController.ImageProcess.HdrAntiHalationTexture, Mode=Default}" x:Name="sldHDRAntiHalationTexture" HorizontalAlignment="Right" Width="172" Margin="0,0,8,0" IsSnapToTickEnabled="True" LargeChange="10"/>
+							</Grid>
+                            <Grid x:Name="grdHDRAntiHalationContrast" Height="37" VerticalAlignment="Top" IsEnabled="{Binding sUiController.ImageProcess.HdrAntiHalationParamEnable, Mode=Default}" Margin="0,10,0,0">
+                                <Label x:Name="lblHDRAntiHalationContrast" FontSize="12" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                <Label Content="{Binding sUiController.ImageProcess.HdrAntiHalationContrast, Mode=Default}" HorizontalAlignment="Left" Foreground="#FFFFFFFF" x:Name="lblHDRAntiHalationContrastValue" VerticalAlignment="Center" Margin="98,0,0,0" />
+                                <Slider Style="{DynamicResource SliderStyle}" Margin="0,0,8,0" VerticalAlignment="Center" Maximum="{Binding sUiController.ImageProcess.HdrContrastMaximum, Mode=Default}" SmallChange="1" Minimum="{Binding sUiController.ImageProcess.HdrContrastMinimum, Mode=Default}" Value="{Binding sUiController.ImageProcess.HdrAntiHalationContrast, Mode=Default}" x:Name="sldHDRAntiHalationContrast" Width="172" HorizontalAlignment="Right" IsSnapToTickEnabled="True" LargeChange="10"/>
+							</Grid>
+                            <Grid x:Name="grdHDRAntiHalationChrome" Height="37" VerticalAlignment="Top" IsEnabled="{Binding sUiController.ImageProcess.HdrAntiHalationParamEnable, Mode=Default}" Margin="0,10,0,0">
+                                <Label x:Name="lblHDRAntiHalationChrome" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" Foreground="White" />
+                                <Label Content="{Binding sUiController.ImageProcess.HdrAntiHalationChrome, Mode=Default}" HorizontalAlignment="Left" Foreground="#FFFFFFFF" x:Name="lblHDRAntiHalationChromeValue" VerticalAlignment="Center" Margin="98,0,0,0" />
+                                <Slider Style="{DynamicResource SliderStyle}" VerticalAlignment="Center" Maximum="{Binding sUiController.ImageProcess.HdrChromeMaximum, Mode=Default}" SmallChange="1" Minimum="{Binding sUiController.ImageProcess.HdrChromeMinimum, Mode=Default}" Value="{Binding sUiController.ImageProcess.HdrAntiHalationChrome, Mode=Default}" x:Name="sldHDRAntiHalationChrome" Width="172" HorizontalAlignment="Right" Margin="0,0,8,0" IsSnapToTickEnabled="True" LargeChange="10"/>
+							</Grid>
+						</StackPanel>
+					</GroupBox>
+				</Expander>
+                <Expander x:Name="expAntiHalationHighPage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Margin="0,5,0,0" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingAntiHalationHighPageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingAntiHalationHighPageVisibility, Mode=Default}">
+					<GroupBox x:Name="grbAntiHalationHigh" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="262">
+						<Grid x:Name="grdApicalDetailSettingPage" Background="{StaticResource AcquisitionNormalBackgroundBrush}" Visibility="Visible" Width="320" Height="225">
+							<Grid.RowDefinitions>
+                                <RowDefinition Height="35" />
+                                <RowDefinition Height="47" />
+								<RowDefinition Height="47" />
+								<RowDefinition Height="47" />
+								<RowDefinition Height="15" />
+								<RowDefinition Height="40" />
+							</Grid.RowDefinitions>
+                            <Button VerticalAlignment="Center" IsEnabled="{Binding sUiController.ImageProcess.DefaultButtonEnable, Mode=Default}" Width="100" Height="32" Style="{DynamicResource NormalButtonStyle}" FontSize="14" HorizontalAlignment="Right" Command="{Binding sUiController.ImageProcess.ApicalParamaterDefaultButtonHandler, Mode=Default}" x:Name="btnDefaltWiDER" Margin="0,0,190,0" Grid.RowSpan="1"/>
+                            <Label HorizontalAlignment="Left" Width="90" Foreground="#FFFFFFFF" x:Name="lblAsymmetry" VerticalAlignment="Stretch" Margin="0,9,0,0" Grid.Row="1" />
+                            <Label Width="80" Content="{Binding sUiController.ImageProcess.AsymmetryDisplayValue, Mode=Default}" HorizontalAlignment="Left" Margin="105,9,0,0" Foreground="#FFFFFFFF" x:Name="lblAsymmetryValue" Grid.Row="1"/>
+                            <Slider Style="{DynamicResource SliderStyle}" VerticalAlignment="Center" IsEnabled="{Binding sUiController.ImageProcess.AsymmetryEnable, Mode=Default}" Minimum="{Binding sUiController.ImageProcess.AsymmetryMin, Mode=Default}" Maximum="{Binding sUiController.ImageProcess.AsymmetryMax, Mode=Default}" SmallChange="10" Value="{Binding sUiController.ImageProcess.AsymmetrySliderValue, Mode=Default}" Width="172" x:Name="sldAsymmetry" HorizontalAlignment="Right" TickFrequency="10" IsSnapToTickEnabled="True" LargeChange="10" Grid.Row="1"/>
+							<Label HorizontalAlignment="Left" Width="85" Foreground="#FFFFFFFF" x:Name="lblStrength" Grid.Row="2" Margin="0,9,0,0" Grid.RowSpan="1" />
+							<Label Width="80" Content="{Binding sUiController.ImageProcess.StrengthDisplayValue, Mode=Default}" HorizontalAlignment="Left" Margin="105,9,0,0" Foreground="#FFFFFFFF" x:Name="lblStrengthValue" Grid.Row="2" />
+                            <Slider Style="{DynamicResource SliderStyle}" Margin="0" VerticalAlignment="Center" IsEnabled="{Binding sUiController.ImageProcess.StrengthEnable, Mode=Default}" Minimum="{Binding sUiController.ImageProcess.StrengthMin, Mode=Default}" Maximum="{Binding sUiController.ImageProcess.StrengthMax, Mode=Default}" SmallChange="1" Value="{Binding sUiController.ImageProcess.StrengthSliderValue, Mode=Default}" Width="172" x:Name="sldStrength" Grid.Row="2" HorizontalAlignment="Right" IsSnapToTickEnabled="True" LargeChange="10"/>
+							<Label HorizontalAlignment="Left" Width="85" Foreground="#FFFFFFFF" x:Name="lblSaturation" Grid.Row="3" Margin="0,9,0,0" Grid.RowSpan="1" />
+							<Label Width="80" Content="{Binding sUiController.ImageProcess.SaturationDisplayValue, Mode=Default}" HorizontalAlignment="Left" Margin="105,9,0,0" Foreground="#FFFFFFFF" x:Name="lblSaturationValue" Grid.Row="3" />
+                            <Slider Style="{DynamicResource SliderStyle}" Margin="0" VerticalAlignment="Center" IsEnabled="{Binding sUiController.ImageProcess.SaturationEnable, Mode=Default}" Minimum="{Binding sUiController.ImageProcess.SaturationMin, Mode=Default}" Maximum="{Binding sUiController.ImageProcess.SaturationMax, Mode=Default}" SmallChange="1" Value="{Binding sUiController.ImageProcess.SaturationSliderValue, Mode=Default}" Width="172" x:Name="sldSaturation" HorizontalAlignment="Right" Grid.Row="3" IsSnapToTickEnabled="True" LargeChange="10"/>
+							<Label HorizontalAlignment="Left" Width="185" Foreground="#FFFFFFFF" x:Name="lblNoiseReductionStatus" Grid.Row="4" Margin="0,-3,0,0" VerticalAlignment="Top" Grid.RowSpan="2" />
+                            <RadioButton Style="{DynamicResource RadioButtonStyle}" Margin="5,-10,0,0" Foreground="#FFFFFFFF" IsEnabled="{Binding Path=sUiController.ImageProcess.NoiseReductionEnable, Mode=Default}" IsChecked="{Binding sUiController.ImageProcess.ApicalNoiseReductionStatus, ConverterParameter=NoiseReductionStatusOff, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" x:Name="rbtnOFF" HorizontalAlignment="Left" Padding="0" Grid.Row="5" />
+                            <RadioButton Style="{DynamicResource RadioButtonStyle}" Margin="70,-10,0,0" Foreground="#FFFFFFFF" IsEnabled="{Binding Path=sUiController.ImageProcess.NoiseReductionEnable, Mode=Default}" IsChecked="{Binding sUiController.ImageProcess.ApicalNoiseReductionStatus, ConverterParameter=NoiseReductionStatusLow, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" x:Name="rbtnLOW" HorizontalAlignment="Left" Grid.Row="5" />
+                            <RadioButton Style="{DynamicResource RadioButtonStyle}" Margin="145,-10,0,0" Foreground="#FFFFFFFF" IsEnabled="{Binding Path=sUiController.ImageProcess.NoiseReductionEnable, Mode=Default}" IsChecked="{Binding sUiController.ImageProcess.ApicalNoiseReductionStatus, ConverterParameter=NoiseReductionStatusMid, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" x:Name="rbtnMID" HorizontalAlignment="Left" Padding="0" Grid.Row="5" />
+                            <RadioButton Style="{DynamicResource RadioButtonStyle}" Margin="240,-10,0,0" Foreground="#FFFFFFFF" IsEnabled="{Binding Path=sUiController.ImageProcess.NoiseReductionEnable, Mode=Default}" IsChecked="{Binding sUiController.ImageProcess.ApicalNoiseReductionStatus, ConverterParameter=NoiseReductionStatusHigh, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" Padding="0" HorizontalAlignment="Left" x:Name="rbtnHIGH" Grid.Row="5" />
+                            
+						</Grid>
+					</GroupBox>
+				</Expander>
+                <Expander x:Name="expIdentificationColoredPage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Margin="0,5,0,0" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingIdentificationColoredPageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingIdentificationColoredPageVisibility, Mode=Default}">
+					<GroupBox x:Name="grbIdentificationColored" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="90">
+						<Button Margin="0,0,7,0" Width="49.5" Height="49.5" Style="{DynamicResource NormalButtonStyle}" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding sUiController.ImageProcess.OpenLiveColorDialogButtonHandler, Mode=Default}" IsEnabled="{Binding sUiController.ImageProcess.LiveColorChangeEnable, Mode=Default}" x:Name="btnRegister">
+							<Canvas Width="31.374" Height="29.619" Margin="-15,-22,0,0">
+								<Path x:Name="Path_1385" Width="12.552" Height="12.554" Canvas.Left="2.267" Canvas.Top="14.667" Stretch="Fill" Fill="#FFA2F859" Data="F1 M 15.2194,8.94476C 15.2194,12.4092 12.4102,15.2206 8.94238,15.2206C 5.4762,15.2206 2.66663,12.4092 2.66663,8.94476C 2.66663,5.47821 5.4762,2.66675 8.94238,2.66675C 12.4102,2.66675 15.2194,5.47821 15.2194,8.94476 Z "/>
+								<Path x:Name="Path_1386" Width="13.886" Height="13.887" Canvas.Left="1.625" Canvas.Top="14" Stretch="Fill" StrokeThickness="1.33333" StrokeMiterLimit="2.75" Stroke="#FF201613" Data="F1 M 15.2194,8.94476C 15.2194,12.4092 12.4102,15.2206 8.94238,15.2206C 5.4762,15.2206 2.66663,12.4092 2.66663,8.94476C 2.66663,5.47821 5.4762,2.66675 8.94238,2.66675C 12.4102,2.66675 15.2194,5.47821 15.2194,8.94476 Z "/>
+								<Path x:Name="Path_1388" Width="12.552" Height="12.554" Canvas.Left="16.1" Canvas.Top="14.667" Stretch="Fill" Fill="#FF0C97D1" Data="F1 M 15.219,8.94476C 15.219,12.4092 12.4098,15.2206 8.94263,15.2206C 5.47656,15.2206 2.66663,12.4092 2.66663,8.94476C 2.66663,5.47821 5.47656,2.66675 8.94263,2.66675C 12.4098,2.66675 15.219,5.47821 15.219,8.94476 Z "/>
+								<Path x:Name="Path_1389" Width="13.886" Height="13.887" Canvas.Left="15.4" Canvas.Top="14" Stretch="Fill" StrokeThickness="1.33333" StrokeMiterLimit="2.75" Stroke="#FF201613" Data="F1 M 15.219,8.94476C 15.219,12.4092 12.4098,15.2206 8.94263,15.2206C 5.47656,15.2206 2.66663,12.4092 2.66663,8.94476C 2.66663,5.47821 5.47656,2.66675 8.94263,2.66675C 12.4098,2.66675 15.219,5.47821 15.219,8.94476 Z "/>
+								<Path x:Name="Path_1382" Width="12.553" Height="12.554" Canvas.Left="9.15" Canvas.Top="2.667" Stretch="Fill" Fill="#FFF85959" Data="F1 M 15.2196,8.9425C 15.2196,12.4091 12.4103,15.2206 8.94324,15.2206C 5.47595,15.2206 2.66663,12.4091 2.66663,8.9425C 2.66663,5.47815 5.47595,2.66669 8.94324,2.66669C 12.4103,2.66669 15.2196,5.47815 15.2196,8.9425 Z "/>
+								<Path x:Name="Path_1383" Width="13.886" Height="13.887" Canvas.Left="8.5" Canvas.Top="2" Stretch="Fill" StrokeThickness="1.33333" StrokeMiterLimit="2.75" Stroke="#FF221815" Data="F1 M 15.2196,8.9425C 15.2196,12.4091 12.4103,15.2206 8.94324,15.2206C 5.47595,15.2206 2.66663,12.4091 2.66663,8.9425C 2.66663,5.47815 5.47595,2.66669 8.94324,2.66669C 12.4103,2.66669 15.2196,5.47815 15.2196,8.9425 Z "/>
+								<Path x:Name="Path_1392" Width="11.461" Height="11.461" Canvas.Left="9.6" Canvas.Top="10.7" Stretch="Fill" Fill="#FF231815" Data="F1 M 13.0093,13.0088C 10.7719,15.2461 7.14368,15.2473 4.90576,13.0088C 2.66663,10.7691 2.66736,7.14154 4.90466,4.90405C 7.14258,2.66663 10.7714,2.66663 13.0093,4.90527C 15.2472,7.1427 15.2467,10.7714 13.0093,13.0088 Z "/>
+								<Path x:Name="Path_1393" Width="12.794" Height="12.795" Canvas.Left="9" Canvas.Top="10" Stretch="Fill" StrokeThickness="1.33333" StrokeMiterLimit="2.75" Stroke="#FFFFFFFF" Data="F1 M 13.0093,13.0088C 10.7719,15.2461 7.14368,15.2473 4.90576,13.0088C 2.66663,10.7691 2.66736,7.14154 4.90466,4.90405C 7.14258,2.66663 10.7714,2.66663 13.0093,4.90527C 15.2472,7.1427 15.2467,10.7714 13.0093,13.0088 Z "/>
+								<Path x:Name="Line_1395" Width="7.539" Height="7.538" Canvas.Left="9" Canvas.Top="10" Stretch="Fill" StrokeThickness="1.33333" StrokeMiterLimit="2.75" Stroke="#FFFFFFFF" Data="F1 M 8.87207,2.66663L 2.66675,8.87134"/>
+								<Path x:Name="Line_1396" Width="9.199" Height="9.198" Canvas.Left="9.75" Canvas.Top="10.75" Stretch="Fill" StrokeThickness="1.33333" StrokeMiterLimit="2.75" Stroke="#FFFFFFFF" Data="F1 M 11.4159,3.52155L 3.55066,11.3864"/>
+								<Path x:Name="Line_1397" Width="9.199" Height="9.199" Canvas.Left="11.5" Canvas.Top="12.5" Stretch="Fill" StrokeThickness="1.33333" StrokeMiterLimit="2.75" Stroke="#FFFFFFFF" Data="F1 M 13.1152,5.22034L 5.25,13.0863"/>
+								<Path x:Name="Line_1398" Width="7.538" Height="7.539" Canvas.Left="14.1" Canvas.Top="15.1" Stretch="Fill" StrokeThickness="1.33333" StrokeMiterLimit="2.75" Stroke="#FFFFFFFF" Data="F1 M 13.9697,7.76434L 7.76501,13.9702"/>
+								<Path x:Name="Path_1378" Width="12.451" Height="32.14" Canvas.Left="31.363" Canvas.Top="13.22" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 40.9926,13.2368L 40.9883,14.5579C 40.9883,15.6758 40.6246,17.3513 40.166,18.3695C 40.1416,18.4294 40.0197,18.672 39.7516,18.9392C 39.3793,19.3115 38.7123,19.7271 37.6107,19.7271C 35.882,19.7225 35.0907,18.6577 34.9933,18.1703L 35.0576,18.3586C 34.5967,17.3347 34.2418,15.6603 34.2487,14.5455L 34.2487,13.2202C 34.2177,13.2501 33.9559,13.4562 33.588,13.8218C 32.7416,14.6641 31.4073,16.2731 31.4052,18.0316C 31.4009,20.5547 32.9034,22.8087 35.2394,23.7762L 35.7891,24.0054L 35.7667,34.5692L 35.2128,34.7941C 32.8789,35.756 31.3676,38.0033 31.3632,40.5265C 31.3585,43.0541 34.0781,45.2605 34.1842,45.3467L 34.1888,44.0236C 34.1932,42.9045 34.5502,41.2301 35.0111,40.2108C 35.0353,40.1519 35.1572,39.9115 35.4254,39.6434C 35.8021,39.2688 36.4672,38.8566 37.5684,38.8566C 39.2974,38.8589 40.0861,39.9248 40.1837,40.4103L 40.1239,40.2239C 40.5781,41.2456 40.9349,42.9211 40.9307,44.037L 40.9307,45.3601C 40.9618,45.3358 41.2208,45.1262 41.5909,44.7584C 42.4355,43.9175 43.7675,42.3107 43.7719,40.5486C 43.7784,38.0299 42.2715,35.7737 39.942,34.8075L 39.3881,34.5779L 39.4122,24.0122L 39.9644,23.785C 42.2979,22.8265 43.8116,20.5781 43.814,18.0549C 43.8204,15.5308 41.1035,13.3254 40.9926,13.2368"/>
+							</Canvas>
+						</Button>
+					</GroupBox>
+				</Expander>
+                <Expander x:Name="expEdgePage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Margin="0,5,0,0" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingEdgePageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingEdgePageVisibility, Mode=Default}">
+					<GroupBox x:Name="grbEdge" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="70">
+						<Grid Height="40" VerticalAlignment="Top">
+							<Label HorizontalAlignment="Left" VerticalAlignment="Center" Content="{Binding sUiController.ImageProcess.EdgeEmphasisLevelContent, Mode=Default}" Margin="12,-1,0,1" Foreground="#FFFFFFFF"/>
+                            <Slider Style="{DynamicResource SliderStyle}" Margin="70,3,0,0" VerticalAlignment="Top" Minimum="{Binding sUiController.ImageProcess.EdgeEmphasisMinimum}"  Maximum="{Binding sUiController.ImageProcess.EdgeEmphasisMaximum}" SmallChange="{Binding sUiController.ImageProcess.EdgeEmphasisSmallChange}" Value="{Binding sUiController.ImageProcess.EdgeEmphasisLevelValue, Mode=Default}" IsEnabled="{Binding sUiController.ImageProcess.EdgeEmphasisEnable, Mode=Default}" TickFrequency="{Binding Path=sUiController.ImageProcess.EdgeEmphasisSmallChange}" IsSnapToTickEnabled="True" />
+						</Grid>
+					</GroupBox>
+				</Expander>
+                <Expander x:Name="expGammaPage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Margin="0,5,0,0" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingGammaPageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingGammaPageVisibility, Mode=Default}">
+					<GroupBox x:Name="grbGamma" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="70">
+						<Grid Height="40" VerticalAlignment="Top">
+							<Label HorizontalAlignment="Left" VerticalAlignment="Center" Content="{Binding sUiController.ImageProcess.GammaValue, Mode=Default}" Margin="12,-1,0,1" Foreground="#FFFFFFFF"/>
+                            <Slider Style="{DynamicResource SliderStyle}" Margin="70,3,0,0" VerticalAlignment="Top" Minimum="{Binding sUiController.ImageProcess.GammaTransformMinimum}"  Maximum="{Binding sUiController.ImageProcess.GammaTransformMaximum}" SmallChange="{Binding sUiController.ImageProcess.GammaTransformSmallChange}" Value="{Binding sUiController.ImageProcess.GammaValue, Mode=Default}" IsEnabled="{Binding Path=sUiController.ImageProcess.GammaTransformEnable, Mode=Default}" IsSnapToTickEnabled="True" TickFrequency="0.1"/>
+						</Grid>
+					</GroupBox>
+				</Expander>
+                <Expander x:Name="expWhiteBalancePage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Margin="0,5,0,0" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingWhiteBalancePageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingWhiteBalancePageVisibility, Mode=Default}">
+                    <Grid IsEnabled="{Binding Path=sUiController.ImageProcess.WhiteBalanceSettingEnable, Mode=Default}">
+                        <StackPanel x:Name="stpWhiteBalance">
+                            <GroupBox x:Name="grbWbSubGain" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="215">
+							    <StackPanel VerticalAlignment="Top">
+								    <Grid x:Name="grdSetting" HorizontalAlignment="Stretch" Height="37" VerticalAlignment="Top" Margin="0,5,0,0">
+                                        <Button VerticalAlignment="Center" d:LayoutOverrides="Width" Width="100" Height="32" Style="{DynamicResource NormalButtonStyle}" FontSize="14" HorizontalAlignment="Left" x:Name="btnAutomaticBase" Command="{Binding sUiController.ImageProcess.CalibrateWhiteBalanceButtonHandler, Mode=Default}" Margin="30,0,0,0" />
+                                        <Button VerticalAlignment="Center" Width="100" Height="32" Style="{DynamicResource NormalButtonStyle}" FontSize="14" HorizontalAlignment="Right" x:Name="btnDefaltBase" Command="{Binding sUiController.ImageProcess.DefaultWhiteBalanceButtonHandler, Mode=Default}" Margin="0,0,30,0" />
+								    </Grid>
+								    <Grid x:Name="grdRedGain" Height="37" VerticalAlignment="Top" IsEnabled="{Binding sUiController.ImageProcess.WhiteBalanceParamEnable, Mode=Default}" Margin="0,10,0,0">
+									    <Label x:Name="lblRedGain" FontSize="12" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" />
+									    <Label Content="{Binding sUiController.ImageProcess.WhiteBalanceRedGain, Mode=Default}" HorizontalAlignment="Left" Foreground="#FFFFFFFF" x:Name="lblBrightnessValue1" Margin="70,0,0,0" VerticalAlignment="Center" />
+                                        <Slider Style="{DynamicResource SliderStyle}" Maximum="{Binding sUiController.ImageProcess.MaxWhiteBalanceGain, Mode=Default}" Minimum="{Binding sUiController.ImageProcess.MinWhiteBalanceGain, Mode=Default}" Value="{Binding sUiController.ImageProcess.WhiteBalanceRedGain, Mode=Default}" VerticalAlignment="Center" SmallChange="0.1" x:Name="sldRedGain" HorizontalAlignment="Right" Width="200" Margin="0,0,8,0" IsSnapToTickEnabled="True" TickFrequency="0.1"/>
+								    </Grid>
+								    <Grid x:Name="grdGreenGain" Height="37" VerticalAlignment="Top" IsEnabled="{Binding sUiController.ImageProcess.WhiteBalanceParamEnable, Mode=Default}" Margin="0,10,0,0">
+									    <Label x:Name="lblGreenGain" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontSize="12" />
+									    <Label Content="{Binding sUiController.ImageProcess.WhiteBalanceGreenGain, Mode=Default}" HorizontalAlignment="Left" Foreground="#FFFFFFFF" x:Name="lblTextureValue1" VerticalAlignment="Center" Margin="70,0,0,0" />
+                                        <Slider Style="{DynamicResource SliderStyle}" Maximum="{Binding sUiController.ImageProcess.MaxWhiteBalanceGain, Mode=Default}" Minimum="{Binding sUiController.ImageProcess.MinWhiteBalanceGain, Mode=Default}" Value="{Binding sUiController.ImageProcess.WhiteBalanceGreenGain, Mode=Default}" VerticalAlignment="Center" SmallChange="0.1" x:Name="sldGreenGain" HorizontalAlignment="Right" Width="200" Margin="0,0,8,0" IsSnapToTickEnabled="True" TickFrequency="0.1"/>
+								    </Grid>
+								    <Grid x:Name="grdBlueGain" Height="37" VerticalAlignment="Top" IsEnabled="{Binding sUiController.ImageProcess.WhiteBalanceParamEnable, Mode=Default}" Margin="0,10,0,0">
+									    <Label x:Name="lblBlueGain" FontSize="12" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" />
+									    <Label Content="{Binding sUiController.ImageProcess.WhiteBalanceBlueGain, Mode=Default}" HorizontalAlignment="Left" Foreground="#FFFFFFFF" x:Name="lblContrastValue1" VerticalAlignment="Center" Margin="70,0,0,0" />
+                                        <Slider Style="{DynamicResource SliderStyle}" Maximum="{Binding sUiController.ImageProcess.MaxWhiteBalanceGain, Mode=Default}" Minimum="{Binding sUiController.ImageProcess.MinWhiteBalanceGain, Mode=Default}" Value="{Binding sUiController.ImageProcess.WhiteBalanceBlueGain, Mode=Default}" VerticalAlignment="Center" SmallChange="0.1" x:Name="sldBlueGain" HorizontalAlignment="Right" Width="200" Margin="0,0,8,0" IsSnapToTickEnabled="True" TickFrequency="0.1"/>
+								    </Grid>
+							    </StackPanel>
+						    </GroupBox>
+						    <GroupBox x:Name="grbWbSubROI" Header="ROI Settings" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="70">
+							    <Grid x:Name="grdROI" HorizontalAlignment="Stretch" Height="38" VerticalAlignment="Top" Margin="0,3,0,0">
+                                    <ToggleButton VerticalAlignment="Center" d:LayoutOverrides="Width" Width="100" Height="32" Style="{DynamicResource ToggleButtonStyle}" FontSize="14" HorizontalAlignment="Left" x:Name="tglbROIOnOffSwitchBase" IsChecked="{Binding sUiController.ImageProcess.WhiteBalanceRoiSwitch, Mode=Default}" Margin="30,0,0,0" />
+                                    <Button VerticalAlignment="Center" Width="100" Height="32" Style="{DynamicResource NormalButtonStyle}" FontSize="14" x:Name="btnROIOnOffSwitchBase" IsEnabled="{Binding sUiController.ImageProcess.WhiteBalanceRoiSwitch, Mode=Default}" Command="{Binding sUiController.ImageProcess.WhiteBalanceRoiDefaultButtonHandler, Mode=Default}" Margin="0,0,30,0" HorizontalAlignment="Right" />
+							    </Grid>
+						    </GroupBox>
+					    </StackPanel>
+                    </Grid>
+				</Expander>
+			</StackPanel>
+		</Grid>
+        <Grid x:Name="grdPhotographySettingPage" Background="{DynamicResource AcquisitionNormalBackgroundBrush}" Visibility="{Binding sUiController.DetailSetting.SettingPhotographySettingPageVisibility, Mode=Default}">
+        	<StackPanel x:Name="stpPhotographySettingPage" Width="345" VerticalAlignment="Top" Margin="3,0,0,0" >
+        		<Label x:Name="lblPhotographySettingTitle" HorizontalAlignment="Left" Foreground="White" FontSize="16" Background="{x:Null}"/>
+        		<Expander x:Name="expSnapPage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingSnapPageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingSnapPageVisibility, Mode=Default}" Margin="0,5,0,0">
+        			<GroupBox x:Name="grbSnap" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="115">
+        				<StackPanel VerticalAlignment="Top" Margin="0,5,0,0" IsEnabled="{Binding sUiController.Acquisition.SnapDetailSettingEnable, Mode=Default}">
+        					<RadioButton x:Name="rbtn3CcdOff" HorizontalAlignment="Left" Margin="5,5,0,0" Height="21" Foreground="#FFFFFFFF" IsEnabled="{Binding sUiController.Acquisition.Snap3CcdModeOffEnable, Mode=Default}"  IsChecked="{Binding sUiController.Acquisition.Snap3CcdModeOff, Mode=Default}" GroupName="SnapMode" Style="{DynamicResource RadioButtonStyle}"/>
+        					<RadioButton x:Name="rbtn3CcdHR" HorizontalAlignment="Left" Margin="5,5,0,0" Height="21" Foreground="#FFFFFFFF" IsEnabled="{Binding sUiController.Acquisition.Snap3CcdModeHREnable, Mode=Default}"  IsChecked="{Binding sUiController.Acquisition.Snap3CcdModeHR, Mode=Default}" GroupName="SnapMode" Style="{DynamicResource RadioButtonStyle}"/>
+        					<RadioButton x:Name="rbtn3CcdSuperHR" HorizontalAlignment="Left" Margin="5,5,0,0" Height="21" Foreground="#FFFFFFFF" IsEnabled="{Binding sUiController.Acquisition.Snap3CcdModeHREnable, Mode=Default}" IsChecked="{Binding sUiController.Acquisition.Snap3CcdModeSuperHR, Mode=Default}" GroupName="SnapMode" Style="{DynamicResource RadioButtonStyle}"/>
+        				</StackPanel>
+        			</GroupBox>
+        		</Expander>
+        		<!--Expander x:Name="expThreeDimensionalPage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Margin="0,5,0,0" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingThreeDimensionalPageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingThreeDimensionalPageVisibility, Mode=Default}">
+        			<GroupBox x:Name="grbThreeDimensional" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="115"/>
+        		</Expander-->
+                <Expander x:Name="expMovingImagePage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Margin="0,5,0,0" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingMovingImagePageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingMovingImagePageVisibility, Mode=Default}">
+        			<GroupBox x:Name="grbMovingImage" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="190">
+                        <Grid IsEnabled="{Binding Path=sUiController.Acquisition.SettingMovingImagePageEnable, Mode=Default}">
+        					<Grid>
+        						<Label x:Name="lblPhotoImgMovieSet" VerticalAlignment="Top" HorizontalAlignment="Left" Background="{x:Null}" Foreground="White"/>
+        						<RadioButton x:Name="lblRBtmPhotoImgMovieLow" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,25,0,0" Foreground="White" Background="{x:Null}" Style="{DynamicResource RadioButtonStyle}" IsChecked="{Binding sUiController.Acquisition.ImageQualityLowRadioButtonIsChecked, Mode=Default}"/>
+        						<RadioButton x:Name="lblRBtmPhotoImgMovieStd" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,50,0,0" Background="{x:Null}" Foreground="White" Style="{DynamicResource RadioButtonStyle}" IsChecked="{Binding sUiController.Acquisition.ImageQualityStandardRadioButtonIsChecked, Mode=Default}"/>
+        					</Grid>
+        					<Grid>
+        						<Label x:Name="lblPhotoImgFramerate" VerticalAlignment="Top" HorizontalAlignment="Left" Background="{x:Null}" Foreground="White" Margin="0,80,0,0"/>
+        						<RadioButton x:Name="lblRBtnPhotoImgFramerate1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Foreground="White" Margin="20,105,0,0" Style="{DynamicResource RadioButtonStyle}" IsChecked="{Binding sUiController.Acquisition.FrameRateLowFPSRadioButtonIsChecked, Mode=Default}"/>
+        						<RadioButton x:Name="lblRBtnPhotoImgFramerate15" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="{x:Null}" Margin="20,130,0,0" Style="{DynamicResource RadioButtonStyle}" IsChecked="{Binding sUiController.Acquisition.FrameRateStandardFPSRadioButtonIsChecked, Mode=Default}"/>
+        					</Grid>
+        				</Grid>
+        			</GroupBox>
+        		</Expander>
+        		<Expander x:Name="expAutoSavePage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Margin="0,5,0,0" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingAutoSavePageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingAutoSavePageVisibility, Mode=Default}">
+        			<GroupBox x:Name="grbAutoSave" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="550">
+        				<StackPanel x:Name="stpAutoSave">
+                            <!--自動保存有効無効チェックボックス-->
+        					<CheckBox Margin="5,5,0,0" Content="{Binding sUiController.Acquisition.AutoSaveCheckLabel, Mode=Default}" Foreground="#FFFFFFFF" IsChecked="{Binding sUiController.Acquisition.AutoSaveCheck, Mode=Default}" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource CheckBoxStyle}"/>
+                            <!--保存先グループボックス-->
+        					<GroupBox x:Name="grbAutoSavePlace" Header="{Binding sUiController.Acquisition.AutoSavePlaceLabel, Mode=Default}" BorderThickness="0.5" Foreground="White" Width="315" VerticalAlignment="Top" Height="55" Margin="0,5,0,0" IsEnabled="{Binding sUiController.Acquisition.AutoSavePlaceEnable, Mode=Default}">
+        						<Grid x:Name="grdAutoSavePlace" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+        							<RadioButton HorizontalAlignment="Left" Content="{Binding sUiController.Acquisition.AutoSavePlaceFileLabel, Mode=Default}" Foreground="#FFFFFFFF" IsChecked="{Binding sUiController.Acquisition.AutoSavePlace, ConverterParameter=FILE, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" Style="{DynamicResource RadioButtonStyle}" Margin="5,5,0,0"/>
+        							<RadioButton HorizontalAlignment="Left" Content="{Binding sUiController.Acquisition.AutoSavePlaceDBLabel, Mode=Default}" Foreground="#FFFFFFFF" IsChecked="{Binding sUiController.Acquisition.AutoSavePlace, ConverterParameter=DB, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" Style="{DynamicResource RadioButtonStyle}" Margin="95,5,0,0" />
+        							<RadioButton HorizontalAlignment="Left" Content="{Binding sUiController.Acquisition.AutoSavePlaceBothLabel, Mode=Default}" Foreground="#FFFFFFFF" IsChecked="{Binding sUiController.Acquisition.AutoSavePlace, ConverterParameter=BOTH, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" Style="{DynamicResource RadioButtonStyle}" Margin="170,5,0,0"/>
+        						</Grid>
+        					</GroupBox>
+                            <!--ファイル設定グループボックス-->
+        					<GroupBox x:Name="grbFileSetting" Header="{Binding sUiController.Acquisition.AutoSaveFileSettingLabel, Mode=Default}" BorderThickness="0.5" Foreground="White" Width="315" VerticalAlignment="Top" Height="300" Margin="0,5,0,0" IsEnabled="{Binding sUiController.Acquisition.AutoSaveFileSettingEnable, Mode=Default}">
+        						<StackPanel x:Name="stpFileSetting">
+                                    <StackPanel x:Name="stpFolderPath" IsEnabled="{Binding sUiController.Acquisition.AutoSaveFolderPathEnable, Mode=Default}">
+                                        <!--フォルダ-->
+                                        <Label x:Name="lblFolderPath" HorizontalAlignment="Left" Content="{Binding sUiController.Acquisition.AutoSaveFolderPathLabel, Mode=Default}" Foreground="White" Background="{x:Null}" Margin="5,0,0,0"/>
+                                        <Grid x:Name="grdFolderPath" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                            <CustomControl:ValidateTextBox InputType="String" FontSize="13" Text="{Binding Mode=Default, Path=sUiController.Acquisition.AutoSaveFolderPath, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Left" Width="200" Margin="5,-5,0,0" Style="{DynamicResource TextBoxStyle}" VerticalAlignment="Center" x:Name="txtAutoSaveFolder" LostKeyboardFocus="_TextBox_LostKeyboardFocus" />
+                                            <Button Width="80" Content="{Binding sUiController.Acquisition.AutoSaveReferLabel, Mode=Default}" Command="{Binding sUiController.Acquisition.AutoSaveFolderDialogShowHandler, Mode=Default}" HorizontalAlignment="Right" Style="{DynamicResource NormalButtonStyle}" Margin="0,-5,5,0" Height="32" VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </StackPanel>
+                                    <!--ファイル名-->
+        							<Label x:Name="lblFileName" HorizontalAlignment="Left" Content="{Binding sUiController.Acquisition.AutoSaveFileNameLabel, Mode=Default}" Foreground="White" Background="{x:Null}" Margin="0"/>
+                                    <CustomControl:ValidateTextBox InputType="String" FontSize="13" Text="{Binding Mode=Default, Path=sUiController.Acquisition.AutoSaveFileName, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Left" Width="200" Margin="5,-5,0,0" Style="{DynamicResource TextBoxStyle}" MaxLength="36" x:Name="txtAutoSaveFileName" LostKeyboardFocus="_TextBox_LostKeyboardFocus" />
+                                    <!--ファイルカウンタ-->
+                                    <Label x:Name="lblFileCounter" HorizontalAlignment="Left" Content="{Binding sUiController.Acquisition.AutoSaveFileCounterLabel, Mode=Default}" Foreground="White" Background="{x:Null}" Margin="0"/>
+        							<Grid HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Margin="0,-5,0,0">
+                                        <CustomControl:ValidateTextBox InputType="NumericPositive" InputMethod.IsInputMethodEnabled="False" FontSize="13" HorizontalAlignment="Left" Width="69.936" Height="26" Text="{Binding Mode=Default, Path=sUiController.Acquisition.AutoSaveFileCounter, UpdateSourceTrigger=Explicit}" VerticalAlignment="Top" Style="{DynamicResource TextBoxStyle}" Margin="5,0,0,0" TextAlignment="Right" MaxLength="4" DefaultSetReason="NumericParseError" DefaultValue="0" RangeMin="{Binding sUiController.Acquisition.AutoSaveFileCounterRangeMin, Mode=Default}" RangeMax="{Binding sUiController.Acquisition.AutoSaveFileCounterRangeMax, Mode=Default}" IsRangeCheck="True" x:Name="txtAutoSaveFileCounter" LostKeyboardFocus="_TextBox_LostKeyboardFocus" />
+        								<RepeatButton HorizontalAlignment="Left" Width="17.5" Height="13" FontSize="8" Foreground="{DynamicResource TextBoxButtonBrush}" Delay="500" Interval="100" Margin="74,0,0,0" VerticalAlignment="Top"    Command="{Binding sUiController.Acquisition.AutoSaveFileCounterIncreaseHandler, Mode=Default}" Style="{DynamicResource NumericUpButtonStyle}"/>
+        								<RepeatButton HorizontalAlignment="Left" Width="17.5" Height="13" FontSize="8" Foreground="{DynamicResource TextBoxButtonBrush}" Delay="500" Interval="100" Margin="74,0,0,0" VerticalAlignment="Bottom" Command="{Binding sUiController.Acquisition.AutoSaveFileCounterDecreaseHandler, Mode=Default}" Style="{DynamicResource NumericDownButtonStyle}"/>
+        							</Grid>
+                                    <StackPanel x:Name="stpFileType" IsEnabled="{Binding sUiController.Acquisition.AutoSaveFileTypeEnable, Mode=Default}">
+                                        <!--デフォルトファイル形式-->
+        							    <Label x:Name="lblDefaultFileType" HorizontalAlignment="Left" Content="{Binding sUiController.Acquisition.AutoSaveDefaultFileTypeLabel, Mode=Default}" Foreground="White" Background="{x:Null}" Margin="0"/>
+        							    <ComboBox Style="{DynamicResource ComboBoxStyle}" HorizontalAlignment="Left" Width="120" Height="26" Margin="5,-5,0,0" ItemsSource="{Binding sUiController.Acquisition.AutoSaveDefaultFileTypeInfo, Mode=Default}" SelectedValue="{Binding sUiController.Acquisition.AutoSaveSelectedDefaultFileType, Mode=Default}" DisplayMemberPath="AutoSaveFileTypeName" SelectedValuePath="AutoSaveFileType"/>
+                                        <!--追加保存ファイル形式-->
+        							    <CheckBox Content="{Binding sUiController.Acquisition.AutoSaveAddFileTypeCheckLabel, Mode=Default}" Foreground="#FFFFFFFF" IsChecked="{Binding sUiController.Acquisition.AutoSaveAddFileTypeCheck, Mode=Default}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5,0,0" Style="{DynamicResource CheckBoxStyle}"/>
+        							    <ComboBox Style="{DynamicResource ComboBoxStyle}" HorizontalAlignment="Left" Width="120" Height="26" Margin="5,5,0,0" ItemsSource="{Binding sUiController.Acquisition.AutoSaveAddFileTypeInfo, Mode=Default}" SelectedValue="{Binding sUiController.Acquisition.AutoSaveSelectedAddFileType, Mode=Default}" DisplayMemberPath="AutoSaveFileTypeName" SelectedValuePath="AutoSaveFileType" IsEnabled="{Binding sUiController.Acquisition.AutoSaveAddFileTypeCheck, Mode=Default}"/>
+                                    </StackPanel>
+                                </StackPanel>
+        					</GroupBox>
+                            <!--コメントグループボックス-->
+        					<GroupBox x:Name="grbComment" Header="{Binding sUiController.Acquisition.AutoSaveCommentLabel, Mode=Default}" BorderThickness="0.5" Foreground="White" Width="315" VerticalAlignment="Top" Height="125" Margin="0,5,0,0" IsEnabled="{Binding sUiController.Acquisition.AutoSaveCommentEnable, Mode=Default}">
+                                <CustomControl:ValidateTextBox InputType="String" FontSize="13" Style="{DynamicResource TextBoxStyle}" Text="{Binding Mode=Default, UpdateSourceTrigger=Explicit, Path=sUiController.Acquisition.AutoSaveComment}" HorizontalAlignment="Left" Width="295" Height="90" Margin="5,0,5,0" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" MaxLength="40" x:Name="txtAutoSaveComment" LostKeyboardFocus="_TextBox_LostKeyboardFocus" />
+        					</GroupBox>
+        				</StackPanel>
+        			</GroupBox>
+        		</Expander>	
+        		<Expander x:Name="expGRRPage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Margin="0,5,0,0" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingGRRPageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingGRRPageVisibility, Mode=Default}">
+        			<GroupBox x:Name="grbGRR" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="280">
+						<StackPanel x:Name="stpGRR">
+							<CheckBox Margin="5,5,0,0" Content="{Binding sUiController.Acquisition.GRRAcquisitionEnableCheckLabel, Mode=Default}" Foreground="#FFFFFFFF" IsChecked="{Binding sUiController.Acquisition.GRRAcquisitionEnableCheck, Mode=Default}" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource CheckBoxStyle}"/>
+							<Label x:Name="lblOperator" HorizontalAlignment="Left" Content="{Binding sUiController.Acquisition.GRROperatorLabel, Mode=Default}" Foreground="White" Background="{x:Null}" Margin="0,5,0,0"/>
+							<ComboBox Style="{DynamicResource ComboBoxStyle}" HorizontalAlignment="Left" Width="200" Height="26" Margin="5,5,0,0" ItemsSource="{Binding sUiController.Acquisition.GRROperatorList, Mode=TwoWay}" SelectedIndex="{Binding sUiController.Acquisition.GRRSelectedOperator, Mode=Default}" MaxDropDownHeight="200" />
+							<Grid x:Name="grdEditOperator" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,12,0,0">
+								<CustomControl:ValidateTextBox InputType="GRRString" FontSize="13" Text="{Binding sUiController.Acquisition.GRREditOperatorName, Mode=Default}" HorizontalAlignment="Left" Width="200" Margin="5,-5,0,0" MaxLines="1" Style="{DynamicResource TextBoxStyle}" VerticalAlignment="Center"/>
+								<Button Width="80" Content="{Binding sUiController.Acquisition.GRREditOperatorLabel, Mode=Default}" Command="{Binding sUiController.Acquisition.GRREditOperatorHandler, Mode=Default}" HorizontalAlignment="Right" Style="{DynamicResource NormalButtonStyle}" Margin="0,-5,20,0" Height="32" VerticalAlignment="Center"/>
+							</Grid>
+							<Label x:Name="lblSample" HorizontalAlignment="Left" Content="{Binding sUiController.Acquisition.GRRSampleLabel, Mode=Default}" Foreground="White" Background="{x:Null}" Margin="0,10,0,0"/>
+							<ComboBox Style="{DynamicResource ComboBoxStyle}" HorizontalAlignment="Left" Width="200" Height="26" Margin="5,5,0,0" ItemsSource="{Binding sUiController.Acquisition.GRRSampleList, Mode=TwoWay}" SelectedIndex="{Binding sUiController.Acquisition.GRRSelectedSample, Mode=Default}" MaxDropDownHeight="200" />
+							<Grid x:Name="grdEditSample" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,12,0,0">
+								<CustomControl:ValidateTextBox InputType="GRRString" FontSize="13" Text="{Binding sUiController.Acquisition.GRREditSampleName, Mode=Default}" HorizontalAlignment="Left" Width="200" Margin="5,-5,0,0" MaxLines="1" Style="{DynamicResource TextBoxStyle}" VerticalAlignment="Center"/>
+								<Button Width="80" Content="{Binding sUiController.Acquisition.GRREditSampleLabel, Mode=Default}" Command="{Binding sUiController.Acquisition.GRREditSampleHandler, Mode=Default}" HorizontalAlignment="Right" Style="{DynamicResource NormalButtonStyle}" Margin="0,-5,20,0" Height="32" VerticalAlignment="Center"/>
+							</Grid>
+						</StackPanel>
+					</GroupBox>
+        		</Expander>
+        	</StackPanel>
+        </Grid>
+        <Grid x:Name="grdMapSettingPage" Background="{DynamicResource AcquisitionNormalBackgroundBrush}" Visibility="{Binding sUiController.DetailSetting.SettingMapSettingPageVisibility, Mode=Default}">
+        	<StackPanel x:Name="stpMapSettingPage" Width="345" VerticalAlignment="Top" Margin="3,0,0,0" >
+        		<Label x:Name="lblMapSettingTitle" HorizontalAlignment="Left" Foreground="White" FontSize="16" Background="{x:Null}"/>
+        		<Expander x:Name="expMapPage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingImageUpDataZoomPageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingImageUpDataZoomPageVisibility, Mode=Default}" Margin="0,5,0,0">
+                    <GroupBox x:Name="grbMap" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="115">
+                        <Grid>
+                            <StackPanel Orientation="Vertical">
+                                <CheckBox x:Name="checkBoxMapUpdateObservationMethod" IsChecked="{Binding Path=sUiController.Acquisition.IsImageUpdateObservationMethod, Mode=Default}" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Foreground="#FFFFFFFF"/>
+                                <GroupBox x:Name="grbMapAutoUpdate" BorderThickness="0.5" Foreground="White" Width="315" Height="55" Margin="0,5,0,0">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <RadioButton x:Name="rbMapUpdateX1" HorizontalAlignment="Left" Width="60" Foreground="#FFFFFFFF" IsChecked="{Binding Path=sUiController.Acquisition.ImageUpdateMagnification, Mode=Default, Converter={StaticResource cnvEnumBoolean }, ConverterParameter=Magnification1x}" Style="{DynamicResource RadioButtonStyle}"/>
+                                        <RadioButton x:Name="rbMapUpdateX2" HorizontalAlignment="Left" Width="60" Foreground="#FFFFFFFF" IsChecked="{Binding Path=sUiController.Acquisition.ImageUpdateMagnification, Mode=Default, Converter={StaticResource cnvEnumBoolean }, ConverterParameter=Magnification2x}" Style="{DynamicResource RadioButtonStyle}" />
+                                        <RadioButton x:Name="rbMapUpdateX5" HorizontalAlignment="Left" Width="60" Foreground="#FFFFFFFF" IsChecked="{Binding Path=sUiController.Acquisition.ImageUpdateMagnification, Mode=Default, Converter={StaticResource cnvEnumBoolean }, ConverterParameter=Magnification5x}" Style="{DynamicResource RadioButtonStyle}" />
+                                        <RadioButton x:Name="rbMapUpdateX10" HorizontalAlignment="Left" Width="60" Foreground="#FFFFFFFF" IsChecked="{Binding Path=sUiController.Acquisition.ImageUpdateMagnification, Mode=Default, Converter={StaticResource cnvEnumBoolean }, ConverterParameter=Magnification10x}" Style="{DynamicResource RadioButtonStyle}" />
+                                    </StackPanel>
+                                </GroupBox>
+                            </StackPanel>
+                        </Grid>
+                    </GroupBox>
+                </Expander>
+        	</StackPanel>
+        </Grid>
+        <Grid x:Name="grdStageSettingPage" Background="{DynamicResource AcquisitionNormalBackgroundBrush}" Visibility="{Binding sUiController.DetailSetting.SettingStageSettingPageVisibility, Mode=Default}">
+			<StackPanel x:Name="stpStageSettingPage" Width="345" VerticalAlignment="Top" Margin="3,0,0,0" >
+                <Label x:Name="lblStageSettingTitle" HorizontalAlignment="Left" Foreground="White" FontSize="16" Background="{x:Null}"/>
+                <Expander x:Name="expStagePage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingSampleChangePositionPageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingSampleChangePositionPageVisibility, Mode=Default}" Margin="0,5,0,0">
+					<GroupBox x:Name="grbStage" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="150">
+						<Grid>
+                            <Button Content="{Binding sUiController.Stage.StageSettingCurrentPoint, Mode=Default}" Command="{Binding sUiController.Stage.GetCurrentPositionForSampleExchangeHandler, Mode=Default}" HorizontalAlignment="Left" Width="80" Height="28" VerticalAlignment="Top" Margin="200,3,0,0" FontSize="13.333" Style="{DynamicResource SimpleButtonStyle}"/>
+							<Label Content="{Binding sUiController.Stage.StageSettingDialogCurrentX, Mode=Default}" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
+                            <CustomControl:ValidateTextBox Text="{Binding sUiController.Stage.SampleChangePositionX, Mode=Default}" InputType="{Binding sUiController.Stage.SampleChangePositionInputType, Mode=OneWay}" InputMethod.IsInputMethodEnabled="False" MaxLength="{Binding sUiController.Stage.SampleChangePositionMaxLength, Mode=OneWay}" Margin="25,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" HorizontalAlignment="Left" Width="90" MaxNumberOfDecimalPlaces="{Binding sUiController.Stage.SampleChangePositionMaxNumberOfDecimalPlaces, Mode=OneWay}" />
+                            <Label Content="{Binding sUiController.Layout.CommonUnit, Mode=Default}" HorizontalAlignment="Left" Margin="120,7,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
+							<Label Content="{Binding sUiController.Stage.StageSettingDialogCurrentY, Mode=Default}" HorizontalAlignment="Left" Margin="0,42,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
+                            <CustomControl:ValidateTextBox Text="{Binding sUiController.Stage.SampleChangePositionY, Mode=Default}" InputType="{Binding sUiController.Stage.SampleChangePositionInputType, Mode=OneWay}" InputMethod.IsInputMethodEnabled="False" MaxLength="{Binding sUiController.Stage.SampleChangePositionMaxLength, Mode=OneWay}" HorizontalAlignment="Left" Margin="25,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="12" MaxNumberOfDecimalPlaces="{Binding sUiController.Stage.SampleChangePositionMaxNumberOfDecimalPlaces, Mode=OneWay}" />
+                            <Label Content="{Binding sUiController.Layout.CommonUnit, Mode=Default}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13.333" Margin="120,44,0,0" Foreground="White"/>
+							<Button x:Name="btnRegistry" Content="登 録" Width="110" Height="32" VerticalAlignment="Bottom" d:LayoutOverrides="Height" HorizontalAlignment="Center" Margin="0,0,0,5" Style="{DynamicResource NormalButtonStyle}" Command="{Binding sUiController.Stage.StageCtrlRegistryExchangeValueHandler, Mode=Default}"/>
+						</Grid>
+					</GroupBox>
+				</Expander>
+                <Expander x:Name="expStageAutoCalibrationPage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingStageAutoCalibrationPageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingStageAutoCalibrationPageVisibility, Mode=Default}" Margin="0,5,0,0">
+					<GroupBox x:Name="grbStageAutoCalibration" BorderThickness="0.5" Foreground="White" Width="335" Height="70">
+						<Grid>
+                            <Button x:Name="btnStartAutoCalibration" Content="開始" Width="100" Height="32" HorizontalAlignment="Center" Margin="0,3,0,0" Style="{DynamicResource NormalButtonStyle}" Command="{Binding Path=sUiController.Stage.StageStartAutoCalibrationParamHandler, Mode=Default}" VerticalAlignment="Top" d:LayoutOverrides="Height"/>
+						</Grid>
+					</GroupBox>
+				</Expander>
+			</StackPanel>
+		</Grid>
+        <Grid x:Name="grdOtherSettingPage" Background="{DynamicResource AcquisitionNormalBackgroundBrush}" Visibility="{Binding sUiController.DetailSetting.SettingOtherSettingPageVisibility, Mode=Default}">
+        	<StackPanel x:Name="stpOtherSettingPage" Width="345" VerticalAlignment="Top" Margin="3,0,0,0">
+        		<Label x:Name="lblOtherSettingTitle" HorizontalAlignment="Left" Foreground="White" FontSize="16"/>
+        		<Expander x:Name="expSleepPage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingSleepPageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingSleepPageVisibility, Mode=Default}" Margin="0,5,0,0">
+        			<GroupBox x:Name="grbSleep" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="120">
+        				<Grid>
+        					<CheckBox x:Name="lblCheckBoxSleepEnable" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="{Binding sUiController.Sleep.SleepModeSwitch, Mode=Default}" Margin="5,5,0,0" Foreground="White"/>
+        					<Label x:Name="lblSleepWaitTime" HorizontalAlignment="Left" Foreground="#FFFFFFFF" VerticalAlignment="Top" Margin="0,30,0,0" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment" />
+                            <CustomControl:ValidateTextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding sUiController.Sleep.SleepModeWaitingMinuteValue, Mode=Default}"  MaxLength="3" HorizontalAlignment="Left" Width="50" Margin="5,58,0,0" Height="26" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment" InputType="NumericPositive" InputMethod.IsInputMethodEnabled="False" />
+        					<Label x:Name="lblSleepMinutesUnit" Foreground="#FFFFFFFF" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="60,58,0,0" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment" />
+        					<Button x:Name="lblSleepSetApply" VerticalAlignment="Top" Command="{Binding sUiController.Sleep.SleepModeSetHandler, Mode=Default}" Height="32" HorizontalAlignment="Right" Style="{DynamicResource NormalButtonStyle}" Margin="0,55,50,0" Width="100" d:LayoutOverrides="VerticalAlignment" />
+        				</Grid>
+        			</GroupBox>
+        		</Expander>
+        		<Expander x:Name="expImageFramScalePage" Foreground="White" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Margin="0,5,0,0" FontSize="13.333" IsExpanded="{Binding sUiController.DetailSetting.SettingImageFramScalePageIsExpanded, Mode=Default}" Visibility="{Binding sUiController.DetailSetting.SettingImageFramScalePageVisibility, Mode=Default}">
+        			<GroupBox x:Name="grbImageFramScale" BorderThickness="0.5" Foreground="White" Width="335" VerticalAlignment="Top" Height="65">
+        				<Grid d:LayoutOverrides="Height" VerticalAlignment="Center">
+        					<CheckBox x:Name="lblCheckBoxShowGrid" Margin="5,0,0,0" Height="18" Foreground="#FFFFFFFF" IsChecked="{Binding sUiController.Display.IsImageFrameScaleVisible, Mode=Default}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        				</Grid>
+        			</GroupBox>
+        		</Expander>
+        	</StackPanel>
+        </Grid>
+    </Grid>
+</Page>

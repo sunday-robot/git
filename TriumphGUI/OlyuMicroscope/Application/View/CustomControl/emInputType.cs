@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Olympus.LI.Triumph.Application.View.CustomControl {
+    public enum emInputType {
+        Numeric,
+        NumericPositive,
+        Decimal,
+        DecimalPositive,
+        String,
+        GRRString,
+    }
+}

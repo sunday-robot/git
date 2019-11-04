@@ -1,0 +1,20 @@
+bfv.exe (programmed by M.Akiyama)
+
+B-FONTファイルのviewerです。使い方は、以下の通りです。
+
+>BFV.EXE {<option>} <filename>
+option:
+-a		bfaでアーカイブされたものとして扱います。
+-c<1-15>	単色B-FONTの表示色を指定します。0は背景色です。
+-e		拡張ヘッダを無視します。liked B-FONTで、表示がうまくいか
+		ないとき指定してみてください。
+-g		Gajetと同じ幅(256)で表示します。
+-l		B-FONT ver.1.5以前のファイルのとき(linkedの時)指定します。
+
+gr.libを使っています。metysさん、Ｔａｋａさん、dannaさんに感謝します。
+
+配布・改変など自由に行ってください。
+
+連絡先
+pcs37258(Kouji)
+

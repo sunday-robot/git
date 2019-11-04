@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorAdjusterWPF", "ColorAdjusterWPF\ColorAdjusterWPF.csproj", "{C59C35BE-9B92-4B74-A4F4-E64B709D7EA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorConverter", "ColorConverter\ColorConverter.csproj", "{212E8DF7-1369-4AD9-9EA4-DEE19D5062B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorConverterTest", "ColorConverterTest\ColorConverterTest.csproj", "{8BD80295-C8A6-42DC-B5AB-D0AAD9567666}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C59C35BE-9B92-4B74-A4F4-E64B709D7EA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C59C35BE-9B92-4B74-A4F4-E64B709D7EA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C59C35BE-9B92-4B74-A4F4-E64B709D7EA8}.Debug|x86.ActiveCfg = Debug|x86
+		{C59C35BE-9B92-4B74-A4F4-E64B709D7EA8}.Debug|x86.Build.0 = Debug|x86
+		{C59C35BE-9B92-4B74-A4F4-E64B709D7EA8}.Release|Any CPU.ActiveCfg = Release|x86
+		{C59C35BE-9B92-4B74-A4F4-E64B709D7EA8}.Release|x86.ActiveCfg = Release|x86
+		{C59C35BE-9B92-4B74-A4F4-E64B709D7EA8}.Release|x86.Build.0 = Release|x86
+		{212E8DF7-1369-4AD9-9EA4-DEE19D5062B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{212E8DF7-1369-4AD9-9EA4-DEE19D5062B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{212E8DF7-1369-4AD9-9EA4-DEE19D5062B5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{212E8DF7-1369-4AD9-9EA4-DEE19D5062B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{212E8DF7-1369-4AD9-9EA4-DEE19D5062B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{212E8DF7-1369-4AD9-9EA4-DEE19D5062B5}.Release|x86.ActiveCfg = Release|Any CPU
+		{8BD80295-C8A6-42DC-B5AB-D0AAD9567666}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BD80295-C8A6-42DC-B5AB-D0AAD9567666}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BD80295-C8A6-42DC-B5AB-D0AAD9567666}.Debug|x86.ActiveCfg = Debug|x86
+		{8BD80295-C8A6-42DC-B5AB-D0AAD9567666}.Debug|x86.Build.0 = Debug|x86
+		{8BD80295-C8A6-42DC-B5AB-D0AAD9567666}.Release|Any CPU.ActiveCfg = Release|x86
+		{8BD80295-C8A6-42DC-B5AB-D0AAD9567666}.Release|x86.ActiveCfg = Release|x86
+		{8BD80295-C8A6-42DC-B5AB-D0AAD9567666}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

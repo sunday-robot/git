@@ -1,0 +1,250 @@
+﻿<Application x:Class="DataBindingLab.DataBindingLabApp"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Startup="AppStartup"
+    xmlns:src="clr-namespace:DataBindingLab">
+    <Application.Resources>
+        <src:DateConverter x:Key="dateConverter"/>
+
+        <!-- 大見出し用?(データバインディングとは無関係) -->
+        <Style x:Key="titleStyle" TargetType="TextBlock">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="DodgerBlue"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+
+        <!-- 小見出し用?(データバインディングとは無関係) -->
+        <Style x:Key="smallTitleStyle" TargetType="TextBlock">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="DimGray"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+        </Style>
+
+        <Style x:Key="textStyleTextBlock" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#333333" />
+        </Style>
+
+        <Style x:Key="textStyleTextBox" TargetType="TextBox">
+            <Setter Property="Foreground" Value="#333333" />
+            <Setter Property="MaxLength" Value="40" />
+            <Setter Property="Width" Value="392" />
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter
+                        Property="ToolTip"
+                        Value="{Binding RelativeSource={RelativeSource Self},
+                              Path=(Validation.Errors)[0].ErrorContent}"
+                        />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="comboBoxItemStyle" TargetType="ComboBoxItem">
+            <Setter Property="Foreground" Value="#333333" />
+        </Style>
+
+        <Style x:Key="comboBoxStyle" TargetType="ComboBox">
+            <Setter Property="Foreground" Value="#333333" />
+        </Style>
+
+        <!--
+        AuctionItemのデフォルトデータテンプレート?
+        メイン画面のリストボックス、AddProductWindowの下部の簡易説明表示に使用される。
+        以下のデータ項目を表示する。
+        (1) 枠線(AuctionItem.SpecialFeatureに対応)
+        (2) 星アイコン(これもAuctionItem.SpecialFeatureに対応)
+        (3) オークションアイテム説明(AuctionItem.Description)
+        (4) 現在の値段(AuctionItem.CurrentPrice)
+        -->
+        <DataTemplate DataType="{x:Type src:AuctionItem}">
+            <Border
+                Name="border"
+                BorderThickness="1" BorderBrush="Gray"
+                Padding="7" Margin="3" Width="500">
+                <Grid>
+                    <!-- 2行3列のGridDefinition -->
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/><!-- 星のアイコン用の列 -->
+                        <ColumnDefinition Width="100"/><!-- 項目名用の列 -->
+                        <ColumnDefinition Width="*"/><!-- 項目値用の列 -->
+                    </Grid.ColumnDefinitions>
+
+                    <!-- 星のアイコン(AuctionItem.SpecialFeatureにHighlightが設定されている場合に表示される) -->
+                    <Polygon
+                        Name="star"
+                        Grid.Row="0" Grid.Column="0" Grid.RowSpan="4"
+                        Fill="Yellow" Stroke="Black" StrokeThickness="1"
+                        StrokeLineJoin="Round" Width="20" Height="20"
+                        Stretch="Fill"
+                        Points="9,2 11,7 17,7 12,10 14,15 9,12 4,15 6,10 1,7 7,7"
+                        Visibility="Hidden"
+                        />
+
+                    <!-- AuctionItem.Description(オークションアイテムの説明) -->
+                    <TextBlock
+                        Name="descriptionTitle"
+                        Grid.Row="0" Grid.Column="1" Margin="0,0,8,0"
+                        Style="{StaticResource smallTitleStyle}">Description:</TextBlock>
+                    <TextBlock
+                        Name="DescriptionDTDataType"
+                        Grid.Row="0" Grid.Column="2" 
+                        Text="{Binding Path=Description}" 
+                        Style="{StaticResource textStyleTextBlock}"/>
+
+                    <!-- AuctionItem.CurrentPrice -->
+                    <TextBlock
+                        Name="currentPriceTitle"
+                        Grid.Row="1" Grid.Column="1" Margin="0,0,8,0"
+                        Style="{StaticResource smallTitleStyle}">Current Price:</TextBlock>
+                    <StackPanel
+                        Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
+                        <TextBlock
+                            Text="$"
+                            Style="{StaticResource textStyleTextBlock}"/>
+                        <TextBlock
+                            Text="{Binding Path=CurrentPrice}" 
+                            Style="{StaticResource textStyleTextBlock}"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <DataTemplate.Triggers>
+                <!--
+                AuctionItem.SpecialFeaturesに、Colorが設定されている場合の見てくれ調整
+                枠の太さを3、
+                枠は暗い青、
+                枠のパディングを5、
+                説明文、現在の価格の項目名はネイビーブルー、
+                -->
+                <DataTrigger Binding="{Binding Path=SpecialFeatures}">
+                    <DataTrigger.Value>
+                        <src:SpecialFeatures>Color</src:SpecialFeatures>
+                    </DataTrigger.Value>
+
+                    <DataTrigger.Setters>
+                        <Setter TargetName="border" Property="BorderThickness" Value="3" />
+                        <Setter TargetName="border" Property="BorderBrush" Value="DodgerBlue" />
+                        <Setter TargetName="border" Property="Padding" Value="5" />
+                        <Setter TargetName="descriptionTitle" Property="Foreground" Value="Navy" />
+                        <Setter TargetName="currentPriceTitle" Property="Foreground" Value="Navy" />
+                    </DataTrigger.Setters>
+                </DataTrigger>
+
+                <!--
+                AuctionItem.SpecialFeaturesに、Highlightが設定されている場合の見てくれ調整
+                枠の太さを3、
+                枠はオレンジ、
+                枠のパディングを5、
+                星アイコンを表示する、
+                説明文、現在の価格の項目名はネイビーブルー、
+                -->
+                <DataTrigger Binding="{Binding Path=SpecialFeatures}">
+                    <DataTrigger.Value>
+                        <src:SpecialFeatures>Highlight</src:SpecialFeatures>
+                    </DataTrigger.Value>
+
+                    <Setter TargetName="border" Property="BorderThickness" Value="3" />
+                    <Setter TargetName="border" Property="BorderBrush" Value="Orange" />
+                    <Setter TargetName="border" Property="Padding" Value="5" />
+                    <Setter TargetName="star" Property="Visibility" Value="Visible" />
+                    <Setter TargetName="descriptionTitle" Property="Foreground" Value="Navy" />
+                    <Setter TargetName="currentPriceTitle" Property="Foreground" Value="Navy" />
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+        <DataTemplate x:Key="detailsProductListingTemplate">
+            <Grid Margin="5,5,5,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition/><!--Description-->
+                    <RowDefinition/><!--StartPrice-->
+                    <RowDefinition/><!--StartDate-->
+                    <RowDefinition/><!--Category-->
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="113"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock
+                    Name="descriptionTitle"
+                    Grid.Row="0" Grid.Column="0" Margin="0,0,8,0"
+                    Style="{StaticResource smallTitleStyle}">Description:</TextBlock>
+                <TextBlock
+                    Name="DescriptionDTKey"
+                    Grid.Row="0" Grid.Column="1" 
+                    Text="{Binding Path=Description}" 
+                    Style="{StaticResource textStyleTextBlock}"/>
+
+                <TextBlock
+                    Name="startPriceTitle"
+                    Grid.Row="1" Grid.Column="0" Margin="0,0,8,0"
+                    Style="{StaticResource smallTitleStyle}">Start Price:</TextBlock>
+                <StackPanel
+                    Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                    <TextBlock
+                        Text="$" Style="{StaticResource textStyleTextBlock}"/>
+                    <TextBlock
+                        Name="StartPriceDTKey" 
+                        Text="{Binding Path=StartPrice}" 
+                        Style="{StaticResource textStyleTextBlock}"/>
+                </StackPanel>
+
+                <TextBlock
+                    Name="startDateTitle"
+                    Grid.Row="2" Grid.Column="0" Margin="0,0,8,0"
+                    Style="{StaticResource smallTitleStyle}">Start Date:</TextBlock>
+                <TextBlock
+                    Name="StartDateDTKey"
+                    Grid.Row="2" Grid.Column="1" 
+                    Text="{Binding Path=StartDate, Converter={StaticResource dateConverter}}" 
+                    Style="{StaticResource textStyleTextBlock}"/>
+
+                <TextBlock
+                    Name="categoryTitle"
+                    Grid.Row="3" Grid.Column="0" Margin="0,0,8,0"
+                    Style="{StaticResource smallTitleStyle}">Category:</TextBlock>
+                <TextBlock
+                    Name="CategoryDTKey"
+                    Grid.Row="3" Grid.Column="1" 
+                    Text="{Binding Path=Category}" 
+                    Style="{StaticResource textStyleTextBlock}"/>
+
+                <TextBlock
+                    Name="ownerNameTitle"
+                    Grid.Row="4" Grid.Column="0" Margin="0,0,8,0"
+                    Style="{StaticResource smallTitleStyle}">Owner's Name:</TextBlock>
+                <TextBlock Name="OwnersNameDTKey" Grid.Row="4" Grid.Column="1" 
+                    Text="{Binding Path=Owner.Name}" 
+                    Style="{StaticResource textStyleTextBlock}"/>
+
+                <TextBlock
+                    Grid.Row="5" Grid.Column="0" Margin="0,0,8,0"
+                    Style="{StaticResource smallTitleStyle}">Owner's Rating:</TextBlock>
+                <TextBlock
+                    Name="OwnersRatingDTKey"
+                    Grid.Row="5" Grid.Column="1" 
+                    Text="{Binding Path=Owner.Rating}"
+                    Style="{StaticResource textStyleTextBlock}"/>
+
+                <TextBlock
+                    Name="ownerMemberSinceTitle"
+                    Grid.Row="6" Grid.Column="0" Margin="0,0,8,0"
+                    Style="{StaticResource smallTitleStyle}">Member Since:</TextBlock>
+                <TextBlock
+                    Name="MemberSinceDTKey"
+                    Grid.Row="6" Grid.Column="1" 
+                    Text="{Binding Path=Owner.MemberSince, Converter={StaticResource dateConverter}}" 
+                    Style="{StaticResource textStyleTextBlock}"/>
+            </Grid>
+        </DataTemplate>
+    </Application.Resources>
+</Application>

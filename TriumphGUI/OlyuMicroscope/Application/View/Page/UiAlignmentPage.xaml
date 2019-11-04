@@ -1,0 +1,87 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:utility="clr-namespace:Olympus.LI.Triumph.Application.View.Utility"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	x:Class="Olympus.LI.Triumph.Application.View.UiAlignmentPage"
+	x:Name="AlignmentPage"
+	WindowTitle="UiAlignmentPage"
+	FlowDirection="LeftToRight"
+	Width="568" Height="426" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+    <Page.Resources>
+        <utility:EnumBooleanConverter x:Key="cnvEnumBoolean"/>
+    </Page.Resources>
+
+    <Grid x:Name="LayoutRoot" Stylus.IsPressAndHoldEnabled="False" IsEnabled="{Binding Path=sUiController.Acquisition.MovingAcquisitionSettingsStateEnable, Mode=Default}">
+		<RadioButton Content="{Binding sUiController.Stage.StageSettingDialogOnButton, Mode=Default}" Command="{Binding sUiController.Stage.EnableAlignmentHandler, Mode=Default}" IsEnabled="{Binding Path=sUiController.Stage.AlignmentOnButtonIsEnabled}" IsChecked="{Binding Path=sUiController.Stage.AlignmentOnButtonIsChecked}" Height="28" Margin="0,10,100,0" VerticalAlignment="Top" Width="80" HorizontalAlignment="Right" FontSize="13.333" Style="{DynamicResource NormalRadioButtonStyle}"/>
+        <RadioButton Content="{Binding sUiController.Stage.StageSettingDialogOffButton, Mode=Default}" Command="{Binding sUiController.Stage.DisableAlignmentHandler, Mode=Default}" IsEnabled="{Binding Path=sUiController.Stage.AlignmentOffButtonIsEnabled}" IsChecked="{Binding Path=sUiController.Stage.AlignmentOffButtonIsChecked}" HorizontalAlignment="Right" Height="28" Margin="0,10,10,0" VerticalAlignment="Top" Width="80" FontSize="13.333" Style="{DynamicResource NormalRadioButtonStyle}"/>
+        <Grid x:Name="BaseAxisAndPointGrid" IsEnabled="{Binding Path=sUiController.Stage.BaseAxisAndPointGridIsEnabled}" Margin="10,0,10,5" Height="358" VerticalAlignment="Bottom">
+            <Rectangle Stroke="Black" RadiusX="3" RadiusY="3"/>
+            <Canvas Width="51.318" Height="50.834" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="45,5,0,0">
+                <Path x:Name="Path_13" Width="48.8319" Height="48.8345" Canvas.Left="0.999899" Canvas.Top="0.999838" Stretch="Fill" StrokeThickness="0.666583" StrokeMiterLimit="2.75" Stroke="#FF000000" Data="F1 M 49.4985,45.7954C 49.4985,47.8416 47.8411,49.5011 45.7941,49.5011L 5.0376,49.5011C 2.992,49.5011 1.33319,47.8416 1.33319,45.7954L 1.33319,5.03809C 1.33319,2.99268 2.992,1.33313 5.0376,1.33313L 45.7941,1.33313C 47.8411,1.33313 49.4985,2.99268 49.4985,5.03809L 49.4985,45.7954 Z "/>
+                <Path x:Name="Line" Width="1.2" Height="43.4314" Canvas.Left="7.82685" Canvas.Top="4.0831" Stretch="Fill" StrokeThickness="1.2" StrokeMiterLimit="2.75" Stroke="#FF000000" Data="F1 M 8.42685,4.68311L 8.42685,46.9146"/>
+                <Path x:Name="Line_14" Width="44.0512" Height="1.2" Canvas.Left="3.09809" Canvas.Top="41.2892" Stretch="Fill" StrokeThickness="1.2" StrokeMiterLimit="2.75" Stroke="#FF000000" Data="F1 M 3.69809,41.8892L 46.5493,41.8892"/>
+                <Path x:Name="Line_15" Width="24.5222" Height="34.0907" Canvas.Left="3.63443" Canvas.Top="7.22559" Stretch="Fill" StrokeThickness="2" StrokeMiterLimit="2.75" Stroke="#FF000000" Data="F1 M 4.63443,8.22559L 27.1566,40.3163"/>
+                <Path x:Name="Line_16" Width="35.2903" Height="25.2445" Canvas.Left="13.0276" Canvas.Top="13.6871" Stretch="Fill" StrokeThickness="2" StrokeMiterLimit="2.75" Stroke="#FF000000" Data="F1 M 14.0276,37.9316L 47.3179,14.6871"/>
+                <Path x:Name="Path_181" Width="8" Height="8" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF000000" Fill="#FF000000" Data="F1 M 297.205,597.638C 299.138,597.638 300.705,599.205 300.705,601.138C 300.705,603.071 299.138,604.638 297.205,604.638C 295.272,604.638 293.705,603.071 293.705,601.138C 293.705,599.205 295.272,597.638 297.205,597.638 Z " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10.5,18.3,0,0"/>
+                <Path x:Name="Path_131" Width="8" Height="8" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF000000" Fill="#FF000000" Data="F1 M 323.69,594.773C 325.623,594.773 327.19,596.34 327.19,598.273C 327.19,600.206 325.623,601.773 323.69,601.773C 321.757,601.773 320.19,600.206 320.19,598.273C 320.19,596.34 321.757,594.773 323.69,594.773 Z " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36.8,15.5,0,0"/>
+                <Path x:Name="Path_201" Width="8" Height="8" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FF000000" Fill="#FF000000" Data="F1 M 309.75,604.101C 311.683,604.101 313.25,605.668 313.25,607.601C 313.25,609.534 311.683,611.101 309.75,611.101C 307.817,611.101 306.25,609.534 306.25,607.601C 306.25,605.668 307.817,604.101 309.75,604.101 Z " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,24.7,0,0"/>
+            </Canvas>
+            <Label Content="{Binding sUiController.Stage.StageSettingDialog3pointCrossLine, Mode=Default}" Margin="110,15,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="14.667"/>
+            <Path x:Name="Line_17" Height="0.667" Stretch="Fill" StrokeThickness="0.666583" StrokeMiterLimit="2.75" Stroke="#FF000000" Data="F1 M 278.092,644.999L 756.907,645" Margin="30,70,25,0" VerticalAlignment="Top"/>
+            <Label Content="{Binding sUiController.Stage.StageSettingDialogDefineReferencePosition, Mode=Default}" HorizontalAlignment="Left" Margin="60,75,0,0" VerticalAlignment="Top" FontSize="14.667"/>
+            <RadioButton Content="{Binding sUiController.Stage.StageSettingDialogAxisX, Mode=Default}" Margin="278,80,0,0" VerticalAlignment="Top" FontSize="14.667" HorizontalAlignment="Left" Style="{DynamicResource RadioButtonStyle}" IsChecked="{Binding sUiController.Stage.BaseAxisSelect, ConverterParameter=X, Converter={StaticResource cnvEnumBoolean}, Mode=Default}"/>
+            <RadioButton Content="{Binding sUiController.Stage.StageSettingDialogAxisY, Mode=Default}" HorizontalAlignment="Left" Margin="368,80,0,0" VerticalAlignment="Top" FontSize="14.667" Style="{DynamicResource RadioButtonStyle}" IsChecked="{Binding sUiController.Stage.BaseAxisSelect, ConverterParameter=Y, Converter={StaticResource cnvEnumBoolean}, Mode=Default}"/>
+            <Label Content="{Binding sUiController.Stage.StageSettingDialogCoordinatePointXY, Mode=Default}" HorizontalAlignment="Left" Margin="60,110,0,0" VerticalAlignment="Top" FontSize="14.667"/>
+            <Canvas Width="180" Height="170" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="65,150,0,0">
+            	<Canvas.LayoutTransform>
+            		<TransformGroup>
+            			<ScaleTransform ScaleY="1.05"/>
+            			<SkewTransform/>
+            			<RotateTransform/>
+            			<TranslateTransform/>
+            		</TransformGroup>
+            	</Canvas.LayoutTransform>
+                <Rectangle x:Name="Rectangle" Stretch="Fill" Fill="#FF000000" Width="180" Height="170"/>
+                <Path x:Name="Line_138" Width="1.33317" Height="138.107" Canvas.Left="17.3146" Canvas.Top="1.99986" Stretch="Fill" StrokeThickness="1.33317" StrokeMiterLimit="2.75" Stroke="#FFFFFFFF" Data="F1 M 17.9812,2.66644L 17.9812,139.441" Margin="5,10,0,0"/>
+                <Path x:Name="Line_139" Width="140.115" Height="1.33317" Canvas.Left="1.99968" Canvas.Top="122.498" Stretch="Fill" StrokeThickness="1.33317" StrokeMiterLimit="2.75" Stroke="#FFFFFFFF" Data="F1 M 2.66626,123.165L 141.448,123.165" Margin="5,10,0,0"/>
+                <Path x:Name="Line_140" Width="75.6085" Height="106.598" Canvas.Left="4.3655" Canvas.Top="12.806" Stretch="Fill" StrokeThickness="2.66633" StrokeMiterLimit="2.75" Stroke="#FFFFFFFF" Data="F1 M 5.69867,14.1392L 78.6408,118.071" Margin="5,10,0,0"/>
+                <Path x:Name="Line_141" Width="110.483" Height="77.9478" Canvas.Left="34.7872" Canvas.Top="33.7326" Stretch="Fill" StrokeThickness="2.66633" StrokeMiterLimit="2.75" Stroke="#FFFFFFFF" Data="F1 M 36.1204,110.347L 143.937,35.0658" Margin="5,10,0,0"/>
+                <Path x:Name="Path_242" Width="13.366" Height="13.366" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 423.704,801.083C 427.395,801.083 430.387,804.075 430.387,807.766C 430.387,811.457 427.395,814.449 423.704,814.449C 420.013,814.449 417.021,811.457 417.021,807.766C 417.021,804.075 420.013,801.083 423.704,801.083 Z " HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="102.2" Canvas.Top="51.8" Margin="5,10,0,0"/>
+                <Path x:Name="Path_243" Width="13.366" Height="13.366" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 391.869,824.664C 395.56,824.664 398.552,827.655 398.552,831.346C 398.552,835.037 395.56,838.029 391.869,838.029C 388.178,838.029 385.187,835.037 385.187,831.346C 385.187,827.655 388.178,824.664 391.869,824.664 Z " HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="70.3" Canvas.Top="75.4" Margin="5,10,0,0"/>
+                <Path x:Name="Path_244" Width="13.366" Height="13.366" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 345.813,792.88C 349.504,792.88 352.496,795.872 352.496,799.563C 352.496,803.254 349.504,806.246 345.813,806.246C 342.122,806.246 339.13,803.254 339.13,799.563C 339.13,795.872 342.122,792.88 345.813,792.88 Z " HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="24.3" Canvas.Top="43.7" Margin="5,10,0,0"/>
+                <Label Content="{Binding sUiController.Stage.StageSettingDialogBasePoint1, Mode=Default}" FontSize="13.333" Background="{x:Null}" Foreground="White" Margin="118,55,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="{Binding sUiController.Stage.StageSettingDialogBasePoint2, Mode=Default}" FontSize="13.333" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,78,0,0" Background="{x:Null}" Foreground="White"/>
+                <Label Content="{Binding sUiController.Stage.StageSettingDialogCrossPoint, Mode=Default}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13.333" Background="{x:Null}" Foreground="White" Margin="39,46,0,0"/>
+            </Canvas>
+            <DataGrid x:Name="BaseAxisAndPointList" ItemsSource="{Binding Path=sUiController.Stage.BaseAxisAndPointList}" SelectedIndex="{Binding Path=sUiController.Stage.BaseAxisAndPointListSelectedIndex}" HorizontalAlignment="Left" Width="240" VerticalAlignment="Top" Height="100" Margin="278,150,0,0" FontSize="13.333" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" HeadersVisibility="All" SelectionUnit="FullRow" SelectionMode="Single" EnableRowVirtualization="False" HorizontalScrollBarVisibility="Hidden" PreviewKeyDown="AlignmentBAPListPreviewKeyDownHandler" HorizontalContentAlignment="Right" CellEditEnding="AlignmentBAPListCellEditEndingHandler" PreviewTextInput="AlignmentBAPListPreviewTextInputHandler">
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="lblColmnNumI" Header="#" Width="48" IsReadOnly="true" Binding="{Binding Path=No, Mode=TwoWay}"/>
+                    <DataGridTextColumn x:Name="lblColmnPosX" Header="X" Width="92" Binding="{Binding Path=X, Mode=TwoWay}"/>
+                    <DataGridTextColumn x:Name="lblColmnPosY" Header="Y" Width="92" Binding="{Binding Path=Y, Mode=TwoWay}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Content="{Binding sUiController.Stage.StageSettingCurrentPoint, Mode=Default}" HorizontalAlignment="Right" Height="28" VerticalAlignment="Top" Width="100" FontSize="13.333" Margin="0,270,170,0" Style="{DynamicResource SimpleButtonStyle}" Command="{Binding sUiController.Stage.BaseAxisAndPositionGetPositionHandler, Mode=Default}"/>
+            <Button Content="{Binding sUiController.Stage.StageSettingDialogMoveTo, Mode=Default}" HorizontalAlignment="Right" Height="28" VerticalAlignment="Top" Width="100" FontSize="13.333" Margin="0,270,30,0" Style="{DynamicResource SimpleButtonStyle}" Command="{Binding sUiController.Stage.BaseAxisAndPositionMovePositionHandler, Mode=Default}" IsEnabled="{Binding sUiController.Stage.IsStageMoveSpecifiedEnable, Mode=Default}"/>
+        </Grid>
+        <Button HorizontalAlignment="Left" Height="46" Margin="10,8,0,0" VerticalAlignment="Top" Width="46" Command="{Binding sUiController.Stage.AlignmentFileLoadHandler, Mode=Default}" IsEnabled="{Binding Path=sUiController.Stage.LoadAlignmentButtonIsEnabled}"  Style="{DynamicResource NormalButtonStyle}">
+        	<Canvas Width="46" Height="46" Clip="F1 M 0,0L 83,0L 83,92L 0,92L 0,0">
+        		<Rectangle x:Name="Rectangle1" Stretch="Fill" Fill="#FF363636" Width="46" Height="46" RadiusX="3" RadiusY="3" Visibility="Collapsed"/>
+        		<Path x:Name="Path_3" Width="20.703" Height="10.419" Canvas.Left="4.755" Canvas.Top="30.535" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 4.26178,4.58459L 21.9583,4.58459L 19.1511,15.0039L 1.25519,15.0039L 4.26178,4.58459"/>
+        		<Path x:Name="Path_4" Width="18.784" Height="10.964" Canvas.Left="3.5" Canvas.Top="25.95" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 2.34625,3.02081L 18.7839,3.02081L 18.7839,1.5L 8.13281,1.44141L 7.09625,0L 0.769531,0.0299072L 0,1.45831L 0,10.9635L 2.34625,3.02081"/>
+        		<Path x:Name="Path_5" Width="13.635" Height="15.34" Canvas.Left="29.577" Canvas.Top="5.743" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 69.7123,46.8332L 69.7123,35.0818L 66.1212,31.4933L 64.9155,31.4933L 56.0978,31.4933L 56.0769,46.8123L 69.7123,46.8332 Z M 68.3464,45.2576C 68.3464,45.3618 68.2619,45.4464 68.1589,45.4464L 57.6915,45.4464C 57.5873,45.4464 57.504,45.3618 57.504,45.2576L 57.504,33.0493C 57.504,32.9424 57.5873,32.8591 57.6915,32.8591L 64.8582,32.8591L 64.8582,36.3474L 68.3464,36.3474L 68.3464,45.2576 Z M 66.2241,34.9815L 66.2241,32.8591L 68.3464,34.9815L 66.2241,34.9815 Z "/>
+        		<Path x:Name="Path_6" Width="18.692" Height="14.142" Canvas.Left="8.966" Canvas.Top="8.945" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 54.1582,39.9839L 47.1804,34.6949L 47.1804,38.553L 45.752,38.553C 40.0801,38.553 35.4655,43.1663 35.4655,48.8369L 38.4655,48.8369C 38.4655,44.8199 41.7336,41.553 45.752,41.553L 47.1804,41.553L 47.1804,45.3121L 54.1582,39.9839 Z "/>
+        	</Canvas>
+        </Button>
+        <Button HorizontalAlignment="Left" Height="46" Margin="70,8,0,0" VerticalAlignment="Top" Width="46" Command="{Binding sUiController.Stage.AlignmentFileSaveHandler, Mode=Default}" IsEnabled="{Binding Path=sUiController.Stage.SaveAlignmentButtonIsEnabled}"   Style="{DynamicResource NormalButtonStyle}">
+        	<Canvas Width="46" Height="46" Clip="F1 M 0,0L 62,0L 62,73L 0,73L 0,0">
+        		<Rectangle x:Name="Rectangle2" Stretch="Fill" Fill="#FF363636" Width="46" Height="46" RadiusX="3" RadiusY="3" Visibility="Collapsed"/>
+        		<Path x:Name="Path_1" Width="13.636" Height="15.34" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 51.5038,34.5218L 51.5038,22.7704L 47.9127,19.1819L 46.707,19.1819L 37.8893,19.1819L 37.8684,34.5009L 51.5038,34.5218 Z M 50.1379,32.9462C 50.1379,33.0504 50.0535,33.135 49.9504,33.135L 39.483,33.135C 39.3788,33.135 39.2955,33.0504 39.2955,32.9462L 39.2955,20.738C 39.2955,20.6311 39.3788,20.5478 39.483,20.5478L 46.6497,20.5478L 46.6497,24.0361L 50.1379,24.0361L 50.1379,32.9462 Z M 48.0156,22.6702L 48.0156,20.5478L 50.1379,22.6702L 48.0156,22.6702 Z " Margin="30,3,0,0"/>
+        		<Path x:Name="Path_2" Width="18.128" Height="13.047" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 18.9999,36.6105L 17.9743,27.915L 21.3007,29.8693L 22.0243,28.6377C 24.8974,23.7474 31.2126,22.1055 36.1018,24.978L 34.5822,27.5647C 31.1188,25.5298 26.6464,26.6928 24.6108,30.1574L 23.8873,31.389L 27.1285,33.2932L 18.9999,36.6105 Z " Margin="10,10,0,0"/>
+        		<Path x:Name="Path_7" Width="17.508" Height="17.82" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 14.8933,0L 12.9089,0L 12.9089,6.73175L 4.75,6.73175L 4.75,0L 0,0L 0,17.8203L 17.5078,17.8203L 17.5078,2.62494L 14.8933,0 Z M 14.8906,16.4296L 2.61719,16.4296L 2.61719,8.94263L 14.8906,8.94263L 14.8906,16.4296 Z " Margin="3,24,0,0"/>
+        		<Rectangle x:Name="Rectangle_4" Width="1.802" Height="4.326" Canvas.Left="9.912" Canvas.Top="1.114" Stretch="Fill" Fill="#FFFFFFFF" Margin="3,24,0,0"/>
+        	</Canvas>
+        </Button>
+    </Grid>
+</Page>

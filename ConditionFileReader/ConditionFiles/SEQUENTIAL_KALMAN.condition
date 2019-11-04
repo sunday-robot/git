@@ -1,0 +1,918 @@
+<?xml version="1.0" encoding="ASCII"?>
+<enablermodel:stateConditionTableGroupList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:enablermodel="http://www.fluoview.olympus.co.jp/core/enablermodel">
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_REFERENCE_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_LINE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_FRAME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GROUP_ADDABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_CLIP_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_LINE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_FRAME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GROUP_ADDABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_LINE_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_LINE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_FRAME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GROUP_ADDABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_FREE_LINE_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_LINE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_FRAME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GROUP_ADDABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_POINT_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_LINE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_FRAME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GROUP_ADDABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_MULTI_POINT_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_LINE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_FRAME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GROUP_ADDABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_MAPPING_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_LINE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_FRAME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GROUP_ADDABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_GALVANO</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_KALMAN_LINE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+          <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_ONEWAY</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_KALMAN_LINE</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+                <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_REFERENCE_SCAN_MODE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_KALMAN_LINE</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>true</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_CLIP_SCAN_MODE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_KALMAN_LINE</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>true</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_LINE_SCAN_MODE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_KALMAN_LINE</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>true</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_FREE_LINE_SCAN_MODE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_KALMAN_LINE</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>true</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_POINT_SCAN_MODE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_KALMAN_LINE</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>false</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_MULTI_POINT_SCAN_MODE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_KALMAN_LINE</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>false</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_MAPPING_SCAN_MODE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_KALMAN_LINE</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>false</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_ROUNDTRIP</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_KALMAN_LINE</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_KALMAN_FRAME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+          <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_REFERENCE_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_KALMAN_FRAME</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>true</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_CLIP_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_KALMAN_FRAME</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>true</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_LINE_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_KALMAN_FRAME</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_FREE_LINE_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_KALMAN_FRAME</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_POINT_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_KALMAN_FRAME</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_MULTI_POINT_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_KALMAN_FRAME</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_MAPPING_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_KALMAN_FRAME</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_RESONANT</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_KALMAN_LINE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+          <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_ONEWAY</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_KALMAN_LINE</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>true</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_ROUNDTRIP</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_KALMAN_LINE</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_KALMAN_FRAME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+          <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_REFERENCE_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_KALMAN_FRAME</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>true</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_CLIP_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_KALMAN_FRAME</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>true</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_LINE_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_KALMAN_FRAME</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_FREE_LINE_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_KALMAN_FRAME</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_POINT_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_KALMAN_FRAME</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_MULTI_POINT_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_KALMAN_FRAME</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_MAPPING_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_KALMAN_FRAME</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList initStateId="S_NO_SAME_DETECTOR_USE_IN_ONE_PHASE" isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_SAME_DETECTOR_USE_IN_ONE_PHASE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_NONE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_NO_SAME_DETECTOR_USE_IN_ONE_PHASE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_NONE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_SEQUENTIAL_OFF</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GROUP_ADDABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_SEQUENTIAL_LINE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GROUP_ADDABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_SEQUENTIAL_FRAME</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GROUP_ADDABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_SERIES_NONE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_NONE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_LINE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_FRAME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_SERIES_Z</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_NONE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_LINE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_FRAME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_SERIES_T</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_NONE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_LINE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_FRAME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_SERIES_ZT</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_NONE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_LINE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_FRAME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_SERIES_LEM</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_NONE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_LINE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_FRAME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_SERIES_LEMZ</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_NONE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_LINE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_FRAME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_SERIES_LEMT</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_NONE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_LINE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_FRAME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_SERIES_LEMZT</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_NONE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_LINE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_FRAME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_IMAGING_IDLING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_KALMAN_SETTING_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GROUP_SELECTABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_REPEAT_SCANNING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_KALMAN_SETTING_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GROUP_SELECTABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_SERIES_SCANNING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_KALMAN_SETTING_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GROUP_SELECTABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_RESTING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_KALMAN_SETTING_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GROUP_SELECTABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_CELL32_VBF_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_LINE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_FRAME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_CELL32_LAMBDA_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_LINE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_FRAME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_FOCUS_SCAN_OFF</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_KALMAN_SETTING_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_FOCUS_SCAN_PREPARING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_KALMAN_SETTING_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_FOCUS_SCAN_SCANNING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_KALMAN_SETTING_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_NO_SIM_LASER_IN_ALL_PHASE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_NONE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_LINE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_FRAME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_SIM_LASER_IN_ALL_PHASE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_NONE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_LINE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_SEQUENTIAL_FRAME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+</enablermodel:stateConditionTableGroupList>

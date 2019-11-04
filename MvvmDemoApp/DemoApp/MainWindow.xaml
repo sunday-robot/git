@@ -1,0 +1,76 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:DemoApp.ViewModel"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Class="DemoApp.MainWindow"
+    FontSize="13" 
+    FontFamily="Verdana"
+    MinWidth="650"
+    MinHeight="420"
+    Title="{Binding DisplayName}"
+    Width="650"
+    Height="420"
+    WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary Source="MainWindowResources.xaml" />
+    </Window.Resources>
+
+    <!--画面レイアウト-->
+    <DockPanel>
+        <!--画面上部のメニューバー-->
+        <DockPanel
+            DockPanel.Dock="Top"
+            KeyboardNavigation.TabNavigation="None">
+            <Menu KeyboardNavigation.TabNavigation="Cycle">
+                <MenuItem Header="_File">
+                    <MenuItem Header="E_xit" Command="{Binding CloseCommand}" />
+                </MenuItem>
+                <MenuItem Header="_Edit" />
+                <MenuItem Header="_Options" />
+                <MenuItem Header="_Help" />
+            </Menu>
+        </DockPanel>
+        <Grid Margin="4">
+            <Grid.ColumnDefinitions>
+                <!--カラム0:画面左のコントロールパネル列？-->
+                <ColumnDefinition Width="Auto" />
+                <!--カラム1:ただの隙間？列-->
+                <ColumnDefinition Width="4" />
+                <!--カラム2:画面右のワークスペース列？-->
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!--カラム0:画面左のコントロールパネル(ハイパーリンク形式のボタン)-->
+            <Border
+                Grid.Column="0"
+                x:Name="controlPanelBorder"
+                Style="{StaticResource MainBorderStyle}"
+                Width="170">
+                <HeaderedContentControl
+					Content="{Binding Commands}"
+					ContentTemplate="{StaticResource CommandsTemplate}"
+					Header="Control Panel"
+					Style="{StaticResource MainHCCStyle}"/>
+            </Border>
+
+            <!--カラム1:ただの隙間なので何もなし-->
+
+            <!--カラム2:画面右のワークスペース-->
+            <Border
+                Grid.Column="2"
+                x:Name="workSpacesBorder"
+                Style="{StaticResource MainBorderStyle}">
+                <HeaderedContentControl
+					Content="{Binding Workspaces}"
+					ContentTemplate="{StaticResource WorkspacesTemplate}"
+					Header="Workspaces"
+					Style="{StaticResource MainHCCStyle}"/>
+            </Border>
+        </Grid>
+
+        <!--メニューバーの下のメイン領域-->
+    </DockPanel>
+</Window>

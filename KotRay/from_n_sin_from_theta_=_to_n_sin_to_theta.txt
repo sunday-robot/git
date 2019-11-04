@@ -1,0 +1,8 @@
+from_n * sin(from_theta) = to_n * sin(to_theta)
+from_n * sin(from_theta) / to_n = sin(to_theta)
+asin(sin(from_theta) * from_n / to_n) = to_theta
+
+sin(theta) -> dx
+from_n * from_dx / to_n = to_dx
+
+

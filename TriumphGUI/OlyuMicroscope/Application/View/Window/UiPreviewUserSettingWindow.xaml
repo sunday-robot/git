@@ -1,0 +1,17 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="Olympus.LI.Triumph.Application.View.UiPreviewUserSettingWindow"
+	x:Name="Window"
+	Title="UiPreviewUserSettingWindow"
+	Width="1920" Height="1080" ResizeMode="NoResize" WindowStartupLocation="Manual" WindowStyle="None" Background="Black" Left="0" Top="0" AllowsTransparency="True"
+    Closing="WindowClosing">
+
+    <Grid x:Name="LayoutRoot" Stylus.IsPressAndHoldEnabled="False">
+		<Frame Margin="0,39,680,20" x:Name="frmPreviewUserPatternArea" Content="frmPreviewUserPatternArea" NavigationUIVisibility="Hidden" Source="{Binding Path=sUiController.Layout.PreviewUserPatternSource, Mode=Default}"/>
+		<Frame Height="39" Content="HeaderBarArea" x:Name="frmHeaderBarArea" NavigationUIVisibility="Hidden" VerticalAlignment="Top" Source="{Binding Path=sUiController.Layout.PreviewHeaderBarSource, Mode=Default}"/>
+		<Frame Margin="1240,45,0,345" x:Name="frmCurrentConditionArea" Content="frmCurrentConditionArea" NavigationUIVisibility="Hidden" Source="{Binding Path=sUiController.Layout.PreviewCurrentConditionSource, Mode=Default}"/>
+		<Frame Margin="1240,655,0,85" x:Name="frmUserSettingArea" Content="frmUserSettingArea" NavigationUIVisibility="Hidden" Source="{Binding Path=sUiController.Layout.PreviewUserSettingSource, Mode=Default}"/>
+		<Frame x:Name="frmUserOperationArea" VerticalAlignment="Bottom" Content="frmUserOperationArea" Source="{Binding Path=sUiController.Layout.PreviewUserOperationSource, Mode=Default}" Height="65" Width="1920" />
+	</Grid>
+</Window>

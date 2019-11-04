@@ -1,0 +1,2324 @@
+<?xml version="1.0" encoding="ASCII"?>
+<enablermodel:stateConditionTableGroupList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:enablermodel="http://www.fluoview.olympus.co.jp/core/enablermodel">
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_PROTOCOL_NO_PROTOCOL</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE_AS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_CLOSE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_PREPARE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_START_STOP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SUSPEND_RESUME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_FILE_SELECTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_ADD_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_DELETE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_CURRENT_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_EXECUTION_TIME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_APPLY_TASK_PARAMETERS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_POST_PROCESS_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_FILE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_CONDITION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_ACTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_OTHER_TASK_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_EDIT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_PROTOCOL_ANY_PROTOCOL</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE_AS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_CLOSE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_PREPARE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_START_STOP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SUSPEND_RESUME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_FILE_SELECTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_ADD_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_DELETE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_CURRENT_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_EXECUTION_TIME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_APPLY_TASK_PARAMETERS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_POST_PROCESS_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_FILE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_CONDITION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_ACTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_OTHER_TASK_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_EDIT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_PROTOCOL_NOT_EDITED</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_PROTOCOL_EDITED</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_PROTOCOL_NOT_READY</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_START_STOP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SUSPEND_RESUME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_PROTOCOL_READY</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_START_STOP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SUSPEND_RESUME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_PROTOCOL_STOP</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_STANDARD_MODE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_CREATE_NEW_FILE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_OPEN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE_AS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_CLOSE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_PREPARE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_START_STOP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SUSPEND_RESUME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_FILE_SELECTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_ADD_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_DELETE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_CURRENT_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_EXECUTION_TIME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_APPLY_TASK_PARAMETERS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_POST_PROCESS_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_FILE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_CONDITION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_ACTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_OTHER_TASK_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_WAITING_PAUSE_MSG</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CHANNEL_GROUP_EDIT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LAMBDA_RANGE_EDIT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_EDIT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_PROTOCOL_WAITING_PREPARE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_STANDARD_MODE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_CREATE_NEW_FILE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_OPEN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE_AS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_CLOSE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_PREPARE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_START_STOP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SUSPEND_RESUME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_FILE_SELECTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_ADD_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_DELETE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_CURRENT_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_EXECUTION_TIME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_APPLY_TASK_PARAMETERS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_POST_PROCESS_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_FILE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_CONDITION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_ACTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_OTHER_TASK_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_WAITING_PAUSE_MSG</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CHANNEL_GROUP_EDIT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LAMBDA_RANGE_EDIT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_EDIT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_PROTOCOL_EXECUTING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_STANDARD_MODE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_CREATE_NEW_FILE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_OPEN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE_AS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_CLOSE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_PREPARE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_START_STOP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SUSPEND_RESUME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_FILE_SELECTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_ADD_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_DELETE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_CURRENT_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_EXECUTION_TIME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_APPLY_TASK_PARAMETERS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_POST_PROCESS_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_FILE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_CONDITION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_ACTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_OTHER_TASK_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_WAITING_PAUSE_MSG</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CHANNEL_GROUP_EDIT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LAMBDA_RANGE_EDIT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_EDIT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_PROTOCOL_WAITING_START</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_STANDARD_MODE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_CREATE_NEW_FILE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_OPEN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE_AS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_CLOSE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_PREPARE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_START_STOP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SUSPEND_RESUME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_FILE_SELECTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_ADD_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_DELETE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_CURRENT_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_EXECUTION_TIME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_APPLY_TASK_PARAMETERS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_POST_PROCESS_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_FILE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_CONDITION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_ACTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_OTHER_TASK_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_WAITING_PAUSE_MSG</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CHANNEL_GROUP_EDIT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LAMBDA_RANGE_EDIT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_EDIT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_PROTOCOL_WAITING_STOP</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_STANDARD_MODE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_CREATE_NEW_FILE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_OPEN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE_AS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_CLOSE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_PREPARE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_START_STOP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SUSPEND_RESUME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_FILE_SELECTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_ADD_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_DELETE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_CURRENT_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_EXECUTION_TIME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_APPLY_TASK_PARAMETERS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_POST_PROCESS_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_FILE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_CONDITION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_ACTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_OTHER_TASK_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_WAITING_PAUSE_MSG</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CHANNEL_GROUP_EDIT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LAMBDA_RANGE_EDIT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_EDIT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_PROTOCOL_WAITING_PAUSE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_STANDARD_MODE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_CREATE_NEW_FILE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_OPEN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE_AS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_CLOSE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_PREPARE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_START_STOP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SUSPEND_RESUME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_FILE_SELECTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_ADD_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_DELETE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_CURRENT_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_EXECUTION_TIME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_APPLY_TASK_PARAMETERS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_POST_PROCESS_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_FILE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_CONDITION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_ACTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_OTHER_TASK_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_WAITING_PAUSE_MSG</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CHANNEL_GROUP_EDIT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LAMBDA_RANGE_EDIT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_EDIT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_PROTOCOL_WAITING_RESUME</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_STANDARD_MODE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_CREATE_NEW_FILE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_OPEN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE_AS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_CLOSE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_PREPARE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_START_STOP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SUSPEND_RESUME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_FILE_SELECTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_ADD_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_DELETE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_CURRENT_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_EXECUTION_TIME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_APPLY_TASK_PARAMETERS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_POST_PROCESS_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_FILE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_CONDITION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_ACTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_OTHER_TASK_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_WAITING_PAUSE_MSG</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CHANNEL_GROUP_EDIT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LAMBDA_RANGE_EDIT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_EDIT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_PROTOCOL_PAUSE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_STANDARD_MODE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_CREATE_NEW_FILE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_OPEN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE_AS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_CLOSE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_PREPARE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_START_STOP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SUSPEND_RESUME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_FILE_SELECTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_ADD_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_DELETE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_CURRENT_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_EXECUTION_TIME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_APPLY_TASK_PARAMETERS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_POST_PROCESS_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_FILE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_CONDITION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_ACTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_OTHER_TASK_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_WAITING_PAUSE_MSG</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CHANNEL_GROUP_EDIT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LAMBDA_RANGE_EDIT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_EDIT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_PROTOCOL_WAITING_RESET</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_STANDARD_MODE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_CREATE_NEW_FILE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_OPEN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SAVE_AS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_CLOSE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_PREPARE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_START_STOP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SUSPEND_RESUME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_FILE_SELECTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SELECT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_GROUP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_ADD_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_DELETE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_CURRENT_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_MOVE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_EXECUTION_TIME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_APPLY_TASK_PARAMETERS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_POST_PROCESS_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_FILE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_CONDITION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_POST_PROCESS_ACTION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SHOW_GROUP_OTHER_TASK_INFO</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_SET_ENABLE_TASK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_WAITING_PAUSE_MSG</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CHANNEL_GROUP_EDIT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LAMBDA_RANGE_EDIT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PROTOCOL_EDIT_PROTOCOL</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+</enablermodel:stateConditionTableGroupList>

@@ -1,0 +1,144 @@
+h0 H
+vo
+c
+
+v0 - c = V * t
+v0 - V * t = c
+V = (-Hy, Hx)
+c = h0 + H * u
+v0 - V * t = h0 + H * u
+v0 - (-Hy, Hx) * t = h0 + H * u
+
+v0x + Hy * t = h0x + Hx * u
+v0y - Hx * t = h0y + Hy * u
+
+Hy * t = h0x + Hx * u - v0x
+t = (h0x + Hx * u - v0x) / Hy
+
+v0y - Hx * (h0x + Hx * u - v0x) / Hy = h0y + Hy * u
+v0y * Hy - Hx * (h0x + Hx * u - v0x) = h0y * Hy + Hy * u * Hy
+v0y * Hy - (Hx * h0x + Hx * Hx * u - Hx * v0x) = h0y * Hy + Hy * u * Hy
+v0y * Hy - Hx * h0x - Hx * Hx * u + Hx * v0x = h0y * Hy + Hy * u * Hy
+- Hx * h0x - Hx * Hx * u + Hx * v0x = h0y * Hy + Hy * u * Hy - v0y * Hy
+- Hx * Hx * u = h0y * Hy + Hy * u * Hy - v0y * Hy + Hx * h0x - Hx * v0x
+- Hx * Hx * u - Hy * u * Hy  = h0y * Hy - v0y * Hy + Hx * h0x - Hx * v0x
+(- Hx * Hx - Hy * Hy) * u  = h0y * Hy - v0y * Hy + Hx * h0x - Hx * v0x
+-(Hx * Hx + Hy * Hy) * u  = (h0y - v0y) * Hy + (h0x - v0x) * Hx
+(Hx * Hx + Hy * Hy) * u  = (-h0y + v0y) * Hy + (-h0x + v0x) * Hx
+(Hx * Hx + Hy * Hy) * u  = ((-h0y + v0y) * Hy + (-h0x + v0x) * Hx)
+u = ((-h0y + v0y) * Hy + (-h0x + v0x) * Hx) / (Hx * Hx + Hy * Hy)
+
+c = h0 + H * ((-h0y + v0y) * Hy + (-h0x + v0x) * Hx) / (Hx * Hx + Hy * Hy)
+c = h0 + H * ((-h0y + v0y) * Hy + (-h0x + v0x) * Hx) / dot(H, H)
+c = h0 + (Hx, Hy) * ((-h0y + v0y) * Hy + (-h0x + v0x) * Hx) / dot(H, H)
+c = h0 + (Hx* ((-h0y + v0y) * Hy + (-h0x + v0x) * Hx), Hy* ((-h0y + v0y) * Hy + (-h0x + v0x) * Hx))  / dot(H, H)
+c = (h0x, h0y) + (Hx* ((-h0y + v0y) * Hy + (-h0x + v0x) * Hx), Hy* ((-h0y + v0y) * Hy + (-h0x + v0x) * Hx)) / dot(H, H)
+
+cx = h0x + Hx* ((-h0y + v0y) * Hy + (-h0x + v0x) * Hx) / dot(H, H)
+cy = h0y + Hy* ((-h0y + v0y) * Hy + (-h0x + v0x) * Hx) / dot(H, H)
+
+cx = (h0x * Hx * Hx + h0x * Hy * Hy - h0y * Hx * Hy + v0y * Hx * Hy - h0x * Hx* Hx + v0x * Hx* Hx) / dot(H, H)
+
+cy = (h0y * (Hx * Hx + Hy * Hy) + Hy* ((-h0y + v0y) * Hy + (-h0x + v0x) * Hx)) / dot(H, H)
+cy = (h0y * Hx * Hx + h0y * Hy * Hy - h0y * Hy * Hy + v0y * Hy * Hy - h0x * Hy * Hx + v0x * Hy * Hx) / dot(H, H)
+
+cx = (h0x * Hy * Hy - h0y * Hx * Hy + v0y * Hx * Hy + v0x * Hx * Hx) / dot(H, H)
+cy = (h0y * Hx * Hx + v0y * Hy * Hy - h0x * Hy * Hx + v0x * Hy * Hx) / dot(H, H)
+
+cx = (h0x * Hy * Hy + v0x * Hx * Hx - h0y * Hx * Hy + v0y * Hx * Hy) / dot(H, H)
+cy = (h0y * Hx * Hx + v0y * Hy * Hy - h0x * Hy * Hx + v0x * Hy * Hx) / dot(H, H)
+
+Hx = (h1x - h0x)
+Hy = (h1y - h0y)
+Hx * Hy = (h1x - h0x) * (h1y - h0y)
+Hx * Hy = ((h1x - h0x) * h1y - (h1x - h0x) * h0y)
+Hx * Hy = ((h1x * h1y - h0x * h1y) - (h1x * h0y - h0x * h0y))
+Hx * Hy = (h1x * h1y - h0x * h1y - h1x * h0y + h0x * h0y)
+cx = (h0x * Hy * Hy + v0x * Hx * Hx - (h0y - v0y) * (h1x * h1y - h0x * h1y - h1x * h0y + h0x * h0y)) / dot(H, H)
+cy = (h0y * Hx * Hx + v0y * Hy * Hy - (h0x - v0x) * (h1x * h1y - h0x * h1y - h1x * h0y + h0x * h0y)) / dot(H, H)
+
+cx = (h0x * Hy * Hy + v0x * Hx * Hx - ((h0y - v0y) * h1x * h1y - (h0y - v0y) * h0x * h1y - (h0y - v0y) * h1x * h0y + (h0y - v0y) * h0x * h0y)) / dot(H, H)
+cy = (h0y * Hx * Hx + v0y * Hy * Hy - ((h0x - v0x) * h1x * h1y - (h0x - v0x) * h0x * h1y - (h0x - v0x) * h1x * h0y + (h0x - v0x) * h0x * h0y)) / dot(H, H)
+
+cx = (h0x * Hy * Hy + v0x * Hx * Hx - h0y * h1x * h1y + v0y * h1x * h1y + h0y * h0x * h1y - v0y * h0x * h1y + h0y * h1x * h0y - v0y * h1x * h0y - h0y * h0x * h0y + v0y * h0x * h0y) / dot(H, H)
+cy = (h0y * Hx * Hx + v0y * Hy * Hy - h0x * h1x * h1y + v0x * h1x * h1y + h0x * h0x * h1y - v0x * h0x * h1y + h0x * h1x * h0y - v0x * h1x * h0y - h0x * h0x * h0y + v0x * h0x * h0y) / dot(H, H)
+
+Hx * Hx = (h1x * (h1x - h0x) - h0x * (h1x - h0x))
+Hx * Hx = (h1x * h1x - h1x * h0x - h0x * h1x + h0x * h0x)
+
+cx = (h0x * Hy * Hy + v0x * (h1x * h1x - h1x * h0x - h0x * h1x + h0x * h0x) - h0y * h1x * h1y + v0y * h1x * h1y + h0y * h0x * h1y - v0y * h0x * h1y + h0y * h1x * h0y - v0y * h1x * h0y - h0y * h0x * h0y + v0y * h0x * h0y) / dot(H, H)
+cy = (h0y * (h1x * h1x - h1x * h0x - h0x * h1x + h0x * h0x) + v0y * Hy * Hy - h0x * h1x * h1y + v0x * h1x * h1y + h0x * h0x * h1y - v0x * h0x * h1y + h0x * h1x * h0y - v0x * h1x * h0y - h0x * h0x * h0y + v0x * h0x * h0y) / dot(H, H)
+
+Hy * Hy = (h1y - h0y) * (h1y - h0y)
+Hy * Hy = (h1y * h1y - h1y * h0y - h0y * h1y + h0y * h0y)
+cx = (h0x * (h1y * h1y - h1y * h0y - h0y * h1y + h0y * h0y) + v0x * (h1x * h1x - h1x * h0x - h0x * h1x + h0x * h0x) - h0y * h1x * h1y + v0y * h1x * h1y + h0y * h0x * h1y - v0y * h0x * h1y + h0y * h1x * h0y - v0y * h1x * h0y - h0y * h0x * h0y + v0y * h0x * h0y) / dot(H, H)
+cy = (h0y * (h1x * h1x - h1x * h0x - h0x * h1x + h0x * h0x) + v0y * (h1y * h1y - h1y * h0y - h0y * h1y + h0y * h0y) - h0x * h1x * h1y + v0x * h1x * h1y + h0x * h0x * h1y - v0x * h0x * h1y + h0x * h1x * h0y - v0x * h1x * h0y - h0x * h0x * h0y + v0x * h0x * h0y) / dot(H, H)
+
+cx = (h0x * h1y * h1y - h0x * h1y * h0y - h0x * h0y * h1y + h0x * h0y * h0y + v0x * h1x * h1x - v0x * h1x * h0x - v0x * h0x * h1x + v0x * h0x * h0x - h0y * h1x * h1y + v0y * h1x * h1y + h0y * h0x * h1y - v0y * h0x * h1y + h0y * h1x * h0y - v0y * h1x * h0y - h0y * h0x * h0y + v0y * h0x * h0y) / dot(H, H)
+cy = (h0y * h1x * h1x - h0y * h1x * h0x - h0y * h0x * h1x + h0y * h0x * h0x + v0y * h1y * h1y - v0y * h1y * h0y - v0y * h0y * h1y + v0y * h0y * h0y - h0x * h1x * h1y + v0x * h1x * h1y + h0x * h0x * h1y - v0x * h0x * h1y + h0x * h1x * h0y - v0x * h1x * h0y - h0x * h0x * h0y + v0x * h0x * h0y) / dot(H, H)
+
+cx = (
+	+ h1y * h1y * h0x
+	+ (
+		- h1x * h1y
+		+ h1x * h0y
+
+		- h1y * h0x
+		+ h1y * h0x
+		- h1y * h0x
+
+		+ h0x * h0y
+		- h0x * h0y
+	) * h0y
+	+ vx0 * (h1x - h0x) * (h1x - h0x)
+	+ v0y * (h1x - h0x) * (h1y - h0y)
+) / dot(H, H)
+cy = (h0y * h1x * h1x - h0y * h1x * h0x - h0y * h0x * h1x + h0y * h0x * h0x + v0y * h1y * h1y - v0y * h1y * h0y - v0y * h0y * h1y + v0y * h0y * h0y - h0x * h1x * h1y + v0x * h1x * h1y + h0x * h0x * h1y - v0x * h0x * h1y + h0x * h1x * h0y - v0x * h1x * h0y - h0x * h0x * h0y + v0x * h0x * h0y) / dot(H, H)
+
+cx = (
+	(-h1x * h0y + h1y * h0x) * (hy1 - h0y)
+	+ (vx0 * (h1x - h0x) + v0y * (h1y - h0y)) * (h1x - h0x)
+) / dot(H, H)
+cy = (
+	+ h0x * h0x * h1y 
+	- h0x * h1x * h1y 
+	+ h0x * h1x * h0y 
+	+ h0y * h1x * h1x
+	- 2 * h0y * h0x * h1x 
+
+	+ (v0x * (h1x - h0x) + v0y * (h1y - h0y)) * (h1y - h0y)
+) / dot(H, H)
+
+h0 + H * t = v0 + (-Hy, Hx) * u
+(h0x, h0y) + (Hx, Hy) * t = (v0x, v0y) + (-Hy, Hx) * u
+
+h0x + Hx * t = v0x - Hy * u
+h0y + Hy * t = v0y + Hx * u
+
+t = (v0x - Hy * u - h0x) / Hx
+
+h0y + Hy * (v0x - Hy * u - h0x) / Hx = v0y + Hx * u
+h0y + Hy * (v0x - h0x - Hy * u) / Hx = v0y + Hx * u
+h0y + Hy * (v0x - h0x) / Hx - (Hy * u) / Hx = v0y + Hx * u
+h0y + Hy * (v0x - h0x) / Hx - v0y = Hx * u + Hy * u / Hx
+h0y + Hy * (v0x - h0x) / Hx - v0y = (Hx + Hy / Hx) * u
+(h0y + Hy * (v0x - h0x) / Hx - v0y) / (Hx + Hy / Hx) = u
+
+x = v0x - Hy * u
+A = (Hx + Hy / Hx)
+x = v0x - Hy * (h0y + Hy * (v0x - h0x) / Hx - v0y) / A
+x = v0x - Hy * (h0y + (Hy * v0x - Hy * h0x) / Hx - v0y) / A
+x = v0x - Hy * (h0y + Hy * v0x / Hx - Hy * h0x / Hx - v0y) / A
+x = (A * v0x - Hy * (h0y + Hy * v0x / Hx - Hy * h0x / Hx - v0y) / A
+x = (A * v0x - (Hy * h0y + Hy * Hy * v0x / Hx - Hy * Hy * h0x / Hx - Hy * v0y) / A
+x = ((Hx + Hy / Hx) * v0x - (Hy * h0y + Hy * Hy * v0x / Hx - Hy * Hy * h0x / Hx - Hy * v0y)) / A
+x = (Hx * v0x + Hy * v0x / Hx - Hy * h0y - Hy * Hy * v0x / Hx + Hy * Hy * h0x / Hx + Hy * v0y) / A
+x = (v0x * Hx + v0x * Hy / Hx - h0y * Hy - v0x * Hy * Hy / Hx + h0x * Hy * Hy / Hx + v0y * Hy) / A
+x = (
+	v0x * Hx
+	+ v0y * Hy
+	- h0y * Hy
+	+ v0x * Hy / Hx
+	- v0x * Hy * Hy / Hx
+	+ h0x * Hy * Hy / Hx
+) / A

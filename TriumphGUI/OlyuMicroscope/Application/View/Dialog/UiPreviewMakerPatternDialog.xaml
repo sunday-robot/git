@@ -1,0 +1,84 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/composite-font" xmlns:d="http://schemas.microsoft.com/expression/blend/2006" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+    xmlns:CustomControl="clr-namespace:Olympus.LI.Triumph.Application.View.CustomControl"
+	x:Class="Olympus.LI.Triumph.Application.View.UiPreviewMakerPatternDialog"
+	x:Name="Window"
+	Title="UiMessageDialog"
+    ResizeMode="NoResize"
+	Width="645" Height="300" AllowsTransparency="True" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" WindowState="Normal" WindowStyle="None" Background="{x:Null}" Topmost="False"
+    Closing="WindowClosing">
+
+    <Window.Resources>
+
+		<Custom:LinearGradientBrush x:Key="DefaultGradient" StartPoint="0.500005,0.984066" EndPoint="0.500005,0.0159305">
+			<Custom:GradientStop Color="#FFFFFFFF" Offset="0.005618"/>
+			<Custom:GradientStop Color="#FFBFBDB9" Offset="0.550562"/>
+			<Custom:GradientStop Color="#FFCDCCC8" Offset="0.578652"/>
+			<Custom:GradientStop Color="#FFFCFCFC" Offset="1"/>
+		</Custom:LinearGradientBrush>
+
+	</Window.Resources>
+	<Grid x:Name="LayoutRoot" VerticalAlignment="Top" Width="375" Height="280">
+        <Grid>
+
+
+            <Path x:Name="pthSettingConditions" Canvas.Left="455.87" Canvas.Top="317.986" Stretch="Fill" Data="F1 M 1181.03,317.986L 1181.03,671.255C 1181.03,674.201 1178.65,676.589 1175.7,676.589L 461.204,676.589C 458.258,676.589 455.87,674.201 455.87,671.255L 455.87,317.986L 1181.03,317.986 Z " d:LayoutOverrides="VerticalAlignment" Margin="0,40,0,0">
+                <Path.Fill>
+                    <Custom:LinearGradientBrush StartPoint="0.5,1.51388" EndPoint="0.5,-0.513885">
+                        <Custom:GradientStop Color="#FFFFFFFF" Offset="0.005618"/>
+                        <Custom:GradientStop Color="#FFB6EEFC" Offset="1"/>
+                        <Custom:GradientStop Color="#FFC6F1FC" Offset="0.781"/>
+                        <Custom:GradientStop Color="#FFC4F0FC" Offset="0.805"/>
+                        <Custom:GradientStop Color="#FFC1EFFC" Offset="0.842"/>
+                        <Custom:GradientStop Color="#FFBEEEFC" Offset="0.879"/>
+                    </Custom:LinearGradientBrush>
+                </Path.Fill>
+                <Path.Effect>
+                    <DropShadowEffect BlurRadius="15"/>
+                </Path.Effect>
+            </Path>
+            <ListBox Height="118" HorizontalAlignment="Left" Margin="19,104,0,0" Name="listBox1" VerticalAlignment="Top" Width="348" FontSize="14" SelectedIndex="{Binding Path=sUiController.Preview.MakerPatternListDialog.SelectedMakerPatternIndex, Mode=Default}">
+                <ListBoxItem x:Name="lblListBoxDefect" Content="Defect (=0)" />
+                <ListBoxItem x:Name="lblListBoxFlat" Content="Flat (=1)" />
+                <ListBoxItem x:Name="lblListBoxContamination" Content="Contamination (=2)" IsEnabled="False"/>
+                <ListBoxItem x:Name="lblListBoxBumpiness" Content="Bumpiness (=3)" />
+                <ListBoxItem x:Name="lblListBoxSubstrate" Content="Substrate (=4)" />
+            </ListBox>
+            <StackPanel HorizontalAlignment="Right" Margin="0,0,8,8" VerticalAlignment="Bottom" Orientation="Horizontal">
+                <Button Style="{DynamicResource SimpleButtonStyle}" x:Name="cmdSecond" Content="OK" FontSize="14" Margin="20,0,0,0" Width="100" Height="36"  Command="{Binding Path=sUiController.Preview.MakerPatternListDialog.PreviewMakerPatternListOkCloseHandler, Mode=Default}" />
+                <Button Style="{DynamicResource SimpleButtonStyle}" x:Name="cmdThird" Content="Cancel" FontSize="14" Margin="20,0,0,0" Width="100" Height="36" Command="{Binding Path=sUiController.Preview.MakerPatternListDialog.PreviewMakerPatternListCancelCloseHandler, Mode=Default}" />
+            </StackPanel>
+            <Grid Height="28" Margin="19,72,119,0" VerticalAlignment="Top">
+            	<Label Content="Version" HorizontalAlignment="Left" Width="74" FontSize="14.667"/>
+                <CustomControl:ValidateTextBox InputType="String" HorizontalAlignment="Left" Margin="78,0,0,0" TextWrapping="Wrap" Text="{Binding Path=sUiController.Preview.MakerPatternListDialog.MajorVersion, Mode=Default}" Width="27" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14.667"/>
+            	<Label Content="." Margin="108,0,113,0" FontSize="14.667"/>
+                <CustomControl:ValidateTextBox InputType="String" HorizontalAlignment="Right" Margin="0,0,86,0" TextWrapping="Wrap" Text="{Binding Path=sUiController.Preview.MakerPatternListDialog.MinorVersion, Mode=Default}" Width="27" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14.667"/>
+            	<Label Content="." Margin="0,0,70,0" FontSize="14.667" HorizontalAlignment="Right" Width="16"/>
+                <CustomControl:ValidateTextBox InputType="String" Margin="0,0,43,0" TextWrapping="Wrap" Text="{Binding Path=sUiController.Preview.MakerPatternListDialog.MajorRevision, Mode=Default}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14.667" HorizontalAlignment="Right" Width="27"/>
+            	<Label Content="." Margin="0,0,27,0" FontSize="14.667" HorizontalAlignment="Right" Width="16"/>
+                <CustomControl:ValidateTextBox InputType="String" TextWrapping="Wrap" Text="{Binding Path=sUiController.Preview.MakerPatternListDialog.MinorRevision, Mode=Default}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14.667" HorizontalAlignment="Right" Width="27"/>
+            </Grid>
+        </Grid>
+        <Grid VerticalAlignment="Top" Height="40">
+
+
+			<Path x:Name="pthHeaderCondition" Canvas.Left="551.403" Canvas.Top="127.965" Stretch="Fill" StrokeLineJoin="Round" Stroke="#CDFFFFFF" Data="F1 M 555.903,128.465L 1091.78,128.465C 1093.99,128.465 1095.78,130.256 1095.78,132.465L 1095.78,164.489L 551.903,164.489L 551.903,132.465C 551.903,130.256 553.694,128.465 555.903,128.465 Z ">
+				<Path.Fill>
+					<Custom:LinearGradientBrush StartPoint="0.58864,9.15936" EndPoint="0.58864,-8.15937">
+						<Custom:GradientStop Color="#CDEFFCFF" Offset="0.40678"/>
+						<Custom:GradientStop Color="#CD192C34" Offset="0.495763"/>
+						<Custom:GradientStop Color="#CDE9F9FF" Offset="0.584746"/>
+					</Custom:LinearGradientBrush>
+				</Path.Fill>
+                <Path.Effect>
+                    <DropShadowEffect BlurRadius="15"/>
+                </Path.Effect>
+            </Path>
+
+
+            <Label BorderThickness="20,0,0,0" FontSize="22" FontWeight="Bold" Foreground="#FFFFFFFF" x:Name="lblDialogTitle" Content="Preview Maker Pattern List"/>
+		</Grid>
+	</Grid>
+</Window>

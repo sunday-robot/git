@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ASCII"?>
+<TableGroupList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TableGroupList isMainTable="true">
+    <TableList>
+      <stateId>S_LSM_IMAGING_IDLING</stateId>
+      <condition>
+        <functionId>F_LIVE_ANALYSIS_SETTINGS_CHANGE</functionId>
+        <Condition xsi:type="EnableCondition">
+          <conditionType>EnableCondition</conditionType>
+          <enable>true</enable>
+        </Condition>
+      </condition>
+    </TableList>
+    <TableList>
+      <stateId>S_LSM_REPEAT_SCANNING</stateId>
+      <condition>
+        <functionId>F_LIVE_ANALYSIS_SETTINGS_CHANGE</functionId>
+        <Condition xsi:type="EnableCondition">
+          <conditionType>EnableCondition</conditionType>
+          <enable>false</enable>
+        </Condition>
+      </condition>
+    </TableList>
+    <TableList>
+      <stateId>S_LSM_SERIES_SCANNING</stateId>
+      <condition>
+        <functionId>F_LIVE_ANALYSIS_SETTINGS_CHANGE</functionId>
+        <Condition xsi:type="EnableCondition">
+          <conditionType>EnableCondition</conditionType>
+          <enable>false</enable>
+        </Condition>
+      </condition>
+    </TableList>
+    <TableList>
+      <stateId>S_LSM_RESTING</stateId>
+      <condition>
+        <functionId>F_LIVE_ANALYSIS_SETTINGS_CHANGE</functionId>
+        <Condition xsi:type="EnableCondition">
+          <conditionType>EnableCondition</conditionType>
+          <enable>false</enable>
+        </Condition>
+      </condition>
+    </TableList>
+  </TableGroupList>
+</TableGroupList>

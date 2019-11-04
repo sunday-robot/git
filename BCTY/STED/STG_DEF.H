@@ -1,0 +1,10 @@
+#define MAP_SIZE 26
+#define COM_TANK 20
+#define MIN_STAGE_SIZE_X 64
+#define MIN_STAGE_SIZE_Y (2 + 2 * 3 + MAP_SIZE * 2 + 8 * 2)
+#define MIN_STAGE_FRAME_COLOR_1 13
+#define MIN_STAGE_FRAME_COLOR_2 15
+#define MIN_STAGE_FRAME_COLOR_3 8
+#define PAGE_SIZE_X 10
+#define PAGE_SIZE_Y 5
+#define PAGE_SIZE (PAGE_SIZE_X * PAGE_SIZE_Y)

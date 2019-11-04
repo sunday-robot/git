@@ -1,0 +1,1223 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:utility="clr-namespace:Olympus.LI.Triumph.Application.View.Utility" 
+      xmlns:CustomControl="clr-namespace:Olympus.LI.Triumph.Application.View.CustomControl"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="d"
+	x:Class="Olympus.LI.Triumph.Application.View.UiMovingShotPage"
+	x:Name="MovingShotPage"
+	WindowTitle="UiMovingShotPage"
+	FlowDirection="LeftToRight"
+	Width="568" Height="426" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+    <Page.Resources>
+        <utility:BooleanVisibilityConverter x:Key="cnvVisibility"/>
+    </Page.Resources>
+    
+    <Grid x:Name="LayoutRoot" Stylus.IsPressAndHoldEnabled="False">
+        <Grid Name="MovingShotSettings" IsEnabled="{Binding Path=sUiController.Acquisition.MovingAcquisitionSettingsStateEnable, Mode=Default}">
+            <CheckBox Content="{Binding sUiController.Stage.StageSettingDialogZEscAtMove, Mode=Default}" Margin="90,20,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="14.667" IsChecked="{Binding Path=sUiController.Acquisition.MovingAcquisitionIsEscapeZ, Mode=Default}"/>
+            <Label Content="{Binding sUiController.Stage.StageSettingDialogZEscDist, Mode=Default}" Margin="0,48,313,0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="14.667"/>
+            <CustomControl:ValidateTextBox InputType="{Binding sUiController.Acquisition.MovingAcquisitionEscapeZLengthInputType, Mode=OneWay}"  InputMethod.IsInputMethodEnabled="False" IsRangeCheck="True"  RangeMax="{Binding Path=sUiController.Acquisition.MovingAcqEscapeZRangeMax, Mode=Default}" Margin="260,50,0,0" TextWrapping="Wrap" Text="{Binding Path = sUiController.Acquisition.MovingAcquisitionEscapeZLength}" MaxLength="{Binding sUiController.Acquisition.MovingAcquisitionEscapeZLengthMaxLength, Mode=OneWay}" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="13.333" Width="80" MaxNumberOfDecimalPlaces="{Binding sUiController.Acquisition.MovingAcquisitionEscapeZLengthMaxNumberOfDecimalPlaces, Mode=OneWay}" />
+            <Label Content="{Binding sUiController.Layout.CommonUnit, Mode=Default}" HorizontalAlignment="Left" Height="30" Margin="345,50,0,0" VerticalAlignment="Top" Width="56" FontSize="13.333"/>
+            <CheckBox Content="{Binding sUiController.Stage.StageSettingDialogEachPointAF, Mode=Default}" Margin="90,90,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14.667" IsChecked="{Binding Path=sUiController.Acquisition.MovingAcquisitionIsAFExecute , Mode=Default}" IsEnabled="{Binding Path=sUiController.Acquisition.MovingAcquisitionIsAFEnable, Mode=Default}" Visibility="{Binding Path=sUiController.Acquisition.MovingAcquisitionIsAFVisible, Mode=Default}" />
+            <CheckBox Content="{Binding sUiController.Stage.StageSettingDialogMeasureAfterImaging, Mode=Default}" Margin="90,120,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="14.667" IsChecked="{Binding sUiController.ProcessJoin.RecipeRunModeCheck, Mode=Default}"/>
+            <Button Content="{Binding sUiController.Stage.StageSettingDialogSelectWizard, Mode=Default}" HorizontalAlignment="Left" Margin="300,150,0,0" VerticalAlignment="Top" Height="28" Width="120" FontSize="13.333" Style="{DynamicResource SimpleButtonStyle}" Command="{Binding sUiController.ProcessJoin.ShowRecipeListHandler, Mode=Default}" IsEnabled="{Binding sUiController.ProcessJoin.ShowRecipeListEnabled, Mode=Default}"/>
+            <Label Content="{Binding sUiController.Stage.StageSettingDialogSelectWizardExplain, Mode=Default}" Visibility="{Binding sUiController.Stage.StageSettingDialogSelectWizardExplainVisible, Mode=Default}" HorizontalAlignment="Left" Margin="431,150,0,0" VerticalAlignment="Top" FontSize="14.667"/>
+            <CheckBox Content="{Binding sUiController.Stage.StageSettingDialogAutoSaveChkBox, Mode=Default}" HorizontalAlignment="Left" Margin="90,195,0,0" VerticalAlignment="Top" IsChecked="{Binding Path=sUiController.Acquisition.AutoSaveCheck, Mode=Default}" FontSize="14.667" />
+            <Button Content="{Binding sUiController.Stage.StageSettingDialogSelectSaveTo, Mode=Default}" Margin="300,192,0,0" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13.333" Command="{Binding Path=sUiController.DetailSetting.ShowDetailSetteingAutoSavePageHandler, Mode=Default}" IsEnabled="{Binding Path=sUiController.Acquisition.AutoSaveFileSettingEnable, Mode=Default}"
+     Style="{DynamicResource SimpleButtonStyle}" Width="120"/>
+		    <Path x:Name="Line_279" Height="1" Stretch="Fill" StrokeThickness="0.666583" StrokeMiterLimit="2.75" Stroke="Black" Data="F1 M 577.531,325.655L 21.4641,325.655" VerticalAlignment="Top" Margin="7,230,7,0"/>
+            <TextBlock Text="{Binding sUiController.Stage.StageSettingDialogImagingCondition, Mode=Default}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="90,239,0,0" FontSize="14.667" Width="380" Block.LineStackingStrategy="BlockLineHeight" Block.LineHeight="18" TextWrapping="Wrap" />
+        </Grid>
+        <Grid Name="AcquisitionButtons" IsEnabled="{Binding Path=sUiController.Acquisition.MovingAcquisitionStateEnable, Mode=Default}">
+            <Button Height="67" Margin="95,280,0,0" VerticalAlignment="Top" Command="{Binding Path=sUiController.Acquisition.MovingAcquisitionSnapStartHandler, Mode=Default}" Visibility="{Binding sUiController.Acquisition.SettingSnapAcquisitionStartButtonVisible, Mode=Default}" Style="{DynamicResource AcquisitionButtonStyle}" Width="345" HorizontalAlignment="Left" x:Name="btnAcquisitionSnapStart" >
+                <Grid Height="67" Width="345">
+                    <Canvas Width="0" VerticalAlignment="Top" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment" Margin="5,10,0,0">
+                        <Canvas.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Canvas.LayoutTransform>
+                        <Path x:Name="Path_983" Width="62.4" Height="19.943" Canvas.Left="-0.09" Stretch="Fill" Data="F1 M 62.4004,14.046C 62.4004,13.521 61.9736,12.9919 61.45,12.8668L 8.06348,0.125183C 7.53979,0 7.19263,0.485962 6.66895,1.00824L 0,6.3277L 16.3573,10.0545L 17.5137,6.54102L 38.5369,11.7601L 39.6097,15.6048L 55.9832,20.0485L 62.4004,14.0783L 62.4004,14.046 Z " Canvas.Top="0.5">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.925745,1.13335" EndPoint="2.57393,1.13335">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.925745" CenterY="1.13335" AngleX="47.7996" AngleY="0"/>
+                                            <RotateTransform CenterX="0.925745" CenterY="1.13335" Angle="236.608"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80DCFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80CFECF6" Offset="0.730337"/>
+                                    <GradientStop Color="#80C2D9ED" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_984" Width="6.484" Height="43.328" Canvas.Left="55.826" Canvas.Top="14.473" Stretch="Fill" Data="F1 M 55.9159,20.1111L 55.9832,57.4061L 61.45,51.129C 61.9736,50.6038 62.4004,49.8998 62.4004,49.3762L 62.4004,14.0783L 55.9159,20.1111 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                    <GradientStop Color="#807A7A7A" Offset="0"/>
+                                    <GradientStop Color="#80525252" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_985" Width="56.384" Height="51.333" Canvas.Top="6.645" Stretch="Fill" Data="F1 M 75.3529,27.8547L 59.806,24.1447L 58.8368,20.2462L 37.6844,15.1967L 36.7152,18.6335L 20.8694,14.8507C 20.343,14.727 19.9191,15.0499 19.9191,15.575L 19.9191,48.8537C 19.9191,49.3773 20.343,49.9064 20.8694,50.0302L 75.3529,66.1169C 75.8766,66.2423 76.2604,66.0928 76.3033,65.3928L 76.3033,29.0327C 76.3033,28.5076 75.8781,27.9799 75.3529,27.8547 Z " Canvas.Left="-0.5">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="1.04677,0.91597" EndPoint="2.25119,0.91597">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="1.04677" CenterY="0.91597" AngleX="5.14241" AngleY="0"/>
+                                            <RotateTransform CenterX="1.04677" CenterY="0.91597" Angle="219.213"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80CACACA" Offset="0.005618"/>
+                                    <GradientStop Color="#80ACACAC" Offset="0.551553"/>
+                                    <GradientStop Color="#808F8F8F" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_986" Width="28.193" Height="28.991" Canvas.Left="11.455" Canvas.Top="18.042" Stretch="Fill" Data="F1 M 60.6542,43.1432C 60.6542,50.9281 54.3407,55.7313 46.557,53.8749C 38.7694,52.0157 32.4613,44.1987 32.4613,36.4137C 32.4613,28.6288 38.7694,23.8243 46.557,25.6819C 54.3407,27.5412 60.6542,35.3584 60.6542,43.1432 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.897002,0.873348" EndPoint="1.85683,0.873348">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.897002" CenterY="0.873348" AngleX="0.790476" AngleY="0"/>
+                                            <RotateTransform CenterX="0.897002" CenterY="0.873348" Angle="223.668"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80474747" Offset="0"/>
+                                    <GradientStop Color="#80575757" Offset="0.095506"/>
+                                    <GradientStop Color="#80393939" Offset="0.199648"/>
+                                    <GradientStop Color="#801C1C1C" Offset="0.483146"/>
+                                    <GradientStop Color="#802F2F2F" Offset="0.502697"/>
+                                    <GradientStop Color="#80424242" Offset="0.505618"/>
+                                    <GradientStop Color="#80EDEDED" Offset="0.786517"/>
+                                    <GradientStop Color="#809C9C9C" Offset="0.893258"/>
+                                    <GradientStop Color="#80CCCCCC" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_987" Width="3.566" Height="3.667" Canvas.Left="39.258" Canvas.Top="20.733" Stretch="Fill" Fill="#80242424" Data="F1 M 63.8298,30.2321C 63.8298,31.2176 63.0302,31.8246 62.046,31.5905C 61.0607,31.3535 60.2638,30.3654 60.2638,29.3827C 60.2638,28.3959 61.0607,27.79 62.046,28.0245C 63.0302,28.26 63.8298,29.2467 63.8298,30.2321 Z "/>
+                        <Path x:Name="Path_988" Width="25.366" Height="9.825" Canvas.Left="17.274" Canvas.Top="2.254" Stretch="Fill" Data="F1 M 58.8368,20.2462L 37.6844,15.1967L 42.4297,10.4211L 63.0503,15.1967L 58.8368,20.2462 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.89933,0.985954" EndPoint="2.27006,0.985954">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.89933" CenterY="0.985954" AngleX="40.7428" AngleY="0"/>
+                                            <RotateTransform CenterX="0.89933" CenterY="0.985954" Angle="231.379"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80DCFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80CFECF6" Offset="0.730337"/>
+                                    <GradientStop Color="#80C2D9ED" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_989" Width="6.622" Height="8.948" Canvas.Left="38.452" Canvas.Top="7.049" Stretch="Fill" Data="F1 M 59.806,24.1447L 65.4586,17.7275L 63.0503,15.1967L 58.8368,20.2462L 59.806,24.1447 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.643034,0.6384" EndPoint="1.1043,0.6384">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.643034" CenterY="0.6384" AngleX="-16.3095" AngleY="0"/>
+                                            <RotateTransform CenterX="0.643034" CenterY="0.6384" Angle="208.799"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#805386A7" Offset="0"/>
+                                    <GradientStop Color="#80325D6F" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_990" Width="28.193" Height="28.989" Canvas.Left="10.25" Canvas.Top="19.247" Stretch="Fill" Data="F1 M 59.4493,44.3467C 59.4493,52.1315 53.1385,56.936 45.3523,55.0784C 37.5687,53.2206 31.2565,45.4034 31.2565,37.6185C 31.2565,29.8323 37.5687,25.0291 45.3523,26.887C 53.1385,28.7446 59.4493,36.5604 59.4493,44.3467 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.897054,0.873333" EndPoint="1.8569,0.873333">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.897054" CenterY="0.873333" AngleX="0.792525" AngleY="0"/>
+                                            <RotateTransform CenterX="0.897054" CenterY="0.873333" Angle="223.669"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80292929" Offset="0"/>
+                                    <GradientStop Color="#80454545" Offset="0.322045"/>
+                                    <GradientStop Color="#80616161" Offset="0.994382"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_991" Width="24.882" Height="25.562" Canvas.Left="13.24" Canvas.Top="20.96" Stretch="Fill" StrokeThickness="0.919596" StrokeMiterLimit="2.75" Stroke="#80363636" Data="F1 M 58.6678,43.842C 58.6678,50.4596 53.3033,54.5427 46.6857,52.9634C 40.0677,51.3844 34.7059,44.7411 34.7059,38.1234C 34.7059,31.5055 40.0677,27.4199 46.6857,29.0004C 53.3033,30.5807 58.6678,37.2241 58.6678,43.842 Z ">
+                            <Path.Fill>
+                                <RadialGradientBrush RadiusX="0.864927" RadiusY="0.689055" Center="0.303093,0.306142" GradientOrigin="0.303093,0.306142">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.303093" CenterY="0.306142" AngleX="4.19599" AngleY="0"/>
+                                            <RotateTransform CenterX="0.303093" CenterY="0.306142" Angle="37.8791"/>
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80FFFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80DFDFDF" Offset="0.101234"/>
+                                    <GradientStop Color="#80C0C0C0" Offset="0.179775"/>
+                                    <GradientStop Color="#808F8F8F" Offset="1"/>
+                                </RadialGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Canvas>
+                    <Label Content="{Binding sUiController.Stage.StageSettingDialogImagingButton, Mode=Default}" FontSize="32" FontWeight="Bold" Margin="-5,4,0,0" HorizontalAlignment="Center"/>
+                    <Grid VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,5,5,0">
+                        <Path x:Name="Path_992" Width="60.667" Height="28.001" Stretch="Fill" Fill="#FF000000" Data="F1 M 290.321,10.2925L 345.655,10.2925C 347.128,10.2925 348.321,11.4864 348.321,12.9592L 348.321,35.6258C 348.321,37.0986 347.128,38.2925 345.655,38.2925L 290.321,38.2925C 288.849,38.2925 287.655,37.0986 287.655,35.6258L 287.655,12.9592C 287.655,11.4864 288.849,10.2925 290.321,10.2925 Z " HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBlock x:Name="TextBlock_921" TextAlignment="Left" FontFamily="メイリオ" FontWeight="Bold" FontSize="14" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-2,0,0">
+            			<TextBlock.LayoutTransform>
+            				<TransformGroup>
+            					<ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+            					<SkewTransform/>
+            					<RotateTransform/>
+            					<TranslateTransform/>
+            				</TransformGroup>
+            			</TextBlock.LayoutTransform><Run Text="Snap" Foreground="#FF21D2FD"/></TextBlock>
+                    </Grid>
+                </Grid>
+            </Button>
+            <Button Height="67" Margin="95,280,0,0" VerticalAlignment="Top" Command="{Binding Path=sUiController.Acquisition.MovingAcquisitionSnapStopHandler, Mode=Default}" Style="{DynamicResource AcquisitionButtonStyle}" Width="345" HorizontalAlignment="Left" x:Name="btnAcquisitionSnapCancel" Visibility="{Binding sUiController.Acquisition.SettingSnapAcquisitionCancelButtonVisible, Mode=Default}" d:IsHidden="True" >
+                <Grid Height="67" Width="345">
+                    <Canvas Width="0" VerticalAlignment="Top" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment" Margin="5,10,0,0">
+                        <Canvas.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Canvas.LayoutTransform>
+                        <Path x:Name="Path_9836" Width="62.4" Height="19.943" Canvas.Left="-0.09" Stretch="Fill" Data="F1 M 62.4004,14.046C 62.4004,13.521 61.9736,12.9919 61.45,12.8668L 8.06348,0.125183C 7.53979,0 7.19263,0.485962 6.66895,1.00824L 0,6.3277L 16.3573,10.0545L 17.5137,6.54102L 38.5369,11.7601L 39.6097,15.6048L 55.9832,20.0485L 62.4004,14.0783L 62.4004,14.046 Z " Canvas.Top="0.5">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.925745,1.13335" EndPoint="2.57393,1.13335">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.925745" CenterY="1.13335" AngleX="47.7996" AngleY="0"/>
+                                            <RotateTransform CenterX="0.925745" CenterY="1.13335" Angle="236.608"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80DCFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80CFECF6" Offset="0.730337"/>
+                                    <GradientStop Color="#80C2D9ED" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9846" Width="6.484" Height="43.328" Canvas.Left="55.826" Canvas.Top="14.473" Stretch="Fill" Data="F1 M 55.9159,20.1111L 55.9832,57.4061L 61.45,51.129C 61.9736,50.6038 62.4004,49.8998 62.4004,49.3762L 62.4004,14.0783L 55.9159,20.1111 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                    <GradientStop Color="#807A7A7A" Offset="0"/>
+                                    <GradientStop Color="#80525252" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9856" Width="56.384" Height="51.333" Canvas.Top="6.645" Stretch="Fill" Data="F1 M 75.3529,27.8547L 59.806,24.1447L 58.8368,20.2462L 37.6844,15.1967L 36.7152,18.6335L 20.8694,14.8507C 20.343,14.727 19.9191,15.0499 19.9191,15.575L 19.9191,48.8537C 19.9191,49.3773 20.343,49.9064 20.8694,50.0302L 75.3529,66.1169C 75.8766,66.2423 76.2604,66.0928 76.3033,65.3928L 76.3033,29.0327C 76.3033,28.5076 75.8781,27.9799 75.3529,27.8547 Z " Canvas.Left="-0.5">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="1.04677,0.91597" EndPoint="2.25119,0.91597">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="1.04677" CenterY="0.91597" AngleX="5.14241" AngleY="0"/>
+                                            <RotateTransform CenterX="1.04677" CenterY="0.91597" Angle="219.213"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80CACACA" Offset="0.005618"/>
+                                    <GradientStop Color="#80ACACAC" Offset="0.551553"/>
+                                    <GradientStop Color="#808F8F8F" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9866" Width="28.193" Height="28.991" Canvas.Left="11.455" Canvas.Top="18.042" Stretch="Fill" Data="F1 M 60.6542,43.1432C 60.6542,50.9281 54.3407,55.7313 46.557,53.8749C 38.7694,52.0157 32.4613,44.1987 32.4613,36.4137C 32.4613,28.6288 38.7694,23.8243 46.557,25.6819C 54.3407,27.5412 60.6542,35.3584 60.6542,43.1432 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.897002,0.873348" EndPoint="1.85683,0.873348">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.897002" CenterY="0.873348" AngleX="0.790476" AngleY="0"/>
+                                            <RotateTransform CenterX="0.897002" CenterY="0.873348" Angle="223.668"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80474747" Offset="0"/>
+                                    <GradientStop Color="#80575757" Offset="0.095506"/>
+                                    <GradientStop Color="#80393939" Offset="0.199648"/>
+                                    <GradientStop Color="#801C1C1C" Offset="0.483146"/>
+                                    <GradientStop Color="#802F2F2F" Offset="0.502697"/>
+                                    <GradientStop Color="#80424242" Offset="0.505618"/>
+                                    <GradientStop Color="#80EDEDED" Offset="0.786517"/>
+                                    <GradientStop Color="#809C9C9C" Offset="0.893258"/>
+                                    <GradientStop Color="#80CCCCCC" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9876" Width="3.566" Height="3.667" Canvas.Left="39.258" Canvas.Top="20.733" Stretch="Fill" Fill="#80242424" Data="F1 M 63.8298,30.2321C 63.8298,31.2176 63.0302,31.8246 62.046,31.5905C 61.0607,31.3535 60.2638,30.3654 60.2638,29.3827C 60.2638,28.3959 61.0607,27.79 62.046,28.0245C 63.0302,28.26 63.8298,29.2467 63.8298,30.2321 Z "/>
+                        <Path x:Name="Path_9886" Width="25.366" Height="9.825" Canvas.Left="17.274" Canvas.Top="2.254" Stretch="Fill" Data="F1 M 58.8368,20.2462L 37.6844,15.1967L 42.4297,10.4211L 63.0503,15.1967L 58.8368,20.2462 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.89933,0.985954" EndPoint="2.27006,0.985954">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.89933" CenterY="0.985954" AngleX="40.7428" AngleY="0"/>
+                                            <RotateTransform CenterX="0.89933" CenterY="0.985954" Angle="231.379"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80DCFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80CFECF6" Offset="0.730337"/>
+                                    <GradientStop Color="#80C2D9ED" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9896" Width="6.622" Height="8.948" Canvas.Left="38.452" Canvas.Top="7.049" Stretch="Fill" Data="F1 M 59.806,24.1447L 65.4586,17.7275L 63.0503,15.1967L 58.8368,20.2462L 59.806,24.1447 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.643034,0.6384" EndPoint="1.1043,0.6384">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.643034" CenterY="0.6384" AngleX="-16.3095" AngleY="0"/>
+                                            <RotateTransform CenterX="0.643034" CenterY="0.6384" Angle="208.799"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#805386A7" Offset="0"/>
+                                    <GradientStop Color="#80325D6F" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9906" Width="28.193" Height="28.989" Canvas.Left="10.25" Canvas.Top="19.247" Stretch="Fill" Data="F1 M 59.4493,44.3467C 59.4493,52.1315 53.1385,56.936 45.3523,55.0784C 37.5687,53.2206 31.2565,45.4034 31.2565,37.6185C 31.2565,29.8323 37.5687,25.0291 45.3523,26.887C 53.1385,28.7446 59.4493,36.5604 59.4493,44.3467 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.897054,0.873333" EndPoint="1.8569,0.873333">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.897054" CenterY="0.873333" AngleX="0.792525" AngleY="0"/>
+                                            <RotateTransform CenterX="0.897054" CenterY="0.873333" Angle="223.669"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80292929" Offset="0"/>
+                                    <GradientStop Color="#80454545" Offset="0.322045"/>
+                                    <GradientStop Color="#80616161" Offset="0.994382"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9916" Width="24.882" Height="25.562" Canvas.Left="13.24" Canvas.Top="20.96" Stretch="Fill" StrokeThickness="0.919596" StrokeMiterLimit="2.75" Stroke="#80363636" Data="F1 M 58.6678,43.842C 58.6678,50.4596 53.3033,54.5427 46.6857,52.9634C 40.0677,51.3844 34.7059,44.7411 34.7059,38.1234C 34.7059,31.5055 40.0677,27.4199 46.6857,29.0004C 53.3033,30.5807 58.6678,37.2241 58.6678,43.842 Z ">
+                            <Path.Fill>
+                                <RadialGradientBrush RadiusX="0.864927" RadiusY="0.689055" Center="0.303093,0.306142" GradientOrigin="0.303093,0.306142">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.303093" CenterY="0.306142" AngleX="4.19599" AngleY="0"/>
+                                            <RotateTransform CenterX="0.303093" CenterY="0.306142" Angle="37.8791"/>
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80FFFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80DFDFDF" Offset="0.101234"/>
+                                    <GradientStop Color="#80C0C0C0" Offset="0.179775"/>
+                                    <GradientStop Color="#808F8F8F" Offset="1"/>
+                                </RadialGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Canvas>
+                    <Label Content="{Binding sUiController.Stage.StageSettingDialogStopButton, Mode=Default}" FontSize="32" FontWeight="Bold" Margin="-5,4,0,0" HorizontalAlignment="Center"/>
+                    <Grid VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,5,5,0">
+                        <Path x:Name="Path_9926" Width="60.667" Height="28.001" Stretch="Fill" Fill="#FF000000" Data="F1 M 290.321,10.2925L 345.655,10.2925C 347.128,10.2925 348.321,11.4864 348.321,12.9592L 348.321,35.6258C 348.321,37.0986 347.128,38.2925 345.655,38.2925L 290.321,38.2925C 288.849,38.2925 287.655,37.0986 287.655,35.6258L 287.655,12.9592C 287.655,11.4864 288.849,10.2925 290.321,10.2925 Z " HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBlock x:Name="TextBlock_9216" TextAlignment="Left" FontFamily="メイリオ" FontWeight="Bold" FontSize="14" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-2,0,0">
+						<TextBlock.LayoutTransform>
+							<TransformGroup>
+								<ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+								<SkewTransform/>
+								<RotateTransform/>
+								<TranslateTransform/>
+							</TransformGroup>
+						</TextBlock.LayoutTransform><Run Text="Snap" Foreground="#FF21D2FD"/></TextBlock>
+                    </Grid>
+                </Grid>
+            </Button>
+            <Button Height="67" Margin="95,280,0,0" VerticalAlignment="Top" Command="{Binding Path=sUiController.Acquisition.MovingAcquisitionExtendStartHandler, Mode=Default}" Style="{DynamicResource AcquisitionButtonStyle}" Width="345" HorizontalAlignment="Left" x:Name="btnAcquisitionThreeDimensionalStart" Visibility="{Binding sUiController.Acquisition.SettingThreeDimensionalAcquisitionStartButtonVisible, Mode=Default}" d:LayoutOverrides="VerticalAlignment" d:IsHidden="True">
+                <Grid Height="67" Width="345">
+                    <Canvas Width="0" VerticalAlignment="Top" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment" Margin="5,10,0,0">
+                        <Canvas.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Canvas.LayoutTransform>
+                        <Path x:Name="Path_9831" Width="62.4" Height="19.943" Canvas.Left="-0.09" Stretch="Fill" Data="F1 M 62.4004,14.046C 62.4004,13.521 61.9736,12.9919 61.45,12.8668L 8.06348,0.125183C 7.53979,0 7.19263,0.485962 6.66895,1.00824L 0,6.3277L 16.3573,10.0545L 17.5137,6.54102L 38.5369,11.7601L 39.6097,15.6048L 55.9832,20.0485L 62.4004,14.0783L 62.4004,14.046 Z " Canvas.Top="0.5">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.925745,1.13335" EndPoint="2.57393,1.13335">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.925745" CenterY="1.13335" AngleX="47.7996" AngleY="0"/>
+                                            <RotateTransform CenterX="0.925745" CenterY="1.13335" Angle="236.608"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80DCFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80CFECF6" Offset="0.730337"/>
+                                    <GradientStop Color="#80C2D9ED" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9841" Width="6.484" Height="43.328" Canvas.Left="55.826" Canvas.Top="14.473" Stretch="Fill" Data="F1 M 55.9159,20.1111L 55.9832,57.4061L 61.45,51.129C 61.9736,50.6038 62.4004,49.8998 62.4004,49.3762L 62.4004,14.0783L 55.9159,20.1111 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                    <GradientStop Color="#807A7A7A" Offset="0"/>
+                                    <GradientStop Color="#80525252" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9851" Width="56.384" Height="51.333" Canvas.Top="6.645" Stretch="Fill" Data="F1 M 75.3529,27.8547L 59.806,24.1447L 58.8368,20.2462L 37.6844,15.1967L 36.7152,18.6335L 20.8694,14.8507C 20.343,14.727 19.9191,15.0499 19.9191,15.575L 19.9191,48.8537C 19.9191,49.3773 20.343,49.9064 20.8694,50.0302L 75.3529,66.1169C 75.8766,66.2423 76.2604,66.0928 76.3033,65.3928L 76.3033,29.0327C 76.3033,28.5076 75.8781,27.9799 75.3529,27.8547 Z " Canvas.Left="-0.5">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="1.04677,0.91597" EndPoint="2.25119,0.91597">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="1.04677" CenterY="0.91597" AngleX="5.14241" AngleY="0"/>
+                                            <RotateTransform CenterX="1.04677" CenterY="0.91597" Angle="219.213"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80CACACA" Offset="0.005618"/>
+                                    <GradientStop Color="#80ACACAC" Offset="0.551553"/>
+                                    <GradientStop Color="#808F8F8F" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9861" Width="28.193" Height="28.991" Canvas.Left="11.455" Canvas.Top="18.042" Stretch="Fill" Data="F1 M 60.6542,43.1432C 60.6542,50.9281 54.3407,55.7313 46.557,53.8749C 38.7694,52.0157 32.4613,44.1987 32.4613,36.4137C 32.4613,28.6288 38.7694,23.8243 46.557,25.6819C 54.3407,27.5412 60.6542,35.3584 60.6542,43.1432 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.897002,0.873348" EndPoint="1.85683,0.873348">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.897002" CenterY="0.873348" AngleX="0.790476" AngleY="0"/>
+                                            <RotateTransform CenterX="0.897002" CenterY="0.873348" Angle="223.668"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80474747" Offset="0"/>
+                                    <GradientStop Color="#80575757" Offset="0.095506"/>
+                                    <GradientStop Color="#80393939" Offset="0.199648"/>
+                                    <GradientStop Color="#801C1C1C" Offset="0.483146"/>
+                                    <GradientStop Color="#802F2F2F" Offset="0.502697"/>
+                                    <GradientStop Color="#80424242" Offset="0.505618"/>
+                                    <GradientStop Color="#80EDEDED" Offset="0.786517"/>
+                                    <GradientStop Color="#809C9C9C" Offset="0.893258"/>
+                                    <GradientStop Color="#80CCCCCC" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9871" Width="3.566" Height="3.667" Canvas.Left="39.258" Canvas.Top="20.733" Stretch="Fill" Fill="#80242424" Data="F1 M 63.8298,30.2321C 63.8298,31.2176 63.0302,31.8246 62.046,31.5905C 61.0607,31.3535 60.2638,30.3654 60.2638,29.3827C 60.2638,28.3959 61.0607,27.79 62.046,28.0245C 63.0302,28.26 63.8298,29.2467 63.8298,30.2321 Z "/>
+                        <Path x:Name="Path_9881" Width="25.366" Height="9.825" Canvas.Left="17.274" Canvas.Top="2.254" Stretch="Fill" Data="F1 M 58.8368,20.2462L 37.6844,15.1967L 42.4297,10.4211L 63.0503,15.1967L 58.8368,20.2462 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.89933,0.985954" EndPoint="2.27006,0.985954">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.89933" CenterY="0.985954" AngleX="40.7428" AngleY="0"/>
+                                            <RotateTransform CenterX="0.89933" CenterY="0.985954" Angle="231.379"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80DCFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80CFECF6" Offset="0.730337"/>
+                                    <GradientStop Color="#80C2D9ED" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9891" Width="6.622" Height="8.948" Canvas.Left="38.452" Canvas.Top="7.049" Stretch="Fill" Data="F1 M 59.806,24.1447L 65.4586,17.7275L 63.0503,15.1967L 58.8368,20.2462L 59.806,24.1447 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.643034,0.6384" EndPoint="1.1043,0.6384">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.643034" CenterY="0.6384" AngleX="-16.3095" AngleY="0"/>
+                                            <RotateTransform CenterX="0.643034" CenterY="0.6384" Angle="208.799"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#805386A7" Offset="0"/>
+                                    <GradientStop Color="#80325D6F" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9901" Width="28.193" Height="28.989" Canvas.Left="10.25" Canvas.Top="19.247" Stretch="Fill" Data="F1 M 59.4493,44.3467C 59.4493,52.1315 53.1385,56.936 45.3523,55.0784C 37.5687,53.2206 31.2565,45.4034 31.2565,37.6185C 31.2565,29.8323 37.5687,25.0291 45.3523,26.887C 53.1385,28.7446 59.4493,36.5604 59.4493,44.3467 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.897054,0.873333" EndPoint="1.8569,0.873333">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.897054" CenterY="0.873333" AngleX="0.792525" AngleY="0"/>
+                                            <RotateTransform CenterX="0.897054" CenterY="0.873333" Angle="223.669"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80292929" Offset="0"/>
+                                    <GradientStop Color="#80454545" Offset="0.322045"/>
+                                    <GradientStop Color="#80616161" Offset="0.994382"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9911" Width="24.882" Height="25.562" Canvas.Left="13.24" Canvas.Top="20.96" Stretch="Fill" StrokeThickness="0.919596" StrokeMiterLimit="2.75" Stroke="#80363636" Data="F1 M 58.6678,43.842C 58.6678,50.4596 53.3033,54.5427 46.6857,52.9634C 40.0677,51.3844 34.7059,44.7411 34.7059,38.1234C 34.7059,31.5055 40.0677,27.4199 46.6857,29.0004C 53.3033,30.5807 58.6678,37.2241 58.6678,43.842 Z ">
+                            <Path.Fill>
+                                <RadialGradientBrush RadiusX="0.864927" RadiusY="0.689055" Center="0.303093,0.306142" GradientOrigin="0.303093,0.306142">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.303093" CenterY="0.306142" AngleX="4.19599" AngleY="0"/>
+                                            <RotateTransform CenterX="0.303093" CenterY="0.306142" Angle="37.8791"/>
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80FFFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80DFDFDF" Offset="0.101234"/>
+                                    <GradientStop Color="#80C0C0C0" Offset="0.179775"/>
+                                    <GradientStop Color="#808F8F8F" Offset="1"/>
+                                </RadialGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Canvas>
+                    <Label Content="{Binding sUiController.Stage.StageSettingDialogImagingButton, Mode=Default}" FontSize="32" FontWeight="Bold" Margin="-5,4,0,0" HorizontalAlignment="Center"/>
+                    <Grid VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,5,5,0">
+                        <Path x:Name="Path_9921" Width="60.667" Height="28.001" Stretch="Fill" Fill="#FF000000" Data="F1 M 290.321,10.2925L 345.655,10.2925C 347.128,10.2925 348.321,11.4864 348.321,12.9592L 348.321,35.6258C 348.321,37.0986 347.128,38.2925 345.655,38.2925L 290.321,38.2925C 288.849,38.2925 287.655,37.0986 287.655,35.6258L 287.655,12.9592C 287.655,11.4864 288.849,10.2925 290.321,10.2925 Z " HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBlock x:Name="TextBlock_9211" TextAlignment="Left" FontFamily="メイリオ" FontWeight="Bold" FontSize="14" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Margin="0,-5,0,0">
+						<TextBlock.LayoutTransform>
+							<TransformGroup>
+								<ScaleTransform ScaleX="2" ScaleY="2"/>
+								<SkewTransform/>
+								<RotateTransform/>
+								<TranslateTransform/>
+							</TransformGroup>
+						</TextBlock.LayoutTransform><Run Text="3D" Foreground="#FF21D2FD"/></TextBlock>
+                    </Grid>
+                </Grid>
+            </Button>
+            <Button Height="67" Margin="95,280,0,0" VerticalAlignment="Top" Command="{Binding Path=sUiController.Acquisition.MovingAcquisitionExtendStopHandler, Mode=Default}" Style="{DynamicResource AcquisitionButtonStyle}" Width="345" HorizontalAlignment="Left" x:Name="btnAcquisitionThreeDimensionalCancel" Visibility="{Binding sUiController.Acquisition.SettingThreeDimensionalAcquisitionCancelButtonVisible, Mode=Default}" d:LayoutOverrides="VerticalAlignment" d:IsHidden="True">
+                <Grid Width="345" Height="67">
+                    <Canvas Width="0" VerticalAlignment="Top" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment" Margin="5,10,0,0">
+                        <Canvas.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Canvas.LayoutTransform>
+                        <Path x:Name="Path_98315" Width="62.4" Height="19.943" Canvas.Left="-0.09" Stretch="Fill" Data="F1 M 62.4004,14.046C 62.4004,13.521 61.9736,12.9919 61.45,12.8668L 8.06348,0.125183C 7.53979,0 7.19263,0.485962 6.66895,1.00824L 0,6.3277L 16.3573,10.0545L 17.5137,6.54102L 38.5369,11.7601L 39.6097,15.6048L 55.9832,20.0485L 62.4004,14.0783L 62.4004,14.046 Z " Canvas.Top="0.5">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.925745,1.13335" EndPoint="2.57393,1.13335">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.925745" CenterY="1.13335" AngleX="47.7996" AngleY="0"/>
+                                            <RotateTransform CenterX="0.925745" CenterY="1.13335" Angle="236.608"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80DCFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80CFECF6" Offset="0.730337"/>
+                                    <GradientStop Color="#80C2D9ED" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_98415" Width="6.484" Height="43.328" Canvas.Left="55.826" Canvas.Top="14.473" Stretch="Fill" Data="F1 M 55.9159,20.1111L 55.9832,57.4061L 61.45,51.129C 61.9736,50.6038 62.4004,49.8998 62.4004,49.3762L 62.4004,14.0783L 55.9159,20.1111 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                    <GradientStop Color="#807A7A7A" Offset="0"/>
+                                    <GradientStop Color="#80525252" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_98515" Width="56.384" Height="51.333" Canvas.Top="6.645" Stretch="Fill" Data="F1 M 75.3529,27.8547L 59.806,24.1447L 58.8368,20.2462L 37.6844,15.1967L 36.7152,18.6335L 20.8694,14.8507C 20.343,14.727 19.9191,15.0499 19.9191,15.575L 19.9191,48.8537C 19.9191,49.3773 20.343,49.9064 20.8694,50.0302L 75.3529,66.1169C 75.8766,66.2423 76.2604,66.0928 76.3033,65.3928L 76.3033,29.0327C 76.3033,28.5076 75.8781,27.9799 75.3529,27.8547 Z " Canvas.Left="-0.5">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="1.04677,0.91597" EndPoint="2.25119,0.91597">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="1.04677" CenterY="0.91597" AngleX="5.14241" AngleY="0"/>
+                                            <RotateTransform CenterX="1.04677" CenterY="0.91597" Angle="219.213"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80CACACA" Offset="0.005618"/>
+                                    <GradientStop Color="#80ACACAC" Offset="0.551553"/>
+                                    <GradientStop Color="#808F8F8F" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_98615" Width="28.193" Height="28.991" Canvas.Left="11.455" Canvas.Top="18.042" Stretch="Fill" Data="F1 M 60.6542,43.1432C 60.6542,50.9281 54.3407,55.7313 46.557,53.8749C 38.7694,52.0157 32.4613,44.1987 32.4613,36.4137C 32.4613,28.6288 38.7694,23.8243 46.557,25.6819C 54.3407,27.5412 60.6542,35.3584 60.6542,43.1432 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.897002,0.873348" EndPoint="1.85683,0.873348">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.897002" CenterY="0.873348" AngleX="0.790476" AngleY="0"/>
+                                            <RotateTransform CenterX="0.897002" CenterY="0.873348" Angle="223.668"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80474747" Offset="0"/>
+                                    <GradientStop Color="#80575757" Offset="0.095506"/>
+                                    <GradientStop Color="#80393939" Offset="0.199648"/>
+                                    <GradientStop Color="#801C1C1C" Offset="0.483146"/>
+                                    <GradientStop Color="#802F2F2F" Offset="0.502697"/>
+                                    <GradientStop Color="#80424242" Offset="0.505618"/>
+                                    <GradientStop Color="#80EDEDED" Offset="0.786517"/>
+                                    <GradientStop Color="#809C9C9C" Offset="0.893258"/>
+                                    <GradientStop Color="#80CCCCCC" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_98715" Width="3.566" Height="3.667" Canvas.Left="39.258" Canvas.Top="20.733" Stretch="Fill" Fill="#80242424" Data="F1 M 63.8298,30.2321C 63.8298,31.2176 63.0302,31.8246 62.046,31.5905C 61.0607,31.3535 60.2638,30.3654 60.2638,29.3827C 60.2638,28.3959 61.0607,27.79 62.046,28.0245C 63.0302,28.26 63.8298,29.2467 63.8298,30.2321 Z "/>
+                        <Path x:Name="Path_98815" Width="25.366" Height="9.825" Canvas.Left="17.274" Canvas.Top="2.254" Stretch="Fill" Data="F1 M 58.8368,20.2462L 37.6844,15.1967L 42.4297,10.4211L 63.0503,15.1967L 58.8368,20.2462 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.89933,0.985954" EndPoint="2.27006,0.985954">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.89933" CenterY="0.985954" AngleX="40.7428" AngleY="0"/>
+                                            <RotateTransform CenterX="0.89933" CenterY="0.985954" Angle="231.379"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80DCFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80CFECF6" Offset="0.730337"/>
+                                    <GradientStop Color="#80C2D9ED" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_98915" Width="6.622" Height="8.948" Canvas.Left="38.452" Canvas.Top="7.049" Stretch="Fill" Data="F1 M 59.806,24.1447L 65.4586,17.7275L 63.0503,15.1967L 58.8368,20.2462L 59.806,24.1447 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.643034,0.6384" EndPoint="1.1043,0.6384">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.643034" CenterY="0.6384" AngleX="-16.3095" AngleY="0"/>
+                                            <RotateTransform CenterX="0.643034" CenterY="0.6384" Angle="208.799"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#805386A7" Offset="0"/>
+                                    <GradientStop Color="#80325D6F" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_99015" Width="28.193" Height="28.989" Canvas.Left="10.25" Canvas.Top="19.247" Stretch="Fill" Data="F1 M 59.4493,44.3467C 59.4493,52.1315 53.1385,56.936 45.3523,55.0784C 37.5687,53.2206 31.2565,45.4034 31.2565,37.6185C 31.2565,29.8323 37.5687,25.0291 45.3523,26.887C 53.1385,28.7446 59.4493,36.5604 59.4493,44.3467 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.897054,0.873333" EndPoint="1.8569,0.873333">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.897054" CenterY="0.873333" AngleX="0.792525" AngleY="0"/>
+                                            <RotateTransform CenterX="0.897054" CenterY="0.873333" Angle="223.669"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80292929" Offset="0"/>
+                                    <GradientStop Color="#80454545" Offset="0.322045"/>
+                                    <GradientStop Color="#80616161" Offset="0.994382"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_99115" Width="24.882" Height="25.562" Canvas.Left="13.24" Canvas.Top="20.96" Stretch="Fill" StrokeThickness="0.919596" StrokeMiterLimit="2.75" Stroke="#80363636" Data="F1 M 58.6678,43.842C 58.6678,50.4596 53.3033,54.5427 46.6857,52.9634C 40.0677,51.3844 34.7059,44.7411 34.7059,38.1234C 34.7059,31.5055 40.0677,27.4199 46.6857,29.0004C 53.3033,30.5807 58.6678,37.2241 58.6678,43.842 Z ">
+                            <Path.Fill>
+                                <RadialGradientBrush RadiusX="0.864927" RadiusY="0.689055" Center="0.303093,0.306142" GradientOrigin="0.303093,0.306142">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.303093" CenterY="0.306142" AngleX="4.19599" AngleY="0"/>
+                                            <RotateTransform CenterX="0.303093" CenterY="0.306142" Angle="37.8791"/>
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80FFFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80DFDFDF" Offset="0.101234"/>
+                                    <GradientStop Color="#80C0C0C0" Offset="0.179775"/>
+                                    <GradientStop Color="#808F8F8F" Offset="1"/>
+                                </RadialGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Canvas>
+                    <Label Content="{Binding sUiController.Stage.StageSettingDialogStopButton, Mode=Default}" FontSize="32" FontWeight="Bold" Margin="-5,4,0,0" HorizontalAlignment="Center"/>
+                    <Grid VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,5,5,0">
+                        <Path x:Name="Path_99215" Width="60.667" Height="28.001" Stretch="Fill" Fill="#FF000000" Data="F1 M 290.321,10.2925L 345.655,10.2925C 347.128,10.2925 348.321,11.4864 348.321,12.9592L 348.321,35.6258C 348.321,37.0986 347.128,38.2925 345.655,38.2925L 290.321,38.2925C 288.849,38.2925 287.655,37.0986 287.655,35.6258L 287.655,12.9592C 287.655,11.4864 288.849,10.2925 290.321,10.2925 Z " HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBlock x:Name="TextBlock_92115" TextAlignment="Left" FontFamily="メイリオ" FontWeight="Bold" FontSize="14" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-5,0,0">
+						<TextBlock.LayoutTransform>
+							<TransformGroup>
+								<ScaleTransform ScaleX="2" ScaleY="2"/>
+								<SkewTransform/>
+								<RotateTransform/>
+								<TranslateTransform/>
+							</TransformGroup>
+						</TextBlock.LayoutTransform><Run Text="3D" Foreground="#FF21D2FD"/></TextBlock>
+                    </Grid>
+                </Grid>
+            </Button>
+            <Button Height="67" Margin="95,280,0,0" VerticalAlignment="Top" Style="{DynamicResource AcquisitionButtonStyle}" Width="345" HorizontalAlignment="Left" x:Name="btnAcquisitionSimpleOmnifocalStart" Visibility="{Binding sUiController.Acquisition.SettingSimpleOmnifocalAcquisitionStartButtonVisible, Mode=Default}" IsEnabled="{Binding sUiController.Acquisition.MovingAcquisitionSimpleOmnifocalEnable, Mode=Default}" Command="{Binding sUiController.Acquisition.MovingAcquisitionExtendStartHandler, Mode=Default}" d:LayoutOverrides="VerticalAlignment" d:IsHidden="True">
+                <Grid Height="67" Width="345">
+                    <Canvas Width="0" VerticalAlignment="Top" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment" Margin="5,10,0,0">
+                        <Canvas.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Canvas.LayoutTransform>
+                        <Path x:Name="Path_9832" Width="62.4" Height="19.943" Canvas.Left="-0.09" Stretch="Fill" Data="F1 M 62.4004,14.046C 62.4004,13.521 61.9736,12.9919 61.45,12.8668L 8.06348,0.125183C 7.53979,0 7.19263,0.485962 6.66895,1.00824L 0,6.3277L 16.3573,10.0545L 17.5137,6.54102L 38.5369,11.7601L 39.6097,15.6048L 55.9832,20.0485L 62.4004,14.0783L 62.4004,14.046 Z " Canvas.Top="0.5">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.925745,1.13335" EndPoint="2.57393,1.13335">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.925745" CenterY="1.13335" AngleX="47.7996" AngleY="0"/>
+                                            <RotateTransform CenterX="0.925745" CenterY="1.13335" Angle="236.608"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80DCFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80CFECF6" Offset="0.730337"/>
+                                    <GradientStop Color="#80C2D9ED" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9842" Width="6.484" Height="43.328" Canvas.Left="55.826" Canvas.Top="14.473" Stretch="Fill" Data="F1 M 55.9159,20.1111L 55.9832,57.4061L 61.45,51.129C 61.9736,50.6038 62.4004,49.8998 62.4004,49.3762L 62.4004,14.0783L 55.9159,20.1111 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                    <GradientStop Color="#807A7A7A" Offset="0"/>
+                                    <GradientStop Color="#80525252" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9852" Width="56.384" Height="51.333" Canvas.Top="6.645" Stretch="Fill" Data="F1 M 75.3529,27.8547L 59.806,24.1447L 58.8368,20.2462L 37.6844,15.1967L 36.7152,18.6335L 20.8694,14.8507C 20.343,14.727 19.9191,15.0499 19.9191,15.575L 19.9191,48.8537C 19.9191,49.3773 20.343,49.9064 20.8694,50.0302L 75.3529,66.1169C 75.8766,66.2423 76.2604,66.0928 76.3033,65.3928L 76.3033,29.0327C 76.3033,28.5076 75.8781,27.9799 75.3529,27.8547 Z " Canvas.Left="-0.5">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="1.04677,0.91597" EndPoint="2.25119,0.91597">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="1.04677" CenterY="0.91597" AngleX="5.14241" AngleY="0"/>
+                                            <RotateTransform CenterX="1.04677" CenterY="0.91597" Angle="219.213"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80CACACA" Offset="0.005618"/>
+                                    <GradientStop Color="#80ACACAC" Offset="0.551553"/>
+                                    <GradientStop Color="#808F8F8F" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9862" Width="28.193" Height="28.991" Canvas.Left="11.455" Canvas.Top="18.042" Stretch="Fill" Data="F1 M 60.6542,43.1432C 60.6542,50.9281 54.3407,55.7313 46.557,53.8749C 38.7694,52.0157 32.4613,44.1987 32.4613,36.4137C 32.4613,28.6288 38.7694,23.8243 46.557,25.6819C 54.3407,27.5412 60.6542,35.3584 60.6542,43.1432 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.897002,0.873348" EndPoint="1.85683,0.873348">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.897002" CenterY="0.873348" AngleX="0.790476" AngleY="0"/>
+                                            <RotateTransform CenterX="0.897002" CenterY="0.873348" Angle="223.668"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80474747" Offset="0"/>
+                                    <GradientStop Color="#80575757" Offset="0.095506"/>
+                                    <GradientStop Color="#80393939" Offset="0.199648"/>
+                                    <GradientStop Color="#801C1C1C" Offset="0.483146"/>
+                                    <GradientStop Color="#802F2F2F" Offset="0.502697"/>
+                                    <GradientStop Color="#80424242" Offset="0.505618"/>
+                                    <GradientStop Color="#80EDEDED" Offset="0.786517"/>
+                                    <GradientStop Color="#809C9C9C" Offset="0.893258"/>
+                                    <GradientStop Color="#80CCCCCC" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9872" Width="3.566" Height="3.667" Canvas.Left="39.258" Canvas.Top="20.733" Stretch="Fill" Fill="#80242424" Data="F1 M 63.8298,30.2321C 63.8298,31.2176 63.0302,31.8246 62.046,31.5905C 61.0607,31.3535 60.2638,30.3654 60.2638,29.3827C 60.2638,28.3959 61.0607,27.79 62.046,28.0245C 63.0302,28.26 63.8298,29.2467 63.8298,30.2321 Z "/>
+                        <Path x:Name="Path_9882" Width="25.366" Height="9.825" Canvas.Left="17.274" Canvas.Top="2.254" Stretch="Fill" Data="F1 M 58.8368,20.2462L 37.6844,15.1967L 42.4297,10.4211L 63.0503,15.1967L 58.8368,20.2462 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.89933,0.985954" EndPoint="2.27006,0.985954">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.89933" CenterY="0.985954" AngleX="40.7428" AngleY="0"/>
+                                            <RotateTransform CenterX="0.89933" CenterY="0.985954" Angle="231.379"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80DCFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80CFECF6" Offset="0.730337"/>
+                                    <GradientStop Color="#80C2D9ED" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9892" Width="6.622" Height="8.948" Canvas.Left="38.452" Canvas.Top="7.049" Stretch="Fill" Data="F1 M 59.806,24.1447L 65.4586,17.7275L 63.0503,15.1967L 58.8368,20.2462L 59.806,24.1447 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.643034,0.6384" EndPoint="1.1043,0.6384">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.643034" CenterY="0.6384" AngleX="-16.3095" AngleY="0"/>
+                                            <RotateTransform CenterX="0.643034" CenterY="0.6384" Angle="208.799"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#805386A7" Offset="0"/>
+                                    <GradientStop Color="#80325D6F" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9902" Width="28.193" Height="28.989" Canvas.Left="10.25" Canvas.Top="19.247" Stretch="Fill" Data="F1 M 59.4493,44.3467C 59.4493,52.1315 53.1385,56.936 45.3523,55.0784C 37.5687,53.2206 31.2565,45.4034 31.2565,37.6185C 31.2565,29.8323 37.5687,25.0291 45.3523,26.887C 53.1385,28.7446 59.4493,36.5604 59.4493,44.3467 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.897054,0.873333" EndPoint="1.8569,0.873333">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.897054" CenterY="0.873333" AngleX="0.792525" AngleY="0"/>
+                                            <RotateTransform CenterX="0.897054" CenterY="0.873333" Angle="223.669"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80292929" Offset="0"/>
+                                    <GradientStop Color="#80454545" Offset="0.322045"/>
+                                    <GradientStop Color="#80616161" Offset="0.994382"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9912" Width="24.882" Height="25.562" Canvas.Left="13.24" Canvas.Top="20.96" Stretch="Fill" StrokeThickness="0.919596" StrokeMiterLimit="2.75" Stroke="#80363636" Data="F1 M 58.6678,43.842C 58.6678,50.4596 53.3033,54.5427 46.6857,52.9634C 40.0677,51.3844 34.7059,44.7411 34.7059,38.1234C 34.7059,31.5055 40.0677,27.4199 46.6857,29.0004C 53.3033,30.5807 58.6678,37.2241 58.6678,43.842 Z ">
+                            <Path.Fill>
+                                <RadialGradientBrush RadiusX="0.864927" RadiusY="0.689055" Center="0.303093,0.306142" GradientOrigin="0.303093,0.306142">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.303093" CenterY="0.306142" AngleX="4.19599" AngleY="0"/>
+                                            <RotateTransform CenterX="0.303093" CenterY="0.306142" Angle="37.8791"/>
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80FFFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80DFDFDF" Offset="0.101234"/>
+                                    <GradientStop Color="#80C0C0C0" Offset="0.179775"/>
+                                    <GradientStop Color="#808F8F8F" Offset="1"/>
+                                </RadialGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Canvas>
+                    <Label Content="{Binding sUiController.Stage.StageSettingDialogImagingButton, Mode=Default}" FontSize="32" FontWeight="Bold" Margin="-5,4,0,0" HorizontalAlignment="Center"/>
+                    <Grid VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,5,5,0">
+                        <Path x:Name="Path_9922" Width="60.667" Height="28.001" Stretch="Fill" Fill="#FF000000" Data="F1 M 290.321,10.2925L 345.655,10.2925C 347.128,10.2925 348.321,11.4864 348.321,12.9592L 348.321,35.6258C 348.321,37.0986 347.128,38.2925 345.655,38.2925L 290.321,38.2925C 288.849,38.2925 287.655,37.0986 287.655,35.6258L 287.655,12.9592C 287.655,11.4864 288.849,10.2925 290.321,10.2925 Z " HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBlock x:Name="TextBlock_9212" TextAlignment="Left" FontFamily="メイリオ" FontWeight="Bold" FontSize="14" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-5,0,0">
+        				<TextBlock.LayoutTransform>
+        					<TransformGroup>
+        						<ScaleTransform ScaleX="2" ScaleY="2"/>
+        						<SkewTransform/>
+        						<RotateTransform/>
+        						<TranslateTransform/>
+        					</TransformGroup>
+        				</TextBlock.LayoutTransform><Run Text="EFI" Foreground="#FF21D2FD"/></TextBlock>
+                    </Grid>
+                </Grid>
+            </Button>
+            <Button Height="67" Margin="95,280,0,0" VerticalAlignment="Top" Style="{DynamicResource AcquisitionButtonStyle}" Width="345" HorizontalAlignment="Left" x:Name="btnAcquisitionSimpleOmnifocalCancel" Visibility="{Binding sUiController.Acquisition.SettingSimpleOmnifocalAcquisitionCancelButtonVisible, Mode=Default}" IsEnabled="{Binding sUiController.Acquisition.MovingAcquisitionStateEnable, Mode=Default}" Command="{Binding sUiController.Acquisition.MovingAcquisitionExtendStopHandler, Mode=Default}" d:LayoutOverrides="VerticalAlignment" d:IsHidden="True">
+                <Grid Width="345" Height="67">
+                    <Canvas Width="0" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5,10,0,0">
+                        <Canvas.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Canvas.LayoutTransform>
+                        <Path x:Name="Path_9837" Width="62.4" Height="19.943" Canvas.Left="-0.09" Stretch="Fill" Data="F1 M 62.4004,14.046C 62.4004,13.521 61.9736,12.9919 61.45,12.8668L 8.06348,0.125183C 7.53979,0 7.19263,0.485962 6.66895,1.00824L 0,6.3277L 16.3573,10.0545L 17.5137,6.54102L 38.5369,11.7601L 39.6097,15.6048L 55.9832,20.0485L 62.4004,14.0783L 62.4004,14.046 Z " Canvas.Top="0.5">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.925745,1.13335" EndPoint="2.57393,1.13335">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.925745" CenterY="1.13335" AngleX="47.7996" AngleY="0"/>
+                                            <RotateTransform CenterX="0.925745" CenterY="1.13335" Angle="236.608"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80DCFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80CFECF6" Offset="0.730337"/>
+                                    <GradientStop Color="#80C2D9ED" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9847" Width="6.484" Height="43.328" Canvas.Left="55.826" Canvas.Top="14.473" Stretch="Fill" Data="F1 M 55.9159,20.1111L 55.9832,57.4061L 61.45,51.129C 61.9736,50.6038 62.4004,49.8998 62.4004,49.3762L 62.4004,14.0783L 55.9159,20.1111 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                    <GradientStop Color="#807A7A7A" Offset="0"/>
+                                    <GradientStop Color="#80525252" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9857" Width="56.384" Height="51.333" Canvas.Top="6.645" Stretch="Fill" Data="F1 M 75.3529,27.8547L 59.806,24.1447L 58.8368,20.2462L 37.6844,15.1967L 36.7152,18.6335L 20.8694,14.8507C 20.343,14.727 19.9191,15.0499 19.9191,15.575L 19.9191,48.8537C 19.9191,49.3773 20.343,49.9064 20.8694,50.0302L 75.3529,66.1169C 75.8766,66.2423 76.2604,66.0928 76.3033,65.3928L 76.3033,29.0327C 76.3033,28.5076 75.8781,27.9799 75.3529,27.8547 Z " Canvas.Left="-0.5">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="1.04677,0.91597" EndPoint="2.25119,0.91597">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="1.04677" CenterY="0.91597" AngleX="5.14241" AngleY="0"/>
+                                            <RotateTransform CenterX="1.04677" CenterY="0.91597" Angle="219.213"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80CACACA" Offset="0.005618"/>
+                                    <GradientStop Color="#80ACACAC" Offset="0.551553"/>
+                                    <GradientStop Color="#808F8F8F" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9867" Width="28.193" Height="28.991" Canvas.Left="11.455" Canvas.Top="18.042" Stretch="Fill" Data="F1 M 60.6542,43.1432C 60.6542,50.9281 54.3407,55.7313 46.557,53.8749C 38.7694,52.0157 32.4613,44.1987 32.4613,36.4137C 32.4613,28.6288 38.7694,23.8243 46.557,25.6819C 54.3407,27.5412 60.6542,35.3584 60.6542,43.1432 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.897002,0.873348" EndPoint="1.85683,0.873348">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.897002" CenterY="0.873348" AngleX="0.790476" AngleY="0"/>
+                                            <RotateTransform CenterX="0.897002" CenterY="0.873348" Angle="223.668"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80474747" Offset="0"/>
+                                    <GradientStop Color="#80575757" Offset="0.095506"/>
+                                    <GradientStop Color="#80393939" Offset="0.199648"/>
+                                    <GradientStop Color="#801C1C1C" Offset="0.483146"/>
+                                    <GradientStop Color="#802F2F2F" Offset="0.502697"/>
+                                    <GradientStop Color="#80424242" Offset="0.505618"/>
+                                    <GradientStop Color="#80EDEDED" Offset="0.786517"/>
+                                    <GradientStop Color="#809C9C9C" Offset="0.893258"/>
+                                    <GradientStop Color="#80CCCCCC" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9877" Width="3.566" Height="3.667" Canvas.Left="39.258" Canvas.Top="20.733" Stretch="Fill" Fill="#80242424" Data="F1 M 63.8298,30.2321C 63.8298,31.2176 63.0302,31.8246 62.046,31.5905C 61.0607,31.3535 60.2638,30.3654 60.2638,29.3827C 60.2638,28.3959 61.0607,27.79 62.046,28.0245C 63.0302,28.26 63.8298,29.2467 63.8298,30.2321 Z "/>
+                        <Path x:Name="Path_9887" Width="25.366" Height="9.825" Canvas.Left="17.274" Canvas.Top="2.254" Stretch="Fill" Data="F1 M 58.8368,20.2462L 37.6844,15.1967L 42.4297,10.4211L 63.0503,15.1967L 58.8368,20.2462 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.89933,0.985954" EndPoint="2.27006,0.985954">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.89933" CenterY="0.985954" AngleX="40.7428" AngleY="0"/>
+                                            <RotateTransform CenterX="0.89933" CenterY="0.985954" Angle="231.379"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80DCFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80CFECF6" Offset="0.730337"/>
+                                    <GradientStop Color="#80C2D9ED" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9897" Width="6.622" Height="8.948" Canvas.Left="38.452" Canvas.Top="7.049" Stretch="Fill" Data="F1 M 59.806,24.1447L 65.4586,17.7275L 63.0503,15.1967L 58.8368,20.2462L 59.806,24.1447 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.643034,0.6384" EndPoint="1.1043,0.6384">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.643034" CenterY="0.6384" AngleX="-16.3095" AngleY="0"/>
+                                            <RotateTransform CenterX="0.643034" CenterY="0.6384" Angle="208.799"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#805386A7" Offset="0"/>
+                                    <GradientStop Color="#80325D6F" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9907" Width="28.193" Height="28.989" Canvas.Left="10.25" Canvas.Top="19.247" Stretch="Fill" Data="F1 M 59.4493,44.3467C 59.4493,52.1315 53.1385,56.936 45.3523,55.0784C 37.5687,53.2206 31.2565,45.4034 31.2565,37.6185C 31.2565,29.8323 37.5687,25.0291 45.3523,26.887C 53.1385,28.7446 59.4493,36.5604 59.4493,44.3467 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.897054,0.873333" EndPoint="1.8569,0.873333">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.897054" CenterY="0.873333" AngleX="0.792525" AngleY="0"/>
+                                            <RotateTransform CenterX="0.897054" CenterY="0.873333" Angle="223.669"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80292929" Offset="0"/>
+                                    <GradientStop Color="#80454545" Offset="0.322045"/>
+                                    <GradientStop Color="#80616161" Offset="0.994382"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9917" Width="24.882" Height="25.562" Canvas.Left="13.24" Canvas.Top="20.96" Stretch="Fill" StrokeThickness="0.919596" StrokeMiterLimit="2.75" Stroke="#80363636" Data="F1 M 58.6678,43.842C 58.6678,50.4596 53.3033,54.5427 46.6857,52.9634C 40.0677,51.3844 34.7059,44.7411 34.7059,38.1234C 34.7059,31.5055 40.0677,27.4199 46.6857,29.0004C 53.3033,30.5807 58.6678,37.2241 58.6678,43.842 Z ">
+                            <Path.Fill>
+                                <RadialGradientBrush RadiusX="0.864927" RadiusY="0.689055" Center="0.303093,0.306142" GradientOrigin="0.303093,0.306142">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.303093" CenterY="0.306142" AngleX="4.19599" AngleY="0"/>
+                                            <RotateTransform CenterX="0.303093" CenterY="0.306142" Angle="37.8791"/>
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80FFFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80DFDFDF" Offset="0.101234"/>
+                                    <GradientStop Color="#80C0C0C0" Offset="0.179775"/>
+                                    <GradientStop Color="#808F8F8F" Offset="1"/>
+                                </RadialGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Canvas>
+                    <Label Content="{Binding sUiController.Stage.StageSettingDialogStopButton, Mode=Default}" FontSize="32" FontWeight="Bold" Margin="-5,4,0,0" HorizontalAlignment="Center"/>
+                    <Grid HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
+                        <Path x:Name="Path_9927" Width="60.667" Height="28.001" Stretch="Fill" Fill="#FF000000" Data="F1 M 290.321,10.2925L 345.655,10.2925C 347.128,10.2925 348.321,11.4864 348.321,12.9592L 348.321,35.6258C 348.321,37.0986 347.128,38.2925 345.655,38.2925L 290.321,38.2925C 288.849,38.2925 287.655,37.0986 287.655,35.6258L 287.655,12.9592C 287.655,11.4864 288.849,10.2925 290.321,10.2925 Z " HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBlock x:Name="TextBlock_9217" TextAlignment="Left" FontFamily="メイリオ" FontWeight="Bold" FontSize="14" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-5,0,0">
+        				<TextBlock.LayoutTransform>
+        					<TransformGroup>
+        						<ScaleTransform ScaleX="2" ScaleY="2"/>
+        						<SkewTransform/>
+        						<RotateTransform/>
+        						<TranslateTransform/>
+        					</TransformGroup>
+        				</TextBlock.LayoutTransform><Run Text="EFI" Foreground="#FF21D2FD"/></TextBlock>
+                    </Grid>
+                </Grid>
+            </Button>
+            <Button Height="67" Margin="95,280,0,0" VerticalAlignment="Top" Command="{Binding Path=sUiController.Acquisition.MovingAcquisitionExtendStartHandler, Mode=Default}" Style="{DynamicResource AcquisitionButtonStyle}" Width="345" HorizontalAlignment="Left" x:Name="btnAcquisitionMovingImageStart" Visibility="{Binding sUiController.Acquisition.SettingMovingImageAcquisitionStartButtonVisible, Mode=Default}" d:LayoutOverrides="VerticalAlignment" IsEnabled="False" d:IsHidden="True" >
+                <Grid Width="345" Height="67">
+                    <Canvas Width="0" VerticalAlignment="Top" Margin="5,10,0,0" HorizontalAlignment="Left">
+                        <Canvas.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Canvas.LayoutTransform>
+                        <Path x:Name="Path_9833" Width="62.4" Height="19.943" Canvas.Left="-0.09" Stretch="Fill" Data="F1 M 62.4004,14.046C 62.4004,13.521 61.9736,12.9919 61.45,12.8668L 8.06348,0.125183C 7.53979,0 7.19263,0.485962 6.66895,1.00824L 0,6.3277L 16.3573,10.0545L 17.5137,6.54102L 38.5369,11.7601L 39.6097,15.6048L 55.9832,20.0485L 62.4004,14.0783L 62.4004,14.046 Z " Canvas.Top="0.5">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.925745,1.13335" EndPoint="2.57393,1.13335">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.925745" CenterY="1.13335" AngleX="47.7996" AngleY="0"/>
+                                            <RotateTransform CenterX="0.925745" CenterY="1.13335" Angle="236.608"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80DCFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80CFECF6" Offset="0.730337"/>
+                                    <GradientStop Color="#80C2D9ED" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9843" Width="6.484" Height="43.328" Canvas.Left="55.826" Canvas.Top="14.473" Stretch="Fill" Data="F1 M 55.9159,20.1111L 55.9832,57.4061L 61.45,51.129C 61.9736,50.6038 62.4004,49.8998 62.4004,49.3762L 62.4004,14.0783L 55.9159,20.1111 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                    <GradientStop Color="#807A7A7A" Offset="0"/>
+                                    <GradientStop Color="#80525252" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9853" Width="56.384" Height="51.333" Canvas.Top="6.645" Stretch="Fill" Data="F1 M 75.3529,27.8547L 59.806,24.1447L 58.8368,20.2462L 37.6844,15.1967L 36.7152,18.6335L 20.8694,14.8507C 20.343,14.727 19.9191,15.0499 19.9191,15.575L 19.9191,48.8537C 19.9191,49.3773 20.343,49.9064 20.8694,50.0302L 75.3529,66.1169C 75.8766,66.2423 76.2604,66.0928 76.3033,65.3928L 76.3033,29.0327C 76.3033,28.5076 75.8781,27.9799 75.3529,27.8547 Z " Canvas.Left="-0.5">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="1.04677,0.91597" EndPoint="2.25119,0.91597">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="1.04677" CenterY="0.91597" AngleX="5.14241" AngleY="0"/>
+                                            <RotateTransform CenterX="1.04677" CenterY="0.91597" Angle="219.213"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80CACACA" Offset="0.005618"/>
+                                    <GradientStop Color="#80ACACAC" Offset="0.551553"/>
+                                    <GradientStop Color="#808F8F8F" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9863" Width="28.193" Height="28.991" Canvas.Left="11.455" Canvas.Top="18.042" Stretch="Fill" Data="F1 M 60.6542,43.1432C 60.6542,50.9281 54.3407,55.7313 46.557,53.8749C 38.7694,52.0157 32.4613,44.1987 32.4613,36.4137C 32.4613,28.6288 38.7694,23.8243 46.557,25.6819C 54.3407,27.5412 60.6542,35.3584 60.6542,43.1432 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.897002,0.873348" EndPoint="1.85683,0.873348">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.897002" CenterY="0.873348" AngleX="0.790476" AngleY="0"/>
+                                            <RotateTransform CenterX="0.897002" CenterY="0.873348" Angle="223.668"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80474747" Offset="0"/>
+                                    <GradientStop Color="#80575757" Offset="0.095506"/>
+                                    <GradientStop Color="#80393939" Offset="0.199648"/>
+                                    <GradientStop Color="#801C1C1C" Offset="0.483146"/>
+                                    <GradientStop Color="#802F2F2F" Offset="0.502697"/>
+                                    <GradientStop Color="#80424242" Offset="0.505618"/>
+                                    <GradientStop Color="#80EDEDED" Offset="0.786517"/>
+                                    <GradientStop Color="#809C9C9C" Offset="0.893258"/>
+                                    <GradientStop Color="#80CCCCCC" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9873" Width="3.566" Height="3.667" Canvas.Left="39.258" Canvas.Top="20.733" Stretch="Fill" Fill="#80242424" Data="F1 M 63.8298,30.2321C 63.8298,31.2176 63.0302,31.8246 62.046,31.5905C 61.0607,31.3535 60.2638,30.3654 60.2638,29.3827C 60.2638,28.3959 61.0607,27.79 62.046,28.0245C 63.0302,28.26 63.8298,29.2467 63.8298,30.2321 Z "/>
+                        <Path x:Name="Path_9883" Width="25.366" Height="9.825" Canvas.Left="17.274" Canvas.Top="2.254" Stretch="Fill" Data="F1 M 58.8368,20.2462L 37.6844,15.1967L 42.4297,10.4211L 63.0503,15.1967L 58.8368,20.2462 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.89933,0.985954" EndPoint="2.27006,0.985954">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.89933" CenterY="0.985954" AngleX="40.7428" AngleY="0"/>
+                                            <RotateTransform CenterX="0.89933" CenterY="0.985954" Angle="231.379"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80DCFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80CFECF6" Offset="0.730337"/>
+                                    <GradientStop Color="#80C2D9ED" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9893" Width="6.622" Height="8.948" Canvas.Left="38.452" Canvas.Top="7.049" Stretch="Fill" Data="F1 M 59.806,24.1447L 65.4586,17.7275L 63.0503,15.1967L 58.8368,20.2462L 59.806,24.1447 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.643034,0.6384" EndPoint="1.1043,0.6384">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.643034" CenterY="0.6384" AngleX="-16.3095" AngleY="0"/>
+                                            <RotateTransform CenterX="0.643034" CenterY="0.6384" Angle="208.799"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#805386A7" Offset="0"/>
+                                    <GradientStop Color="#80325D6F" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9903" Width="28.193" Height="28.989" Canvas.Left="10.25" Canvas.Top="19.247" Stretch="Fill" Data="F1 M 59.4493,44.3467C 59.4493,52.1315 53.1385,56.936 45.3523,55.0784C 37.5687,53.2206 31.2565,45.4034 31.2565,37.6185C 31.2565,29.8323 37.5687,25.0291 45.3523,26.887C 53.1385,28.7446 59.4493,36.5604 59.4493,44.3467 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.897054,0.873333" EndPoint="1.8569,0.873333">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.897054" CenterY="0.873333" AngleX="0.792525" AngleY="0"/>
+                                            <RotateTransform CenterX="0.897054" CenterY="0.873333" Angle="223.669"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80292929" Offset="0"/>
+                                    <GradientStop Color="#80454545" Offset="0.322045"/>
+                                    <GradientStop Color="#80616161" Offset="0.994382"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9913" Width="24.882" Height="25.562" Canvas.Left="13.24" Canvas.Top="20.96" Stretch="Fill" StrokeThickness="0.919596" StrokeMiterLimit="2.75" Stroke="#80363636" Data="F1 M 58.6678,43.842C 58.6678,50.4596 53.3033,54.5427 46.6857,52.9634C 40.0677,51.3844 34.7059,44.7411 34.7059,38.1234C 34.7059,31.5055 40.0677,27.4199 46.6857,29.0004C 53.3033,30.5807 58.6678,37.2241 58.6678,43.842 Z ">
+                            <Path.Fill>
+                                <RadialGradientBrush RadiusX="0.864927" RadiusY="0.689055" Center="0.303093,0.306142" GradientOrigin="0.303093,0.306142">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.303093" CenterY="0.306142" AngleX="4.19599" AngleY="0"/>
+                                            <RotateTransform CenterX="0.303093" CenterY="0.306142" Angle="37.8791"/>
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80FFFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80DFDFDF" Offset="0.101234"/>
+                                    <GradientStop Color="#80C0C0C0" Offset="0.179775"/>
+                                    <GradientStop Color="#808F8F8F" Offset="1"/>
+                                </RadialGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Canvas>
+                    <Label Content="{Binding sUiController.Stage.StageSettingDialogStartRECButton, Mode=Default}" FontSize="32" FontWeight="Bold" Margin="-5,4,0,0" d:LayoutOverrides="Width, Height" HorizontalAlignment="Center"/>
+                    <Grid VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,5,5,0">
+                        <Path x:Name="Path_9923" Width="60.667" Height="28.001" Stretch="Fill" Fill="#FF000000" Data="F1 M 290.321,10.2925L 345.655,10.2925C 347.128,10.2925 348.321,11.4864 348.321,12.9592L 348.321,35.6258C 348.321,37.0986 347.128,38.2925 345.655,38.2925L 290.321,38.2925C 288.849,38.2925 287.655,37.0986 287.655,35.6258L 287.655,12.9592C 287.655,11.4864 288.849,10.2925 290.321,10.2925 Z " HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBlock x:Name="TextBlock_9213" TextAlignment="Left" FontFamily="メイリオ" FontWeight="Bold" FontSize="14" Width="Auto" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment">
+                		<TextBlock.LayoutTransform>
+                			<TransformGroup>
+                				<ScaleTransform ScaleX="1.33333" ScaleY="1.33333"/>
+                				<SkewTransform/>
+                				<RotateTransform/>
+                				<TranslateTransform/>
+                			</TransformGroup>
+                		</TextBlock.LayoutTransform><Run Text="Movie" Foreground="#FF21D2FD"/></TextBlock>
+                    </Grid>
+                </Grid>
+            </Button>
+            <Button Height="67" Margin="95,280,0,0" VerticalAlignment="Top" Style="{DynamicResource AcquisitionButtonStyle}" Width="345" HorizontalAlignment="Left" x:Name="btnAcquisitionMovingImageCancel" Visibility="{Binding sUiController.Acquisition.SettingMovingImageAcquisitionCancelButtonVisible, Mode=Default}" d:LayoutOverrides="VerticalAlignment" IsEnabled="False" d:IsHidden="True" >
+                <Grid Width="345" Height="67">
+                    <Canvas Width="0" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5,10,0,0">
+                        <Canvas.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Canvas.LayoutTransform>
+                        <Path x:Name="Path_9838" Width="62.4" Height="19.943" Canvas.Left="-0.09" Stretch="Fill" Data="F1 M 62.4004,14.046C 62.4004,13.521 61.9736,12.9919 61.45,12.8668L 8.06348,0.125183C 7.53979,0 7.19263,0.485962 6.66895,1.00824L 0,6.3277L 16.3573,10.0545L 17.5137,6.54102L 38.5369,11.7601L 39.6097,15.6048L 55.9832,20.0485L 62.4004,14.0783L 62.4004,14.046 Z " Canvas.Top="0.5">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.925745,1.13335" EndPoint="2.57393,1.13335">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.925745" CenterY="1.13335" AngleX="47.7996" AngleY="0"/>
+                                            <RotateTransform CenterX="0.925745" CenterY="1.13335" Angle="236.608"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80DCFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80CFECF6" Offset="0.730337"/>
+                                    <GradientStop Color="#80C2D9ED" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9848" Width="6.484" Height="43.328" Canvas.Left="55.826" Canvas.Top="14.473" Stretch="Fill" Data="F1 M 55.9159,20.1111L 55.9832,57.4061L 61.45,51.129C 61.9736,50.6038 62.4004,49.8998 62.4004,49.3762L 62.4004,14.0783L 55.9159,20.1111 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                    <GradientStop Color="#807A7A7A" Offset="0"/>
+                                    <GradientStop Color="#80525252" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9858" Width="56.384" Height="51.333" Canvas.Top="6.645" Stretch="Fill" Data="F1 M 75.3529,27.8547L 59.806,24.1447L 58.8368,20.2462L 37.6844,15.1967L 36.7152,18.6335L 20.8694,14.8507C 20.343,14.727 19.9191,15.0499 19.9191,15.575L 19.9191,48.8537C 19.9191,49.3773 20.343,49.9064 20.8694,50.0302L 75.3529,66.1169C 75.8766,66.2423 76.2604,66.0928 76.3033,65.3928L 76.3033,29.0327C 76.3033,28.5076 75.8781,27.9799 75.3529,27.8547 Z " Canvas.Left="-0.5">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="1.04677,0.91597" EndPoint="2.25119,0.91597">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="1.04677" CenterY="0.91597" AngleX="5.14241" AngleY="0"/>
+                                            <RotateTransform CenterX="1.04677" CenterY="0.91597" Angle="219.213"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80CACACA" Offset="0.005618"/>
+                                    <GradientStop Color="#80ACACAC" Offset="0.551553"/>
+                                    <GradientStop Color="#808F8F8F" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9868" Width="28.193" Height="28.991" Canvas.Left="11.455" Canvas.Top="18.042" Stretch="Fill" Data="F1 M 60.6542,43.1432C 60.6542,50.9281 54.3407,55.7313 46.557,53.8749C 38.7694,52.0157 32.4613,44.1987 32.4613,36.4137C 32.4613,28.6288 38.7694,23.8243 46.557,25.6819C 54.3407,27.5412 60.6542,35.3584 60.6542,43.1432 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.897002,0.873348" EndPoint="1.85683,0.873348">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.897002" CenterY="0.873348" AngleX="0.790476" AngleY="0"/>
+                                            <RotateTransform CenterX="0.897002" CenterY="0.873348" Angle="223.668"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80474747" Offset="0"/>
+                                    <GradientStop Color="#80575757" Offset="0.095506"/>
+                                    <GradientStop Color="#80393939" Offset="0.199648"/>
+                                    <GradientStop Color="#801C1C1C" Offset="0.483146"/>
+                                    <GradientStop Color="#802F2F2F" Offset="0.502697"/>
+                                    <GradientStop Color="#80424242" Offset="0.505618"/>
+                                    <GradientStop Color="#80EDEDED" Offset="0.786517"/>
+                                    <GradientStop Color="#809C9C9C" Offset="0.893258"/>
+                                    <GradientStop Color="#80CCCCCC" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9878" Width="3.566" Height="3.667" Canvas.Left="39.258" Canvas.Top="20.733" Stretch="Fill" Fill="#80242424" Data="F1 M 63.8298,30.2321C 63.8298,31.2176 63.0302,31.8246 62.046,31.5905C 61.0607,31.3535 60.2638,30.3654 60.2638,29.3827C 60.2638,28.3959 61.0607,27.79 62.046,28.0245C 63.0302,28.26 63.8298,29.2467 63.8298,30.2321 Z "/>
+                        <Path x:Name="Path_9888" Width="25.366" Height="9.825" Canvas.Left="17.274" Canvas.Top="2.254" Stretch="Fill" Data="F1 M 58.8368,20.2462L 37.6844,15.1967L 42.4297,10.4211L 63.0503,15.1967L 58.8368,20.2462 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.89933,0.985954" EndPoint="2.27006,0.985954">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.89933" CenterY="0.985954" AngleX="40.7428" AngleY="0"/>
+                                            <RotateTransform CenterX="0.89933" CenterY="0.985954" Angle="231.379"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80DCFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80CFECF6" Offset="0.730337"/>
+                                    <GradientStop Color="#80C2D9ED" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9898" Width="6.622" Height="8.948" Canvas.Left="38.452" Canvas.Top="7.049" Stretch="Fill" Data="F1 M 59.806,24.1447L 65.4586,17.7275L 63.0503,15.1967L 58.8368,20.2462L 59.806,24.1447 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.643034,0.6384" EndPoint="1.1043,0.6384">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.643034" CenterY="0.6384" AngleX="-16.3095" AngleY="0"/>
+                                            <RotateTransform CenterX="0.643034" CenterY="0.6384" Angle="208.799"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#805386A7" Offset="0"/>
+                                    <GradientStop Color="#80325D6F" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9908" Width="28.193" Height="28.989" Canvas.Left="10.25" Canvas.Top="19.247" Stretch="Fill" Data="F1 M 59.4493,44.3467C 59.4493,52.1315 53.1385,56.936 45.3523,55.0784C 37.5687,53.2206 31.2565,45.4034 31.2565,37.6185C 31.2565,29.8323 37.5687,25.0291 45.3523,26.887C 53.1385,28.7446 59.4493,36.5604 59.4493,44.3467 Z ">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.897054,0.873333" EndPoint="1.8569,0.873333">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.897054" CenterY="0.873333" AngleX="0.792525" AngleY="0"/>
+                                            <RotateTransform CenterX="0.897054" CenterY="0.873333" Angle="223.669"/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80292929" Offset="0"/>
+                                    <GradientStop Color="#80454545" Offset="0.322045"/>
+                                    <GradientStop Color="#80616161" Offset="0.994382"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="Path_9918" Width="24.882" Height="25.562" Canvas.Left="13.24" Canvas.Top="20.96" Stretch="Fill" StrokeThickness="0.919596" StrokeMiterLimit="2.75" Stroke="#80363636" Data="F1 M 58.6678,43.842C 58.6678,50.4596 53.3033,54.5427 46.6857,52.9634C 40.0677,51.3844 34.7059,44.7411 34.7059,38.1234C 34.7059,31.5055 40.0677,27.4199 46.6857,29.0004C 53.3033,30.5807 58.6678,37.2241 58.6678,43.842 Z ">
+                            <Path.Fill>
+                                <RadialGradientBrush RadiusX="0.864927" RadiusY="0.689055" Center="0.303093,0.306142" GradientOrigin="0.303093,0.306142">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <SkewTransform CenterX="0.303093" CenterY="0.306142" AngleX="4.19599" AngleY="0"/>
+                                            <RotateTransform CenterX="0.303093" CenterY="0.306142" Angle="37.8791"/>
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#80FFFFFF" Offset="0.005618"/>
+                                    <GradientStop Color="#80DFDFDF" Offset="0.101234"/>
+                                    <GradientStop Color="#80C0C0C0" Offset="0.179775"/>
+                                    <GradientStop Color="#808F8F8F" Offset="1"/>
+                                </RadialGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Canvas>
+                    <Label Content="{Binding sUiController.Stage.StageSettingDialogStopRECButton, Mode=Default}" FontSize="32" FontWeight="Bold" Margin="-5,4,0,0" d:LayoutOverrides="Height" HorizontalAlignment="Center"/>
+                    <Grid HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
+                        <Path x:Name="Path_9928" Width="60.667" Height="28.001" Stretch="Fill" Fill="#FF000000" Data="F1 M 290.321,10.2925L 345.655,10.2925C 347.128,10.2925 348.321,11.4864 348.321,12.9592L 348.321,35.6258C 348.321,37.0986 347.128,38.2925 345.655,38.2925L 290.321,38.2925C 288.849,38.2925 287.655,37.0986 287.655,35.6258L 287.655,12.9592C 287.655,11.4864 288.849,10.2925 290.321,10.2925 Z " HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBlock x:Name="TextBlock_9218" TextAlignment="Left" FontFamily="メイリオ" FontWeight="Bold" FontSize="14" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                		<TextBlock.LayoutTransform>
+                			<TransformGroup>
+                				<ScaleTransform ScaleX="1.33333" ScaleY="1.33333"/>
+                				<SkewTransform/>
+                				<RotateTransform/>
+                				<TranslateTransform/>
+                			</TransformGroup>
+                		</TextBlock.LayoutTransform><Run Text="Movie" Foreground="#FF21D2FD"/></TextBlock>
+                    </Grid>
+                </Grid>
+            </Button>
+        </Grid>
+        <Label Content="{Binding Path=sUiController.Acquisition.MovingAcquisitionProgress, Mode=Default}" Visibility="{Binding sUiController.Acquisition.MovingAcquisitionProgressVisible, Mode=Default}" HorizontalAlignment="Left" Margin="160,355,0,0" VerticalAlignment="Top" FontSize="14.667" d:IsHidden="True"/>
+        <!--
+        <Label Content="/" Margin="120,350,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="13.333"/>
+        <Label Content="{Binding Path=sUiController.Acquisition.MovingAcquisitionTotalCount, Mode=Default}" HorizontalAlignment="Left" Margin="170,350,0,0" VerticalAlignment="Top" FontSize="13.333"/>
+		<Label Content="枚目を撮影中です" Margin="190,350,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="13.333"/>
+        <Label Content="現在" Margin="120,350,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="13.333"/>
+		<Label Content="枚目を撮影中です" Margin="190,350,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="13.333"/>
+		<Label Content="全体枚数：" HorizontalAlignment="Left" Margin="120,372,0,8" VerticalAlignment="Top" FontSize="13.333"/>
+        <Label Content="{Binding Path=sUiController.Magnification.CurrentRevolverObjectiveLensMagnification, Mode=Default}" Margin="205,372,0,8" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="13.333"/>
+		<Label Content="枚" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="230,372,0,0" FontSize="13.333"/>
+        -->
+    </Grid>
+</Page>

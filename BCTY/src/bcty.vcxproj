@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C74C98A7-8368-47C1-AD12-07406F32ADC5}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>bcty</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;.\dummy_library</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="BCTY.cpp" />
+    <ClCompile Include="BCVTIMER.cpp" />
+    <ClCompile Include="ComputerTank.cpp" />
+    <ClCompile Include="dummy_library.cpp" />
+    <ClCompile Include="GAME.cpp" />
+    <ClCompile Include="GameModel.cpp" />
+    <ClCompile Include="GameView.cpp" />
+    <ClCompile Include="Gun.cpp" />
+    <ClCompile Include="HI_SCORE.cpp" />
+    <ClCompile Include="INFO_MES.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="ITEM_NUM.cpp" />
+    <ClCompile Include="KEY.cpp" />
+    <ClCompile Include="PALET.cpp" />
+    <ClCompile Include="PILOT.cpp" />
+    <ClCompile Include="RESULT.cpp" />
+    <ClCompile Include="SPRITE.cpp" />
+    <ClCompile Include="STAGE.cpp" />
+    <ClCompile Include="oldTANK.cpp" />
+    <ClCompile Include="Tank.cpp" />
+    <ClCompile Include="TITLE.cpp" />
+    <ClCompile Include="T_TYPE.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Base.h" />
+    <ClInclude Include="BCTY.H" />
+    <ClInclude Include="BCVTIMER.H" />
+    <ClInclude Include="BGMOPN.H" />
+    <ClInclude Include="ComputerTank.h" />
+    <ClInclude Include="EnvInfo.h" />
+    <ClInclude Include="GameModel.h" />
+    <ClInclude Include="GameView.h" />
+    <ClInclude Include="Gun.h" />
+    <ClInclude Include="Hits.h" />
+    <ClInclude Include="HI_SCORE.H" />
+    <ClInclude Include="INFO_MES.H" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="ItemType.h" />
+    <ClInclude Include="ITEM_NUM.H" />
+    <ClInclude Include="KEY.H" />
+    <ClInclude Include="PALET.H" />
+    <ClInclude Include="PAT.H" />
+    <ClInclude Include="PILOT.H" />
+    <ClInclude Include="PlayerTank.h" />
+    <ClInclude Include="Point.h" />
+    <ClInclude Include="oldTANK.H" />
+    <ClInclude Include="RESULT.H" />
+    <ClInclude Include="SPRITE.H" />
+    <ClInclude Include="SPRITE_T.H" />
+    <ClInclude Include="STAGE.H" />
+    <ClInclude Include="Status.h" />
+    <ClInclude Include="SUPER_BC.H" />
+    <ClInclude Include="Tank.h" />
+    <ClInclude Include="TankType.h" />
+    <ClInclude Include="TITLE.H" />
+    <ClInclude Include="Vvram.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

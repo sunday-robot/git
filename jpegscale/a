@@ -1,0 +1,89 @@
+process_directory(D:\Akiyama\JAVA\jpegscale\秘本)
+process_file(秘本\02.jpg)
+process_file(秘本\03.jpg)
+process_file(秘本\04.jpg)
+process_file(秘本\05.jpg)
+process_file(秘本\06.jpg)
+process_file(秘本\07.jpg)
+process_file(秘本\08.jpg)
+process_file(秘本\09.jpg)
+process_file(秘本\10.jpg)
+process_file(秘本\01.jpg)
+
+Flat profile of 80.29 secs (5868 total ticks): main
+
+  Interpreted + native   Method                        
+  5.2%     0  +   282    sun.awt.image.codec.JPEGImageDecoderImpl.readJPEGStream
+  5.1%     0  +   273    sun.awt.image.codec.JPEGImageEncoderImpl.writeJPEGStream
+  0.6%     0  +    30    java.awt.image.DataBufferInt.<init>
+  0.1%     0  +     7    java.io.FileInputStream.readBytes
+  0.1%     3  +     0    ImageScaler.scale
+  0.1%     0  +     3    java.io.FileOutputStream.writeBytes
+  0.1%     0  +     3    java.io.Win32FileSystem.rename
+  0.1%     0  +     3    java.util.zip.ZipFile.open
+  0.0%     2  +     0    java.awt.image.DirectColorModel.getRed
+  0.0%     0  +     2    java.lang.ClassLoader$NativeLibrary.load
+  0.0%     2  +     0    java.awt.image.DirectColorModel.getGreen
+  0.0%     2  +     0    sun.io.ByteToCharISO8859_1.convert
+  0.0%     0  +     2    jpegscale.process_file
+  0.0%     2  +     0    java.awt.image.DirectColorModel.getRGB
+  0.0%     0  +     2    sun.misc.URLClassPath$FileLoader.getResource
+  0.0%     1  +     0    sun.io.CharToByteSingleByte.getNative
+  0.0%     0  +     1    java.util.jar.JarFile.getEntry
+  0.0%     1  +     0    WRGB.add
+  0.0%     0  +     1    java.security.Policy.<init>
+  0.0%     0  +     1    java.util.zip.ZipFile.initIDs
+  0.0%     1  +     0    java.lang.String.lastIndexOf
+  0.0%     1  +     0    java.awt.image.PackedColorModel.equals
+  0.0%     1  +     0    ImageScaler.calc_row
+  0.0%     1  +     0    sun.io.CharToByteMS932.convSingleByte
+  0.0%     0  +     1    java.io.FileInputStream.open
+ 11.8%    21  +   615    Total interpreted (including elided)
+
+     Compiled + native   Method                        
+ 14.3%   762  +    10    sun.awt.image.IntegerInterleavedRaster.getDataElements
+ 10.8%   577  +     7    java.awt.image.DirectColorModel.getDataElements
+  9.0%   487  +     0    WRGB.add
+  8.7%   467  +     0    WRGB.set
+  5.9%   314  +     4    ImageScaler.scale
+  5.3%   279  +     5    ImageScaler.calc_row
+  3.9%   211  +     0    java.awt.image.DirectColorModel.getGreen
+  3.8%   205  +     0    java.awt.image.DirectColorModel.getBlue
+  3.4%   185  +     0    java.awt.image.DirectColorModel.getRed
+  2.0%   109  +     0    java.awt.image.DirectColorModel.getRGB
+  1.8%    97  +     0    java.awt.image.DirectColorModel.getRGB
+  1.7%    90  +     0    WRGB.add
+  1.4%    78  +     0    WRGB.getColor
+  1.4%    74  +     0    java.awt.image.DirectColorModel.getAlpha
+  1.1%    58  +     0    WRGB.add
+  1.0%    55  +     0    sun.awt.image.IntegerInterleavedRaster.setDataElements
+  0.8%    42  +     0    java.awt.image.ColorModel.equals
+  0.4%    24  +     0    java.awt.image.PackedColorModel.equals
+  0.4%    22  +     0    adapters
+  0.4%    19  +     0    java.awt.image.ColorModel.getRGBdefault
+ 77.6%  4155  +    26    Total compiled
+
+  Runtime stub + native  Method                        
+  0.0%     1  +     0    _new_typeArray_Java
+  0.0%     1  +     0    Total runtime stubs
+
+  Thread-local ticks:
+  8.2%   482             Blocked (of total)
+  0.1%     3             Class loader
+  0.3%    18             Interpreter
+  1.1%    61             Compilation
+  9.0%   486             Unknown code
+
+
+Global summary of 80.29 seconds:
+100.0%  5915             Received ticks
+  0.8%    45             Received GC ticks
+  1.0%    61             Compilation
+  0.2%     9             Other VM operations
+  8.1%   482             Blocked ticks
+  0.0%     2             Threads_lock blocks
+ 99.2%  5868             Delivered ticks
+ 98.2%  5807             All ticks
+  0.1%     3             Class loader
+  0.3%    18             Interpreter
+  8.2%   486             Unknown code

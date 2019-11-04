@@ -1,0 +1,49 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/composite-font"
+    xmlns:CustomControl="clr-namespace:Olympus.LI.Triumph.Application.View.CustomControl"
+	x:Class="Olympus.LI.Triumph.Application.View.UiPreviewUserSettingPage"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight"
+	Width="580" Height="340"
+	WindowWidth="640" WindowHeight="480" Background="#FF2F2F2F" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+	<Grid x:Name="LayoutRoot">
+        <Grid Margin="22,40,22,0" VerticalAlignment="Top" IsEnabled="{Binding Path=sUiController.Preview.PreviewUserSettingNameAreaEnable}">
+            <CustomControl:ValidateTextBox InputType="String" Margin="230,0,0,0" FontSize="21" VerticalContentAlignment="Center" Text="{Binding Path=sUiController.Preview.PreviewUserSettingName, Mode=Default}" TextWrapping="Wrap" Height="46" MaxLength="40"/>
+			<Label x:Name="lblFileName" HorizontalAlignment="Left" Content="Name" FontSize="21" Foreground="#FFFFFFFF" VerticalContentAlignment="Center" />
+		</Grid>
+        <GroupBox Margin="22,110,22,30" FontSize="24" IsEnabled="{Binding Path=sUiController.Preview.PreviewUserSettingRegisterAreaEnable}">
+			<GroupBox.Header>
+				<CheckBox x:Name="chkRegister" RenderTransformOrigin="0.5,0.5" Content="Register a user button" FontSize="21" Foreground="#FFFFFFFF" IsChecked="{Binding Path=sUiController.Preview.ShortCutRegistrationEnable, Mode=Default}" Padding="10,0,0,0">
+					<CheckBox.RenderTransform>
+						<TransformGroup>
+							<ScaleTransform/>
+							<SkewTransform AngleX="0" AngleY="0"/>
+							<RotateTransform Angle="0"/>
+							<TranslateTransform X="0" Y="0"/>
+						</TransformGroup>
+					</CheckBox.RenderTransform>
+				</CheckBox>
+			</GroupBox.Header>
+			<StackPanel IsEnabled="{Binding Path=sUiController.Preview.ShortCutRegistrationEnable, Mode=Default}">
+				<Grid Margin="0,20,0,0">
+					<ComboBox x:Name="cmbUserList" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Width="170" FontSize="21" IsSynchronizedWithCurrentItem="True" SelectedIndex="{Binding Path=sUiController.Preview.ShortCutIndex, Mode=Default}">
+						<ComboBoxItem Visibility="Collapsed" Content="NON"/>
+						<ComboBoxItem Content="User 1"/>
+						<ComboBoxItem Content="User 2"/>
+						<ComboBoxItem Content="User 3"/>
+					</ComboBox>
+                    <TextBlock Margin="190,6,0,0" Text="{Binding Path=sUiController.Preview.ShortCutPreviewName, Mode=Default}" FontSize="16" Foreground="#FFFFFFFF" TextWrapping="Wrap" />
+				</Grid>
+				<Grid Margin="0,30,0,0">
+					<Label x:Name="lblComment" Content="Comment" FontSize="21" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="#FFFFFFFF" />
+                    <CustomControl:ValidateTextBox InputType="String" Margin="190,0,8,0" FontSize="21" VerticalContentAlignment="Center" Text="{Binding Path=sUiController.Preview.UserPreviewToolTip, Mode=Default}" TextWrapping="Wrap" Height="46" MaxLength="40"/>
+				</Grid>
+			</StackPanel>
+		</GroupBox>
+        <Rectangle Name="rectangle1" Stroke="White" />
+    </Grid>
+</Page>

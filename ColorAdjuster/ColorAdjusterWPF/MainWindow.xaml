@@ -1,0 +1,55 @@
+﻿<Window x:Class="ColorAdjuster.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="578">
+    <DockPanel>
+        <StackPanel x:Name="_CommandButtons"
+            DockPanel.Dock="Top" Orientation="Horizontal"
+            >
+            <Button
+                    x:Name="LoadImageButton"
+                    Content="Load Image" HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Click="button1_Click" />
+            <ComboBox
+                    x:Name="ZoomComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="comboBox1_SelectionChanged" SelectedIndex="0"
+                
+                ItemsSource="{Binding ZoomComboBoxItems}">
+            </ComboBox>
+            <Label
+                    Name="label1" HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="{Binding Path=BitmapFilePath}" Width="300" Height="20" />
+        </StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <ScrollViewer HorizontalScrollBarVisibility="Visible">
+                <Image
+            			x:Name="OriginalImageImage"
+            			MouseDown="image1_MouseDown"
+            			MouseUp="image1_MouseUp"
+            			Source="{Binding BitmapSource, Mode=OneWay}"
+            			Width="{Binding ImageWidth, Mode=OneWay}"
+            			Height="{Binding ImageHeight, Mode=OneWay}"
+                        />
+            </ScrollViewer>
+            <ListBox
+                	x:Name="ColorCorrectionHintListBox"
+                	ItemsSource="{Binding Regions, Mode=OneWay}"
+                Grid.Column="1"
+                    />
+            <ScrollViewer
+            		HorizontalScrollBarVisibility="Visible" Grid.Column="2">
+                <Image
+            			x:Name="CorrectedImageImage"
+            			Width="{Binding ImageWidth, Mode=OneWay}"
+            			Height="{Binding ImageHeight, Mode=OneWay}"
+                        />
+            </ScrollViewer>
+        </Grid>
+    </DockPanel>
+</Window>

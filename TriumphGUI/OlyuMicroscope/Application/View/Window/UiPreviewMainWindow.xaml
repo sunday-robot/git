@@ -1,0 +1,19 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="Olympus.LI.Triumph.Application.View.UiPreviewMainWindow"
+	x:Name="Window"
+	Title="UiPreviewMainWindow"
+	Width="1920" Height="1080" ResizeMode="NoResize" WindowStartupLocation="Manual" WindowStyle="None" Background="Black" Left="0" Top="0" AllowsTransparency="True"
+    IsEnabled="{Binding sUiController.Layout.ApplicationPreviewMainWindowEnable, Mode=Default}"
+    Closing="WindowClosing">
+
+    <Grid x:Name="LayoutRoot" Stylus.IsPressAndHoldEnabled="False">
+		<Frame Content="HeaderBarArea" x:Name="frmHeaderBarArea" NavigationUIVisibility="Hidden" VerticalAlignment="Top" Source="{Binding Path=sUiController.Layout.PreviewHeaderBarSource, Mode=Default}" Height="41"/>
+		<Frame Margin="1240,45,0,345" x:Name="frmCurrentConditionArea" Content="frmCurrentConditionArea" NavigationUIVisibility="Hidden" Source="{Binding Path=sUiController.Layout.PreviewCurrentConditionSource, Mode=Default}"/>
+        <Frame Margin="1240,655,0,85" x:Name="frmOperationArea" Content="frmOperationArea" NavigationUIVisibility="Hidden" Source="{Binding Path=sUiController.Layout.PreviewPatternSelectSource, Mode=Default}"/>
+		<Frame x:Name="frmApplyArea" VerticalAlignment="Bottom" Content="frmApplyArea" Source="{Binding Path=sUiController.Layout.PreviewApplySource, Mode=Default}" Width="1920" Height="65" />
+        <Frame x:Name="frmPreviewImageArea" Content="frmPreviewImageArea" NavigationUIVisibility="Hidden" Source="{Binding Path=sUiController.Layout.PreviewImageDisplaySource, Mode=Default}" Margin="0,39,680,20" />
+		<Grid Width="1920" Height="1080" Panel.ZIndex="100" Opacity="0.5" Background="#000000" Visibility="{Binding Path=sUiController.Layout.ApplicationPreviewMainWindowShield}"/>
+    </Grid>
+</Window>

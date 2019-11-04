@@ -1,0 +1,70 @@
+import java.awt.image.*;
+
+public class ImageScaler {
+
+/*		
+	    // 左、右端部分の縮小元画像の画素の座標と、グローバル座標における
+	    // 高さ
+	    int sy1 = gy / dest_height;
+	    int sh1 = dest_height - gy % dest_height;
+	    int sy2 = (gy + src_height - 1) / dest_height;
+	    int sh2 = (gy + src_height - 1) % dest_height + 1;
+
+	    int dx, gx;
+	    for (dx = 0, gx = 0; dx < dest_width; dx++, gx += src_width) {
+		int sx1 = gx / dest_width;
+		int sw1 = dest_width - gx % dest_width;
+		int sx2 = (gx + src_width - 1) / dest_width;
+		int sw2 = (gx + src_width - 1) % dest_width + 1;
+
+		// 重みつき画素値
+		WRGB wrgb = new WRGB();
+
+		// 上辺部分の重みつき画素値を計算
+		wrgb.add(calc_row(sx1, sw1, dest_width, sx2, sw2, sy1, sh1,
+				  src));
+
+		// 中央部分の重みつき画素値を計算
+		int y;
+		for (y = sy1 + 1; y < sy2; y++) {
+		    wrgb.add(calc_row(sx1, sw1, dest_width, sx2, sw2, y,
+				      dest_height, src));
+		}
+		    
+		// 下辺部分の重みつき画素値を計算
+		if (sy2 > sy1) {
+		    wrgb.add(calc_row(sx1, sw1, dest_width, sx2,
+				      sw2, sy2, sh2, src));
+		}
+
+		// 縮小先画像に画素値をセット
+		dest.setRGB(dx, dy, wrgb.getColor());
+	    }
+	    BufferedImage dest = new BufferedImage(dest_width, dest_height,
+	    BufferedImage.TYPE_INT_RGB);
+	}
+*/
+
+	//return dest;
+
+    static BufferedImage scale(
+	BufferedImage src,	// ソースイメージ
+	int dest_width,		// デスティネーションイメージの幅
+	int dest_height) {	// 同じく高さ
+
+	int src_width = src.getWidth();
+	int src_height = src.getHeight();
+
+	WRGBImage wrgb_image = new WRGBImage(dest_width, dest_height);
+	
+	int sx, sy;
+	for (sy = 0; sy < src_height; sy++) {
+	    for (sx = 0; sx < src_width; sx++) {
+		int rgb = src.getRGB(sx, sy);
+		wrgb_image.fillRectangle(sx * dest_width, sy * dest_height,
+		dest_width, dest_height, rgb);
+	    }
+	}
+        return wrgb_image.getBufferedImage();
+    }
+}

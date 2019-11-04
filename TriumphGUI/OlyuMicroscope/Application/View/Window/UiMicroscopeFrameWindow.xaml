@@ -1,0 +1,469 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/composite-font" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="d"
+	x:Class="Olympus.LI.Triumph.Application.View.UiMicroscopeFrameWindow"
+	x:Name="Window"
+	Title="UiMicroscopeFrameWindow"
+	Width="1920" Height="1080" ResizeMode="NoResize" WindowStartupLocation="Manual" BorderBrush="#FF808080" BorderThickness="0,0,0,0" WindowState="{Binding sUiController.Layout.WindowStateChange, Mode=Default}" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}" Left="0" Top="0"
+    IsEnabled="{Binding sUiController.Layout.ApplicationMainWindowEnable, Mode=Default}"        
+    Closing="WindowClosing" ShowInTaskbar="False">
+
+	<Window.Resources>
+		<SolidColorBrush x:Key="TabControlNormalBorderBrush3" Color="#919B9C"/>
+		<LinearGradientBrush x:Key="TabControlPaneTopNormalBackground" EndPoint="0,1" StartPoint="0,0">
+			<GradientStop Color="#FFFCFCFE" Offset="0"/>
+			<GradientStop Color="#FFF4F3EE" Offset="1"/>
+		</LinearGradientBrush>
+		<LinearGradientBrush x:Key="TabControlPaneBottomNormalBackground" EndPoint="0,0" StartPoint="0,1">
+			<GradientStop Color="#FFFCFCFE" Offset="0"/>
+			<GradientStop Color="#FFF4F3EE" Offset="1"/>
+		</LinearGradientBrush>
+		<LinearGradientBrush x:Key="TabControlPaneLeftNormalBackground" EndPoint="1,0" StartPoint="0,0">
+			<GradientStop Color="#FFFCFCFE" Offset="0"/>
+			<GradientStop Color="#FFF4F3EE" Offset="1"/>
+		</LinearGradientBrush>
+		<LinearGradientBrush x:Key="TabControlPaneRightNormalBackground" EndPoint="0,0" StartPoint="1,0">
+			<GradientStop Color="#FFFCFCFE" Offset="0"/>
+			<GradientStop Color="#FFF4F3EE" Offset="1"/>
+		</LinearGradientBrush>
+	
+	
+	
+	
+	
+	
+	
+		<Style x:Key="AcquisitionMainTabPanelTabControlStyle" TargetType="{x:Type TabControl}">
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+			<Setter Property="Padding" Value="4,4,4,4"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="BorderBrush" Value="{StaticResource TabControlNormalBorderBrush3}"/>
+			<Setter Property="Background" Value="{StaticResource TabControlPaneTopNormalBackground}"/>
+			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type TabControl}">
+						<Grid ClipToBounds="true" SnapsToDevicePixels="true" KeyboardNavigation.TabNavigation="Local">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition x:Name="ColumnDefinition0"/>
+								<ColumnDefinition Width="0" x:Name="ColumnDefinition1"/>
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition x:Name="RowDefinition0" Height="Auto"/>
+								<RowDefinition x:Name="RowDefinition1" Height="*"/>
+							</Grid.RowDefinitions>
+							<TabPanel Margin="5,2,5,0" x:Name="HeaderPanel" Grid.Column="0" Grid.Row="0" IsItemsHost="true" Panel.ZIndex="1" KeyboardNavigation.TabIndex="1" Grid.RowSpan="2"/>
+							<Border x:Name="ContentPanel" Grid.Column="0" Grid.Row="1" KeyboardNavigation.DirectionalNavigation="Contained" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local" BorderBrush="{x:Null}" BorderThickness="0,0,1,1">
+								<Border Visibility="Visible" BorderThickness="{TemplateBinding BorderThickness}">
+									<ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="{TemplateBinding Padding}" x:Name="PART_SelectedContentHost" ContentSource="SelectedContent"/>
+								</Border>
+							</Border>
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger Property="TabStripPlacement" Value="Bottom">
+								<Setter Property="Grid.Row" TargetName="HeaderPanel" Value="1"/>
+								<Setter Property="Grid.Row" TargetName="ContentPanel" Value="0"/>
+								<Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+								<Setter Property="Height" TargetName="RowDefinition1" Value="Auto"/>
+								<Setter Property="Margin" TargetName="HeaderPanel" Value="2,0,2,2"/>
+								<Setter Property="Background" Value="{StaticResource TabControlPaneBottomNormalBackground}"/>
+							</Trigger>
+							<Trigger Property="TabStripPlacement" Value="Left">
+								<Setter Property="Grid.Row" TargetName="HeaderPanel" Value="0"/>
+								<Setter Property="Grid.Row" TargetName="ContentPanel" Value="0"/>
+								<Setter Property="Grid.Column" TargetName="HeaderPanel" Value="0"/>
+								<Setter Property="Grid.Column" TargetName="ContentPanel" Value="1"/>
+								<Setter Property="Width" TargetName="ColumnDefinition0" Value="Auto"/>
+								<Setter Property="Width" TargetName="ColumnDefinition1" Value="*"/>
+								<Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+								<Setter Property="Height" TargetName="RowDefinition1" Value="0"/>
+								<Setter Property="Background" Value="{StaticResource TabControlPaneLeftNormalBackground}"/>
+								<Setter Property="Grid.RowSpan" TargetName="HeaderPanel" Value="1"/>
+								<Setter Property="Grid.ColumnSpan" TargetName="HeaderPanel" Value="2"/>
+								<Setter Property="Margin" TargetName="ContentPanel" Value="1,1,1,1"/>
+								<Setter Property="Margin" TargetName="PART_SelectedContentHost" Value="1,1,1,1"/>
+								<Setter Property="Margin" TargetName="HeaderPanel" Value="1,1,1,1"/>
+							</Trigger>
+							<Trigger Property="TabStripPlacement" Value="Right">
+								<Setter Property="Grid.Row" TargetName="HeaderPanel" Value="0"/>
+								<Setter Property="Grid.Row" TargetName="ContentPanel" Value="0"/>
+								<Setter Property="Grid.Column" TargetName="HeaderPanel" Value="1"/>
+								<Setter Property="Grid.Column" TargetName="ContentPanel" Value="0"/>
+								<Setter Property="Width" TargetName="ColumnDefinition0" Value="*"/>
+								<Setter Property="Width" TargetName="ColumnDefinition1" Value="Auto"/>
+								<Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+								<Setter Property="Height" TargetName="RowDefinition1" Value="0"/>
+								<Setter Property="Margin" TargetName="HeaderPanel" Value="-1,2,2,2"/>
+								<Setter Property="Background" Value="{StaticResource TabControlPaneRightNormalBackground}"/>
+							</Trigger>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	
+	
+	
+	
+	
+	
+	
+		<Style x:Key="TabItemFocusVisual">
+			<Setter Property="Control.Template">
+				<Setter.Value>
+					<ControlTemplate>
+						<Rectangle SnapsToDevicePixels="true" Stroke="Black" StrokeDashArray="1 2" StrokeThickness="1" Margin="3,3,3,1"/>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<SolidColorBrush x:Key="TabControlNormalBorderBrush4" Color="#919B9C"/>
+		<LinearGradientBrush x:Key="TabItemNormalBackground" EndPoint="0,1" StartPoint="0,0">
+			<GradientStop Color="#FFFFFFFF" Offset="0"/>
+			<GradientStop Color="#FFECEBE6" Offset="1"/>
+		</LinearGradientBrush>
+		<LinearGradientBrush x:Key="AquisitionStandardTabOnMouseFillBrush" EndPoint="0.967,0.5" StartPoint="0.04,0.5">
+			<GradientStop Color="#FF87E5F1" Offset="0"/>
+			<GradientStop Color="#FF61C1CD" Offset="0.442"/>
+			<GradientStop Color="#FF85C3DE" Offset="0.502697"/>
+			<GradientStop Color="#FF79D6DD" Offset="0.505618"/>
+			<GradientStop Color="#FFC5FBFF" Offset="1"/>
+		</LinearGradientBrush>
+		<SolidColorBrush x:Key="AquisitionStandardTabOnMouseStrokeBrush" Color="#FF7DE9F6"/>
+		<SolidColorBrush x:Key="AquisitionStandardTabNormalFillBrush" Color="#FF666666"/>
+		<SolidColorBrush x:Key="AquisitionStandardTabNormalStrokeBrush" Color="#FFBEBEC0"/>	
+		<Color x:Key="AcquisitionButtonSplendorColor">#FF00F0FF</Color>
+		<Style x:Key="Aquisition_MainPanel_Standard_TabItemStyle" TargetType="{x:Type TabItem}">
+			<Setter Property="FocusVisualStyle" Value="{StaticResource TabItemFocusVisual}"/>
+			<Setter Property="Padding" Value="12,2,12,2"/>
+			<Setter Property="BorderThickness" Value="1,1,1,0"/>
+			<Setter Property="BorderBrush" Value="{StaticResource TabControlNormalBorderBrush4}"/>
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+			<Setter Property="Background" Value="{StaticResource TabItemNormalBackground}"/>
+			<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+			<Setter Property="VerticalContentAlignment" Value="Stretch"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type TabItem}">
+						<Border SnapsToDevicePixels="true" Width="Auto">
+							<Grid x:Name="grid" Height="Auto" Margin="1,-118,0,0" VerticalAlignment="Top">
+								<Grid x:Name="Transform" VerticalAlignment="Bottom" Height="480">
+									<Path x:Name="Path_974" Width="38.458" Height="320" Stretch="Fill" StrokeThickness="1.33333" StrokeMiterLimit="2.75" Stroke="{DynamicResource AquisitionStandardTabNormalStrokeBrush}" Fill="{DynamicResource AquisitionStandardTabNormalFillBrush}" Data="F1 M 14.149,901.185C 11.5564,897.622 9.44446,891.118 9.44446,886.714L 9.44446,607.473C 9.44446,603.081 13.0447,599.482 17.4367,599.482L 46.5687,599.482L 46.4723,935.83L 14.149,901.185" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="6.6,0,0,26.339"/>
+								</Grid>
+								<Border HorizontalAlignment="Stretch" x:Name="border" VerticalAlignment="Center" BorderThickness="{TemplateBinding BorderThickness}" RenderTransformOrigin="0.5,0.5" Margin="-28,80,0,0">
+									<Border.LayoutTransform>
+										<TransformGroup>
+											<ScaleTransform/>
+											<SkewTransform/>
+											<RotateTransform Angle="270"/>
+											<TranslateTransform/>
+										</TransformGroup>
+									</Border.LayoutTransform>
+									<Border.RenderTransform>
+										<TransformGroup>
+											<ScaleTransform ScaleX="1" ScaleY="1"/>
+											<SkewTransform AngleX="0" AngleY="0"/>
+											<RotateTransform Angle="0"/>
+											<TranslateTransform X="0" Y="0"/>
+										</TransformGroup>
+									</Border.RenderTransform>
+									<ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" VerticalAlignment="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" ContentSource="Header" RecognizesAccessKey="True"/>
+								</Border>
+							</Grid>
+						</Border>
+						<ControlTemplate.Triggers>
+							<MultiTrigger>
+								<MultiTrigger.Conditions>
+									<Condition Property="IsMouseOver" Value="True"/>
+									<Condition Property="Selector.IsSelected" Value="False"/>
+								</MultiTrigger.Conditions>
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+								<Setter Property="Fill" TargetName="Path_974" Value="{DynamicResource AquisitionStandardTabOnMouseFillBrush}"/>
+								<Setter Property="Stroke" TargetName="Path_974" Value="{DynamicResource AquisitionStandardTabOnMouseStrokeBrush}"/>
+								<Setter Property="HorizontalAlignment" TargetName="border" Value="Center"/>
+							</MultiTrigger>
+							<Trigger Property="IsSelected" Value="true">
+								<Setter Property="Panel.ZIndex" Value="1"/>
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+								<Setter Property="VerticalAlignment" TargetName="border" Value="Center"/>
+								<Setter Property="Visibility" TargetName="Path_974" Value="Hidden"/>
+							</Trigger>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+								<Setter Property="Opacity" TargetName="grid" Value="0.4"/>
+							</Trigger>
+							<MultiTrigger>
+								<MultiTrigger.Conditions>
+									<Condition Property="IsSelected" Value="true"/>
+									<Condition Property="TabStripPlacement" Value="Left"/>
+								</MultiTrigger.Conditions>
+								<Setter Property="Margin" Value="0,0,0,0"/>
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+								<Setter Property="Visibility" TargetName="border" Value="Hidden"/>
+							</MultiTrigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	
+	
+	
+	
+	
+	
+		<Style x:Key="AquisitionEasyTab_TabItemStyle" TargetType="{x:Type TabItem}">
+			<Setter Property="FocusVisualStyle" Value="{StaticResource TabItemFocusVisual}"/>
+			<Setter Property="Padding" Value="12,2,12,2"/>
+			<Setter Property="BorderThickness" Value="1,1,1,0"/>
+			<Setter Property="BorderBrush" Value="{StaticResource TabControlNormalBorderBrush4}"/>
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+			<Setter Property="Background" Value="{StaticResource TabItemNormalBackground}"/>
+			<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+			<Setter Property="VerticalContentAlignment" Value="Stretch"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type TabItem}">
+						<Border SnapsToDevicePixels="true" Width="Auto">
+							<Grid x:Name="grid" Margin="1,0,0,0" Height="Auto" VerticalAlignment="Top">
+								<Grid x:Name="Transform" VerticalAlignment="Bottom">
+									<Path x:Name="Path_974" Width="38.4576" Height="320" Stretch="Fill" StrokeThickness="1.33333" StrokeMiterLimit="2.75" Stroke="{DynamicResource AquisitionStandardTabNormalStrokeBrush}" Fill="{DynamicResource AquisitionStandardTabNormalFillBrush}" Data="F1 M 14.149,901.185C 11.5564,897.622 9.44446,891.118 9.44446,886.714L 9.44446,607.473C 9.44446,603.081 13.0447,599.482 17.4367,599.482L 46.5687,599.482L 46.4723,935.83L 14.149,901.185" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="6.6,0,0,0" d:LayoutOverrides="HorizontalAlignment"/>
+								</Grid>
+								<Border HorizontalAlignment="Left" x:Name="border" VerticalAlignment="Center" BorderThickness="{TemplateBinding BorderThickness}" RenderTransformOrigin="0.5,0.5" Margin="16,-30,0,0">
+									<Border.LayoutTransform>
+										<TransformGroup>
+											<ScaleTransform/>
+											<SkewTransform/>
+											<RotateTransform Angle="270"/>
+											<TranslateTransform/>
+										</TransformGroup>
+									</Border.LayoutTransform>
+									<ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" VerticalAlignment="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" ContentSource="Header" RecognizesAccessKey="True"/>
+								</Border>
+							</Grid>
+						</Border>
+						<ControlTemplate.Triggers>
+							<MultiTrigger>
+								<MultiTrigger.Conditions>
+									<Condition Property="IsMouseOver" Value="True"/>
+									<Condition Property="Selector.IsSelected" Value="False"/>
+								</MultiTrigger.Conditions>
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+								<Setter Property="HorizontalAlignment" TargetName="border" Value="Left"/>
+								<Setter Property="Fill" TargetName="Path_974" Value="{DynamicResource AquisitionStandardTabOnMouseFillBrush}"/>
+								<Setter Property="Stroke" TargetName="Path_974" Value="{DynamicResource AquisitionStandardTabOnMouseStrokeBrush}"/>
+							</MultiTrigger>
+							<Trigger Property="IsSelected" Value="true">
+								<Setter Property="Panel.ZIndex" Value="1"/>
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+								<Setter Property="VerticalAlignment" TargetName="border" Value="Center"/>
+								<Setter Property="HorizontalAlignment" TargetName="border" Value="Left"/>
+								<Setter Property="Visibility" TargetName="Path_974" Value="Hidden"/>
+							</Trigger>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+								<Setter Property="Opacity" TargetName="grid" Value="0.4"/>
+							</Trigger>
+							<MultiTrigger>
+								<MultiTrigger.Conditions>
+									<Condition Property="IsSelected" Value="true"/>
+									<Condition Property="TabStripPlacement" Value="Left"/>
+								</MultiTrigger.Conditions>
+								<Setter Property="Margin" Value="0,0,0,0"/>
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+								<Setter Property="VerticalAlignment" TargetName="border" Value="Center"/>
+								<Setter Property="HorizontalAlignment" TargetName="border" Value="Left"/>
+								<Setter Property="Margin" TargetName="border" Value="0,0,0,0"/>
+								<Setter Property="Visibility" TargetName="border" Value="Hidden"/>
+								<Setter Property="Visibility" TargetName="Path_974" Value="Hidden"/>
+							</MultiTrigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>	
+
+    </Window.Resources>
+    <Grid x:Name="LayoutRoot" Margin="0" Stylus.IsPressAndHoldEnabled="False" PreviewMouseDown="LayoutRoot_PreviewMouseDown" PreviewTouchDown="LayoutRoot_PreviewTouchDown">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="43" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1083" />
+            <ColumnDefinition Width="92" />
+            <ColumnDefinition Width="370" />
+            <ColumnDefinition MinWidth="0" Width="370" />
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+        <TabControl Style="{DynamicResource AcquisitionMainTabPanelTabControlStyle}" IsSynchronizedWithCurrentItem="True" Height="Auto" TabStripPlacement="Left" x:Name="tabMainPanel" d:LayoutOverrides="Height" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,-0.007,0" SelectedIndex="{Binding Path=sUiController.Layout.MainPanelTabIndex, Mode=Default}" IsEnabled="{Binding Path=sUiController.Layout.MainPanelTabEnable, Mode=Default}">
+            <TabItem Style="{DynamicResource Aquisition_MainPanel_Standard_TabItemStyle}" FontFamily="Meiryo" HorizontalAlignment="Left" x:Name="tbiMainPanelNormal" Height="600" Margin="0.406,0,0,0" Width="83" Header="{Binding sUiController.Layout.MainPanelNormalTabHeader, Mode=Default}">
+                <Grid>
+                    <Rectangle HorizontalAlignment="Left" Width="46" Margin="-3,-4,0,-4" Fill="Black"/>
+                    <Path Data="M46.000005,577.13685 L46.052438,577.92158 46.052438,1037 46.000005,1037 z M1083,0 L1083,1037 46.052438,1037 1082.64,1036.3377 z M0,0 L46.000005,0 46.000005,577.13685 45.952189,576.42121 C45.492185,572.76667 43.50451,568.17457 41.141544,565.54755 L4.9089584,524.13892 C1.8563118,520.83039 0,515.56867 0,511.76392 z" Margin="-3,-3,88,-4" Stretch="Fill">
+                    	<Path.Fill>
+                    		<LinearGradientBrush StartPoint="0.0236617,-0.0349633" EndPoint="2.86659,-0.0349633">
+                    			<LinearGradientBrush.RelativeTransform>
+                    				<TransformGroup>
+                    					<SkewTransform CenterX="0.0236617" CenterY="-0.0349633" AngleX="0.0647682" AngleY="0"/>
+                    					<RotateTransform CenterX="0.0236617" CenterY="-0.0349633" Angle="77.3397"/>
+                    				</TransformGroup>
+                    			</LinearGradientBrush.RelativeTransform>
+                    			<GradientStop Color="#FF60D7FF" Offset="0"/>
+                    			<GradientStop Color="#FF30A0CF" Offset="0.0306884"/>
+                    			<GradientStop Color="#FF006A9F" Offset="0.056183"/>
+                    			<GradientStop Color="#FF194E69" Offset="0.182169"/>
+                    			<GradientStop Color="#FF333333" Offset="1"/>
+                    		</LinearGradientBrush>
+                    	</Path.Fill>
+                    </Path>
+                    <Grid x:Name="grdMainPanelNormalBackground" Margin="-3,-3,-4,-4" Visibility="{Binding sUiController.Layout.MainPanelBackgroundVisibility, Mode=Default}">
+                    	<Rectangle Fill="Black" HorizontalAlignment="Right" Margin="0" Width="93"/>
+                    	<Path x:Name="pthMainPanelNormalBackground" Stretch="Fill" Data="F1 M 0.00374349,0.012085L 1083.27,0.012085L 1082.91,1079.73L 46.0675,1080.42L 46.0675,602.125C 46.0675,598.163 43.8566,592.361 41.1554,589.233L 4.9139,546.091C 1.86051,542.644 0.00374349,537.162 0.00374349,533.198L 0.00374349,0.012085" Margin="0,0,92,0">
+                    		<Path.Fill>
+                    			<LinearGradientBrush StartPoint="0.0236617,-0.0349633" EndPoint="2.86659,-0.0349633">
+                    				<LinearGradientBrush.RelativeTransform>
+                    					<TransformGroup>
+                    						<SkewTransform CenterX="0.0236617" CenterY="-0.0349633" AngleX="0.0647682" AngleY="0"/>
+                    						<RotateTransform CenterX="0.0236617" CenterY="-0.0349633" Angle="77.3397"/>
+                    					</TransformGroup>
+                    				</LinearGradientBrush.RelativeTransform>
+                    				<GradientStop Color="#FF60D7FF" Offset="0"/>
+                    				<GradientStop Color="#FF30A0CF" Offset="0.0306884"/>
+                    				<GradientStop Color="#FF006A9F" Offset="0.056183"/>
+                    				<GradientStop Color="#FF194E69" Offset="0.182169"/>
+                    				<GradientStop Color="#FF333333" Offset="1"/>
+                    			</LinearGradientBrush>
+                    		</Path.Fill>
+                    	</Path>
+                    </Grid>
+                    <Label HorizontalAlignment="Left" Margin="0,-510,0,0" x:Name="lblMainPanelNormal" FontSize="24" Foreground="#FFFFFFFF" VerticalAlignment="Center" Content="{Binding sUiController.Layout.MainPanelNormalTabHeader, Mode=Default}">
+                    	<Label.LayoutTransform>
+                    		<TransformGroup>
+                    			<ScaleTransform/>
+                    			<SkewTransform/>
+                    			<RotateTransform Angle="270"/>
+                    			<TranslateTransform/>
+                    		</TransformGroup>
+                    	</Label.LayoutTransform>
+                    </Label>
+                </Grid>
+            </TabItem>
+            <TabItem Style="{DynamicResource AquisitionEasyTab_TabItemStyle}" FontFamily="Meiryo" HorizontalAlignment="Left" x:Name="tbiMainPanelEasy" Margin="0" Height="600" Header="{Binding sUiController.Layout.MainPanelEasyTabHeader, Mode=Default}">
+                <Grid>
+                    <Rectangle HorizontalAlignment="Left" Width="46" Margin="-3,-4,0,-4" Fill="Black"/>
+                    <Path Data="M45.999996,839.83258 L46.10244,840.51288 C46.168644,841.11212 46.203114,841.65967 46.20311,842.13556 L46.171753,1038 45.999996,1038 z M45.999996,343.75903 L45.999996,839.83258 45.811356,838.57996 C45.049759,834.48401 43.244255,829.24719 40.985897,827.19153 L7.6542825,796.81983 C6.3578133,795.50977 -2.8421709E-14,789.5755 0,785.77039 L0,398.56107 C2.6824614E-07,394.75678 4.7676396,386.892 5.7399854,385.25958 L42.826042,355.6738 C43.965126,353.4194 45.277546,348.68958 45.862564,344.85993 z M45.999996,0 L46.234482,0 46.171753,341.45532 C46.171749,341.93106 46.143204,342.46308 46.090286,343.03574 L45.999996,343.75903 z" HorizontalAlignment="Left" Margin="-3,-4,0,-4" Stretch="Fill" Width="46.234">
+                    	<Path.Fill>
+                    		<LinearGradientBrush StartPoint="0.001,-0.037" EndPoint="0.755,2.64">
+                    			<LinearGradientBrush.RelativeTransform>
+                    				<TransformGroup>
+                    					<SkewTransform CenterX="-0.0387815" CenterY="0.434539" AngleX="4.1301" AngleY="0"/>
+                    					<RotateTransform CenterX="-0.0387815" CenterY="0.434539" Angle="6.79586"/>
+                    				</TransformGroup>
+                    			</LinearGradientBrush.RelativeTransform>
+                    			<GradientStop Color="#FFAEE1DC" Offset="0"/>
+                    			<GradientStop Color="#FF009D8B" Offset="0.0561829"/>
+                    			<GradientStop Color="#FF19685F" Offset="0.162925"/>
+                    			<GradientStop Color="#FF333333" Offset="0.505618"/>
+                    			<GradientStop Color="#FF333333" Offset="1"/>
+                    		</LinearGradientBrush>
+                    	</Path.Fill>
+                    </Path>
+                    <Grid x:Name="grdMainPanelEasyBackground" Margin="-3,-3,-4,-4" Visibility="{Binding sUiController.Layout.MainPanelBackgroundVisibility, Mode=Default}">
+                    	<Rectangle Fill="Black" HorizontalAlignment="Right" Margin="0" Width="92"/>
+                    	<Path Stretch="Fill" Data="F1 M77.022488,3.594347E-15 L76.910975,394.74604 C76.910975,399.14604 73.663408,407.7086 70.963608,411.1836 L5.0390543,445.38677 C3.3105992,447.274 -5.1644058,456.36621 -5.1644058,460.76421 L-5.1644061,908.405 C-5.1644061,912.804 6.137308,919.66449 8.4419127,921.17894 L67.692556,956.29077 C73.045186,959.45946 76.966732,969.1661 76.966732,973.5671 L76.910975,1200 1920,1200 1920,0 77.022488,3.594347E-15 z" Margin="0,0,92,0">
+                    		<Path.Fill>
+                    			<LinearGradientBrush StartPoint="0.001,-0.037" EndPoint="0.755,2.64">
+                    				<LinearGradientBrush.RelativeTransform>
+                    					<TransformGroup>
+                    						<SkewTransform CenterX="-0.0387815" CenterY="0.434539" AngleX="4.1301" AngleY="0"/>
+                    						<RotateTransform CenterX="-0.0387815" CenterY="0.434539" Angle="6.79586"/>
+                    					</TransformGroup>
+                    				</LinearGradientBrush.RelativeTransform>
+                    				<GradientStop Color="#FFAEE1DC" Offset="0"/>
+                    				<GradientStop Color="#FF009D8B" Offset="0.0561829"/>
+                    				<GradientStop Color="#FF19685F" Offset="0.162925"/>
+                    				<GradientStop Color="#FF333333" Offset="0.505618"/>
+                    				<GradientStop Color="#FF333333" Offset="1"/>
+                    			</LinearGradientBrush>
+                    		</Path.Fill>
+                    	</Path>
+                    </Grid>
+                    <Label FontSize="24" Foreground="#FFFFFFFF" HorizontalAlignment="Left" Margin="0,0,0,-150" x:Name="lblMainPanelEasy" VerticalAlignment="Center" Content="{Binding sUiController.Layout.MainPanelEasyTabHeader, Mode=Default}">
+                    	<Label.LayoutTransform>
+                    		<TransformGroup>
+                    			<ScaleTransform/>
+                    			<SkewTransform/>
+                    			<RotateTransform Angle="270"/>
+                    			<TranslateTransform/>
+                    		</TransformGroup>
+                    	</Label.LayoutTransform>
+                    </Label>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Frame Content="ImageDisplayArea" Source="{Binding sUiController.Layout.ImageDisplaySource, Mode=Default}" x:Name="frmImageDisplayArea" Margin="0" Width="1037" Height="1037" NavigationUIVisibility="Hidden" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.RowSpan="2" />
+        <Frame Height="43" Content="HeaderBarArea" Source="{Binding sUiController.Layout.HeaderBarSource, Mode=Default}" x:Name="frmHeaderBarArea" VerticalAlignment="Top" NavigationUIVisibility="Hidden" Grid.ColumnSpan="5" DataContext="{Binding}" Width="1920" />
+		<Grid x:Name="grdBeginnner" DataContext="{Binding}"/>
+        <Grid x:Name="grdControlArea" Width="745" Height="1037" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" Visibility="{Binding sUiController.Layout.ControlAreaVisibility, Mode=Default}" IsEnabled="{Binding Path=sUiController.Layout.ControlAreaEnable, Mode=Default}">
+            <Grid>
+                <Grid.RowDefinitions>
+            	    <RowDefinition Height="67" />
+            	    <RowDefinition Height="57" />
+            	    <RowDefinition Height="28" />
+            	    <RowDefinition Height="378" />
+            	    <RowDefinition Height="74" />
+            	    <RowDefinition Height="253" />
+            	    <RowDefinition Height="152" />
+            	    <RowDefinition Height="28" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+            	    <ColumnDefinition Width="370" />
+            	    <ColumnDefinition Width="370" />
+            	    <ColumnDefinition Width="5" />
+                </Grid.ColumnDefinitions>
+        	    <Path Grid.ColumnSpan="3" Data="M370,152 L370,558 370,560 740,560 740,558 740,152 z M0,0 L745,0 745,1037 0,1037 z" Fill="Black" Grid.RowSpan="8" Stretch="Fill" StrokeMiterLimit="2.75"/>
+        	    <Frame Grid.Column="1" Grid.Row="1" Height="85" HorizontalAlignment="Left" x:Name="frmLensSetting" Content="LensSettingArea" VerticalAlignment="Top" Width="370" Source="{Binding sUiController.Layout.LensSettingPageSource, Mode=Default}" Grid.RowSpan="2" d:LayoutOverrides="GridBox" NavigationUIVisibility="Hidden" />
+        	    <Frame Grid.Column="1" Grid.Row="3" Height="408" HorizontalAlignment="Left" x:Name="frmNaviScreen" Content="NaviScreenArea" VerticalAlignment="Top" Width="370" Source="{Binding sUiController.Layout.NaviScreenPageSource, Mode=Default}" Grid.RowSpan="2" Visibility="{Binding sUiController.Layout.FrmNaviScreenVisibility, Mode=Default}" NavigationUIVisibility="Hidden" Background="Black"/>
+        	    <Frame Grid.Row="7" Height="28" HorizontalAlignment="Left" Margin="5,0,0,0" x:Name="frmStatusBar" Content="StatusBarArea" VerticalAlignment="Top" Width="745" Source="{Binding sUiController.Layout.StatusBarPanelPageSource, Mode=Default}" Grid.ColumnSpan="3" NavigationUIVisibility="Hidden"/>
+        	    <Grid x:Name="grdExpertControlArea" Height="1009" VerticalAlignment="Top" Visibility="{Binding sUiController.Layout.ExpertControlAreaVisibility, Mode=Default}" Grid.RowSpan="7" Grid.ColumnSpan="3" Grid.IsSharedSizeScope="True">
+        		    <Grid.RowDefinitions>
+        		    	<RowDefinition Height="67" />        			    
+        		    	<RowDefinition Height="85" />
+        		    	<RowDefinition Height="183" />
+        		    	<RowDefinition Height="85" />
+        		    	<RowDefinition Height="55" />
+        		    	<RowDefinition Height="85*"/>
+        		    	<RowDefinition Height="183*"/>
+        		    	<RowDefinition Height="85*"/>
+        		    	<RowDefinition Height="181*"/>
+        		    </Grid.RowDefinitions>
+        		    <Grid.ColumnDefinitions>
+        		    	<ColumnDefinition Width="370" />
+        		    	<ColumnDefinition Width="370" />
+        		    	<ColumnDefinition Width="5"/>
+        		    </Grid.ColumnDefinitions>
+        		    <Frame Grid.Column="1" Grid.Row="6" Grid.RowSpan="10" Height="450" HorizontalAlignment="Left" x:Name="frmThreeDimensionalSetting" Content="UiThreeDimensionalSettingArea" VerticalAlignment="Top" Width="370" Source="{Binding sUiController.Layout.ThreeDimensionalSettingPageSource, Mode=Default}" NavigationUIVisibility="Hidden" Panel.ZIndex="1"/>
+        		    <Frame Grid.Column="1" Grid.Row="2" Grid.RowSpan="10" Height="856" HorizontalAlignment="Left" Margin="0,1,0,0" x:Name="frmDetailSetting" Content="UiDetailSettingArea" VerticalAlignment="Top" Width="370" Source="{Binding sUiController.Layout.DetailSettingMainPageSource, Mode=Default}" NavigationUIVisibility="Hidden" Panel.ZIndex="{Binding sUiController.Layout.DetailSettingMainPageZIndex, Mode=Default}"/>
+        		    <Frame Grid.Row="{Binding sUiController.Layout.DisplayCustomizeObsevationSettingsPanelRow, Mode=Default}" Height="408" HorizontalAlignment="Left" Margin="0" x:Name="frmIlluminationSetting" Content="IlluminationSettingArea" VerticalAlignment="Top" Width="370" Grid.RowSpan="10" Source="{Binding sUiController.Layout.IlluminationSettingPageSource, Mode=Default}" NavigationUIVisibility="Hidden" Visibility="{Binding sUiController.Layout.DisplayCustomizeObsevationSettingsPanelVisibility, Mode=Default}" Panel.ZIndex="1"/>
+                    <Frame Grid.Row="1" HorizontalAlignment="Left" x:Name="frmSpeculum" Content="SpeculumArea" VerticalAlignment="Top" Width="370" Grid.RowSpan="10" Source="{Binding sUiController.Layout.SpeculumPageSource, Mode=Default}" NavigationUIVisibility="Hidden" Visibility="{Binding sUiController.Layout.DisplayCustomizeObsevationModePanelVisibility, Mode=Default}" Panel.ZIndex="1"/>                    
+        		    <Frame Grid.Row="{Binding sUiController.Layout.DisplayCustomizeImageProcessingPanelRow, Mode=Default}" Height="268" HorizontalAlignment="Left" x:Name="frmImageRevision" Content="ImageRevisionArea" VerticalAlignment="Top" Source="{Binding sUiController.Layout.ImageRevisionPageSource, Mode=Default}" Width="370" NavigationUIVisibility="Hidden" Grid.RowSpan="10" Visibility="{Binding sUiController.Layout.DisplayCustomizeImageProcessingPanelVisibility, Mode=Default}" Panel.ZIndex="1" />
+        		    <Frame Grid.Row="{Binding sUiController.Layout.DisplayCustomizePhotographySettingsPanelRow, Mode=Default}" Height="182" HorizontalAlignment="Left" x:Name="frmPhotographySetting" Content="PhotographySettingArea" VerticalAlignment="Top" Width="370" Source="{Binding sUiController.Layout.PhotographySettingPageSource, Mode=Default}" NavigationUIVisibility="Hidden" d:LayoutOverrides="GridBox" Margin="0,-1,0,0" Grid.RowSpan="10" Panel.ZIndex="1" />
+        	    </Grid>
+                <!--Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="740" Height="1009" Grid.ColumnSpan="2" Grid.RowSpan="7" Panel.ZIndex="100" Background="#000000" Opacity="0.5" Visibility="{Binding sUiController.Layout.ExpertControlAreaShield, Mode=Default}"/-->
+                <Grid x:Name="grdBeginnerControlArea" Width="740" Height="1009" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="{Binding sUiController.Layout.BeginnerControlAreaVisibility, Mode=Default}" Grid.ColumnSpan="2" Grid.RowSpan="7">
+        		    <Frame x:Name="frmBeginnerMenu" Content="Frame" Height="835" VerticalAlignment="Top" NavigationUIVisibility="Hidden" Width="370" HorizontalAlignment="Left" Source="{Binding sUiController.Layout.BeginnerMenuPageSource, Mode=Default}" Grid.Row="1" Margin="0,67,0,0"/>
+        	    </Grid>
+                <Frame Height="80" HorizontalAlignment="Left" Margin="0" x:Name="frmMenu" Content="MenuArea" VerticalAlignment="Top" Width="745" Grid.ColumnSpan="3" Source="{Binding sUiController.Layout.MenuPageSource, Mode=Default}" NavigationUIVisibility="Hidden" Grid.RowSpan="2"/>
+            </Grid>
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" Width="745" Height="1037" Panel.ZIndex="100" Background="#000000" Opacity="0.5" Visibility="{Binding sUiController.Layout.ControlAreaShield, Mode=Default}"/>
+        </Grid>
+        <Frame Grid.Column="1" Height="1037" HorizontalAlignment="Left" Margin="0" x:Name="frmSettingTool" Content="SettingToolArea" VerticalAlignment="Top" Grid.Row="1" Source="{Binding sUiController.Layout.SettingToolPageSource, Mode=Default}" Grid.ColumnSpan="2" NavigationUIVisibility="Hidden"/>
+        <!--
+            2011/9/16 画面全体に対して入力制限をかけるためのシールドを実装
+        -->
+        <Grid Width="1920" Height="1080" Panel.ZIndex="100" Opacity="0.0" Background="#000000" Visibility="{Binding Path=sUiController.Layout.ApplicationMainWindowShield}" Grid.RowSpan="2" Grid.ColumnSpan="5"/>
+    </Grid>
+</Window>

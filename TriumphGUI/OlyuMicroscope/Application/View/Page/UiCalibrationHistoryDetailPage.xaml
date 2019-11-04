@@ -1,0 +1,31 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/composite-font"
+    xmlns:utility="clr-namespace:Olympus.LI.Triumph.Application.View.Utility"
+	x:Class="Olympus.LI.Triumph.Application.View.UiCalibrationHistoryDetailPage"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight"
+	Width="270" Height="660"
+	WindowWidth="640" WindowHeight="480">
+
+    <Page.Resources>
+        <utility:EnumBooleanConverter x:Key="cnvEnumBoolean"/>
+    </Page.Resources>
+    <Page.Background>
+        <StaticResource ResourceKey="AcquisitionNormalBackgroundBrush"/>
+    </Page.Background>
+    <Grid Stylus.IsPressAndHoldEnabled="False">
+        <Label x:Name="lblSaveName" Content="SaveName" Foreground="White" VerticalAlignment="Top" Height="25" Margin="0,10,0,0" />
+        <Label Content="{Binding Path=sUiController.Magnification.CalibrationHistoryDetailSaveName}" Foreground="White" Background="Gray" VerticalAlignment="Top" Height="25" Margin="100,10,10,0" />
+        <DataGrid ItemsSource="{Binding Path=sUiController.Magnification.CalibrationHistoryDetailList}" AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserSortColumns="False" HeadersVisibility="Column" Margin="10,40,10,56">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="colMagnification" Header="Magnification" Binding="{Binding Path=DisplayZoomMagnification, Mode=OneWay}" Width="90" />
+                <DataGridTextColumn x:Name="colCurrentX" Header="CurrentX" Binding="{Binding Path=DisplayCalibrationValueX, Mode=OneWay}" Width="65" />
+                <DataGridTextColumn x:Name="colCurrentY" Header="CurrentY" Binding="{Binding Path=DisplayCalibrationValueY, Mode=OneWay}" Width="65" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnClose" Content="Close" Height="30" Width="100" VerticalAlignment="Bottom" Margin="0,0,0,10" Command="{Binding Path=sUiController.Magnification.CloseCalibrationHistoryDetailDialogHandler}" Style="{StaticResource AcquisitionButtonStyle}" />
+    </Grid>
+</Page>

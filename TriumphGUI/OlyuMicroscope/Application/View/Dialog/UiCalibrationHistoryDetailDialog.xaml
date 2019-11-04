@@ -1,0 +1,49 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2006" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+    xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/composite-font"
+    x:Class="Olympus.LI.Triumph.Application.View.UiCalibrationHistoryDetailDialog"
+    x:Name="wndCalibration"
+    Title="UiCalibrationHistoryDetailDialog"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False" Topmost="False" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}" 
+    Width="290" 
+    Height="720"
+    WindowStartupLocation="CenterScreen"
+    Closing="WindowClosing">
+
+    <Grid x:Name="LayoutRoot" Stylus.IsPressAndHoldEnabled="False">
+        <Path x:Name="pthSettingConditions" Canvas.Left="455.87" Canvas.Top="317.986" Stretch="Fill" Data="F1 M 1181.03,317.986L 1181.03,671.255C 1181.03,674.201 1178.65,676.589 1175.7,676.589L 461.204,676.589C 458.258,676.589 455.87,674.201 455.87,671.255L 455.87,317.986L 1181.03,317.986 Z " d:LayoutOverrides="VerticalAlignment">
+            <Path.Fill>
+                <Custom:LinearGradientBrush StartPoint="0.5,1.51388" EndPoint="0.5,-0.513885">
+                    <Custom:GradientStop Color="#FFFFFFFF" Offset="0.005618"/>
+                    <Custom:GradientStop Color="#FFB6EEFC" Offset="1"/>
+                    <Custom:GradientStop Color="#FFC6F1FC" Offset="0.781"/>
+                    <Custom:GradientStop Color="#FFC4F0FC" Offset="0.805"/>
+                    <Custom:GradientStop Color="#FFC1EFFC" Offset="0.842"/>
+                    <Custom:GradientStop Color="#FFBEEEFC" Offset="0.879"/>
+                </Custom:LinearGradientBrush>
+            </Path.Fill>
+            <Path.Effect>
+                <DropShadowEffect BlurRadius="15"/>
+            </Path.Effect>
+        </Path>
+        <Grid Height="40" VerticalAlignment="Top" MouseLeftButtonDown="MouseLeftButtonDownHandler">
+            <Path x:Name="pthHeaderCondition" Canvas.Left="551.403" Canvas.Top="127.965" Stretch="Fill" StrokeLineJoin="Round" Stroke="#CDFFFFFF" Data="F1 M 555.903,128.465L 1091.78,128.465C 1093.99,128.465 1095.78,130.256 1095.78,132.465L 1095.78,164.489L 551.903,164.489L 551.903,132.465C 551.903,130.256 553.694,128.465 555.903,128.465 Z ">
+                <Path.Fill>
+                    <Custom:LinearGradientBrush StartPoint="0.58864,9.15936" EndPoint="0.58864,-8.15937">
+                        <Custom:GradientStop Color="#CDEFFCFF" Offset="0.40678"/>
+                        <Custom:GradientStop Color="#CD192C34" Offset="0.495763"/>
+                        <Custom:GradientStop Color="#CDE9F9FF" Offset="0.584746"/>
+                    </Custom:LinearGradientBrush>
+                </Path.Fill>
+                <Path.Effect>
+                    <DropShadowEffect BlurRadius="15"/>
+                </Path.Effect>
+            </Path>
+            <Label x:Name="Label1" Content="Calibration history" BorderThickness="0,0,0,0" FontSize="22" FontWeight="Bold" Foreground="#FFFFFFFF"/>
+        </Grid>
+        <Frame Content="CalibrationHistoryDetail" Source="{Binding Path=sUiController.Layout.CalibrationHistoryDetailSource, Mode=Default}" x:Name="frmCalibrationHistoryDetail" NavigationUIVisibility="Hidden" VerticalAlignment="Top" Margin="0,50,0,10" />
+    </Grid>
+</Window>

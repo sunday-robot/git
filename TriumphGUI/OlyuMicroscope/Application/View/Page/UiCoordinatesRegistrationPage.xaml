@@ -1,0 +1,101 @@
+﻿<Page 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:utility="clr-namespace:Olympus.LI.Triumph.Application.View.Utility"
+    xmlns:CustomControl="clr-namespace:Olympus.LI.Triumph.Application.View.CustomControl"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	x:Class="Olympus.LI.Triumph.Application.View.UiCoordinatesRegistrationPage"
+	x:Name="CoordinatesRegistrationPage"
+	WindowTitle="UiCoordinatesRegistrationPage"
+	FlowDirection="LeftToRight"
+	Width="568" Height="426" HorizontalAlignment="Left" VerticalAlignment="Top" Stylus.IsPressAndHoldEnabled="False">
+
+    <Page.Resources>
+        <utility:EnumInt32Converter x:Key="cnvEnumInt32"/>
+        <utility:EnumBooleanConverter x:Key="cnvEnumBoolean"/>
+    </Page.Resources>
+
+    <Grid x:Name="LayoutRoot" Stylus.IsPressAndHoldEnabled="False" IsEnabled="{Binding Path=sUiController.Acquisition.MovingAcquisitionSettingsStateEnable, Mode=Default}">
+        <Button Command="{Binding sUiController.Stage.CoordinatesFileLoadHandler, Mode=Default}" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="46" Style="{DynamicResource NormalButtonStyle}" Margin="10,8,0,0">
+            <Canvas Width="46" Height="46" Clip="F1 M 0,0L 83,0L 83,92L 0,92L 0,0">
+                <Rectangle x:Name="Rectangle" Stretch="Fill" Fill="#FF363636" Width="46" Height="46" RadiusX="3" RadiusY="3" Visibility="Collapsed"/>
+                <Path x:Name="Path_3" Width="20.703" Height="10.419" Canvas.Left="4.755" Canvas.Top="30.535" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 4.26178,4.58459L 21.9583,4.58459L 19.1511,15.0039L 1.25519,15.0039L 4.26178,4.58459"/>
+                <Path x:Name="Path_4" Width="18.784" Height="10.964" Canvas.Left="3.5" Canvas.Top="25.95" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 2.34625,3.02081L 18.7839,3.02081L 18.7839,1.5L 8.13281,1.44141L 7.09625,0L 0.769531,0.0299072L 0,1.45831L 0,10.9635L 2.34625,3.02081"/>
+                <Path x:Name="Path_5" Width="13.635" Height="15.34" Canvas.Left="29.577" Canvas.Top="5.743" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 69.7123,46.8332L 69.7123,35.0818L 66.1212,31.4933L 64.9155,31.4933L 56.0978,31.4933L 56.0769,46.8123L 69.7123,46.8332 Z M 68.3464,45.2576C 68.3464,45.3618 68.2619,45.4464 68.1589,45.4464L 57.6915,45.4464C 57.5873,45.4464 57.504,45.3618 57.504,45.2576L 57.504,33.0493C 57.504,32.9424 57.5873,32.8591 57.6915,32.8591L 64.8582,32.8591L 64.8582,36.3474L 68.3464,36.3474L 68.3464,45.2576 Z M 66.2241,34.9815L 66.2241,32.8591L 68.3464,34.9815L 66.2241,34.9815 Z "/>
+                <Path x:Name="Path_6" Width="18.692" Height="14.142" Canvas.Left="8.966" Canvas.Top="8.945" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 54.1582,39.9839L 47.1804,34.6949L 47.1804,38.553L 45.752,38.553C 40.0801,38.553 35.4655,43.1663 35.4655,48.8369L 38.4655,48.8369C 38.4655,44.8199 41.7336,41.553 45.752,41.553L 47.1804,41.553L 47.1804,45.3121L 54.1582,39.9839 Z "/>
+            </Canvas>
+        </Button>
+        <Button Command="{Binding sUiController.Stage.CoordinatesFileSaveHandler, Mode=Default}" HorizontalAlignment="Left" Height="46" Margin="70,8,0,0" VerticalAlignment="Top" Width="46" Style="{DynamicResource NormalButtonStyle}">
+            <Canvas Width="46" Height="46" Clip="F1 M 0,0L 62,0L 62,73L 0,73L 0,0">
+                <Rectangle x:Name="Rectangle1" Stretch="Fill" Fill="#FF363636" Width="46" Height="46" RadiusX="3" RadiusY="3" Visibility="Collapsed"/>
+                <Path x:Name="Path_1" Width="13.636" Height="15.34" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 51.5038,34.5218L 51.5038,22.7704L 47.9127,19.1819L 46.707,19.1819L 37.8893,19.1819L 37.8684,34.5009L 51.5038,34.5218 Z M 50.1379,32.9462C 50.1379,33.0504 50.0535,33.135 49.9504,33.135L 39.483,33.135C 39.3788,33.135 39.2955,33.0504 39.2955,32.9462L 39.2955,20.738C 39.2955,20.6311 39.3788,20.5478 39.483,20.5478L 46.6497,20.5478L 46.6497,24.0361L 50.1379,24.0361L 50.1379,32.9462 Z M 48.0156,22.6702L 48.0156,20.5478L 50.1379,22.6702L 48.0156,22.6702 Z " Margin="30,3,0,0"/>
+                <Path x:Name="Path_2" Width="18.128" Height="13.047" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 18.9999,36.6105L 17.9743,27.915L 21.3007,29.8693L 22.0243,28.6377C 24.8974,23.7474 31.2126,22.1055 36.1018,24.978L 34.5822,27.5647C 31.1188,25.5298 26.6464,26.6928 24.6108,30.1574L 23.8873,31.389L 27.1285,33.2932L 18.9999,36.6105 Z " Margin="10,10,0,0"/>
+                <Path x:Name="Path_7" Width="17.508" Height="17.82" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 14.8933,0L 12.9089,0L 12.9089,6.73175L 4.75,6.73175L 4.75,0L 0,0L 0,17.8203L 17.5078,17.8203L 17.5078,2.62494L 14.8933,0 Z M 14.8906,16.4296L 2.61719,16.4296L 2.61719,8.94263L 14.8906,8.94263L 14.8906,16.4296 Z " Margin="3,24,0,0"/>
+                <Rectangle x:Name="Rectangle_4" Width="1.802" Height="4.326" Canvas.Left="9.912" Canvas.Top="1.114" Stretch="Fill" Fill="#FFFFFFFF" Margin="3,24,0,0"/>
+            </Canvas>
+        </Button>
+        <Grid Width="290" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,63,0,0">
+			<Rectangle HorizontalAlignment="Left" Stroke="Black" Width="290" Height="160" VerticalAlignment="Top" Margin="0" RadiusX="3" RadiusY="3"/>
+            <Label Content="{Binding sUiController.Stage.StageSettingDialogNumberIndex, Mode=Default}" HorizontalAlignment="Left" Margin="0,15,0,0" FontSize="13.333" VerticalAlignment="Top"/>
+			<Grid HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Margin="30,15,0,0">
+                <CustomControl:ValidateTextBox IsReadOnly="True" Text="{Binding Path=sUiController.Stage.CoordinateNo, Mode=Default}" InputType="Numeric" InputMethod.IsInputMethodEnabled="False" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="50" Style="{DynamicResource TextBoxStyle}" FontSize="12"/>
+                <RepeatButton Command="{Binding sUiController.Stage.CoordinateNoIncreaseRepeativeHandler, Mode=Default}" Style="{DynamicResource NumericUpButtonStyle}" HorizontalAlignment="Left" Height="13" VerticalAlignment="Top" Width="17.5"  FontSize="8"  Foreground="{DynamicResource TextBoxButtonBrush}" Margin="49,0,0,0" Delay="500" Interval="10"/>
+                <RepeatButton Command="{Binding sUiController.Stage.CoordinateNoDecreaseRepeativeHandler, Mode=Default}" Style="{DynamicResource NumericDownButtonStyle}" HorizontalAlignment="Left" Height="13" VerticalAlignment="Bottom" Width="17.5"  FontSize="8"  Foreground="{DynamicResource TextBoxButtonBrush}" Margin="49,0,0,0" Delay="500" Interval="10"/>
+            </Grid>
+            <Button Content="{Binding sUiController.Stage.StageSettingCurrentPoint, Mode=Default}" Command="{Binding sUiController.Stage.GetCurrentPositionHandler, Mode=Default}" HorizontalAlignment="Left" Width="80" Height="28" VerticalAlignment="Top" Margin="110,15,0,0" FontSize="13.333" Style="{DynamicResource SimpleButtonStyle}"/>
+            <Button Content="{Binding sUiController.Stage.StageSettingDialogMoveTo, Mode=Default}" Command="{Binding sUiController.Stage.MovePositionHandler, Mode=Default}" HorizontalAlignment="Right" Height="28" Margin="0,15,5,0" VerticalAlignment="Top" Width="85" FontSize="13.333" Style="{DynamicResource SimpleButtonStyle}" IsEnabled="{Binding sUiController.Stage.IsStageMoveSpecifiedEnable, Mode=Default}"/>
+            <Label Content="{Binding sUiController.Stage.StageSettingDialogCurrentX, Mode=Default}" HorizontalAlignment="Left" Margin="85,54,0,0" VerticalAlignment="Top" FontSize="13.333"/>
+            <CustomControl:ValidateTextBox Text="{Binding Path=sUiController.Stage.CoordinateX, Mode=Default}" InputType="{Binding Path=sUiController.Stage.CoordinateInputType, Mode=OneWay}" InputMethod.IsInputMethodEnabled="False" MaxLength="{Binding Path=sUiController.Stage.CoordinateMaxLength, Mode=Default}" Margin="110,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" HorizontalAlignment="Left" Width="90" MaxNumberOfDecimalPlaces="{Binding sUiController.Stage.CoordinateMaxNumberOfDecimalPlaces, Mode=OneWay}" />
+            <Label Content="{Binding sUiController.Layout.CommonUnit, Mode=Default}" HorizontalAlignment="Left" Margin="205,53,0,0" VerticalAlignment="Top" FontSize="13.333"/>
+            <Label Content="{Binding sUiController.Stage.StageSettingDialogCurrentY, Mode=Default}" HorizontalAlignment="Left" Margin="85,89,0,0" VerticalAlignment="Top" FontSize="13.333"/>
+            <CustomControl:ValidateTextBox Text="{Binding Path=sUiController.Stage.CoordinateY, Mode=Default}" InputType="{Binding Path=sUiController.Stage.CoordinateInputType, Mode=OneWay}" InputMethod.IsInputMethodEnabled="False" MaxLength="{Binding Path=sUiController.Stage.CoordinateMaxLength, Mode=Default}" HorizontalAlignment="Left" Margin="110,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="12" MaxNumberOfDecimalPlaces="{Binding sUiController.Stage.CoordinateMaxNumberOfDecimalPlaces, Mode=OneWay}" />
+            <Label Content="{Binding sUiController.Layout.CommonUnit, Mode=Default}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13.333" Margin="205,88,0,0"/>
+            <Label Content="{Binding sUiController.Stage.StageSettingDialogMoveTo, Mode=Default}" HorizontalAlignment="Right" Margin="0,0,185,3" VerticalAlignment="Bottom" FontSize="14.667"/>
+            <RadioButton IsChecked="{Binding sUiController.Stage.TargetForMovement, ConverterParameter=MoveOn, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" Content="{Binding sUiController.Stage.StageSettingDialogOnButton, Mode=Default}" Margin="110,0,0,8" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="14.667" Style="{DynamicResource RadioButtonStyle}"/>
+            <RadioButton IsChecked="{Binding sUiController.Stage.TargetForMovement, ConverterParameter=MoveOff, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" Content="{Binding sUiController.Stage.StageSettingDialogOffButton, Mode=Default}" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="14.667" Margin="180,0,0,8" Style="{DynamicResource RadioButtonStyle}"/>
+		</Grid>
+        <CheckBox x:Name="chkMatrixRegistration" Content="{Binding sUiController.Stage.StageSettingDialogGridRegistration, Mode=Default}" IsChecked="{Binding sUiController.Stage.MatrixRegistration, Mode=Default}" HorizontalAlignment="Left" Margin="9,230,0,0" VerticalAlignment="Top" Width="90" FontSize="14.667"/>
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,230,0,0" Width="310" Height="145" IsEnabled="{Binding sUiController.Stage.MatrixRegistration, Mode=Default}">
+            <Label Content="{Binding sUiController.Stage.StageSettingDialogSelectBasePoint, Mode=Default}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14.667" Margin="4,20,0,0"/>
+            <ComboBox SelectedIndex="{Binding Path=sUiController.Stage.MatrixType, Mode=Default, Converter={StaticResource cnvEnumInt32 }}" ItemsSource="{Binding Path=sUiController.Stage.MatrixTypeDisp}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="100,22,0,0" Style="{DynamicResource ComboBoxStyle}" Height="26" />
+			<Label Content="→" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,48,0,0" FontSize="16" FontWeight="Bold"/>
+			<Label Content="↓" HorizontalAlignment="Left" Margin="220,48,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+            <Label Content="{Binding sUiController.Stage.StageSettingDialogMatrixPoint, Mode=Default}" HorizontalAlignment="Left" Margin="33,75,0,0" VerticalAlignment="Top" FontSize="14.667"/>
+			<Grid HorizontalAlignment="Left" Margin="100,75,0,0" VerticalAlignment="Top">
+                <CustomControl:ValidateTextBox x:Name="RowCount" Text="{Binding Path=sUiController.Stage.RowCount, UpdateSourceTrigger=PropertyChanged, Mode=Default}" InputType="NumericPositive" InputMethod.IsInputMethodEnabled="False" MaxLength="3" TextChanged="RowCountTextChangedHandler" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="65" Style="{DynamicResource TextBoxStyle}" FontSize="12"/>
+                <RepeatButton Command="{Binding sUiController.Stage.RowCountIncreaseRepeativeHandler, Mode=Default}" Style="{DynamicResource NumericUpButtonStyle}" HorizontalAlignment="Left" Height="13" VerticalAlignment="Top" Width="17.5"  FontSize="8"  Foreground="{DynamicResource TextBoxButtonBrush}" Margin="64,0,0,0" Delay="500" Interval="10"/>
+                <RepeatButton Command="{Binding sUiController.Stage.RowCountDecreaseRepeativeHandler, Mode=Default}" Style="{DynamicResource NumericDownButtonStyle}" HorizontalAlignment="Left" Height="13" VerticalAlignment="Bottom" Width="17.5"  FontSize="8"  Foreground="{DynamicResource TextBoxButtonBrush}" Margin="64,0,0,0" Delay="500" Interval="10"/>
+			</Grid>
+			<Grid HorizontalAlignment="Left" Margin="195,75,0,0" VerticalAlignment="Top">
+                <CustomControl:ValidateTextBox x:Name="ColumnCount" Text="{Binding Path=sUiController.Stage.ColumnCount, UpdateSourceTrigger=PropertyChanged, Mode=Default}" InputType="NumericPositive" InputMethod.IsInputMethodEnabled="False" MaxLength="3" TextChanged="ColumnCountTextChangedHandler" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="65" Style="{DynamicResource TextBoxStyle}" FontSize="12"/>
+                <RepeatButton Command="{Binding sUiController.Stage.ColumnCountIncreaseRepeativeHandler, Mode=Default}" Style="{DynamicResource NumericUpButtonStyle}" HorizontalAlignment="Left" Height="13" VerticalAlignment="Top" Width="17.5"  FontSize="8"  Foreground="{DynamicResource TextBoxButtonBrush}" Margin="64,0,0,0" Delay="500" Interval="10"/>
+                <RepeatButton Command="{Binding sUiController.Stage.ColumnCountDecreaseRepeativeHandler, Mode=Default}" Style="{DynamicResource NumericDownButtonStyle}" HorizontalAlignment="Left" Height="13" VerticalAlignment="Bottom" Width="17.5"  FontSize="8"  Foreground="{DynamicResource TextBoxButtonBrush}" Margin="64,0,0,0" Delay="500" Interval="10"/>
+			</Grid>
+            <Label Content="{Binding sUiController.Stage.StageSettingDialogPitchStep, Mode=Default}" HorizontalAlignment="Left" Margin="33,115,0,0" VerticalAlignment="Top" FontSize="14.667"/>
+			<Grid HorizontalAlignment="Left" Margin="100,115,0,0" VerticalAlignment="Top">
+                <CustomControl:ValidateTextBox x:Name="RowPitch" Text="{Binding Path=sUiController.Stage.RowPitch, UpdateSourceTrigger=PropertyChanged, Mode=Default}" InputType="{Binding Path=sUiController.Stage.PitchInputType, Mode=OneWay}" InputMethod.IsInputMethodEnabled="False" MaxLength="{Binding Path=sUiController.Stage.CoordinateMaxLength, Mode=Default}" TextChanged="RowPitchTextChangedHandler" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="65" Style="{DynamicResource TextBoxStyle}" FontSize="12" MaxNumberOfDecimalPlaces="{Binding sUiController.Stage.CoordinateMaxNumberOfDecimalPlaces, Mode=OneWay}" />
+                <RepeatButton Command="{Binding sUiController.Stage.RowPitchIncreaseRepeativeHandler, Mode=Default}" Style="{DynamicResource NumericUpButtonStyle}" HorizontalAlignment="Left" Height="13" VerticalAlignment="Top" Width="17.5"  FontSize="8"  Foreground="{DynamicResource TextBoxButtonBrush}" Margin="64,0,0,0" Delay="500" Interval="10"/>
+                <RepeatButton Command="{Binding sUiController.Stage.RowPitchDecreaseRepeativeHandler, Mode=Default}" Style="{DynamicResource NumericDownButtonStyle}" HorizontalAlignment="Left" Height="13" VerticalAlignment="Bottom" Width="17.5"  FontSize="8"  Foreground="{DynamicResource TextBoxButtonBrush}" Margin="64,0,0,0" Delay="500" Interval="10"/>
+			</Grid>
+			<Grid HorizontalAlignment="Left" Margin="195,115,0,0" VerticalAlignment="Top">
+                <CustomControl:ValidateTextBox x:Name="ColumnPitch" Text="{Binding Path=sUiController.Stage.ColumnPitch, UpdateSourceTrigger=PropertyChanged, Mode=Default}" InputType="{Binding Path=sUiController.Stage.PitchInputType, Mode=OneWay}" InputMethod.IsInputMethodEnabled="False" MaxLength="{Binding Path=sUiController.Stage.CoordinateMaxLength, Mode=Default}" TextChanged="ColumnPitchTextChangedHandler" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="65" Style="{DynamicResource TextBoxStyle}" FontSize="12" MaxNumberOfDecimalPlaces="{Binding sUiController.Stage.CoordinateMaxNumberOfDecimalPlaces, Mode=OneWay}" />
+                <RepeatButton Command="{Binding sUiController.Stage.ColumnPitchIncreaseRepeativeHandler, Mode=Default}" Style="{DynamicResource NumericUpButtonStyle}" HorizontalAlignment="Left" Height="13" VerticalAlignment="Top" Width="17.5"  FontSize="8"  Foreground="{DynamicResource TextBoxButtonBrush}" Margin="64,0,0,0" Delay="500" Interval="10"/>
+                <RepeatButton Command="{Binding sUiController.Stage.ColumnPitchDecreaseRepeativeHandler, Mode=Default}" Style="{DynamicResource NumericDownButtonStyle}" HorizontalAlignment="Left" Height="13" VerticalAlignment="Bottom" Width="17.5"  FontSize="8"  Foreground="{DynamicResource TextBoxButtonBrush}" Margin="64,0,0,0" Delay="500" Interval="10"/>
+			</Grid>
+            <Label Content="{Binding sUiController.Layout.CommonUnit, Mode=Default}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" Margin="276,115,0,0"/>
+		</Grid>
+        <DataGrid x:Name="StageCoordinatesList" SelectedIndex="{Binding sUiController.Stage.StageCoordinatesListSelectedIndex, Mode=Default}"  SelectionChanged="StageCoordinatesListSelectionChangedHandler" ItemsSource="{Binding Path=sUiController.Stage.StageCoordinatesList}" HorizontalAlignment="Right" Width="245" Height="315" VerticalAlignment="Top" Margin="0,63,10,0" FontSize="12" VerticalContentAlignment="Center" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeColumns="True" CanUserResizeRows="False" CanUserSortColumns="False" CanUserReorderColumns="False" EnableRowVirtualization="False">
+			<DataGrid.Columns>
+                <DataGridTextColumn x:Name="lblColmnNumI" Header="#" Binding="{Binding Path=No, Mode=OneWay}" Width="40"/>
+                <DataGridTextColumn x:Name="lblColmnPosX" Header="X" Binding="{Binding Path=X, Mode=OneWay}" Width="70"/>
+                <DataGridTextColumn x:Name="lblColmnPosY" Header="Y" Binding="{Binding Path=Y, Mode=OneWay}" Width="70"/>
+                <DataGridTextColumn x:Name="lblColmnMove" Header="M" Binding="{Binding Path=IsMove, Mode=OneWay}" Width="40"/>
+			</DataGrid.Columns>
+		</DataGrid>
+		<Path x:Name="Line_279" Height="1" Stretch="Fill" StrokeThickness="0.666583" StrokeMiterLimit="2.75" Stroke="Black" Data="F1 M 577.531,325.655L 21.4641,325.655" VerticalAlignment="Bottom" Margin="10,0,10,40"/>
+        <Button Content="{Binding sUiController.Stage.StageSettingDialogRegistrationButton, Mode=Default}" Command="{Binding sUiController.Stage.CoordinatesRegistrationHandler, Mode=Default}" Height="28" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="13.333" Width="100" Margin="0,0,240,8" Style="{DynamicResource SimpleButtonStyle}"/>
+        <Button Content="{Binding sUiController.Stage.StageSettingDialogDeleteButton, Mode=Default}" Command="{Binding sUiController.Stage.CoordinatesDeletionHandler, Mode=Default}" HorizontalAlignment="Right" Height="28" Margin="0,0,125,8" VerticalAlignment="Bottom" Width="100" FontSize="13.333" Style="{DynamicResource SimpleButtonStyle}"/>
+        <Button Content="{Binding sUiController.Stage.StageSettingDialogAllDeleteButton, Mode=Default}" Command="{Binding sUiController.Stage.CoordinatesAllDeletionHandler, Mode=Default}" HorizontalAlignment="Right" Margin="0,0,10,8" Width="100" VerticalAlignment="Bottom" FontSize="13.333" Height="28" Style="{DynamicResource SimpleButtonStyle}"/>
+    </Grid>
+</Page>

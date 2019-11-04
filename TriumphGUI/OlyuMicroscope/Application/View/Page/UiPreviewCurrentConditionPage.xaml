@@ -1,0 +1,105 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="Olympus.LI.Triumph.Application.View.UiPreviewCurrentConditionPage"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight"
+	Width="680" Height="690">
+    
+    <Page.Resources>
+
+        <SolidColorBrush x:Key="TabControlNormalBorderBrush3" Color="#919B9C"/>
+        <LinearGradientBrush x:Key="TabControlPaneTopNormalBackground" EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#FFFCFCFE" Offset="0"/>
+            <GradientStop Color="#FFF4F3EE" Offset="1"/>
+        </LinearGradientBrush>
+
+        <Style x:Key="AquisitionNaviPanel_TabControlStyle" TargetType="{x:Type TabControl}">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="Padding" Value="4,4,4,4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TabControlNormalBorderBrush3}"/>
+            <Setter Property="Background" Value="{StaticResource TabControlPaneTopNormalBackground}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabControl}">
+                        <Grid ClipToBounds="true" SnapsToDevicePixels="true" KeyboardNavigation.TabNavigation="Local">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition x:Name="ColumnDefinition0"/>
+                                <ColumnDefinition Width="0" x:Name="ColumnDefinition1"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition x:Name="RowDefinition0" Height="Auto"/>
+                                <RowDefinition x:Name="RowDefinition1" Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TabPanel Margin="5,2,5,0" x:Name="HeaderPanel" Grid.Column="0" Grid.Row="0" IsItemsHost="true" Panel.ZIndex="1" KeyboardNavigation.TabIndex="1"/>
+                            <Rectangle x:Name="rectangle" Fill="{DynamicResource AcquisitionNormalBackgroundBrush}" HorizontalAlignment="Stretch" Height="Auto" Grid.Row="1" Stroke="#FFB4B4B4" VerticalAlignment="Stretch" Width="Auto" Margin="5,0,0,0"/>
+                            <Border Margin="10,0,5,0" x:Name="ContentPanel" Grid.Column="0" Grid.Row="1" KeyboardNavigation.DirectionalNavigation="Contained" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local" BorderBrush="{x:Null}" BorderThickness="0,0,1,1">
+                                <Border Visibility="Visible" BorderThickness="{TemplateBinding BorderThickness}">
+                                    <Border>
+                                        <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="{TemplateBinding Padding}" x:Name="PART_SelectedContentHost" ContentSource="SelectedContent"/>
+                                    </Border>
+                                </Border>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="TabStripPlacement" Value="Bottom">
+                                <Setter Property="Grid.Row" TargetName="HeaderPanel" Value="1"/>
+                                <Setter Property="Grid.Row" TargetName="ContentPanel" Value="0"/>
+                                <Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+                                <Setter Property="Height" TargetName="RowDefinition1" Value="Auto"/>
+                                <Setter Property="Margin" TargetName="HeaderPanel" Value="2,0,2,2"/>
+                                <Setter Property="Background" Value="{StaticResource TabControlPaneBottomNormalBackground}"/>
+                            </Trigger>
+                            <Trigger Property="TabStripPlacement" Value="Left">
+                                <Setter Property="Grid.Row" TargetName="HeaderPanel" Value="0"/>
+                                <Setter Property="Grid.Row" TargetName="ContentPanel" Value="0"/>
+                                <Setter Property="Grid.Column" TargetName="HeaderPanel" Value="0"/>
+                                <Setter Property="Grid.Column" TargetName="ContentPanel" Value="1"/>
+                                <Setter Property="Width" TargetName="ColumnDefinition0" Value="Auto"/>
+                                <Setter Property="Width" TargetName="ColumnDefinition1" Value="*"/>
+                                <Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+                                <Setter Property="Height" TargetName="RowDefinition1" Value="0"/>
+                                <Setter Property="Margin" TargetName="HeaderPanel" Value="2,2,-1,2"/>
+                                <Setter Property="Background" Value="{StaticResource TabControlPaneLeftNormalBackground}"/>
+                            </Trigger>
+                            <Trigger Property="TabStripPlacement" Value="Right">
+                                <Setter Property="Grid.Row" TargetName="HeaderPanel" Value="0"/>
+                                <Setter Property="Grid.Row" TargetName="ContentPanel" Value="0"/>
+                                <Setter Property="Grid.Column" TargetName="HeaderPanel" Value="1"/>
+                                <Setter Property="Grid.Column" TargetName="ContentPanel" Value="0"/>
+                                <Setter Property="Width" TargetName="ColumnDefinition0" Value="*"/>
+                                <Setter Property="Width" TargetName="ColumnDefinition1" Value="Auto"/>
+                                <Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+                                <Setter Property="Height" TargetName="RowDefinition1" Value="0"/>
+                                <Setter Property="Margin" TargetName="HeaderPanel" Value="-1,2,2,2"/>
+                                <Setter Property="Background" Value="{StaticResource TabControlPaneRightNormalBackground}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid x:Name="LayoutRoot" IsEnabled="{Binding Path=sUiController.Preview.AquisitionPreviewPanelTabControlEnable}" Stylus.IsPressAndHoldEnabled="False">
+        <TabControl Style="{DynamicResource AquisitionNaviPanel_TabControlStyle}" IsSynchronizedWithCurrentItem="True" x:Name="tabDisplayMap" VerticalAlignment="Top" Height="585" SelectedIndex="{Binding Path=sUiController.Preview.SelectedPreviewImageObservationTabIndex, Mode=Default}" HorizontalAlignment="Left" Width="545" Margin="-5,0,0,0" BorderBrush="White">
+            <TabItem Header="image" Style="{DynamicResource AquisitionPreviewPanelTabItemStyle}" FontFamily="Meiryo" x:Name="tbiImage" Height="43" Margin="0" FontSize="21.333" VerticalAlignment="Bottom" Width="254" HorizontalAlignment="Left" Visibility="{Binding Path=sUiController.Preview.PreviewImageTabVisible, Mode=Default}">
+                <Grid Name="grdImage" Height="{Binding Path=sUiController.Preview.CurrentConditionImageGridHeight, Mode=Default}">
+					<Image Width="{Binding Path=sUiController.Preview.CurrentConditionImageDisplayWidth, Mode=Default}" Height="{Binding Path=sUiController.Preview.CurrentConditionImageDisplayHeight, Mode=Default}" Source="{Binding Path=sUiController.Preview.CurrentConditionImageUpdate, Mode=Default}" Stretch="UniformToFill" Name="imgPreview" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+				</Grid>
+			</TabItem>
+            <TabItem Header="Observation Condition" Style="{DynamicResource AquisitionPreviewPanelTabItemStyle}" Width="280" FontFamily="Meiryo" x:Name="tbiObservationCondition" Height="43" Margin="0,0,-5,0" FontSize="21.333" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                    <Grid Name="grdObervation" Width="526">
+					<TextBox Margin="8,8,15,8" Text="{Binding Path=sUiController.Preview.CurrentConditionDisplay, Mode=Default}" HorizontalScrollBarVisibility="Auto" FontSize="16" Name="txtbObervation" IsReadOnly="True" TextWrapping="Wrap" IsUndoEnabled="False" VerticalScrollBarVisibility="Visible" />
+				</Grid>
+			</TabItem>
+		</TabControl>
+	</Grid>
+</Page>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="LifeGame" default="jar">
+    <description>
+            hello!
+    </description>
+    <target name="jar" description="jar" depends="compile">
+        <jar destfile="lifegame.jar" manifest="manifest.mf" basedir="../bin" />
+    </target>
+	<target name="compile">
+		<javac destdir="../bin" srcdir="../src" />
+	</target>
+</project>

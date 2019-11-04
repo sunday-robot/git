@@ -1,0 +1,16 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/composite-font" xmlns:d="http://schemas.microsoft.com/expression/blend/2006" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="Olympus.LI.Triumph.Application.View.UiPreviewHeaderBarPage"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight"
+	Width="1920" Height="41"
+	WindowWidth="640" WindowHeight="480">
+
+    <Grid x:Name="LayoutRoot" Stylus.IsPressAndHoldEnabled="False">
+        <Rectangle Fill="{DynamicResource MenuBackgroundBrush}" Name="rctHeaderCondition" />
+        <Label Content="{Binding Path=sUiController.Preview.PreviewWindowHeaderTitle, Mode=Default}" FontSize="32" FontWeight="Bold" Foreground="White" VerticalContentAlignment="Center" HorizontalAlignment="Center" Name="lblpthHeaderCondition" VerticalAlignment="Center" Margin="0,-10,0,0" />
+    </Grid>
+</Page>

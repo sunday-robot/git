@@ -1,0 +1,123 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="Olympus.LI.Triumph.Application.View.UiPreviewPatternSelectPage"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight" Height="340" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+    <Page.Resources>
+        <SolidColorBrush x:Key="TabControlNormalBorderBrush3" Color="#919B9C"/>
+        <LinearGradientBrush x:Key="TabControlPaneTopNormalBackground" EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#FFFCFCFE" Offset="0"/>
+            <GradientStop Color="#FFF4F3EE" Offset="1"/>
+        </LinearGradientBrush>
+        <Style x:Key="AquisitionNaviPanel_TabControlStyle" TargetType="{x:Type TabControl}">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="Padding" Value="4,4,4,4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TabControlNormalBorderBrush3}"/>
+            <Setter Property="Background" Value="{StaticResource TabControlPaneTopNormalBackground}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabControl}">
+                        <Grid ClipToBounds="true" SnapsToDevicePixels="true" KeyboardNavigation.TabNavigation="Local">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition x:Name="ColumnDefinition0"/>
+                                <ColumnDefinition Width="0" x:Name="ColumnDefinition1"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition x:Name="RowDefinition0" Height="Auto"/>
+                                <RowDefinition x:Name="RowDefinition1" Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TabPanel Margin="5,2,5,0" x:Name="HeaderPanel" Grid.Column="0" Grid.Row="0" IsItemsHost="true" Panel.ZIndex="1" KeyboardNavigation.TabIndex="1"/>
+                            <Rectangle x:Name="rectangle" Fill="{TemplateBinding Background}" HorizontalAlignment="Stretch" Height="Auto" Grid.Row="1" Stroke="#FFB4B4B4" VerticalAlignment="Stretch" Width="Auto" Margin="5,0,0,0"/>
+                            <Border Margin="10,0,5,0" x:Name="ContentPanel" Grid.Column="0" Grid.Row="1" KeyboardNavigation.DirectionalNavigation="Contained" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local" BorderBrush="{x:Null}" BorderThickness="0,0,1,1">
+                                <Border Visibility="Visible" BorderThickness="{TemplateBinding BorderThickness}">
+                                    <Border>
+                                        <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="{TemplateBinding Padding}" x:Name="PART_SelectedContentHost" ContentSource="SelectedContent"/>
+                                    </Border>
+                                </Border>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="TabStripPlacement" Value="Bottom">
+                                <Setter Property="Grid.Row" TargetName="HeaderPanel" Value="1"/>
+                                <Setter Property="Grid.Row" TargetName="ContentPanel" Value="0"/>
+                                <Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+                                <Setter Property="Height" TargetName="RowDefinition1" Value="Auto"/>
+                                <Setter Property="Margin" TargetName="HeaderPanel" Value="2,0,2,2"/>
+                                <Setter Property="Background" Value="{StaticResource TabControlPaneBottomNormalBackground}"/>
+                            </Trigger>
+                            <Trigger Property="TabStripPlacement" Value="Left">
+                                <Setter Property="Grid.Row" TargetName="HeaderPanel" Value="0"/>
+                                <Setter Property="Grid.Row" TargetName="ContentPanel" Value="0"/>
+                                <Setter Property="Grid.Column" TargetName="HeaderPanel" Value="0"/>
+                                <Setter Property="Grid.Column" TargetName="ContentPanel" Value="1"/>
+                                <Setter Property="Width" TargetName="ColumnDefinition0" Value="Auto"/>
+                                <Setter Property="Width" TargetName="ColumnDefinition1" Value="*"/>
+                                <Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+                                <Setter Property="Height" TargetName="RowDefinition1" Value="0"/>
+                                <Setter Property="Margin" TargetName="HeaderPanel" Value="2,2,-1,2"/>
+                                <Setter Property="Background" Value="{StaticResource TabControlPaneLeftNormalBackground}"/>
+                            </Trigger>
+                            <Trigger Property="TabStripPlacement" Value="Right">
+                                <Setter Property="Grid.Row" TargetName="HeaderPanel" Value="0"/>
+                                <Setter Property="Grid.Row" TargetName="ContentPanel" Value="0"/>
+                                <Setter Property="Grid.Column" TargetName="HeaderPanel" Value="1"/>
+                                <Setter Property="Grid.Column" TargetName="ContentPanel" Value="0"/>
+                                <Setter Property="Width" TargetName="ColumnDefinition0" Value="*"/>
+                                <Setter Property="Width" TargetName="ColumnDefinition1" Value="Auto"/>
+                                <Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+                                <Setter Property="Height" TargetName="RowDefinition1" Value="0"/>
+                                <Setter Property="Margin" TargetName="HeaderPanel" Value="-1,2,2,2"/>
+                                <Setter Property="Background" Value="{StaticResource TabControlPaneRightNormalBackground}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid x:Name="LayoutRoot" Stylus.IsPressAndHoldEnabled="False">
+        <TabControl Style="{DynamicResource AquisitionNaviPanel_TabControlStyle}" IsSynchronizedWithCurrentItem="True" x:Name="tabCondition" VerticalAlignment="Top" Height="340" Width="655" HorizontalAlignment="Left" Margin="-5,0,0,0" SelectedIndex="{Binding Path=sUiController.Preview.SelectedPatternTab, Mode=Default}" Background="#FF7F7F80">
+            <TabItem Header="Preview sample pattern selection" Style="{DynamicResource AquisitionPreviewPanelTabItemStyle}" FontFamily="Meiryo" x:Name="tbiObject" Height="43" Margin="0" VerticalAlignment="Bottom" Width="310" HorizontalAlignment="Left" FontSize="24">
+				<Grid IsEnabled="{Binding Path=sUiController.Preview.PreviewStartDisable, Mode=Default}" Name="grdObject">
+					<Grid Margin="0" VerticalAlignment="Top" Height="115" Name="grdMainPattern">
+                        <Button Width="190" Height="33" CommandParameter="0" Content="Defect" HorizontalAlignment="Left" Margin="8,17,0,0" VerticalAlignment="Top"  FontSize="21" Command="{Binding Path=PreviewMakerPatternSelectedHandler, Mode=Default}" DataContext="{Binding Path=sUiController.Preview.PreviewMakerPatternSelectedBinder, Mode=Default}" ToolTip="{Binding Path=ToolTipString, Mode=Default}" Style="{DynamicResource NormalButtonStyle}" Name="btnDefect" Visibility="{Binding Path=PatternVisible, Mode=Default}"/>
+                        <Button Width="190" Height="33" CommandParameter="1" Content="Flat" FontSize="21" Command="{Binding Path=PreviewMakerPatternSelectedHandler, Mode=Default}" Margin="220,17,0,0" VerticalAlignment="Top" DataContext="{Binding Path=sUiController.Preview.PreviewMakerPatternSelectedBinder, Mode=Default}" ToolTip="{Binding Path=ToolTipString, Mode=Default}" Style="{DynamicResource NormalButtonStyle}" HorizontalAlignment="Left" Name="btnFlat" Visibility="{Binding Path=PatternVisible, Mode=Default}" />
+                        <Button Width="190" Height="33" CommandParameter="4" Content="Substrate" FontSize="21" Command="{Binding Path=PreviewMakerPatternSelectedHandler, Mode=Default}" HorizontalAlignment="Left" Margin="430,17,0,0" VerticalAlignment="Top" DataContext="{Binding Path=sUiController.Preview.PreviewMakerPatternSelectedBinder, Mode=Default}" ToolTip="{Binding Path=ToolTipString, Mode=Default}" Style="{DynamicResource NormalButtonStyle}" Name="btnSubstrate" Visibility="{Binding Path=PatternVisible, Mode=Default}"/>
+                        <Button Width="190" Height="33" CommandParameter="2" Content="Contamination" FontSize="21" Command="{Binding Path=PreviewMakerPatternSelectedHandler, Mode=Default}" HorizontalAlignment="Left"  Margin="220,0,0,15" VerticalAlignment="Bottom"  DataContext="{Binding Path=sUiController.Preview.PreviewMakerPatternSelectedBinder, Mode=Default}" ToolTip="{Binding Path=ToolTipString, Mode=Default}" Style="{DynamicResource NormalButtonStyle}" Name="btnContamination" Visibility="{Binding Path=PatternVisible, Mode=Default}"/>
+                        <Button Width="190" Height="33" CommandParameter="3" Content="凹凸" FontSize="21" Command="{Binding Path=PreviewMakerPatternSelectedHandler, Mode=Default}" Margin="8,0,0,15" VerticalAlignment="Bottom" DataContext="{Binding Path=sUiController.Preview.PreviewMakerPatternSelectedBinder, Mode=Default}" ToolTip="{Binding Path=ToolTipString, Mode=Default}" Style="{DynamicResource NormalButtonStyle}"  HorizontalAlignment="Left" Name="btnIrregularity" Visibility="{Binding Path=PatternVisible, Mode=Default}"/>
+                    </Grid>
+                    <Path x:Name="pathObjectLine" Height="1" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="#FFB4B4B4" Data="F1 M 0.5,0.499969L 563.503,0.499969" Grid.ColumnSpan="3" VerticalAlignment="Top" Grid.Row="2" HorizontalAlignment="Center" Margin="0,120,0,0"/>
+					<Grid Margin="0,0,0,5" VerticalAlignment="Bottom" Height="160" Name="grdUserPattern">
+                        <Button Width="190" Height="33" Content="User 1" FontSize="21" HorizontalAlignment="Left" Margin="8,20,0,0" VerticalAlignment="Top" Command="{Binding Path=PreviewUserPatternSelectedHandler, Mode=Default}" CommandParameter="1" ToolTip="{Binding Path=ToolTipString, Mode=Default}" DataContext="{Binding Path=sUiController.Preview.PreviewUserPatternSelectedBinder, Mode=Default}" Style="{DynamicResource NormalButtonStyle}" IsEnabled="{Binding Path=PatternEnabled, Mode=Default}" Name="btnUserOne" />
+                        <Button Height="33" Content="User 2" FontSize="21" Margin="220,20,0,0" VerticalAlignment="Top" Command="{Binding Path=PreviewUserPatternSelectedHandler, Mode=Default}" CommandParameter="2" ToolTip="{Binding Path=ToolTipString, Mode=Default}" DataContext="{Binding Path=sUiController.Preview.PreviewUserPatternSelectedBinder, Mode=Default}" Style="{DynamicResource NormalButtonStyle}" Width="190" HorizontalAlignment="Left" IsEnabled="{Binding Path=PatternEnabled, Mode=Default}" Name="btnUserTwo" />
+                        <Button Height="33" Content="User 3" FontSize="21" HorizontalAlignment="Left" Margin="430,20,0,0" VerticalAlignment="Top" Width="190" Command="{Binding Path=PreviewUserPatternSelectedHandler, Mode=Default}" CommandParameter="3" ToolTip="{Binding Path=ToolTipString, Mode=Default}" DataContext="{Binding Path=sUiController.Preview.PreviewUserPatternSelectedBinder, Mode=Default}" Style="{DynamicResource NormalButtonStyle}" IsEnabled="{Binding Path=PatternEnabled, Mode=Default}" Name="btnUserThree" />
+                        <Button Content="Others" FontSize="21" HorizontalAlignment="Left" Margin="8,0,0,55" VerticalAlignment="Bottom" Width="190" Height="33" Command="{Binding Path=sUiController.Preview.PreviewUserSettingFileSelectedHandler, Mode=Default}" Style="{DynamicResource NormalButtonStyle}" Name="btnOthers" />
+                        <Button Content="Create setting" FontSize="21" Height="33" Margin="430,0,0,10" VerticalAlignment="Bottom" Command="{Binding Path=sUiController.Preview.PreviewUserSettingModeStartHandler, Mode=Default}" Style="{DynamicResource NormalButtonStyle}" Width="190" HorizontalAlignment="Left" Name="btnCreateSetting" />
+					</Grid>
+					<Separator HorizontalAlignment="Stretch" Margin="0,160,0,160" Height="10"/>
+				</Grid>
+			</TabItem>
+            <TabItem Header="Observation condition setting" Style="{DynamicResource AquisitionPreviewPanelTabItemStyle}" Width="290" FontFamily="Meiryo" x:Name="tbiCondition" Height="43" Margin="0,0,-5,0" FontSize="24" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                <Grid IsEnabled="{Binding Path=sUiController.Preview.PreviewStartDisable, Mode=Default}">
+				    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Name="stkCondition">
+                        <Button Width="193" Height="42" Content="Brightness" Command="{Binding Path=PreviewMakerPatternSelectedHandler, Mode=Default}" CommandParameter="100" ToolTip="{Binding Path=ToolTipString, Mode=Default}" DataContext="{Binding Path=sUiController.Preview.PreviewMakerPatternSelectedBinder, Mode=Default}" Style="{DynamicResource NormalButtonStyle}" Name="btnBrightness" IsEnabled="{Binding Path=PatternEnabled, Mode=Default}" Visibility="{Binding Path=PatternVisible, Mode=Default}" FontSize="21"/>
+                        <Button Width="193" Height="42" Content="Lighting" Margin="0,10,0,0" Command="{Binding Path=PreviewMakerPatternSelectedHandler, Mode=Default}" CommandParameter="101" ToolTip="{Binding Path=ToolTipString, Mode=Default}" DataContext="{Binding Path=sUiController.Preview.PreviewMakerPatternSelectedBinder, Mode=Default}" Style="{DynamicResource NormalButtonStyle}" Name="btnLighting" IsEnabled="{Binding Path=PatternEnabled, Mode=Default}" Visibility="{Binding Path=PatternVisible, Mode=Default}" FontSize="21"/>
+                        <Button Width="193" Height="42" Content="Image enhancement" Margin="0,10,0,0" Command="{Binding Path=PreviewMakerPatternSelectedHandler, Mode=Default}" CommandParameter="102" ToolTip="{Binding Path=ToolTipString, Mode=Default}" DataContext="{Binding Path=sUiController.Preview.PreviewMakerPatternSelectedBinder, Mode=Default}" Style="{DynamicResource NormalButtonStyle}" Name="btnImageEnhancement" IsEnabled="{Binding Path=PatternEnabled, Mode=Default}" Visibility="{Binding Path=PatternVisible, Mode=Default}" FontSize="18"/>
+                        <Button Width="193" Height="42" Content="WiDER" Margin="0,10,0,0" Command="{Binding Path=PreviewMakerPatternSelectedHandler, Mode=Default}" CommandParameter="103" ToolTip="{Binding Path=ToolTipString, Mode=Default}" DataContext="{Binding Path=sUiController.Preview.PreviewMakerPatternSelectedBinder, Mode=Default}" Style="{DynamicResource NormalButtonStyle}" Name="btWDR" IsEnabled="{Binding Path=PatternEnabled, Mode=Default}" Visibility="{Binding Path=PatternVisible, Mode=Default}" FontSize="21"/>
+                        <Button Width="193" Height="42" Content="Shearing" Margin="0,10,0,0" Command="{Binding Path=PreviewMakerPatternSelectedHandler, Mode=Default}" CommandParameter="104" ToolTip="{Binding Path=ToolTipString, Mode=Default}" DataContext="{Binding Path=sUiController.Preview.PreviewMakerPatternSelectedBinder, Mode=Default}" Style="{DynamicResource NormalButtonStyle}" Name="btnShearing" IsEnabled="{Binding Path=PatternEnabled, Mode=Default}" Visibility="{Binding Path=PatternVisible, Mode=Default}" FontSize="21"/>
+				    </StackPanel>
+                </Grid>
+			</TabItem>
+		</TabControl>
+	</Grid>
+</Page>

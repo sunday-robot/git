@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="ASCII"?>
+<enablermodel:stateConditionTableGroupList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:enablermodel="http://www.fluoview.olympus.co.jp/core/enablermodel">
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_IMAGING_IDLING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EX_DM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ADM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EM_DM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_NOTCHFILTER_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_BF_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EM_BEAM_SHIFTER</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_REPEAT_SCANNING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EX_DM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ADM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EM_DM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_NOTCHFILTER_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_BF_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EM_BEAM_SHIFTER</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_SERIES_SCANNING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EX_DM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ADM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EM_DM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_NOTCHFILTER_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_BF_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EM_BEAM_SHIFTER</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_RESTING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EX_DM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ADM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EM_DM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_NOTCHFILTER_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_BF_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EM_BEAM_SHIFTER</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_MOTOR_DEVICE_IDLING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EX_DM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ADM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EM_DM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_NOTCHFILTER_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_BF_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EM_BEAM_SHIFTER</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_DIA_LAMP_INTENSITY_CHANGING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EX_DM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ADM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EM_DM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_NOTCHFILTER_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_BF_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EM_BEAM_SHIFTER</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_AS_CHANGING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EX_DM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ADM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EM_DM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_NOTCHFILTER_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_BF_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EM_BEAM_SHIFTER</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_BSF_CHANGING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EX_DM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ADM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EM_DM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_NOTCHFILTER_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_BF_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EM_BEAM_SHIFTER</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_MOTOR_DEVICE_MOVING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EX_DM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ADM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EM_DM_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_NOTCHFILTER_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_BF_TURRET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_EM_BEAM_SHIFTER</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+</enablermodel:stateConditionTableGroupList>

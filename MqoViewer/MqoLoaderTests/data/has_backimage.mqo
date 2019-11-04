@@ -1,0 +1,23 @@
+Metasequoia Document
+Format Text Ver 1.0
+
+Scene {
+	pos 0.0000 0.0000 1500.0000
+	lookat 0.0000 0.0000 0.0000
+	head -0.5236
+	pich 0.5236
+	bank 0.0000
+	ortho 0
+	zoom2 5.0000
+	amb 0.250 0.250 0.250
+	dirlights 1 {
+		light {
+			dir 0.408 0.408 0.816
+			color 1.000 1.000 1.000
+		}
+	}
+}
+BackImage {
+	pers ".\pers_backimage.jpg" -100.000 -100.000 100.123 100.123
+}
+Eof

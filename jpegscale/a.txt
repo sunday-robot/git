@@ -1,0 +1,78 @@
+process_directory(D:\Akiyama\JAVA\jpegscale\秘本)
+process_file(秘本\02.jpg)
+process_file(秘本\01.jpg)
+process_file(秘本\03.jpg)
+process_file(秘本\04.jpg)
+process_directory(D:\Akiyama\JAVA\jpegscale\秘本\org)
+
+Flat profile of 26.32 secs (1909 total ticks): main
+
+  Interpreted + native   Method                        
+  5.7%     0  +   104    sun.awt.image.codec.JPEGImageEncoderImpl.writeJPEGStream
+  5.6%     0  +   103    sun.awt.image.codec.JPEGImageDecoderImpl.readJPEGStream
+  2.6%     0  +    48    WRGBImage.<init>
+  0.9%     0  +    17    java.awt.image.DataBufferInt.<init>
+  0.3%     3  +     2    sun.io.CharToByteDoubleByte.convert
+  0.2%     3  +     0    java.awt.image.BufferedImage.getRGB
+  0.2%     0  +     3    java.io.FileInputStream.readBytes
+  0.2%     0  +     3    java.util.zip.ZipFile.open
+  0.2%     3  +     0    java.awt.image.DirectColorModel.getDataElements
+  0.1%     0  +     2    sun.net.www.ParseUtil.<init>
+  0.1%     2  +     0    java.awt.image.DirectColorModel.getRGB
+  0.1%     0  +     2    java.util.zip.ZipFile.read
+  0.1%     0  +     2    java.io.Win32FileSystem.canonicalize
+  0.1%     0  +     2    java.lang.ClassLoader$NativeLibrary.load
+  0.1%     2  +     0    WRGBImage.fillRectangle
+  0.1%     1  +     1    sun.awt.image.IntegerInterleavedRaster.getDataElements
+  0.1%     2  +     0    java.util.jar.Attributes.read
+  0.1%     1  +     0    java.awt.image.DirectColorModel.getBlue
+  0.1%     0  +     1    java.lang.System.arraycopy
+  0.1%     1  +     0    sun.misc.URLClassPath$JarLoader.getJarFile
+  0.1%     0  +     1    java.awt.color.ICC_Profile.<init>
+  0.1%     1  +     0    java.util.jar.Attributes$Name.isValid
+  0.1%     1  +     0    WRGBImage.draw_point
+  0.1%     1  +     0    java.util.HashMap.rehash
+  0.1%     0  +     1    JPEGFile.load
+ 17.6%    26  +   297    Total interpreted (including elided)
+
+     Compiled + native   Method                        
+ 16.4%   298  +     3    java.awt.image.DirectColorModel.getDataElements
+ 15.5%   286  +     0    WRGBImage.draw_hline
+  8.8%   161  +     0    WRGBImage.draw_point
+  7.1%   131  +     0    WRGBImage.getBufferedImage
+  6.8%   126  +     0    WRGBImage.fillRectangle
+  4.9%    89  +     2    sun.awt.image.IntegerInterleavedRaster.getDataElements
+  1.4%    26  +     0    java.awt.image.DirectColorModel.getBlue
+  1.3%    24  +     0    java.awt.image.DirectColorModel.getGreen
+  1.0%    19  +     0    sun.awt.image.IntegerInterleavedRaster.setDataElements
+  1.0%    19  +     0    java.awt.image.DirectColorModel.getRed
+  0.9%    17  +     0    ImageScaler.scale
+  0.8%    15  +     0    java.awt.image.DirectColorModel.getRGB
+  0.6%    11  +     0    java.awt.image.DirectColorModel.getAlpha
+  0.5%     9  +     0    java.awt.image.ColorModel.equals
+  0.4%     7  +     0    java.awt.image.DirectColorModel.getRGB
+  0.3%     6  +     0    adapters
+  0.2%     4  +     0    java.awt.image.PackedColorModel.equals
+  0.1%     1  +     0    java.lang.String.hashCode
+  0.1%     1  +     0    java.awt.image.ColorModel.getRGBdefault
+ 68.2%  1250  +     5    Total compiled
+
+  Thread-local ticks:
+  3.6%    69             Blocked (of total)
+  0.3%     5             Class loader
+  0.5%     9             Interpreter
+  4.1%    75             Compilation
+  9.4%   173             Unknown code
+
+
+Global summary of 26.32 seconds:
+100.0%  1938             Received ticks
+  1.5%    29             Received GC ticks
+  3.9%    75             Compilation
+  0.3%     6             Other VM operations
+  3.6%    69             Blocked ticks
+ 98.5%  1909             Delivered ticks
+ 94.6%  1834             All ticks
+  0.3%     5             Class loader
+  0.5%     9             Interpreter
+  8.9%   173             Unknown code

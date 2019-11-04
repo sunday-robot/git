@@ -1,0 +1,62 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/composite-font"
+	x:Class="Olympus.LI.Triumph.Application.View.UiGRRAcquisitionInfoDialog"
+	x:Name="wndGRRAcquisitionInfoDialog"
+	Title="UiGRRAcquisitionInfoDialog"
+    ResizeMode="NoResize"
+	ShowInTaskbar="False" Topmost="False" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}" Width="680" Height="264" WindowStartupLocation="CenterScreen"
+    Closing="WindowClosing">
+
+    <Grid x:Name="LayoutRoot" Width="545" Height="224" Stylus.IsPressAndHoldEnabled="False">
+		<Path x:Name="pthSettingConditions" Canvas.Left="455.87" Canvas.Top="317.986" Stretch="Fill" Data="F1 M 1181.03,317.986L 1181.03,671.255C 1181.03,674.201 1178.65,676.589 1175.7,676.589L 461.204,676.589C 458.258,676.589 455.87,674.201 455.87,671.255L 455.87,317.986L 1181.03,317.986 Z " Margin="0,40,0,0" VerticalAlignment="Stretch">
+			<Path.Fill>
+				<LinearGradientBrush StartPoint="0.5,1.51388" EndPoint="0.5,-0.513885">
+					<GradientStop Color="#FFFFFFFF" Offset="0.005618"/>
+					<GradientStop Color="#FFB6EEFC" Offset="1"/>
+					<GradientStop Color="#FFC6F1FC" Offset="0.781"/>
+					<GradientStop Color="#FFC4F0FC" Offset="0.805"/>
+					<GradientStop Color="#FFC1EFFC" Offset="0.842"/>
+					<GradientStop Color="#FFBEEEFC" Offset="0.879"/>
+				</LinearGradientBrush>
+			</Path.Fill>
+            <Path.Effect>
+                <DropShadowEffect BlurRadius="15"/>
+            </Path.Effect>
+		</Path>
+		<Grid Margin="12,46,12,52">
+            <Grid VerticalAlignment="Top" Height="35" Grid.ColumnSpan="2" Margin="0,5,0,0">
+                <Label Content="{Binding sUiController.Acquisition.GRRAcqOperatorLabel, Mode=Default}" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" Width="155" />
+                <ComboBox Style="{DynamicResource ComboBoxStyle}" HorizontalAlignment="Left" Width="353" FontSize="16" VerticalContentAlignment="Center" ItemsSource="{Binding sUiController.Acquisition.GRRAcqOperatorList, Mode=Default}" Margin="168,0,0,1" SelectedValue="{Binding sUiController.Acquisition.GRRAcqSelectedOperator, Mode=Default}" Text="{Binding sUiController.Acquisition.GRRAcqUserOperatorText, Mode=Default}" DataContext="{Binding}" MaxDropDownHeight="350" IsEditable="True" KeyDown="AlignmentAcqOperatorComboKeyDownHandler" IsTextSearchEnabled="False"/>
+            </Grid>
+            <Grid VerticalAlignment="Center" Height="35" Grid.ColumnSpan="2" Margin="0,5,0,0">
+                <Label Content="{Binding sUiController.Acquisition.GRRAcqSampleLabel, Mode=Default}" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" Width="155"/>
+                <ComboBox Style="{DynamicResource ComboBoxStyle}" HorizontalAlignment="Left" Width="353" FontSize="16" VerticalContentAlignment="Center" ItemsSource="{Binding sUiController.Acquisition.GRRAcqSampleList, Mode=Default}" Margin="168,0,0,1" SelectedValue="{Binding sUiController.Acquisition.GRRAcqSelectedSample, Mode=Default}" Text="{Binding sUiController.Acquisition.GRRAcqUserSampleText, Mode=Default}" DataContext="{Binding}" MaxDropDownHeight="350" IsEditable="True" KeyDown="AlignmentAcqSampleComboKeyDownHandler" IsTextSearchEnabled="False" />
+            </Grid>
+			<Grid VerticalAlignment="Bottom" Height="35" Grid.ColumnSpan="2" Margin="0,5,0,0">
+                <Label Content="{Binding sUiController.Acquisition.GRRAcqInfoCautionLabel, Mode=Default}" FontSize="16" FontWeight="Bold" Margin="0,0,8,0" />
+            </Grid>
+        </Grid>
+		<Grid HorizontalAlignment="Right" Margin="0,0,12,12" VerticalAlignment="Bottom" Width="224" Height="34">
+            <Button Style="{DynamicResource SimpleButtonStyle}" Width="101" HorizontalAlignment="Left" x:Name="lblBtnOK" Content="OK" Command="{Binding sUiController.Acquisition.GRRAcquisitionStartHandler, Mode=Default}" />
+            <Button Style="{DynamicResource SimpleButtonStyle}" Width="101" HorizontalAlignment="Right" x:Name="lblBtnCancel" Content="Cancel"  Command="{Binding sUiController.Acquisition.GRRAcquisitionCancelHandler, Mode=Default}" />
+        </Grid>
+        <Grid Height="40" VerticalAlignment="Top" MouseLeftButtonDown="MouseLeftButtonDownHandler">
+			<Path x:Name="pthHeaderCondition" Canvas.Left="551.403" Canvas.Top="127.965" Stretch="Fill" StrokeLineJoin="Round" Stroke="#CDFFFFFF" Data="F1 M 555.903,128.465L 1091.78,128.465C 1093.99,128.465 1095.78,130.256 1095.78,132.465L 1095.78,164.489L 551.903,164.489L 551.903,132.465C 551.903,130.256 553.694,128.465 555.903,128.465 Z ">
+				<Path.Fill>
+					<LinearGradientBrush StartPoint="0.58864,9.15936" EndPoint="0.58864,-8.15937">
+						<GradientStop Color="#CDEFFCFF" Offset="0.40678"/>
+						<GradientStop Color="#CD192C34" Offset="0.495763"/>
+						<GradientStop Color="#CDE9F9FF" Offset="0.584746"/>
+					</LinearGradientBrush>
+				</Path.Fill>
+                <Path.Effect>
+                    <DropShadowEffect BlurRadius="15"/>
+                </Path.Effect>
+			</Path>
+			<Label Content="{Binding sUiController.Acquisition.GRRAcqInfoWindowTitle, Mode=Default}" BorderThickness="20,0,0,0" FontSize="22" FontWeight="Bold" Foreground="#FFFFFFFF"/>
+		</Grid>
+    </Grid>
+</Window>

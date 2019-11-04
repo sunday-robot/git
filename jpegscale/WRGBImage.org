@@ -1,0 +1,49 @@
+import java.awt.image.*;
+
+// package statement will come here
+
+public class WRGBImage {
+    long data[];
+    int width;
+    int height;
+
+    public void fillRectangle(int x, int y, int w, int h, int rgb) {
+	System.out.println("fillRectangle()");
+	int i, j;
+	int r, g, b;
+	r = (rgb >> 16) & 0xff;
+	g = (rgb >> 8) & 0xff;
+	b = rgb & 0xff;
+	for (i = 0; i < h; i++) {
+	    for (j = 0; j < w; j++) {
+		int idx = i * width * 4 + j * 4;
+		data[idx] += r;
+		data[idx + 1] += g;
+		data[idx + 2] += b;
+		data[idx + 3]++;
+	    }
+	}
+    }
+
+    public BufferedImage getBufferedImage() {
+	BufferedImage bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+	int i, j;
+	for (i = 0; i < height; i++) {
+	    for (j = 0; j < width; j++) {
+		int idx = i * width * 4 + j * 4;
+		long w = data[idx + 3];
+		long r = data[idx] / w;
+		long g = data[idx + 1] / w;
+		long b = data[idx + 2] / w;
+		bi.setRGB(j, i, (int)((r << 16) | (g << 8) | b));
+	    }
+	}
+	return bi;
+    }
+
+    public WRGBImage(int w, int h) {
+	width = w;
+	height = h;
+	data = new long[4 * width * height];
+    }
+}

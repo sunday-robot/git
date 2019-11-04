@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="ASCII"?>
+<enablermodel:stateConditionTableGroupList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:enablermodel="http://www.fluoview.olympus.co.jp/core/enablermodel">
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_STIMURATION_IDLING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_STIMULUS_SCANNER_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_STIMULATING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_STIMULUS_SCANNER_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_NO_STIMULATION_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_STIMULATION_SCAN_SPEED</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+          <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>2</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>4</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>8</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>10</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:DoubleNumber">
+            <enablermodel:numberType>double</enablermodel:numberType>
+            <enablermodel:number>12.5</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>20</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>40</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>80</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>100</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>200</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>400</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>500</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>1000</enablermodel:number>
+          </enablermodel:numberElement>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_CLIP_STIMULATION_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_STIMULATION_SCAN_SPEED</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+          <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>2</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>4</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>8</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>10</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:DoubleNumber">
+            <enablermodel:numberType>double</enablermodel:numberType>
+            <enablermodel:number>12.5</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>20</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>40</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>80</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>100</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>200</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>400</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>500</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>1000</enablermodel:number>
+          </enablermodel:numberElement>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_LINE_STIMULATION_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_STIMULATION_SCAN_SPEED</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+          <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>2</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>4</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>8</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>10</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:DoubleNumber">
+            <enablermodel:numberType>double</enablermodel:numberType>
+            <enablermodel:number>12.5</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>20</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>40</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>80</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>100</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>200</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>400</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>500</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>1000</enablermodel:number>
+          </enablermodel:numberElement>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_FREE_LINE_STIMULATION_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_STIMULATION_SCAN_SPEED</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+          <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>10</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>20</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>100</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>200</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>400</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>500</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>1000</enablermodel:number>
+          </enablermodel:numberElement>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_POINT_STIMULATION_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_STIMULATION_SCAN_SPEED</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+          <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>2</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>4</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>8</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>10</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:DoubleNumber">
+            <enablermodel:numberType>double</enablermodel:numberType>
+            <enablermodel:number>12.5</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>20</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>40</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>80</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>100</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>200</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>400</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>500</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>1000</enablermodel:number>
+          </enablermodel:numberElement>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_MULTI_POINT_STIMULATION_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_STIMULATION_SCAN_SPEED</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+          <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>2</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>4</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>10</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>20</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>40</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>100</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>200</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>400</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>1000</enablermodel:number>
+          </enablermodel:numberElement>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_MAPPINT_STIMULATION_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_STIMULATION_SCAN_SPEED</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+          <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>2</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>4</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>10</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>20</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>40</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>100</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>200</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>400</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>1000</enablermodel:number>
+          </enablermodel:numberElement>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_CAV_TORNADO_STIMULATION_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_STIMULATION_SCAN_SPEED</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+          <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>10</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>20</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>100</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>200</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>400</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>500</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>1000</enablermodel:number>
+          </enablermodel:numberElement>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_CLV_TORNADO_STIMULATION_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_STIMULATION_SCAN_SPEED</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+          <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>10</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>20</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>100</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>200</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>400</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>500</enablermodel:number>
+          </enablermodel:numberElement>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>1000</enablermodel:number>
+          </enablermodel:numberElement>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+</enablermodel:stateConditionTableGroupList>

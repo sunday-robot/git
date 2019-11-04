@@ -1,0 +1,3 @@
+12/05/2017 13:19:14.6735164694,c:\svn\support\loggingtools\logger_enhancement\source\loglibtester\loglibtester\dbgtrace\systemutilities.cpp(1236),[LogTool],Log file, sequence changed
+12/05/2017 13:19:17.7369488824,c:\jenkins\workspace\baseLext-build-CommPortInterfaceLib_v1.1.1\software\DeviceControl\Lext\lib\OlyaCommPortInterface\OlyaCommPortInterface\include\LoggingMessage.h(111),[Comm_String],<<COMMAND_RECV>>,[[M]],3NXYP 18900,26660,0,
+12/05/2017 13:19:17.7386687704,jp.co.olympus.hpf.comm.connection.Connection(643),handleMessageData@FV_AOF_[20] Msg Queue (IPCMonitorTask) Listener:28,[Debug],connection.handleMessageData messageId=108,

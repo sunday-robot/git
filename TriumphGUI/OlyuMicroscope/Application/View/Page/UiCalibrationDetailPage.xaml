@@ -1,0 +1,94 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/composite-font"
+    xmlns:utility="clr-namespace:Olympus.LI.Triumph.Application.View.Utility"
+	x:Class="Olympus.LI.Triumph.Application.View.UiCalibrationDetailPage"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight"
+	Width="400" Height="740"
+	WindowWidth="640" WindowHeight="560">
+
+    <Page.Background>
+        <StaticResource ResourceKey="AcquisitionNormalBackgroundBrush"/>
+    </Page.Background>
+    <Grid HorizontalAlignment="Stretch" Visibility="{Binding Path=sUiController.Magnification.CalibrationDetailVisibility, Mode=Default}" Stylus.IsPressAndHoldEnabled="False">
+        <Label x:Name="lblTitleName" Content="CurrentRevolver" Foreground="White" VerticalAlignment="Top" Height="25" Margin="0,0,0,0" />
+        <Label Content="{Binding Path=sUiController.Magnification.CalibrationExecuteRevolverName}" Foreground="White" Background="Gray" VerticalAlignment="Top" Height="25" Margin="122,0,157,0" />
+        <Label x:Name="lblLens" Content="Lens" Foreground="White" VerticalAlignment="Top" Height="25" Margin="0,30,0,0" />
+        <Label Content="{Binding Path=sUiController.Magnification.LensName}" Foreground="White" Background="Gray" VerticalAlignment="Top" Height="25" Margin="57,30,222,426" />
+        <Label x:Name="lblMagnification" Content="Magnification" Foreground="White" VerticalAlignment="Top" Height="25" Margin="194,30,111,426" />
+        <Label Content="{Binding Path=sUiController.Magnification.LensMagnification}" Foreground="White" Background="Gray" HorizontalAlignment="Right" Width="55" VerticalAlignment="Top" Height="25" Margin="0,30,50,426" />
+        <Grid Visibility="{Binding Path=sUiController.Magnification.CalibrationNormalDetailAreaVisibility, Mode=Default}">
+            <Grid Margin="10,60,10,10">
+                <DataGrid HorizontalAlignment="Center" VerticalAlignment="Top" Width="380" Height="580" Visibility="{Binding Path=sUiController.Magnification.CalibrationCurrentDetailVisibility}" ItemsSource="{Binding Path=sUiController.Magnification.CalibrationDataList}" AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserSortColumns="False" HeadersVisibility="Column">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn x:Name="colMagnification" Header="Magnification" Binding="{Binding Path=DisplayZoomMagnification, Mode=OneWay}" Width="90">
+                        </DataGridTextColumn>
+                        <DataGridTextColumn x:Name="colCurrentX" Header="CurrentX" Binding="{Binding Path=DisplayCalibrationValueX, Mode=OneWay}" Width="65">
+                        </DataGridTextColumn>
+                        <DataGridTextColumn x:Name="colCurrentY" Header="CurrentY" Binding="{Binding Path=DisplayCalibrationValueY, Mode=OneWay}" Width="65">
+                        </DataGridTextColumn>
+                        <DataGridTextColumn x:Name="colResultX" Header="ResultX" Binding="{Binding Path=DisplayMeasurementResultX, Mode=OneWay}" Width="70">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <Setter Property="Foreground" Value="{Binding Path=ResultColorX}" />
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn x:Name="colResultY" Header="ResultY" Binding="{Binding Path=DisplayMeasurementResultY, Mode=OneWay}" Width="70">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <Setter Property="Foreground" Value="{Binding Path=ResultColorY}" />
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <DataGrid HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Height="580" Visibility="{Binding Path=sUiController.Magnification.CalibrationUpdateDetailVisibility}" ItemsSource="{Binding Path=sUiController.Magnification.CalibrationDataList}" Margin="65,0,65,0" AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserSortColumns="False" HeadersVisibility="Column">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn x:Name="colMagnification1" Header="Magnification" Binding="{Binding Path=DisplayZoomMagnification, Mode=OneWay}" Width="90">
+                        </DataGridTextColumn>
+                        <DataGridTextColumn x:Name="colResultX1" Header="ResultX" Binding="{Binding Path=DisplayMeasurementResultX, Mode=OneWay}" Width="70">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <Setter Property="Foreground" Value="{Binding Path=ResultColorX}" />
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn x:Name="colResultY1" Header="ResultY" Binding="{Binding Path=DisplayMeasurementResultY, Mode=OneWay}" Width="70">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <Setter Property="Foreground" Value="{Binding Path=ResultColorY}" />
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="80" Visibility="{Binding Path=sUiController.Magnification.CalibrationDifferenceAreaVisibility, Mode=Default}">
+                <Label Content="Maximum(X)" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="100" Height="25" Margin="0,0,0,0" x:Name="calDifferenceMaxTargetX"/>
+                <Label Content="Minimum(X)" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="100" Height="25" Margin="100,0,0,0" x:Name="calDifferenceMinTargetX"/>
+                <Label Content="Maximum(Y)" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="100" Height="25" Margin="200,0,0,0" x:Name="calDifferenceMaxTargetY"/>
+                <Label Content="Minimum(Y)" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="100" Height="25" Margin="300,0,0,0" x:Name="calDifferenceMinTargetY"/>
+                <Label Content="{Binding Path=sUiController.Magnification.CalibrationDifferenceMaximumTargetX, Mode=Default}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="90" Height="25" Margin="5,30,0,0" BorderBrush="White" BorderThickness="1"/>
+                <Label Content="{Binding Path=sUiController.Magnification.CalibrationDifferenceMinimumTargetX, Mode=Default}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="90" Height="25" Margin="105,30,0,0"  BorderBrush="White" BorderThickness="1"/>
+                <Label Content="{Binding Path=sUiController.Magnification.CalibrationDifferenceMaximumTargetY, Mode=Default}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="90" Height="25" Margin="205,30,0,0"  BorderBrush="White" BorderThickness="1"/>
+                <Label Content="{Binding Path=sUiController.Magnification.CalibrationDifferenceMinimumTargetY, Mode=Default}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="90" Height="25" Margin="305,30,0,0"  BorderBrush="White" BorderThickness="1"/>
+            </Grid>
+        </Grid>
+        <Grid Visibility="{Binding Path=sUiController.Magnification.CalibrationRepetitionDetailAreaVisibility, Mode=Default}">
+            <Grid Margin="10,60,10,10">
+                <Label Width="190" Height="40" Margin="15,100,0,0" Content="3σ" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Left" BorderBrush="White" BorderThickness="2" x:Name="calRepetionThreeSigma" FontSize="24" />
+                <Label Width="190" Height="40" Margin="15,138,0,0" Content="Maximum" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Left" BorderBrush="White" BorderThickness="2" x:Name="calRepetitionDifferenceMax" FontSize="24" />
+                <Label Width="190" Height="40" Margin="15,176,0,0" Content="Minimum" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Left" BorderBrush="White" BorderThickness="2" x:Name="calRepetitionDifferenceMin" FontSize="24" />
+                <Label Width="190" Height="40" Margin="15,214,0,0" Content="Result" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Left" BorderBrush="White" BorderThickness="2" x:Name="calRepetitionResult" FontSize="24" />
+                <Label Width="160" Height="40" Margin="203,100,0,0" Content="{Binding Path=sUiController.Magnification.RepetitionThreeSigma, Mode=Default}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" BorderBrush="White" BorderThickness="2" FontSize="24" />
+                <Label Width="160" Height="40" Margin="203,138,0,0" Content="{Binding Path=sUiController.Magnification.RepetitionDifferenceMaximum, Mode=Default}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" BorderBrush="White" BorderThickness="2" FontSize="24" />
+                <Label Width="160" Height="40" Margin="203,176,0,0" Content="{Binding Path=sUiController.Magnification.RepetitionDifferenceMinimum, Mode=Default}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" BorderBrush="White" BorderThickness="2" FontSize="24" />
+                <Label Width="160" Height="40" Margin="203,214,0,0" Content="{Binding Path=sUiController.Magnification.RepetitionMeasurementResult, Mode=Default}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" BorderBrush="White" BorderThickness="2" FontSize="24" />                
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

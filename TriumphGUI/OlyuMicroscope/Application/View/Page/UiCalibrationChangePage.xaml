@@ -1,0 +1,78 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/composite-font"
+    xmlns:utility="clr-namespace:Olympus.LI.Triumph.Application.View.Utility"
+	x:Class="Olympus.LI.Triumph.Application.View.UiCalibrationChangePage"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight"
+	Width="400" Height="860"
+	WindowWidth="640" WindowHeight="480">
+
+    <Page.Resources>
+        <utility:EnumBooleanConverter x:Key="cnvEnumBoolean"/>
+    </Page.Resources>
+    <Page.Background>
+        <StaticResource ResourceKey="AcquisitionNormalBackgroundBrush"/>
+    </Page.Background>
+    <Grid Stylus.IsPressAndHoldEnabled="False">
+        <Label x:Name="lblTitleName" Content="CurrentRevolver" Foreground="White" VerticalAlignment="Top" Height="25" Margin="0,0,0,0" />
+        <Label Content="{Binding Path=sUiController.Magnification.CalibrationChangeRevolverName}" Foreground="White" Background="Gray" VerticalAlignment="Top" Height="25" Margin="122,0,157,0" />
+        <DataGrid ColumnWidth="79" ItemsSource="{Binding Path=sUiController.Magnification.CalibrationLensSettingList}" AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserSortColumns="False" HeadersVisibility="Column" Margin="0,30,0,110" Foreground="#FF494949">
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="Background" Value="{Binding Path=Background}" />
+                    <Setter Property="Foreground" Value="{Binding Path=Foreground}" />
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                            <Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.CellStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="colLensName" Header="LensName" Binding="{Binding Path=LensName, Mode=OneWay}" Width="135">
+                </DataGridTextColumn>
+                <DataGridTemplateColumn x:Name="colDefault" Header="Default">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <RadioButton GroupName="{Binding Path=LensID}" IsChecked="{Binding Path=CalibrationTarget, Mode=Default, Converter={StaticResource cnvEnumBoolean }, ConverterParameter=Default, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource RadioButtonStyle}" HorizontalAlignment="Center" />
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn x:Name="colUser" Header="User">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <RadioButton GroupName="{Binding Path=LensID}" IsChecked="{Binding Path=CalibrationTarget, Mode=Default, Converter={StaticResource cnvEnumBoolean }, ConverterParameter=User, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Path=UserRadioButtonVisibility}" Style="{StaticResource RadioButtonStyle}" HorizontalAlignment="Center" />
+                                <Label Content="Unregist" Visibility="{Binding Path=UserUnregistVisibility}" Foreground="{Binding Path=Foreground}" />
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn x:Name="colMaker" Header="Maker">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <RadioButton GroupName="{Binding Path=LensID}" IsChecked="{Binding Path=CalibrationTarget, Mode=Default, Converter={StaticResource cnvEnumBoolean }, ConverterParameter=Maker, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Path=MakerRadioButtonVisibility}" Style="{StaticResource RadioButtonStyle}" HorizontalAlignment="Center" />
+                                <Label Content="Unregist" Visibility="{Binding Path=MakerUnregistVisibility}" Foreground="{Binding Path=Foreground}" />
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnAllDefault" Content="All Default" Height="30" Width="100" Style="{StaticResource AcquisitionButtonStyle}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="70,0,230,70" Command="{Binding Path=sUiController.Magnification.SetAllCalibrationToDefaultHandler}" />
+        <Button x:Name="btnAllUser" Content="All User" Height="30" Width="100" Style="{StaticResource AcquisitionButtonStyle}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="180,0,120,70" Command="{Binding Path=sUiController.Magnification.SetAllCalibrationToUserHandler}" />
+        <Button x:Name="btnAllMaker" Content="All Maker" Height="30" Width="100" Style="{StaticResource AcquisitionButtonStyle}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="290,0,10,70" Command="{Binding Path=sUiController.Magnification.SetAllCalibrationToMakerHandler}" />
+        <Grid Margin="0,0,0,10" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="44" Width="250" IsEnabled="{Binding Path=sUiController.Magnification.CalibrationButtonEnable}">
+            <Button x:Name="btnApply" Content="Apply" Height="30" Width="100" HorizontalAlignment="Left" Margin="20,0,0,0" Command="{Binding Path=sUiController.Magnification.ApplyCalibrationTargetHandler}" IsEnabled="{Binding Path=sUiController.Magnification.CalibrationApplyButtonEnable}" Style="{StaticResource AcquisitionButtonStyle}" />
+            <Button x:Name="btnClose" Content="Close" Height="30" Width="100" HorizontalAlignment="Right" Margin="0,0,20,0" Command="{Binding Path=sUiController.Magnification.CloseCalibrationDialogHandler}" IsEnabled="{Binding Path=sUiController.Magnification.CalibrationCloseButtonEnable}" Style="{StaticResource AcquisitionButtonStyle}" />
+        </Grid>
+    </Grid>
+</Page>

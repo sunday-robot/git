@@ -1,0 +1,156 @@
+.AUTODEPEND
+
+#		*Translator Definitions*
+CC = bcc +BCTY.CFG
+TASM = TASM
+TLINK = tlink
+
+
+#		*Implicit Rules*
+.c.obj:
+  $(CC) -c {$< }
+
+.cpp.obj:
+  $(CC) -c {$< }
+
+#		*List Macros*
+Link_Exclude =  \
+  bgmopn_o.obj
+
+Link_Include =  \
+  bgmopn_b.obj \
+  bgmopn_s.obj \
+  item_num.obj \
+  hi_score.obj \
+  info_mes.obj \
+  result.obj \
+  palet.obj \
+  title.obj \
+  bcvtimer.obj \
+  bcty.obj \
+  game.obj \
+  key.obj \
+  pilot.obj \
+  sprite.obj \
+  stage.obj \
+  tank.obj \
+  t_type.obj \
+  opt1614.obj \
+  sprptbc.obj \
+  spt1614.obj \
+  b:\borland\lib\bgmlibs.lib \
+  b:\borland\lib\joy.lib \
+  b:\borland\lib\opnlibs.lib \
+  b:\borland\lib\super.lib \
+  b:\borland\lib\usr.lib
+
+#		*Explicit Rules*
+bcty.exe: bcty.cfg $(Link_Include) $(Link_Exclude)
+  $(TLINK) /m/n/c/d/P-/LB:\BORLAND\LIB @&&|
+c0s.obj+
+bgmopn_b.obj+
+bgmopn_s.obj+
+item_num.obj+
+hi_score.obj+
+info_mes.obj+
+result.obj+
+palet.obj+
+title.obj+
+bcvtimer.obj+
+bcty.obj+
+game.obj+
+key.obj+
+pilot.obj+
+sprite.obj+
+stage.obj+
+tank.obj+
+t_type.obj+
+opt1614.obj+
+sprptbc.obj+
+spt1614.obj
+bcty,bcty
+b:\borland\lib\bgmlibs.lib+
+b:\borland\lib\joy.lib+
+b:\borland\lib\opnlibs.lib+
+b:\borland\lib\super.lib+
+b:\borland\lib\usr.lib+
+cs.lib
+|
+
+
+#		*Individual File Dependencies*
+bgmopn_o.obj: bgmopn_o.c 
+
+bgmopn_b.obj: bgmopn_b.c 
+
+bgmopn_s.obj: bgmopn_s.c 
+
+item_num.obj: item_num.c 
+
+hi_score.obj: hi_score.c 
+
+info_mes.obj: info_mes.c 
+
+result.obj: result.c 
+
+palet.obj: palet.c 
+
+title.obj: title.c 
+
+bcvtimer.obj: bcvtimer.c 
+
+bcty.obj: bcty.c 
+
+game.obj: game.c 
+
+key.obj: key.c 
+
+pilot.obj: pilot.c 
+
+sprite.obj: sprite.c 
+
+stage.obj: stage.c 
+
+tank.obj: tank.c 
+
+t_type.obj: t_type.c 
+
+opt1614.obj: opt1614.asm 
+	$(TASM) /MX /ZI /O OPT1614.ASM,OPT1614.OBJ
+
+sprptbc.obj: sprptbc.asm 
+	$(TASM) /MX /ZI /O SPRPTBC.ASM,SPRPTBC.OBJ
+
+spt1614.obj: spt1614.asm 
+	$(TASM) /MX /ZI /O SPT1614.ASM,SPT1614.OBJ
+
+#		*Compiler Configuration File*
+bcty.cfg: makefile.
+  copy &&|
+-1
+-f-
+-ff-
+-v
+-G
+-O
+-Z
+-k-
+-d
+-vi
+-H=BCTY.SYM
+-wpin
+-wamb
+-wamp
+-wasm
+-wpro
+-wdef
+-wnod
+-wstv
+-wuse
+-IB:\BORLAND\INCLUDE;B:\BORLAND\INCLUDE\LIB
+-LB:\BORLAND\LIB
+-D_PROF;_USEOPNDRV;
+-P-.C
+| bcty.cfg
+
+

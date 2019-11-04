@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="ASCII"?>
+<enablermodel:stateConditionTableGroupList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:enablermodel="http://www.fluoview.olympus.co.jp/core/enablermodel">
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_CAMERA_IDLING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_IMAGESIZE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_COOLINGMODE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_FAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_CLOCK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_CAPTUREMODE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_COLORDEPTH</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_CHANNELSWITCH</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_EMGAIN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_GAIN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_OFFSET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_EXPOSURETIME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_ZSTACK_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+          <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_CAMERA_SERIES_NONE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_CAMERA_ZSTACK_SET_ENABLE</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>true</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_CAMERA_SERIES_Z</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_CAMERA_ZSTACK_SET_ENABLE</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_CAMERA_SERIES_T</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_CAMERA_ZSTACK_SET_ENABLE</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>true</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_CAMERA_SERIES_ZT</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_CAMERA_ZSTACK_SET_ENABLE</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_KALMAN_SETTING_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_CAMERA_REPEAT_IMAGING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_IMAGESIZE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_COOLINGMODE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_FAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_CLOCK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_CAPTUREMODE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_COLORDEPTH</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_CHANNELSWITCH</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_EMGAIN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_GAIN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_OFFSET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_EXPOSURETIME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_ZSTACK_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+          <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_CAMERA_SERIES_NONE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_CAMERA_ZSTACK_SET_ENABLE</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>true</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_CAMERA_SERIES_Z</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_CAMERA_ZSTACK_SET_ENABLE</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_CAMERA_SERIES_T</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_CAMERA_ZSTACK_SET_ENABLE</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>true</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_CAMERA_SERIES_ZT</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_CAMERA_ZSTACK_SET_ENABLE</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_KALMAN_SETTING_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_CAMERA_SERIES_IMAGING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_IMAGESIZE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_COOLINGMODE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_FAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_CLOCK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_CAPTUREMODE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_COLORDEPTH</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_CHANNELSWITCH</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_EMGAIN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_GAIN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_OFFSET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_EXPOSURETIME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_ZSTACK_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_KALMAN_SETTING_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_CAMERA_RESTING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_IMAGESIZE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_COOLINGMODE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_FAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_CLOCK</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_CAPTUREMODE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_COLORDEPTH</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_CHANNELSWITCH</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_EMGAIN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_GAIN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_OFFSET</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_EXPOSURETIME</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_ZSTACK_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_KALMAN_SETTING_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+</enablermodel:stateConditionTableGroupList>

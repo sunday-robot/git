@@ -1,0 +1,69 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/composite-font"
+    xmlns:utility="clr-namespace:Olympus.LI.Triumph.Application.View.Utility"
+    xmlns:CustomControl="clr-namespace:Olympus.LI.Triumph.Application.View.CustomControl"
+	x:Class="Olympus.LI.Triumph.Application.View.UiOptionSettingDialog"
+	x:Name="wndOptionSettingDialog"
+	Title="UiOptionSettingDialog"
+    ResizeMode="NoResize"
+	ShowInTaskbar="False" Topmost="True" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}" Width="460" Height="302" WindowStartupLocation="CenterScreen">
+
+    <Grid x:Name="LayoutRoot" Width="425" Height="264" Stylus.IsPressAndHoldEnabled="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="284*" />
+            <ColumnDefinition Width="38*" />
+            <ColumnDefinition Width="223*" />
+        </Grid.ColumnDefinitions>
+        <Path x:Name="pthSettingConditions" Canvas.Left="455.87" Canvas.Top="317.986" Stretch="Fill" Data="F1 M 1181.03,317.986L 1181.03,671.255C 1181.03,674.201 1178.65,676.589 1175.7,676.589L 461.204,676.589C 458.258,676.589 455.87,674.201 455.87,671.255L 455.87,317.986L 1181.03,317.986 Z " Margin="0,40,0,-2" VerticalAlignment="Stretch" Grid.ColumnSpan="3">
+            <Path.Fill>
+                <LinearGradientBrush StartPoint="0.5,1.51388" EndPoint="0.5,-0.513885">
+                    <GradientStop Color="#FFFFFFFF" Offset="0.005618"/>
+                    <GradientStop Color="#FFB6EEFC" Offset="1"/>
+                    <GradientStop Color="#FFC6F1FC" Offset="0.781"/>
+                    <GradientStop Color="#FFC4F0FC" Offset="0.805"/>
+                    <GradientStop Color="#FFC1EFFC" Offset="0.842"/>
+                    <GradientStop Color="#FFBEEEFC" Offset="0.879"/>
+                </LinearGradientBrush>
+            </Path.Fill>
+            <Path.Effect>
+                <DropShadowEffect BlurRadius="15"/>
+            </Path.Effect>
+        </Path>
+        <Grid Margin="24,46,12,88" Grid.ColumnSpan="3">
+            <Grid VerticalAlignment="Top" Height="35" Grid.ColumnSpan="2" Margin="0,5,0,0" >
+                <CheckBox Content="{Binding sUiController.OptionSettings.LabelBackLight, Mode=Default}" Height="35" HorizontalAlignment="Left" Name="checkBox1" FontSize="16" VerticalAlignment="Top" Width="381" IsChecked="{Binding Path=sUiController.OptionSettings.OptionInfo.BackLightAvailable, Mode=Default}" IsEnabled="{Binding Path=sUiController.OptionSettings.OptionInfo.BackLightEnable, Mode=Default}"/>
+            </Grid>
+            <Grid VerticalAlignment="Top" Height="35" Margin="0,45,0,0" >
+                <CheckBox Content="{Binding sUiController.OptionSettings.LabelFiberLight, Mode=Default}" Height="35" HorizontalAlignment="Left" Name="checkBox2" FontSize="16" VerticalAlignment="Top" Width="381" IsChecked="{Binding Path=sUiController.OptionSettings.OptionInfo.FiberLightAvailable, Mode=Default}" IsEnabled="{Binding Path=sUiController.OptionSettings.OptionInfo.FiberLightEnable, Mode=Default}"/>
+            </Grid>
+            <Grid VerticalAlignment="Bottom" Height="38" Grid.ColumnSpan="2" Margin="0,0,0,10">
+                <Label Content="{Binding sUiController.OptionSettings.LabelStage, Mode=Default}" FontSize="16" FontWeight="Normal" HorizontalAlignment="Left" Width="125" IsEnabled="{Binding Path=sUiController.OptionSettings.OptionInfo.StageEnable, Mode=Default}" />
+                <RadioButton Content="{Binding sUiController.OptionSettings.LabelXYStage, Mode=Default}" Height="29" HorizontalAlignment="Left" Margin="132,6,0,0" Name="radioButton1" FontSize="16" VerticalAlignment="Center" IsChecked="{Binding sUiController.OptionSettings.ElecStageAvailable, Mode=Default}" Style="{DynamicResource RadioButtonStyle}"  IsEnabled="{Binding Path=sUiController.OptionSettings.OptionInfo.StageEnable, Mode=Default}"/>
+                <RadioButton Content="{Binding sUiController.OptionSettings.LabelManualStage, Mode=Default}" Height="29" HorizontalAlignment="Left" Margin="252,6,0,0" Name="radioButton2" FontSize="16" VerticalAlignment="Center" IsChecked="{Binding sUiController.OptionSettings.ManualStageAvailable, Mode=Default}" Style="{DynamicResource RadioButtonStyle}" IsEnabled="{Binding Path=sUiController.OptionSettings.OptionInfo.StageEnable, Mode=Default}"/>
+            </Grid>
+        </Grid>
+        <Grid Margin="0,0,15,10" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width ="220" Height="34" Grid.ColumnSpan="3">
+            <Button Style="{DynamicResource SimpleButtonStyle}" Width="101" HorizontalAlignment="Left" x:Name="lblBtnOK" Content="OK" Command="{Binding sUiController.OptionSettings.OptionSettingApplyHandler, Mode=Default}" />
+            <Button Style="{DynamicResource SimpleButtonStyle}" Width="101" HorizontalAlignment="Right" x:Name="lblBtnCancel" Content="{Binding sUiController.OptionSettings.CancelButtonLabel, Mode=Default}" Command="{Binding sUiController.OptionSettings.OptionSettingCloseHandler, Mode=Default}" />
+        </Grid>
+        <Grid Height="40" VerticalAlignment="Top" Grid.ColumnSpan="3" MouseLeftButtonDown="MouseLeftButtonDownHandler">
+            <Path x:Name="pthHeaderCondition" Canvas.Left="551.403" Canvas.Top="127.965" Stretch="Fill" StrokeLineJoin="Round" Stroke="#CDFFFFFF" Data="F1 M 555.903,128.465L 1091.78,128.465C 1093.99,128.465 1095.78,130.256 1095.78,132.465L 1095.78,164.489L 551.903,164.489L 551.903,132.465C 551.903,130.256 553.694,128.465 555.903,128.465 Z ">
+                <Path.Fill>
+                    <LinearGradientBrush StartPoint="0.58864,9.15936" EndPoint="0.58864,-8.15937">
+                        <GradientStop Color="#CDEFFCFF" Offset="0.40678"/>
+                        <GradientStop Color="#CD192C34" Offset="0.495763"/>
+                        <GradientStop Color="#CDE9F9FF" Offset="0.584746"/>
+                    </LinearGradientBrush>
+                </Path.Fill>
+                <Path.Effect>
+                    <DropShadowEffect BlurRadius="15"/>
+                </Path.Effect>
+            </Path>
+            <Label Content="{Binding sUiController.OptionSettings.WindowTitle, Mode=Default}" BorderThickness="20,0,0,0" FontSize="22" FontWeight="Bold" Foreground="#FFFFFFFF"/>
+        </Grid>
+        <Label Content="{Binding sUiController.OptionSettings.LabelNotify, Mode=Default}" Height="42" HorizontalAlignment="Left" Margin="12,172,0,0" Name="label1" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="401" />
+    </Grid>
+</Window>

@@ -1,0 +1,91 @@
+Metasequoia Document
+Format Text Ver 1.1
+
+Scene {
+	pos 0 0 1500
+	lookat 0 0 0
+	head -0.5236
+	pich 0.5236
+	bank 0.0000
+	ortho 1
+	zoom2 5.0000
+	amb 0.250 0.250 0.250
+	frontclip 225.00002
+	backclip 45000
+	dirlights 1 {
+		light {
+			dir 0.408 0.408 0.816
+			color 1.000 1.000 1.000
+		}
+	}
+}
+Material 1 {
+	"mat1" shader(3) col(1.000 1.000 1.000 1.000) dif(0.800) amb(0.600) emi(0.000) spc(0.000) power(5.00)
+}
+Object "single_edge" {
+	depth 0
+	folding 0
+	scale 1 1 1
+	rotation 0 0 0
+	translation 0 0 0
+	visible 15
+	locking 0
+	shading 1
+	facet 59.5
+	color 0.898 0.498 0.698
+	color_type 0
+	vertex 2 {
+		0 18.006432 34.726688
+		0 26.580923 -33.440514
+	}
+	face 1 {
+		2 V(0 1) M(0)
+	}
+}
+Object "two_edge" {
+	depth 0
+	folding 0
+	scale 1 1 1
+	rotation 0 0 0
+	translation 0 0 0
+	visible 15
+	locking 0
+	shading 1
+	facet 59.5
+	color 0.898 0.498 0.698
+	color_type 0
+	vertex 3 {
+		0 -15.434084 32.583065
+		0 -15.00536 -37.299038
+		0 -66.452309 -36.870312
+	}
+	face 2 {
+		2 V(0 1) M(0)
+		2 V(2 1) M(0)
+	}
+}
+Object "three_edge" {
+	depth 0
+	folding 0
+	scale 1 1 1
+	rotation 0 0 0
+	translation 0 0 0
+	visible 15
+	locking 0
+	shading 1
+	facet 59.5
+	color 0.898 0.498 0.698
+	color_type 0
+	vertex 4 {
+		0 100.32155 30.868168
+		0 84.887459 -29.581995
+		0 57.020367 27.867096
+		0 44.15863 -27.009647
+	}
+	face 3 {
+		2 V(0 1) M(0)
+		2 V(1 2) M(0)
+		2 V(2 3) M(0)
+	}
+}
+Eof

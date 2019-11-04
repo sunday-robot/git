@@ -1,0 +1,44 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/composite-font"
+    xmlns:utility="clr-namespace:Olympus.LI.Triumph.Application.View.Utility"
+	x:Class="Olympus.LI.Triumph.Application.View.UiCalibrationHistoryPage"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight"
+	Width="500" Height="860"
+	WindowWidth="640" WindowHeight="480">
+
+    <Page.Resources>
+        <utility:EnumBooleanConverter x:Key="cnvEnumBoolean"/>
+        <utility:DateFormatConveter x:Key="cnvDateFormat"/>
+    </Page.Resources>
+    <Page.Background>
+        <StaticResource ResourceKey="AcquisitionNormalBackgroundBrush"/>
+    </Page.Background>
+    <Grid Stylus.IsPressAndHoldEnabled="False">
+        <Label x:Name="lblTitleName" Content="CurrentRevolver" Foreground="White" VerticalAlignment="Top" Height="25" Margin="0,0,0,0" />
+        <Label Content="{Binding Path=sUiController.Magnification.CalibrationHistoryRevolverName}" Foreground="White" Background="Gray" VerticalAlignment="Top" Height="25" Margin="122,0,197,0" />
+        <DataGrid ItemsSource="{Binding Path=sUiController.Magnification.CalibrationHistoryList}" AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserSortColumns="True" HeadersVisibility="Column" Margin="0,30,0,52">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="colRevolver" Header="Revolver" Binding="{Binding Path=RevolverName, Mode=OneWay}" Width="80"/>
+                <DataGridTextColumn x:Name="colLensName" Header="LensName" Binding="{Binding Path=LensName, Mode=OneWay}" Width="120"/>
+                <DataGridTextColumn x:Name="colTarget" Header="Target" Binding="{Binding Path=CalibrationType, Mode=OneWay}" Width="50"/>
+                <DataGridTemplateColumn x:Name="colSaveName" Header="SaveName" SortMemberPath="SaveName" Width="107">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                <Hyperlink Command="{Binding Path=OpenDetailDialogHandler}">
+                                    <TextBlock Text="{Binding Path=SaveName}" />
+                                </Hyperlink>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn x:Name="colDate" Header="Date" Binding="{Binding Path=UpdateDate, Mode=OneWay, Converter={StaticResource cnvDateFormat }}" Width="140"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Close" Height="30" Width="100" VerticalAlignment="Bottom" Margin="0,0,0,10" Command="{Binding Path=sUiController.Magnification.CloseCalibrationDialogHandler}" IsEnabled="{Binding Path=sUiController.Magnification.CalibrationCloseButtonEnable}" Style="{StaticResource AcquisitionButtonStyle}" />
+    </Grid>
+</Page>

@@ -1,0 +1,10 @@
+﻿<Window x:Class="WpfLayoutStudy.StackPanelLayoutStudyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="StackPanelLayoutStudyWindow" Height="300" Width="400" Closing="Window_Closing_1">
+    <StackPanel>
+        <Label Content="StackPanel Layout(Vertical)"/>
+        <Button Content="Button1"/>
+        <Button Content="Button2"/>
+    </StackPanel>
+</Window>

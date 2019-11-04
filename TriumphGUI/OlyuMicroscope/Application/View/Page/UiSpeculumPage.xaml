@@ -1,0 +1,52 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:utility="clr-namespace:Olympus.LI.Triumph.Application.View.Utility"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="d"
+	x:Class="Olympus.LI.Triumph.Application.View.UiSpeculumPage"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight" HorizontalAlignment="Left" VerticalAlignment="Top" Width="370" Height="87">    
+    <Page.Resources>
+        <utility:EnumBooleanConverter x:Key="cnvEnumBoolean"/>
+        <utility:EnumInt32Converter x:Key="cnvEnumInt32"/>
+        <utility:EnumlistBooleanConverter x:Key="cnvEnumlistBoolean"/>
+    </Page.Resources>
+    <Page.Triggers>
+    </Page.Triggers>
+    <Grid>
+        <Grid Margin="0,0,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.RowSpan="2" x:Name="grdSpeculumPage" FlowDirection="LeftToRight" IsEnabled="{Binding Path=sUiController.Microscope.MicroscopyMenuListEnable, Mode=Default}" Stylus.IsPressAndHoldEnabled="False" Height="85">
+            <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" RadiusY="4" RadiusX="4" Stroke="#FFB4B4B4" StrokeMiterLimit="2.75" Width="356" Height="82" Margin="8,2,0,1" x:Name="rctSpeculumPagePath" Fill="{DynamicResource AcquisitionNormalBackgroundBrush}" />
+            <Label Content="Microscopy" Margin="8,2,0,0" Style="{DynamicResource TitleLabelStyle}" HorizontalAlignment="Left" FontSize="21.333" VerticalAlignment="Top" Width="356" x:Name="lblSpeculumPage" />
+            <RadioButton x:Name="rbtnMicroscopyBf" Height="46" Width="46" IsChecked="{Binding sUiController.Microscope.Microscopy, ConverterParameter=BrightField, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" IsEnabled="{Binding sUiController.Microscope.AvailableMicroscopyList, ConverterParameter=BrightField, Converter={StaticResource cnvEnumlistBoolean}, Mode=Default}" Visibility="{Binding Path=sUiController.Microscope.MicroscopyVisibility, Mode=Default}" Style="{DynamicResource NormalRadioButtonStyle}" FontSize="16" Content="B F" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="27,31,0,0"/>
+            <RadioButton x:Name="rbtnMicroscopyDf" Height="46" Width="46" IsChecked="{Binding sUiController.Microscope.Microscopy, ConverterParameter=DarkField, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" IsEnabled="{Binding sUiController.Microscope.AvailableMicroscopyList, ConverterParameter=DarkField, Converter={StaticResource cnvEnumlistBoolean}, Mode=Default}" Visibility="{Binding Path=sUiController.Microscope.MicroscopyVisibility, Mode=Default}" Style="{DynamicResource NormalRadioButtonStyle}" FontSize="16" Content="D F" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="95,31,0,0"/>
+            <RadioButton x:Name="rbtnMicroscopyMix" Height="46" Width="46" IsChecked="{Binding sUiController.Microscope.Microscopy, ConverterParameter=Mixed, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" IsEnabled="{Binding sUiController.Microscope.AvailableMicroscopyList, ConverterParameter=Mixed, Converter={StaticResource cnvEnumlistBoolean}, Mode=Default}" Visibility="{Binding Path=sUiController.Microscope.MicroscopyVisibility, Mode=Default}" Style="{DynamicResource NormalRadioButtonStyle}" FontSize="16" Content="MIX" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="163,31,0,0"/>
+            <RadioButton x:Name="rbtnMicroscopyDic" Height="46" Width="46" Foreground="#FFFFFFFF" IsChecked="{Binding sUiController.Microscope.Microscopy, ConverterParameter=Dic, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" IsEnabled="{Binding sUiController.Microscope.AvailableMicroscopyList, ConverterParameter=Dic, Converter={StaticResource cnvEnumlistBoolean}, Mode=Default}" Visibility="{Binding Path=sUiController.Microscope.MicroscopyVisibility, Mode=Default}" Style="{DynamicResource NormalRadioButtonStyle}" FontSize="16" Content="DIC" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="231,31,0,0"/>
+            <RadioButton x:Name="rbtnMicroscopyPo" Height="46" Width="46" Foreground="#FFFFFFFF" IsChecked="{Binding sUiController.Microscope.Microscopy, ConverterParameter=Polarize, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" IsEnabled="{Binding sUiController.Microscope.AvailableMicroscopyList, ConverterParameter=Polarize, Converter={StaticResource cnvEnumlistBoolean}, Mode=Default}" Visibility="{Binding Path=sUiController.Microscope.MicroscopyVisibility, Mode=Default}" Style="{DynamicResource NormalRadioButtonStyle}" FontSize="16" Content="P O" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="299,31,0,0"/>
+            <Button x:Name="rbtnEucentricMove" Command="{Binding sUiController.Focus.ZEucentricMoveHandler, Mode=Default}" IsEnabled="{Binding sUiController.Microscope.AvailableEucentric, Mode=Default}" Visibility="{Binding sUiController.Microscope.EucentricVisibility, Mode=Default}" Height="23" Width="120" Style="{DynamicResource NormalButtonStyle}" FontSize="16" Content="Free angle" Margin="-150,40,0,0" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" HorizontalAlignment="Center" />
+            <Button x:Name="rbtnBasePointMove" Command="{Binding sUiController.Focus.ZBasePointMoveHandler, Mode=Default}" IsEnabled="{Binding sUiController.Microscope.AvailableEucentric, Mode=Default}" Visibility="{Binding sUiController.Microscope.EucentricVisibility, Mode=Default}" Height="23" Width="120" Style="{DynamicResource NormalButtonStyle}" FontSize="16" Content="Upright" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" HorizontalAlignment="Center" Margin="150,40,0,0" />
+        </Grid>
+        <!--
+        <Grid x:Name="gridAdapterSettingPanel" Margin="49,62,0,0" Background="#00000000" HorizontalAlignment="Left" Width="290.0" Height="75.0" Visibility="Hidden">
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="15"/>
+            </Grid.Effect>
+            <Rectangle x:Name="rectangleAdapterSettingPanel" Stroke="Black" StrokeMiterLimit="2.75" Width="290.0" Height="75.0" Margin="0,0,0,0" Fill="{DynamicResource ButtonNormalBorder}" StrokeThickness="1.5" RadiusX="3" RadiusY="3" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" HorizontalAlignment="Left" Panel.ZIndex="0">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <RadioButton HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource RadioButtonStyle}" FontSize="12" Foreground="White" Margin="10,14,0,0" IsChecked="{Binding sUiController.Focus.ZAdapterStatus, ConverterParameter=ZAdapterAttached, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" x:Name="rbtnAdapterAttached"/>
+            <RadioButton HorizontalAlignment="Left"  VerticalAlignment="Top" Style="{DynamicResource RadioButtonStyle}" FontSize="12" Foreground="White" Margin="10,42,0,0" IsChecked="{Binding sUiController.Focus.ZAdapterStatus, ConverterParameter=ZAdapterNotAttached, Converter={StaticResource cnvEnumBoolean}, Mode=Default}" x:Name="rbtnAdapterNotAttached"/>
+        </Grid>
+        -->
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Width="360" Height="86" Panel.ZIndex="100" Background="#000000" Opacity="0.5" Visibility="{Binding Path=sUiController.Microscope.MicroscopyMenuListShield, Mode=Default}"/>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Width="360" Height="86" Panel.ZIndex="101" Background="#000000" Opacity="0.5" Visibility="{Binding Path=sUiController.Microscope.FreeAngleMenuListShield, Mode=Default}"/>
+    </Grid>
+</Page>

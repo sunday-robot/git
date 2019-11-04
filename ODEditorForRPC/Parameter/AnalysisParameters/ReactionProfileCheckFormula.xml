@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Reaction Profile Check Formula Parameters / for All-->
+<ReactionProfileCheckFormula>
+  <FormulaType>
+    <FormulaTypeInfo No="1">
+      <FormulaString>A</FormulaString>
+    </FormulaTypeInfo>
+    <FormulaTypeInfo No="2">
+      <FormulaString>A+B</FormulaString>
+    </FormulaTypeInfo>
+    <FormulaTypeInfo No="3">
+      <FormulaString>A+B+C</FormulaString>
+    </FormulaTypeInfo>
+    <FormulaTypeInfo No="4">
+      <FormulaString>|B-A|</FormulaString>
+    </FormulaTypeInfo>
+    <FormulaTypeInfo No="5">
+      <FormulaString>|C-B|-|B-A|</FormulaString>
+    </FormulaTypeInfo>
+    <FormulaTypeInfo No="6">
+      <FormulaString>|(C-B)-(B-A)|</FormulaString>
+    </FormulaTypeInfo>
+    <FormulaTypeInfo No="7">
+      <FormulaString>
+      </FormulaString>
+    </FormulaTypeInfo>
+    <FormulaTypeInfo No="8">
+      <FormulaString>
+      </FormulaString>
+    </FormulaTypeInfo>
+    <FormulaTypeInfo No="9">
+      <FormulaString>
+      </FormulaString>
+    </FormulaTypeInfo>
+    <FormulaTypeInfo No="10">
+      <FormulaString>
+      </FormulaString>
+    </FormulaTypeInfo>
+    <FormulaTypeInfo No="11">
+      <FormulaString>
+      </FormulaString>
+    </FormulaTypeInfo>
+    <FormulaTypeInfo No="12">
+      <FormulaString>
+      </FormulaString>
+    </FormulaTypeInfo>
+    <FormulaTypeInfo No="13">
+      <FormulaString>
+      </FormulaString>
+    </FormulaTypeInfo>
+    <FormulaTypeInfo No="14">
+      <FormulaString>
+      </FormulaString>
+    </FormulaTypeInfo>
+    <FormulaTypeInfo No="15">
+      <FormulaString>
+      </FormulaString>
+    </FormulaTypeInfo>
+    <FormulaTypeInfo No="16">
+      <FormulaString>
+      </FormulaString>
+    </FormulaTypeInfo>
+    <FormulaTypeInfo No="17">
+      <FormulaString>
+      </FormulaString>
+    </FormulaTypeInfo>
+    <FormulaTypeInfo No="18">
+      <FormulaString>
+      </FormulaString>
+    </FormulaTypeInfo>
+    <FormulaTypeInfo No="19">
+      <FormulaString>
+      </FormulaString>
+    </FormulaTypeInfo>
+    <FormulaTypeInfo No="20">
+      <FormulaString>
+      </FormulaString>
+    </FormulaTypeInfo>
+  </FormulaType>
+</ReactionProfileCheckFormula>

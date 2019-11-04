@@ -1,0 +1,8 @@
+[Title]      [A3] STAT STATUS
+[Tel.Kind]   0xA3 4
+[Send Cond.] K 0 1
+>   N       1
+;B1 N  0             ; STAT“®ìó‘Ô (0:’âŽ~’†, 1:“®ì’†, 2:•ª’“®ì’†, 3:’†’f’†)
+B1 N  0             ; STAT“®ìó‘Ô (0:’âŽ~’†, 1:“®ì’†, 2:•ª’“®ì’†, 3:’†’f’†)
+B1 N  0             ; STAT‹­§•ª’ó‘Ô (0:‹­§»ÝÌßÙ•ª’’†‚Å‚È‚¢, 1:‹­§»ÝÌßÙ•ª’’†)
+B2 N  0,0           ; DUMMY

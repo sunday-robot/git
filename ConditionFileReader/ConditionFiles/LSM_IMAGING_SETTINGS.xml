@@ -1,0 +1,3253 @@
+<?xml version="1.0" encoding="ASCII"?>
+<enablermodel:stateConditionTableGroupList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:enablermodel="http://www.fluoview.olympus.co.jp/core/enablermodel">
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_GALVANO</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ASPECT_1_1</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ASPECT_4_3</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+          <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_ONEWAY</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_ASPECT_4_3</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>true</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_ROUNDTRIP</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_ASPECT_4_3</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+          <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_ONEWAY</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+                <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_REFERENCE_SCAN_MODE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>true</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_CLIP_SCAN_MODE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>false</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_LINE_SCAN_MODE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>false</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_FREE_LINE_SCAN_MODE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>false</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_POINT_SCAN_MODE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>false</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_MULTI_POINT_SCAN_MODE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>false</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_MAPPING_SCAN_MODE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>false</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_ROUNDTRIP</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SCAN_SIZE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+          <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_ONEWAY</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_SCAN_SIZE</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+                <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+                <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                  <enablermodel:numberType>int</enablermodel:numberType>
+                  <enablermodel:number>64</enablermodel:number>
+                </enablermodel:numberElement>
+                <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                  <enablermodel:numberType>int</enablermodel:numberType>
+                  <enablermodel:number>128</enablermodel:number>
+                </enablermodel:numberElement>
+                <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                  <enablermodel:numberType>int</enablermodel:numberType>
+                  <enablermodel:number>256</enablermodel:number>
+                </enablermodel:numberElement>
+                <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                  <enablermodel:numberType>int</enablermodel:numberType>
+                  <enablermodel:number>320</enablermodel:number>
+                </enablermodel:numberElement>
+                <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                  <enablermodel:numberType>int</enablermodel:numberType>
+                  <enablermodel:number>512</enablermodel:number>
+                </enablermodel:numberElement>
+                <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                  <enablermodel:numberType>int</enablermodel:numberType>
+                  <enablermodel:number>640</enablermodel:number>
+                </enablermodel:numberElement>
+                <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                  <enablermodel:numberType>int</enablermodel:numberType>
+                  <enablermodel:number>800</enablermodel:number>
+                </enablermodel:numberElement>
+                <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                  <enablermodel:numberType>int</enablermodel:numberType>
+                  <enablermodel:number>1024</enablermodel:number>
+                </enablermodel:numberElement>
+                <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                  <enablermodel:numberType>int</enablermodel:numberType>
+                  <enablermodel:number>2048</enablermodel:number>
+                </enablermodel:numberElement>
+                <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                  <enablermodel:numberType>int</enablermodel:numberType>
+                  <enablermodel:number>4096</enablermodel:number>
+                </enablermodel:numberElement>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_ROUNDTRIP</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_SCAN_SIZE</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+                <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+                <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                  <enablermodel:numberType>int</enablermodel:numberType>
+                  <enablermodel:number>256</enablermodel:number>
+                </enablermodel:numberElement>
+                <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                  <enablermodel:numberType>int</enablermodel:numberType>
+                  <enablermodel:number>512</enablermodel:number>
+                </enablermodel:numberElement>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+          <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_REFERENCE_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>true</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_CLIP_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_LINE_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_FREE_LINE_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_POINT_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_MULTI_POINT_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_MAPPING_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+          <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_ONEWAY</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+                <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SCAN_SIZE_64</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:DoubleRangeCondition">
+                      <enablermodel:conditionType>DoubleRange</enablermodel:conditionType>
+                      <enablermodel:maxValue>50.0</enablermodel:maxValue>
+                      <enablermodel:minValue>4.0</enablermodel:minValue>
+                      <enablermodel:stepValue>0.01</enablermodel:stepValue>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SCAN_SIZE_128</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:DoubleRangeCondition">
+                      <enablermodel:conditionType>DoubleRange</enablermodel:conditionType>
+                      <enablermodel:maxValue>50.0</enablermodel:maxValue>
+                      <enablermodel:minValue>2.0</enablermodel:minValue>
+                      <enablermodel:stepValue>0.01</enablermodel:stepValue>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SCAN_SIZE_256</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:DoubleRangeCondition">
+                      <enablermodel:conditionType>DoubleRange</enablermodel:conditionType>
+                      <enablermodel:maxValue>50.0</enablermodel:maxValue>
+                      <enablermodel:minValue>1.0</enablermodel:minValue>
+                      <enablermodel:stepValue>0.01</enablermodel:stepValue>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SCAN_SIZE_320</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:DoubleRangeCondition">
+                      <enablermodel:conditionType>DoubleRange</enablermodel:conditionType>
+                      <enablermodel:maxValue>50.0</enablermodel:maxValue>
+                      <enablermodel:minValue>1.0</enablermodel:minValue>
+                      <enablermodel:stepValue>0.01</enablermodel:stepValue>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SCAN_SIZE_512</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:DoubleRangeCondition">
+                      <enablermodel:conditionType>DoubleRange</enablermodel:conditionType>
+                      <enablermodel:maxValue>50.0</enablermodel:maxValue>
+                      <enablermodel:minValue>1.0</enablermodel:minValue>
+                      <enablermodel:stepValue>0.01</enablermodel:stepValue>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SCAN_SIZE_640</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:DoubleRangeCondition">
+                      <enablermodel:conditionType>DoubleRange</enablermodel:conditionType>
+                      <enablermodel:maxValue>50.0</enablermodel:maxValue>
+                      <enablermodel:minValue>1.0</enablermodel:minValue>
+                      <enablermodel:stepValue>0.01</enablermodel:stepValue>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SCAN_SIZE_800</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:DoubleRangeCondition">
+                      <enablermodel:conditionType>DoubleRange</enablermodel:conditionType>
+                      <enablermodel:maxValue>50.0</enablermodel:maxValue>
+                      <enablermodel:minValue>1.0</enablermodel:minValue>
+                      <enablermodel:stepValue>0.01</enablermodel:stepValue>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SCAN_SIZE_1024</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:DoubleRangeCondition">
+                      <enablermodel:conditionType>DoubleRange</enablermodel:conditionType>
+                      <enablermodel:maxValue>50.0</enablermodel:maxValue>
+                      <enablermodel:minValue>1.0</enablermodel:minValue>
+                      <enablermodel:stepValue>0.01</enablermodel:stepValue>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SCAN_SIZE_2048</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:DoubleRangeCondition">
+                      <enablermodel:conditionType>DoubleRange</enablermodel:conditionType>
+                      <enablermodel:maxValue>50.0</enablermodel:maxValue>
+                      <enablermodel:minValue>1.0</enablermodel:minValue>
+                      <enablermodel:stepValue>0.01</enablermodel:stepValue>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SCAN_SIZE_4096</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:DoubleRangeCondition">
+                      <enablermodel:conditionType>DoubleRange</enablermodel:conditionType>
+                      <enablermodel:maxValue>50.0</enablermodel:maxValue>
+                      <enablermodel:minValue>1.0</enablermodel:minValue>
+                      <enablermodel:stepValue>0.01</enablermodel:stepValue>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_ROUNDTRIP</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+                <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_SCAN_SPEED_0_25</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:DoubleRangeCondition">
+                      <enablermodel:conditionType>DoubleRange</enablermodel:conditionType>
+                      <enablermodel:maxValue>50.0</enablermodel:maxValue>
+                      <enablermodel:minValue>6.0</enablermodel:minValue>
+                      <enablermodel:stepValue>0.01</enablermodel:stepValue>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_SCAN_SPEED_0_5</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:DoubleRangeCondition">
+                      <enablermodel:conditionType>DoubleRange</enablermodel:conditionType>
+                      <enablermodel:maxValue>50.0</enablermodel:maxValue>
+                      <enablermodel:minValue>2.0</enablermodel:minValue>
+                      <enablermodel:stepValue>0.01</enablermodel:stepValue>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_LAMBDA</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+          <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_ONEWAY</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+                <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_REFERENCE_SCAN_MODE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+                      <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>2</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>4</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>8</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>10</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:DoubleNumber">
+                        <enablermodel:numberType>double</enablermodel:numberType>
+                        <enablermodel:number>12.5</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>20</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>40</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>80</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>100</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>200</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>400</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>500</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>1000</enablermodel:number>
+                      </enablermodel:numberElement>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_CLIP_SCAN_MODE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+                      <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>2</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>4</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>8</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>10</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:DoubleNumber">
+                        <enablermodel:numberType>double</enablermodel:numberType>
+                        <enablermodel:number>12.5</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>20</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>40</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>80</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>100</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>200</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>400</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>500</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>1000</enablermodel:number>
+                      </enablermodel:numberElement>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_LINE_SCAN_MODE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+                      <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>2</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>4</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>8</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>10</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:DoubleNumber">
+                        <enablermodel:numberType>double</enablermodel:numberType>
+                        <enablermodel:number>12.5</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>20</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>40</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>80</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>100</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>200</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>400</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>500</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>1000</enablermodel:number>
+                      </enablermodel:numberElement>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_FREE_LINE_SCAN_MODE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+                      <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>10</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>20</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>100</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>200</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>400</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>500</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>1000</enablermodel:number>
+                      </enablermodel:numberElement>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_POINT_SCAN_MODE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+                      <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>2</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>4</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>8</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>10</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:DoubleNumber">
+                        <enablermodel:numberType>double</enablermodel:numberType>
+                        <enablermodel:number>12.5</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>20</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>40</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>80</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>100</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>200</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>400</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>500</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>1000</enablermodel:number>
+                      </enablermodel:numberElement>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_MULTI_POINT_SCAN_MODE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+                      <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>2</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>4</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>10</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>20</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>40</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>100</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>200</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>400</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>1000</enablermodel:number>
+                      </enablermodel:numberElement>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_MAPPING_SCAN_MODE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+                      <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>2</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>4</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>10</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>20</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>40</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>100</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>200</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>400</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+                        <enablermodel:numberType>int</enablermodel:numberType>
+                        <enablermodel:number>1000</enablermodel:number>
+                      </enablermodel:numberElement>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_ROUNDTRIP</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup" initStateId="S_LSM_SCAN_SIZE_512">
+                <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SCAN_SIZE_256</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+                      <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+                      <enablermodel:numberElement xsi:type="enablermodel:DoubleNumber">
+                        <enablermodel:numberType>double</enablermodel:numberType>
+                        <enablermodel:number>0.25</enablermodel:number>
+                      </enablermodel:numberElement>
+                      <enablermodel:numberElement xsi:type="enablermodel:DoubleNumber">
+                        <enablermodel:numberType>double</enablermodel:numberType>
+                        <enablermodel:number>0.5</enablermodel:number>
+                      </enablermodel:numberElement>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SCAN_SIZE_512</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+                      <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+                      <enablermodel:numberElement xsi:type="enablermodel:DoubleNumber">
+                        <enablermodel:numberType>double</enablermodel:numberType>
+                        <enablermodel:number>0.5</enablermodel:number>
+                      </enablermodel:numberElement>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_START</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+          <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_REFERENCE_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>true</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_CLIP_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>true</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_LINE_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>true</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_FREE_LINE_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>true</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_POINT_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_MULTI_POINT_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_MAPPING_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>true</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_RESONANT</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ASPECT_1_1</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ASPECT_4_3</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SCAN_SIZE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+          <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+          <enablermodel:numberElement xsi:type="enablermodel:IntNumber">
+            <enablermodel:numberType>int</enablermodel:numberType>
+            <enablermodel:number>512</enablermodel:number>
+          </enablermodel:numberElement>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+          <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_REFERENCE_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:DoubleRangeCondition">
+                <enablermodel:conditionType>DoubleRange</enablermodel:conditionType>
+                <enablermodel:maxValue>8.0</enablermodel:maxValue>
+                <enablermodel:minValue>1.0</enablermodel:minValue>
+                <enablermodel:stepValue>0.01</enablermodel:stepValue>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_CLIP_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_LINE_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_FREE_LINE_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_POINT_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_MULTI_POINT_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_MAPPING_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_LAMBDA</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:NumberListCondition">
+          <enablermodel:conditionType>NumberList</enablermodel:conditionType>
+          <enablermodel:numberElement xsi:type="enablermodel:DoubleNumber">
+            <enablermodel:numberType>double</enablermodel:numberType>
+            <enablermodel:number>0.067</enablermodel:number>
+          </enablermodel:numberElement>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_START</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+          <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_REFERENCE_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>true</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_CLIP_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>true</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_LINE_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+                <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SERIES_NONE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>true</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SERIES_Z</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>true</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SERIES_T</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>false</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SERIES_ZT</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>true</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SERIES_LEM</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>true</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SERIES_LEMZ</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>true</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SERIES_LEMT</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>true</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SERIES_LEMZT</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>true</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_FREE_LINE_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+                <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SERIES_NONE</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>true</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SERIES_Z</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>true</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SERIES_T</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>false</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SERIES_ZT</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>true</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SERIES_LEM</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>true</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SERIES_LEMZ</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>true</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SERIES_LEMT</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>true</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_LSM_SERIES_LEMZT</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>true</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_POINT_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_MULTI_POINT_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_LSM_MAPPING_SCAN_MODE</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_INTERVAL_SETTING</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>true</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_REFERENCE_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_CLIP_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_LINE_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_FREE_LINE_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_POINT_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_MULTI_POINT_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_MAPPING_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_CELL32_VBF_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_RESONANT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ROUNDTRIP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_AUTO_PINHOLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_CELL32_LAMBDA_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_RESONANT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ROUNDTRIP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_AUTO_PINHOLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_IMAGING_ROI_TOOL_DESELECTED</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ONEWAY_ROUNDTRIP_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_IMAGING_ROI_TOOL_SELECTED</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ONEWAY_ROUNDTRIP_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_STIMULATION_ROI_TOOL_DESELECTED</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ONEWAY_ROUNDTRIP_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_STIMULATION_ROI_TOOL_SELECTED</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ONEWAY_ROUNDTRIP_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_REFERENCE_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GALVANO_RESONANT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SCAN_SIZE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ONEWAY_ROUNDTRIP_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_CLIP_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GALVANO_RESONANT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SCAN_SIZE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ONEWAY_ROUNDTRIP_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_LINE_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GALVANO_RESONANT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SCAN_SIZE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ONEWAY_ROUNDTRIP_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_FREE_LINE_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GALVANO_RESONANT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SCAN_SIZE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ONEWAY_ROUNDTRIP_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_POINT_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GALVANO_RESONANT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SCAN_SIZE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ONEWAY_ROUNDTRIP_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_MULTI_POINT_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GALVANO_RESONANT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SCAN_SIZE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ONEWAY_ROUNDTRIP_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_MAPPING_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GALVANO_RESONANT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SCAN_SIZE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ONEWAY_ROUNDTRIP_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_REFERENCE_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_START</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_CLIP_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_START</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_LINE_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_START</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_FREE_LINE_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_START</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_POINT_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_START</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_MULTI_POINT_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_START</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_MAPPING_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_START</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_REVOLVER_STOP</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_REVOLVER_MOVING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_MOTOR_DEVICE_IDLING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GALVANO_RESONANT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ONEWAY_ROUNDTRIP_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ASPECT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PINHOLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SCAN_SIZE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_CHANNEL_SETTING_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_TIMELAPSE_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZSTACK_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_BI_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SERIES_T_SETTINGS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_SERIES_T_SETTINGS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PHASE_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_IMAGING_IDLING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GALVANO_RESONANT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ONEWAY_ROUNDTRIP_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ASPECT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PINHOLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SCAN_SIZE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_CHANNEL_SETTING_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_TIMELAPSE_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZSTACK_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_BI_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SERIES_T_SETTINGS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_SERIES_T_SETTINGS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PHASE_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_REPEAT_SCANNING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GALVANO_RESONANT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ONEWAY_ROUNDTRIP_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ASPECT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PINHOLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SCAN_SIZE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_CHANNEL_SETTING_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_TIMELAPSE_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZSTACK_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_BI_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SERIES_T_SETTINGS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_SERIES_T_SETTINGS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PHASE_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_SERIES_SCANNING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GALVANO_RESONANT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ONEWAY_ROUNDTRIP_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ASPECT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PINHOLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SCAN_SIZE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_CHANNEL_SETTING_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_TIMELAPSE_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZSTACK_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_BI_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SERIES_T_SETTINGS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_SERIES_T_SETTINGS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PHASE_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_RESTING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GALVANO_RESONANT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ONEWAY_ROUNDTRIP_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ASPECT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PINHOLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SCAN_SIZE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_CHANNEL_SETTING_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_TIMELAPSE_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZSTACK_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_BI_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SERIES_T_SETTINGS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_SERIES_T_SETTINGS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PHASE_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_MOTOR_DEVICE_MOVING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GALVANO_RESONANT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ONEWAY_ROUNDTRIP_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ASPECT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_PINHOLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_FOCUS_SCAN_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SCAN_SIZE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_CHANNEL_SETTING_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_TIMELAPSE_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZSTACK_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_BI_SETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SERIES_T_SETTINGS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_CAMERA_SERIES_T_SETTINGS</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PHASE_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_ONEWAY</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_LAMBDA</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_ROUNDTRIP</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_LAMBDA</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_IMAGING_IDLING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_LAMBDA</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_VBF</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_REPEAT_SCANNING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_LAMBDA</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_VBF</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_SERIES_SCANNING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_LAMBDA</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_VBF</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_RESTING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_LAMBDA</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_VBF</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_CAMERA_SERIES_NONE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZSTACK_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_CAMERA_SERIES_Z</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZSTACK_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_CAMERA_SERIES_T</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZSTACK_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_CAMERA_SERIES_ZT</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZSTACK_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_NO_SIM_LASER_IN_ALL_PHASE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_RESONANT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ROUNDTRIP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_SIM_LASER_IN_ALL_PHASE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_RESONANT</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ROUNDTRIP</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_IMAGING_SCANNER_NOT_CHANGING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SCANSETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_IMAGING_SCANNER_CHANGING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SCANSETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_SCANMODE_NOT_CHANGING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_CELL32_SCANSETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PMT_SCANSETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SERIES_SCAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_REPEAT_SCAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_SCANMODE_CHANGING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_CELL32_SCANSETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PMT_SCANSETTING</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SERIES_SCAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_REPEAT_SCAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_FOCUS_SCAN_OFF</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ONEWAY_ROUNDTRIP_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GALVANO_RESONANT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_FOCUS_SCAN_PREPARING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ONEWAY_ROUNDTRIP_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GALVANO_RESONANT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_FOCUS_SCAN_SCANNING</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_ONEWAY_ROUNDTRIP_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_IMAGING_SCAN_SPEED</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_GALVANO_RESONANT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_REFERENCE_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_TIMELAPSE_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZSTACK_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_LAMBDA</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SERIES_T_OR_Z_SET_ABSOLUTELY_MODE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_CLIP_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_TIMELAPSE_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZSTACK_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_LAMBDA</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SERIES_T_OR_Z_SET_ABSOLUTELY_MODE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_LINE_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_TIMELAPSE_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZSTACK_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_LAMBDA</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SERIES_T_OR_Z_SET_ABSOLUTELY_MODE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_POINT_SCAN_MODE</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_TIMELAPSE_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+          <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_GALVANO</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_TIMELAPSE_SET_ENABLE</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:StateConditionTableGroup">
+                <enablermodel:conditionType>TableCondition</enablermodel:conditionType>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_ONEWAY</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_TIMELAPSE_SET_ENABLE</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>true</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+                <enablermodel:stateConditionTableList>
+                  <enablermodel:stateId>S_ROUNDTRIP</enablermodel:stateId>
+                  <enablermodel:condition>
+                    <enablermodel:functionId>F_LSM_TIMELAPSE_SET_ENABLE</enablermodel:functionId>
+                    <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                      <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                      <enablermodel:enable>false</enablermodel:enable>
+                    </enablermodel:Condition>
+                  </enablermodel:condition>
+                </enablermodel:stateConditionTableList>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+          <enablermodel:stateConditionTableList>
+            <enablermodel:stateId>S_RESONANT</enablermodel:stateId>
+            <enablermodel:condition>
+              <enablermodel:functionId>F_LSM_TIMELAPSE_SET_ENABLE</enablermodel:functionId>
+              <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+                <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+                <enablermodel:enable>false</enablermodel:enable>
+              </enablermodel:Condition>
+            </enablermodel:condition>
+          </enablermodel:stateConditionTableList>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZSTACK_SET_ENABLE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_LAMBDA</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SERIES_T_OR_Z_SET_ABSOLUTELY_MODE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+  <enablermodel:stateConditionTableGroupList isMainTable="true">
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_ZOOM_IN_ROI_DOES_NOT_EXIST</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SCAN_SIZE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ASPECT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>true</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+    <enablermodel:stateConditionTableList>
+      <enablermodel:stateId>S_LSM_ZOOM_IN_ROI_EXISTS</enablermodel:stateId>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ROTATION</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_PAN</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ZOOM</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_SCAN_SIZE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+      <enablermodel:condition>
+        <enablermodel:functionId>F_LSM_ASPECT_CHANGE</enablermodel:functionId>
+        <enablermodel:Condition xsi:type="enablermodel:EnableCondition">
+          <enablermodel:conditionType>EnableCondition</enablermodel:conditionType>
+          <enablermodel:enable>false</enablermodel:enable>
+        </enablermodel:Condition>
+      </enablermodel:condition>
+    </enablermodel:stateConditionTableList>
+  </enablermodel:stateConditionTableGroupList>
+</enablermodel:stateConditionTableGroupList>

@@ -1,0 +1,7 @@
+C:\svn\SoundPlay\SoundPlay\SoundPlay\bin\Debug\SoundPlay.exe.config
+C:\svn\SoundPlay\SoundPlay\SoundPlay\bin\Debug\SoundPlay.exe
+C:\svn\SoundPlay\SoundPlay\SoundPlay\bin\Debug\SoundPlay.pdb
+C:\svn\SoundPlay\SoundPlay\SoundPlay\obj\Debug\SoundPlay.csprojAssemblyReference.cache
+C:\svn\SoundPlay\SoundPlay\SoundPlay\obj\Debug\SoundPlay.csproj.CoreCompileInputs.cache
+C:\svn\SoundPlay\SoundPlay\SoundPlay\obj\Debug\SoundPlay.exe
+C:\svn\SoundPlay\SoundPlay\SoundPlay\obj\Debug\SoundPlay.pdb

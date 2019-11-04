@@ -1,0 +1,82 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/composite-font"
+    xmlns:utility="clr-namespace:Olympus.LI.Triumph.Application.View.Utility"
+    xmlns:CustomControl="clr-namespace:Olympus.LI.Triumph.Application.View.CustomControl"
+	x:Class="Olympus.LI.Triumph.Application.View.UiCalibrationMessagePage"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight"
+	Width="450" Height="220"
+	WindowWidth="640" WindowHeight="480">
+
+    <Page.Resources>
+        <utility:EnumBooleanConverter x:Key="cnvEnumBoolean"/>
+    </Page.Resources>
+    <Page.Background>
+        <StaticResource ResourceKey="AcquisitionNormalBackgroundBrush"/>
+    </Page.Background>
+    <Grid Stylus.IsPressAndHoldEnabled="False">
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Height="100" Width="430" Margin="0,10,0,0" Text="{Binding Path=sUiController.Magnification.InstructionMessage, Mode=Default}" Visibility="{Binding Path=sUiController.Magnification.CalibrationMessageAreaVisibility, Mode=Default}" Background="Gray" Foreground="White" TextWrapping="Wrap" />
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Height="40" Width="200" Margin="0,120,0,0" Visibility="{Binding Path=sUiController.Magnification.CalibrationTargetSelectVisibility, Mode=Default}">
+            <RadioButton x:Name="rbtnMaker" Content="Maker" HorizontalAlignment="Left" Foreground="White" IsChecked="{Binding Path=sUiController.Magnification.CalibrationTarget, Mode=Default, Converter={StaticResource cnvEnumBoolean}, ConverterParameter=Maker}" Style="{StaticResource RadioButtonStyle}" Height="18" Width="113" />
+            <RadioButton x:Name="rbtnUser" Content="User" HorizontalAlignment="Right" Foreground="White" IsChecked="{Binding Path=sUiController.Magnification.CalibrationTarget, Mode=Default, Converter={StaticResource cnvEnumBoolean}, ConverterParameter=User}" Style="{StaticResource RadioButtonStyle}" Height="18" Width="84" />
+        </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Height="70" Width="226" Margin="60,115,0,0" Visibility="{Binding Path=sUiController.Magnification.CalibrationModeSelectVisibility, Mode=Default}">
+            <RadioButton x:Name="rbtnCheck" Content="Check"  Margin="0,6,0,6" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" IsChecked="{Binding Path=sUiController.Magnification.CalibrationMode, Mode=Default, Converter={StaticResource cnvEnumBoolean}, ConverterParameter=Check}" Style="{StaticResource RadioButtonStyle}" Width="113" Height="35"/>
+            <RadioButton x:Name="rbtnUpdate" Content="Update" Margin="116,6,0,6" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" IsChecked="{Binding Path=sUiController.Magnification.CalibrationMode, Mode=Default, Converter={StaticResource cnvEnumBoolean}, ConverterParameter=Update}" Style="{StaticResource RadioButtonStyle}" Width="113" Height="35"/>
+            <RadioButton x:Name="rbtnRepetition" Content="RepeatMeasure" Margin="0,35,0,6" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" IsChecked="{Binding Path=sUiController.Magnification.CalibrationMode, Mode=Default, Converter={StaticResource cnvEnumBoolean}, ConverterParameter=RepeatMeasure}" Style="{StaticResource RadioButtonStyle}" Width="113" Height="35" IsEnabled="{Binding Path=sUiController.Magnification.RepetitionModeEnable, Mode=Default}" Visibility="{Binding Path=sUiController.Magnification.RepetitionModeVisibility, Mode=Default}"/>
+        </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Height="80" Width="350" Margin="0,110,0,0" Visibility="{Binding Path=sUiController.Magnification.CalibrationScalePitchVisibility, Mode=Default}">
+            <Label x:Name="lblSamplePitch" Content="Sample pitch" Foreground="White" Height="26" HorizontalAlignment="Left" Margin="0,6,0,0" VerticalAlignment="Top" Width="254" />
+            <CustomControl:ValidateTextBox Height="24" Text="{Binding Path=sUiController.Magnification.ScalePitchString}" Style="{StaticResource TextBoxStyle}" Margin="246,3,40,40" MaxLength="6" InputType="DecimalPositive" InputMethod.IsInputMethodEnabled="False" IsRangeCheck="True" RangeMin="1" RangeMax="99.999" />
+            <Label x:Name="lblScaleUnit" Content="um" Foreground="White" Height="26" HorizontalAlignment="Left" Margin="316,3,0,0" VerticalAlignment="Top" Width="34" />
+            <Label x:Name="lblPitchNotice" Content="If the pitch is different, please change." Foreground="Yellow" Height="28" HorizontalAlignment="Left" Margin="0,35,0,0" VerticalAlignment="Top" Width="350" />
+        </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Height="80" Width="350" Margin="0,110,0,0" Visibility="{Binding Path=sUiController.Magnification.CalibrationDirectionVisibility, Mode=Default}">
+            <RadioButton x:Name="rbtnXY" Foreground="White" Content="XY" Margin="260,0,6,49" IsChecked="{Binding Path=sUiController.Magnification.CalibrationDirection, Mode=Default, Converter={StaticResource cnvEnumBoolean}, ConverterParameter=XY}" Style="{StaticResource RadioButtonStyle}" IsEnabled="{Binding Path=sUiController.Magnification.CalibrationDirectionXYEnable, Mode=Default}"/>
+            <RadioButton x:Name="rbtnX" Foreground="White" Content="X" Margin="260,20,20,29" IsChecked="{Binding Path=sUiController.Magnification.CalibrationDirection, Mode=Default, Converter={StaticResource cnvEnumBoolean}, ConverterParameter=X}" Style="{StaticResource RadioButtonStyle}" />
+            <RadioButton x:Name="rbtnY" Foreground="White" Content="Y" Margin="260,40,6,9" IsChecked="{Binding Path=sUiController.Magnification.CalibrationDirection, Mode=Default, Converter={StaticResource cnvEnumBoolean}, ConverterParameter=Y}" Style="{StaticResource RadioButtonStyle}" IsEnabled="{Binding Path=sUiController.Magnification.CalibrationDirectionYEnable, Mode=Default}"/>
+        </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Height="40" Width="400" Margin="0,120,0,0" Visibility="{Binding Path=sUiController.Magnification.CalibrationSaveEndVisibility, Mode=Default}">
+            <Label x:Name="lblName" Content="Name" Foreground="White" Height="28" HorizontalAlignment="Left" Margin="8,5,0,0" VerticalAlignment="Top" Width="63" />
+            <CustomControl:ValidateTextBox Text="{Binding Path=sUiController.Magnification.CalibrationSaveName, Mode=Default, UpdateSourceTrigger=PropertyChanged}" MaxLength="{Binding Path=sUiController.Magnification.CalibrationSaveNameMaxLength, Mode=Default}" Height="24" HorizontalAlignment="Left" Margin="105,8,0,0" VerticalAlignment="Top" Width="280" Style="{StaticResource TextBoxStyle}" InputType="String" />
+        </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Height="80" Width="400" Margin="0,120,0,0" Visibility="{Binding Path=sUiController.Magnification.CalibrationProgressVisibility, Mode=Default}">
+            <ProgressBar VerticalAlignment="Top" Margin="0,0,0,0" Height="25" Minimum="0" Maximum="100" Value="{Binding Path=sUiController.Magnification.CalibrationProgress}"/>
+            <Label Content="{Binding Path=sUiController.Magnification.RepetitionCurrentCount, Mode=Default}" Foreground="White" HorizontalContentAlignment="Center" Width="26" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,26,0,0" Visibility="{Binding Path=sUiController.Magnification.RepetitionCountVisibility, Mode=Default}"/>
+            <Label Content="/" Foreground="White" HorizontalContentAlignment="Center" Width="19" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="33,26,0,0" Visibility="{Binding Path=sUiController.Magnification.RepetitionCountVisibility, Mode=Default}" x:Name="lblRepetitionCountSeparate"/>
+            <Label Content="{Binding Path=sUiController.Magnification.RepetitionMaxCount, Mode=Default}" Foreground="White" HorizontalContentAlignment="Center" Width="26" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,26,0,0" Visibility="{Binding Path=sUiController.Magnification.RepetitionCountVisibility, Mode=Default}"/>
+            <Button x:Name="btnStop" VerticalAlignment="Top" Content="Stop" Margin="200,40,0,0" Width="100" Height="30" Command="{Binding Path=sUiController.Magnification.StopCalibrationHandler}" Style="{StaticResource AcquisitionButtonStyle}"/>
+        </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,180,0,0" Height="44" Width="250" Visibility="{Binding Path=sUiController.Magnification.CalibrationNextCancelVisibility, Mode=Default}" IsEnabled="{Binding Path=sUiController.Magnification.CalibrationButtonEnable}">
+            <Button x:Name="btnNext" Content="Next" Height="30" Width="100" HorizontalAlignment="Left" Margin="20,0,0,0" Command="{Binding Path=sUiController.Magnification.ShowNextWindowHandler}" Style="{StaticResource AcquisitionButtonStyle}" />
+            <Button x:Name="btnCancel" Content="Cancel" Height="30" Width="100" HorizontalAlignment="Right" Margin="0,0,20,0" Command="{Binding Path=sUiController.Magnification.CloseCalibrationDialogHandler}" Style="{StaticResource AcquisitionButtonStyle}" />
+        </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,180,0,0" Height="44" Width="250" Visibility="{Binding Path=sUiController.Magnification.CalibrationStartCancelVisibility, Mode=Default}" IsEnabled="{Binding Path=sUiController.Magnification.CalibrationButtonEnable}">
+            <Button x:Name="btnStart" Content="Start" Height="30" Width="100" HorizontalAlignment="Left" Margin="20,0,0,0" Command="{Binding Path=sUiController.Magnification.ShowNextWindowHandler}" Style="{StaticResource AcquisitionButtonStyle}" />
+            <Button x:Name="btnCancel1" Content="Cancel" Height="30" Width="100" HorizontalAlignment="Right" Margin="0,0,20,0" Command="{Binding Path=sUiController.Magnification.ExitCalibrationDialogHandler}" Style="{StaticResource AcquisitionButtonStyle}" />
+        </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,180,0,0" Height="44" Width="250" Visibility="{Binding Path=sUiController.Magnification.CalibrationRetryCancelVisibility, Mode=Default}" IsEnabled="{Binding Path=sUiController.Magnification.CalibrationButtonEnable}">
+            <Button x:Name="btnRetry" Content="Start" Height="30" Width="100" HorizontalAlignment="Left" Margin="20,0,0,0" Command="{Binding Path=sUiController.Magnification.RetryCalibrationMaxZoomAFHandler}" Style="{StaticResource AcquisitionButtonStyle}" />
+            <Button x:Name="btnCancel2" Content="Cancel" Height="30" Width="100" HorizontalAlignment="Right" Margin="0,0,20,0" Command="{Binding Path=sUiController.Magnification.ExitCalibrationDialogHandler}" Style="{StaticResource AcquisitionButtonStyle}" />
+        </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,180,0,0" Height="44" Width="250" Visibility="{Binding Path=sUiController.Magnification.CalibrationMeasurementStartCancelVisibility, Mode=Default}" IsEnabled="{Binding Path=sUiController.Magnification.CalibrationButtonEnable}">
+            <Button x:Name="btnMeasurementStart" Content="Start" Height="30" Width="100" HorizontalAlignment="Left" Margin="20,0,0,0" Command="{Binding Path=sUiController.Magnification.ShowNextWindowHandler}" Style="{StaticResource AcquisitionButtonStyle}" />
+            <Button x:Name="btnCancel3" Content="Cancel" Height="30" Width="100" HorizontalAlignment="Right" Margin="0,0,20,0" Command="{Binding Path=sUiController.Magnification.ExitCalibrationDialogHandler}" Style="{StaticResource AcquisitionButtonStyle}" />
+        </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,180,0,0" Height="44" Width="250" Visibility="{Binding Path=sUiController.Magnification.CalibrationContinueStopVisibility, Mode=Default}" IsEnabled="{Binding Path=sUiController.Magnification.CalibrationButtonEnable}">
+            <Button x:Name="btnContinue" Content="Continue" Height="30" Width="100" HorizontalAlignment="Left" Margin="20,0,0,0" Command="{Binding Path=sUiController.Magnification.ShowNextWindowHandler}" Style="{StaticResource AcquisitionButtonStyle}" />
+            <Button x:Name="btnStop1" Content="Stop" Height="30" Width="100" HorizontalAlignment="Right" Margin="0,0,20,0" Command="{Binding Path=sUiController.Magnification.StopCalibrationHandler}" Style="{StaticResource AcquisitionButtonStyle}" />
+        </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,180,0,0" Height="44" Width="250" Visibility="{Binding Path=sUiController.Magnification.CalibrationSaveEndVisibility, Mode=Default}" IsEnabled="{Binding Path=sUiController.Magnification.CalibrationButtonEnable}">
+            <Button x:Name="btnSave" Content="Save" Height="30" Width="100" HorizontalAlignment="Left" Margin="20,0,0,0" Command="{Binding Path=sUiController.Magnification.SaveCalibrationHandler}" IsEnabled="{Binding Path=sUiController.Magnification.CalibrationSaveButtonEnable, Mode=Default}" Style="{StaticResource AcquisitionButtonStyle}" />
+            <Button x:Name="btnEnd" Content="End" Height="30" Width="100" HorizontalAlignment="Right" Margin="0,0,20,0" Command="{Binding Path=sUiController.Magnification.CloseCalibrationConfirmHandler}" Style="{StaticResource AcquisitionButtonStyle}" />
+        </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,180,0,0" Height="44" Width="250" Visibility="{Binding Path=sUiController.Magnification.CalibrationEndVisibility, Mode=Default}" IsEnabled="{Binding Path=sUiController.Magnification.CalibrationButtonEnable}">
+            <Button x:Name="btnReferLog" Content="Log" Height="30" Width="100" HorizontalAlignment="Left" Margin="20,0,0,0" Command="{Binding Path=sUiController.Magnification.ReferCalibrationLogHandler}" IsEnabled="True" Style="{StaticResource AcquisitionButtonStyle}" Visibility="{Binding Path=sUiController.Magnification.ReferLogVisibility}"/>
+            <Button x:Name="btnEnd1" Content="End" Height="30" Width="100" HorizontalAlignment="Right" Margin="0,0,20,0" Command="{Binding Path=sUiController.Magnification.CloseCalibrationDialogHandler}" Style="{StaticResource AcquisitionButtonStyle}" />
+        </Grid>
+    </Grid>
+</Page>

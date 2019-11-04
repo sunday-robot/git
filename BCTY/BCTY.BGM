@@ -1,0 +1,369 @@
+; 1 title
+; 2 openning
+; 3 game over
+; 4 high score
+;
+;=======================================
+;=        Super Depth のテーマ         =
+;=        --------------------         =
+;=        1991 (C) O.Maeda             =
+;=        ALL RIGHTS RESERVED.         =
+;=======================================
+
+T132
+O2L8,		O4L4,		O4L4
+
+GRDRGRDR,	R1,		GD8R16D16GB>
+CRGRCRGR,	R1,		C<G>N1CC16<B16A16G16N0
+ARDRADEF+,	R1,		F+D8R16D16F+8A8>C
+CRCRDREF+,	R1,		<B8G8E8G8DR
+GRDRGRDR,	R1,		GD8R16D16GB>
+CRGRCRGR,	R1,		C<G>N1CC16<B16A16G16N0
+ARDRERF+R,	R1,		F+D8R16D16E8R16E16F+8R16F+16
+GRDRGRGR,	R2R8D8D-8C8<,	GD8E16F+16G8R.
+
+GRDRGRDR,	B2GA8B8>,	GD8R16D16GB>
+CRGRCRGR,	C8E8G8E8C2,	C<G>N1CC16<B16A16G16N0
+ARDRADEF+,	DF+8E8D8C8<B8A8,F+D8R16D16F+8A8>C
+CRCRDREF+,	G.>E8D2<,	<B8G8E8G8DR,
+GRDRGRDR,	B2GA8B8>,	GD8R16D16GB>,
+CRGRCRGR,	C8E8G8E8C2,	C<G>N1CC16<B16A16G16N0
+ARDRERF+R,	DF+8E8D8C8<B8A8,AD8R16D16E8R16E16F+8R16F+16
+GRDRGRGR,	G>D8<B8GR,	GD8E16F+16GR8B32R32B32R32
+
+<R4B4>C+4D+4,	RD+EF+,		B2B8A8G8F+8
+ER<BR>ER<BR,	G.A8GR,		G8F+8G8A8A+8B8R8A32R32A32R32
+R4A4B4>C+4,	RC+DE,		A2A8G8F+8E8
+DR<AR>DRDR,	F+.G8F+R,	D8C+8<B8>C+8DR8D32R32D32R32
+R4<A4>DRDR,	RGF+8R8F+8R8,	E-2DR8D32R32D32R32
+R4<A4>DRDR,	RGF+8R8F+8R8,	E-2DR8D32R32D32R32
+A4G4F+4E4,	>C<BAG,		E-8D16E-16E8E-16E16F8E16F16F+8F16F+16
+D4C4<AR4.>,	F+ED8R.,	G8F+16G16A-8G16A-16A8B8>C8D8
+
+*
+;=======================================
+;=        Bio_100% TITLEだだだ         =
+;=        --------------------         =
+;=        1991 (C) T.Ichikawa          =
+;=        ALL RIGHTS RESERVED.         =
+;=======================================
+
+T140O6L16N1R2C<BAGBAGFGFEDCDEG>C1     ,O6L16N1R2RRC<BAGBAGFGFEDCDE1>     ,O6L16N1R2RRRC<BAGBAGFGFEDCG1>
+
+*
+;=======================================
+;=          ゲームオーバー             =
+;=        --------------------         =
+;=        1991 (C) O.Maeda             =
+;=        ALL RIGHTS RESERVED.         =
+;=======================================
+
+T144
+
+O4L8,			O3L8
+
+N0>C<B16A16BG+AEF+G+,	R1
+A2R2,			A>C+T132ET110C+<T89A2
+R2,			T144R2
+
+*
+;=======================================
+;=              ういなは               =
+;=        --------------------         =
+;=        1991 (C) T.Ichikawa          =
+;=        ALL RIGHTS RESERVED.         =
+;=======================================
+
+T130N0O3L16RRRRRRRRRRRRRRRRRRRRRRRRR8.RR.R1  ,N0L16O5BRBBBRARARARBRBBBRARARGRA8.RF+.>N1D1<     ,N0L16O5GRGGGRDRDRDRGRGGGRDRDRCRD8.R<A.>N1F+1
+L8DRDRDRDRDRERFRF+R     ,L8>D1D4C4<B4A4     ,L8F+1F+4E4D4C4
+GRDRGRDRGRDRGRDR     ,N0GGGGGGAB>CCCCCC<BA     ,D1C1
+DR<AR>DR<AR>DR<AR>DR<AR>     ,N1F+1F+1     ,L16DRDEDRDEDRDEDRDEDRDEDRDEDRDEDRDE
+DR<AR>DR<AR>DR<AR>DR<AR>     ,N0F+F+F+F+F+F+F+GAAAAAAGF+     ,D1C2D4<A4>
+GRDRGRDRGRDRGRDR     ,N1G1G1     ,<GRGAGRGAGRGAGRGAGRGAGRGAGRGAGRGA>
+GRDRGRDRGRDRGRDR     ,N0GGGGGGAB>CCCCCC<BA     ,D1C1
+DR<AR>DR<AR>DR<AR>DR<AR>     ,N1F+1F+1     ,L16DRDEDRDEDRDEDRDEDRDEDRDEDRDEDRDE
+DR<AR>DR<AR>DR<AR>DR<AR>     ,N0F+F+F+F+F+F+F+GAAAAAAGF+     ,D1C2D4<A4>
+GRDRGRDRGRDRGRDR     ,N1G1N0G2N1G4F+4     ,<L16GRGAGRGAGRGAGRGAGRGAGRGAL8B4A4>
+CR<GR>CR<GR>DR<AR>DRF+R     ,N0E4E4E4F+4G4G4F+4E4     ,N0<G4G4G4A4B4B4A4B4>
+GRDRGRBRER<BR>ERG+R     ,D4D4G4B4E1     ,<G4G4.G4AB1>
+ARERARGRF+RDRERF+R     ,A4A4A4G4F+4D4E4B4     ,C4C4C4<B4A4A4G4F+4>
+GRDRGRDRGRDRGRDR     ,N1G1G1     ,N1<G1G1>
+GRDRGRDRGRDRGRDR     ,N0GGGGGGAB>CCCCCC<BA     ,D1C1
+DR<AR>DR<AR>DR<AR>DR<AR>     ,N1F+1F+1     ,L16DRDEDRDEDRDEDRDEDRDEDRDEDRDEDRDE
+DR<AR>DR<AR>DR<AR>DR<AR>     ,N0F+F+F+F+F+F+F+GAAAAAAGF+     ,D1C2D4<A4>
+GRDRGRDRGRDRGRDR     ,N1G1G1     ,<GRGAGRGAGRGAGRGAGRGAGRGAGRGAGRGA>
+GRDRGRDRGRDRGRDR     ,N0GGGGGGAB>CCCCCC<BA     ,D1C1
+DR<AR>DR<AR>DR<AR>DR<AR>     ,N1F+1F+1     ,L16DRDEDRDEDRDEDRDEDRDEDRDEDRDEDRDE
+DR<AR>DR<AR>DR<AR>DR<AR>     ,N0F+F+F+F+F+F+F+GAAAAAAGF+     ,D1C2D4<A4>
+GRDRGRDRGRDRGRDRR4     ,N1G1G1R4     ,<L16GRGAGRGAGRGAGRGAGRGAGRGAG2R4>
+;<END FLAG>--------------------------------------------------------------------
+*
+;=======================================
+;=        行進曲「凱旋の朝日」         =
+;=        --------------------         =
+;=        1991 (C) O.Maeda             =
+;=        ALL RIGHTS RESERVED.         =
+;=======================================
+
+T180
+
+O4L16N1,			O4L16N1,				O4L16N1
+FRFRFRFRDRFRB-RB-RB-RB-RFRB-R,	R2.FRFRFRFRDRFR,			R1.
+>DRDRDRDR<B-R>DRFRDRE-RFRDRE-R,	B-RB-RB-RB-RFRB-R>DR<B-R>CRDR<B-R>CR,	FRFRFRFRDRFRB-RFRB-RB-RFRB-R
+FRFRFRFRFRFRFRFRFRFRFRFR,	DRDRDRDRDRDRDRCRCRCRCRCR,		B-RB-RB-RB-RB-RB-RB-RARARARARAR
+F2.F4.R4.,			C2.C4.R4.,				O3F4.E-4.D4.C4.
+
+O2L8B-4RF4RB-4RF4R,		L8<<B-4RB-4RB-4RB-4R,			R1.
+B-4RF4RB-4RF4R,			B-4RB-4RB-4RB-4R,			R1.
+
+B-4RF4RB-4RF4R,			L16>B-RFRFRB-4>DRF4.E-4DR,		R1.
+>C4R<F4R>C4R<F4R,		CRDRE-RD8R8<B-R>C4.<F4R8,		R1.
+>C4R<F4R>C4R<F4R,		>CR<FRFR>C4DRE-RFRGRF4E-R,		R1.
+B-4RF4RB-4RF4R,			DRE-RFRB-RFRDR<B-4.B-8R4,		R1.
+
+B-4RF4RA-4RF4R,			L8>D4E-F2.<B->CD,			R1.
+E-4RB-4RE-4RB-4RL16,		E-4FG4.G4B-A4G,				R1.
+FRF+RGRG+RARB-RBR>CRC+RDRE-RER,	F4.F4E8E-4.D4.,				R1.
+L8FRRC4.<FRRFGA,		L8C<B-AGAGF4RFGA,			R1.
+
+B-4RF4RB-4RF4R,			L16B-RFRFRB-4>DRF4.E-4DR,		O4L8D4.D4C<B-4.F4.
+>C4R<F4R>C4R<F4R,		CRDRE-RD8R8<B-R>C4.<F4R8,		A4.>C4.E-2.
+>C4R<F4R>C4R<F4R,		>CR<FRFR>C4DRE-RFRGRF4E-R,		D4.<F+4.G4.A4R8
+B-4RF4RB-4RF4R,			DRE-RFRB-RFRDR<B-4.B-8R4,		B-4.>D4.<B-2.
+
+B-4RF4RA-4RF4R,			L8>D4E-F2.<B->CD,			D4.E-4.F4RF4R
+E-4RB-4RE-4RB-4RL16,		E-4FG4.G4B-A4G,				E-4.F4.G4R<G4R
+FRF+RGRG+RARB-RBR>CRC+RDRE-RER,	F4.F4E8E-4.D4.,				FRGRARB-R>CRDR
+L8FR2<FB-R4>CDE,		L8CR2<FB-FGAB-B,			FR2E-DR4R4.
+
+
+F4RC4RF4RC4R,			L16>CR8.FRC2.<FRAR>CR,			R1.
+F4RC4RF4RC4R,			F4.ER8.DRCR<L8FGAB-B,			R1.
+F4RC4RF4RC4R,			L16>CR8.FRC2.<FRAR>CR,			R1.
+F4RC4RF4RC4R,			F4.ER8.DRC4.R8CRCR,			R1.
+
+F4RC4RD4R<A4R,			F4.ER8.DRCRR4CR<AR>CR,			R1.
+B-4R>D4RC4RC4R,			D4.CR8.<ARFR8.GRAR8.B-R,		R1.
+F4.E4.D4.C4.,			>CR<BRB-RAR>DRCR<B-RARA-RGR>CR<AR,	R1.
+F4RC4RF4E-D4C,			FR8.AR>CR8.<ARF4.R4.,			R1.
+
+B-4RF4RB-4RF4R,			L16B-RFRFRB-4>DRF4.E-4DR,		O4L8D4.D4C<B-4.F4.
+>C4R<F4R>C4R<F4R,		CRDRE-RD8R8<B-R>C4.<F4R8,		A4.>C4.E-2.
+>C4R<F4R>C4R<F4R,		>CR<FRFR>C4DRE-RFRGRF4E-R,		D4.<F+4.G4.A4R8
+B-4RF4RB-4RF4R,			DRE-RFRB-RFRDR<B-4.B-8R4,		B-4.>D4.<B-2.
+
+B-4RF4RA-4RF4R,			L8>D4E-F2.<B->CD,			D4.E-4.F4RF4R
+E-4RB-4RE-4RB-4RL16,		E-4FG4.G4B-A4G,				E-4.F4.G4R<G4R
+FRF+RGRG+RARB-RBR>CRC+RDRE-RER,	F4.F4E8E-4.D4.,				FRGRARB-R>CRDR
+L8FR2<FB-R4B-R4,		L8CR2<FB-R4B-R4,			FR2E-DR4DR4
+
+*
+;=======================================
+;=        この腕の中で                 =
+;=        --------------------         =
+;=        1991 (C) T.Ichikawa          =
+;=        ALL RIGHTS RESERVED.         =
+;=======================================
+
+T140N0L8O2GG>G<GGG>G<GFF>F<FFF>F<F     ,L8N1O5B-AD2.D1     ,N1O4L8R2B-AD1F4
+E-E->E-<E-E-E->E-<E-FF>F<FFF>F<F     ,D4.C4.<G4A4B-4>CE-4.     ,F4.E-4.<B-4>C4D4E-F4G
+GG>G<GGG>G<GFF>F<FFF>F<F     ,B-AD2.D1     ,G2B-AD1FG
+E-E->E-<E-E-E->E-<E-FF>F<FFF>F<F     ,D4.C4.<G4A4B-4>CE-4.     ,F4.E-4.<B-4>C4D4E-F4.
+E-E->E-<E-E-E->E-<E-E-E->E-<E-E-E->E-<E-     ,D1E-4.G4.B-4     ,G1B-4.>D4.E-4<
+FF>F<FFF>F<FFF>F<FFF>F<F     ,L32B-B>L8C.C2.<B-4.A4.F4     ,>L32E-EL8F.F2.E-4.D4.<A4
+E-E->E-<E-E-E->E-<E-E-E->E-<E-E-E->E-<E-     ,E-1G4.B-4.>D4<     ,G1B-4.>D4.E-4<
+FF>F<FFF>F<FDD>D<DDD>D<D     ,L32B-B>L8C.C2.D1<     ,>L32E-EL8F.F2.E-4.DD2<
+GG>G<GGG>G<GFF>F<FFF>F<F     ,B-AD2.D1     ,R2B-AD1F4
+E-E->E-<E-E-E->E-<E-FF>F<FFF>F<F     ,D4.C4.<G4A4B-4>CE-4.     ,F4.E-4.<B-4>C4D4E-F4G
+GG>G<GGG>G<GFF>F<FFF>F<F     ,B-AD2.D1     ,G2B-AD1FG
+E-E->E-<E-E-E->E-<E-FF>F<FFF>F<F     ,D4.C4.<G4A4B-4>C4F4     ,F4.E-4.<B-4>C4D4E-L32FF+GAA+B>CC+L8D<
+GG>G<GGG>G<GGG>G<GGG>G<G     ,G1G2DEFG     ,>C2.C<B16A16B1
+FF>F<FFF>F<FFF>F<FFF>F<F     ,G+1B-2G2     ,C1C2E-2
+D-D->D-<D-D-D->D-<D-D-D->D-<D-D-D->D-<D-     ,G+1B-2>C<L32BB-AA-L8G4     ,F1E-2C2
+E-E->E-<E-E-E->E-<E-E-E->E-<E-E-E->E-<E-     ,G+1G2E-2     ,<B-1>C2D-2
+CC>C<CCC>C<CCC>C<CCC>C<C     ,F1E4GL32A-AB-BL8>C2<     ,C1C2.E4
+FF>F<FFF>F<FFF>F<FFF>F<F     ,G+1B-2G2     ,C1C2E-2
+D-D->D-<D-D-D->D-<D-D-D->D-<D-D-D->D-<D-     ,G+1B-2>C<L32BB-AA-L8G4     ,F1E-2C2
+E-E->E-<E-E-E->E-<E-E-E->E-<E-E-E->E-<E-     ,G+1G2E-2     ,<B-1>C2D-2
+FF>F<FFF>F<FFF>F<FFFD>D<     ,F1F2.F+4     ,<B-1A2.B-4>
+;<END FLAG>--------------------------------------------------------------------
+
+*
+;=======================================
+;=          かうんと　だうん           =
+;=        --------------------         =
+;=        1991 (C) T.Ichikawa          =
+;=        ALL RIGHTS RESERVED.         =
+;=======================================
+
+T147L8N1O2G>G<G>G<G>G<G>G<G>G<G>G<G>G<G>G<     ,L8N1O5B-.A.>C4<B-AFG4L32GG+AA+B>CC+DD2L8<     ,L8N1O5G.F.A4GFCD4L32DD+EFF+GG+AB-2L8
+E->E-<E->E-<E->E-<E->E-<E->E-<E->E-<E->E-<E->E-<     ,>E-.D.F4E-D<B->C4L32C<BB-AGG-FEE-2L8     ,B-.A.>C4<B-AFG4L32GG-FEE-DD-C<B-2L8>
+C>C<C>C<C>C<C>C<C>C<C>C<C>C<C>C<     ,B-.A.FC2B-.A.>C4<B-A>C<     ,G.F.C<G2>G.F.A4GFA
+D>D<D>D<D>D<D>D<D>D<E->E-<F>F<F+>F+<     ,B-1A1     ,G1F+4E-4D4C4
+G>G<G>G<G>G<G>G<G>G<G>G<G>G<G>G<     ,B-.A.>C4<B-AFG4L32GG+AA+B>CC+DD2L8<     ,G.F.A4GFCD4L32DD+EFF+GG+AB-2L8
+E->E-<E->E-<E->E-<E->E-<E->E-<E->E-<E->E-<E->E-<     ,>E-.D.F4E-D<B->C4L32C<BB-AGG-FEE-2L8     ,B-.A.>C4<B-AFG4L32GG-FEE-DD-C<B-2L8>
+C>C<C>C<C>C<C>C<C>C<C>C<C>C<C>C<     ,B-.A.FC2B-.A.>C4DE-C<     ,G.F.C<G2>G.F.A4B->C<A
+D>D<D>D<D>D<D>D<D>D<E->E-<F>F<F+>F+<     ,>D1D1<     ,A1F+4E-4D4C4
+G>G<G>G<G>G<G>G<G>G<G>G<G>G<G>G<     ,D.G.B-B-2A.B-.>C.<B-.AF     ,R1R1
+F>F<F>F<F>F<F>F<F>F<F>F<F>F<F>F<     ,G4.DD2R2.D4     ,R1R1
+C>C<C>C<C>C<C>C<C>C<D>D<E->E-<C>C<     ,C.E-.GG2F+.G.A.B-.>C<A     ,R1R1
+D>D<D>D<D>D<D>D>D<D>C<CB-<B->A<A     ,L32AAAA+B>CC+DD2.D1<L8     ,R1F+4E-4D4C4
+G>G<G>G<G>G<G>G<G>G<G>G<G>G<G>G<     ,D.G.B-B-2A.B-.>C.<B-.AF     ,<G1G1>
+F>F<F>F<F>F<F>F<F>F<F>F<F>F<F>F<     ,G4.DD2R2.D4     ,<A1A1>
+C>C<C>C<C>C<C>C<D>D<D>D<D>D<D>D<     ,C.E-.GG2F+.G.A.B-.>C<F+     ,<G1A2F+4D4>
+G>G<G>G<G>G<G>G<G>G<G>G<G>G<G>G<     ,G1G1     ,<D2.DC<B1>>
+G>G<G>G<G>G<G>G<G>G<G>G<G>G<G>G<     ,L8O5B-.A.>C4<B-AFG4L32GG+AA+B>CC+DD2L8<     ,L8O5G.F.A4GFCD4L32DD+EFF+GG+AB-2L8
+E->E-<E->E-<E->E-<E->E-<E->E-<E->E-<E->E-<E->E-<     ,>E-.D.F4E-D<B->C4L32C<BB-AGG-FEE-2L8     ,B-.A.>C4<B-AFG4L32GG-FEE-DD-C<B-2L8>
+C>C<C>C<C>C<C>C<C>C<C>C<C>C<C>C<     ,B-.A.FC2B-.A.>C4<B-A>C<     ,G.F.C<G2>G.F.A4GFA
+D>D<D>D<D>D<D>D<D>D<E->E-<F>F<F+>F+<     ,B-1A1     ,G1F+4E-4D4C4
+G>G<G>G<G>G<G>G<G>G<G>G<G>G<G>G<     ,B-.A.>C4<B-AFG4L32GG+AA+B>CC+DD2L8<     ,G.F.A4GFCD4L32DD+EFF+GG+AB-2L8
+E->E-<E->E-<E->E-<E->E-<E->E-<E->E-<E->E-<E->E-<     ,>E-.D.F4E-D<B->C4L32C<BB-AGG-FEE-2L8     ,B-.A.>C4<B-AFG4L32GG-FEE-DD-C<B-2L8>
+C>C<C>C<C>C<C>C<C>C<C>C<C>C<C>C<     ,B-.A.FC2B-.A.>C4DE-C<     ,G.F.C<G2>G.F.A4B->C<A
+D>D<D>D<D>D<D>D<D>D<E->E-<F>F<F+>F+<     ,>D1D2.F+4<     ,A1F+4E-4D4C4
+G>G<G>G<G>G<G>G<G>G<G>G<G>G<G>G<     ,L16N0>GGDAADB-B-D>CC<DB-B-AAB-B-DAADGGDAADFFDF<     ,R1R1
+E->E-<E->E-<E->E-<E->E-<E->E-<E->E-<E->E-<E->E-<     ,>GGDAADB-B-D>CC<DB-B-AA>DD<D>CC<DB-B-DAADGGDF<     ,R1R1
+C>C<C>C<C>C<C>C<C>C<C>C<C>C<C>C<     ,>GGDAADB-B-D>CC<DB-B-AA>GGDAADB-B-D>CC<DB-B-AA<<     ,R1R1
+D>D<D>D<D>D<D>D<D>D<D>D<D>D<D>D<     ,>GGDAADB-B-D>CC<DB-B-AAB-B-DAADGGDF+F+DAADD<     ,R1R2.<D4>
+G>G<G>G<G>G<G>G<G>G<G>G<G>G<G>G<     ,L16N0>GGDAADB-B-D>CC<DB-B-AAB-B-DAADGGDAADFFDF<     ,<G1G2B-4>C4
+E->E-<E->E-<E->E-<E->E-<E->E-<E->E-<E->E-<E->E-<     ,>GGDAADB-B-D>CC<DB-B-AA>DD<D>CC<DB-B-DAADGGDF<     ,D1D2C4<B-4>
+C>C<C>C<C>C<C>C<C>C<C>C<C>C<C>C<     ,>GGDAADB-B-D>CC<DB-B-AA>GGDAADB-B-D>CC<DB-B-AA<<     ,<G1G2B-4>D4
+D>D<D>D<D>D<D>D<D>D<D>D<D>D<D>D<     ,>GGDAADB-B-D>CC<DB-B-AAB-B-DAADGGDF+F+DAADD<     ,C1D1
+;<END FLAG>--------------------------------------------------------------------
+*
+;=======================================
+;=        爆笑超深どんとこい           =
+;=        --------------------         =
+;=        1991 (C) T.Ichikawa          =
+;=        ALL RIGHTS RESERVED.         =
+;=======================================
+T150O2L16N0     ,O2L16N0     ,O3L16N0
+ERERERERERERERERERERERERERERERER     ,R2GRGRGRGRGRGRGRGRBRBRBRBR     ,R1BRBRBRBR>ERERERER<
+ERERERERERERERERERERERERERERERERERERERERERERERER     ,BRBRBRBR>ERERERERGRGRGRGRBRBRBRBRBRBRBRBRBRBRBRBR<     ,>GRGRGRGRBRBRBRBR>ERERERERERERERERERERERERERERERER<<
+L8O2E>E<E>E<E>E<EF4>F<F>F<F>F<F>F<     ,L8N1O5E2.EFF2G.F.D     ,L8N1O4B2.B>CC2D.C.<A
+E>E<E>E<E>E<EF4>F<F>F<F>F<F>F<     ,E2.EDD1     ,B2.BAA2>>C<B>C16D.<<
+E>E<E>E<E>E<EF4>F<F>F<F>F<F>F<     ,>E2.EFF2G.F.D<     ,B2.B>CC2D.C.<A
+E>E<E>E<E>E<EF4>F<F>F<F>F<F>F<     ,>E2.EDD1<     ,B2.BAA1
+E>E<E>E<E>E<EF4>F<F>F<F>F<F>F<     ,L16GAGF+L8E2REF.A.>CC<B>CD<     ,R1R1
+E>E<E>E<E>E<EF4>F<F>F<F>F<F>F<     ,>E1E2D4.<A     ,R1R1
+E>E<E>E<E>E<EF4>F<F>F<F>F<F>F<     ,B2.B>CC1<     ,O4L16GAGF+L8E2REF.A.>CC<B>CD<
+E>E<E>E<E>E<EF4>F<F>F<F>F<F>F<     ,B1B2A2     ,>E1E2D2<
+E>E<E>E<G>G<G>G<F+>F+<F+>F+<F>F<F>F<     ,E2G2F+4.F4.G4     ,R1R1
+E>E<E>E<G>G<G>G<F+>F+<F+>F+<F>F<F>F<     ,E2G2F+4.A4.D4     ,R1R1
+E>E<E>E<G>G<G>G<F+>F+<F+>F+<F>F<F>F<     ,E2G2F+4.F4.G4     ,B2>E2D4.C4.D4<
+E>E<E>E<G>G<G>G<A>A<A>A<<B>B<B>B     ,E2G2A4.B4RB4     ,B2>D2E4.E-4R<B4
+C>C<C>C<C>C<C>C<C>C<C>C<C>C<C>C<     ,>C.<B.E2.>EREREDC<     ,>C.<B.E2.>E2EDC<
+G>G<G>G<G>G<G>G<G>G<G>G<G>G<G>G<     ,B.A.GG1GRG4     ,B.A.GG1GRG4
+F>F<F>F<F>F<F>F<F>F<F>F<F>F<F>F<     ,A.G.F2.>CRCRC<BA     ,A.G.F2.>C2C<BA
+B>B<B>B<B>B<B>B<B>B<B>B<B>B<B>B<     ,B1B2BRB4     ,B1B2BRB4
+C>C<C>C<C>C<C>C<C>C<C>C<C>C<C>C<     ,>C.<B.E2.>EREREDC<     ,>C.<B.E2.>E2EDC<
+G>G<G>G<G>G<G>G<G>G<G>G<G>G<G>G<     ,B.A.GG1GRG4     ,B.A.GG1GRG4
+F+>F+<F+>F+<F+>F+<F+>F+<F+>F+<F+>F+<F+>F+<F+>F+<     ,A.G.F+2.>CRCRCDE<     ,A.G.F+2.>C2CDE<
+B>B<B>B<B>B<B>B<B>B<B>B<B>B<B>B<     ,>E-2E-<B>E-F+F+1<     ,>E-2E-<B>E-F+F+1<
+L8O2E>E<E>E<E>E<EF4>F<F>F<F>F<F>F<     ,L8N1O5E2.EFF2G.F.D     ,L8N1O4B2.B>CC2D.C.<A
+E>E<E>E<E>E<EF4>F<F>F<F>F<F>F<     ,E2.EDD1     ,B2.BAA2>>C<B>C16D.<<
+E>E<E>E<E>E<EF4>F<F>F<F>F<F>F<     ,>E2.EFF2G.F.D<     ,B2.B>CC2D.C.<A
+E>E<E>E<E>E<EF4>F<F>F<F>F<F>F<     ,>E2.EDD1<     ,B2.BAA1
+;<END FLAG>--------------------------------------------------------------------
+
+*
+;=======================================
+;=            海面クリア　             =
+;=        --------------------         =
+;=        1991 (C) O.Maeda             =
+;=        ALL RIGHTS RESERVED.         =
+;=======================================
+
+T154
+
+O4L8N1,		O4L32N1,		O3L8N1
+
+ECDEFDEF,	R1,			RGF+GRFEF
+R4R1,		CDEFGAB>CC2C4R4,	C1R4
+
+*
+;=======================================
+;=            空面クリア　             =
+;=        --------------------         =
+;=        1991 (C) O.Maeda             =
+;=        ALL RIGHTS RESERVED.         =
+;=======================================
+T146
+
+O3L8,			O3L8,		O5L32
+
+CFECFE,			FGAB>CD,	C<B>C<BAGFEDEFG>>C<B>C<BAGFEDEFG
+CFEL16FGAB>CD,		EFGA16B16>CD,	>EFEDC<BAGFEFGAE>CDEFGAB>CDE
+L32EFGAB>CDEFGAB<C4R8,	L16EFGAB-BC4R8,	FEDC<BAGFEDC<B>C4R8
+*
+;=======================================
+;=           ボス面クリア１            =
+;=        --------------------         =
+;=        1991 (C) O.Maeda             =
+;=        ALL RIGHTS RESERVED.         =
+;=======================================
+T180
+
+O2L8N1,		O4L8N1,				O4L16
+
+R4.<B-4.,	R2Fd,				B-RB-RB-RN1B-4.
+B-2.,		<F2.,				B-RFRB-RFRB-R>DR
+B->CDCDE-,	>>D4D8.R16D16R16D16R16,		F4F8.R16F16R16F16R16
+DE-FE-FG,	E-16R8E-16R8E-16R8E-16R8,	F16R8F16R8F16R8F16R8
+F1R1,		C1R1,				F1R1
+*
+;=======================================
+;=           ボス面クリア２            =
+;=        --------------------         =
+;=        1991 (C) O.Maeda             =
+;=        ALL RIGHTS RESERVED.         =
+;=======================================
+T144
+
+O4L32N0,				O4L32N0,			O4L32N0
+
+FRFRFRFRFR16.ARARARARAR16.>CRCRCRCR,	R4.FRFRFRFRFR16.ARARARAR,	R2.FRFRFRFR
+CR16.FRFRFRFRFR16.R16FRFRFRF16R16G16R16,AR16.>CRCRCRCRCR16.L8C<B-AG,	FR16.ARARARARAR16.L8<RFEE-
+N1A1.R4,				N1F+1.R4,			N1D1.R4
+*
+;=======================================
+;=           ボス面クリア３            =
+;=        --------------------         =
+;=        1991 (C) T.Ichikawa          =
+;=        ALL RIGHTS RESERVED.         =
+;=======================================
+
+T135
+N0L16O5BRBBBRARARARBRBBBRARARGRA8.RF+.>N1D1<,N0L16O5GRGGGRDRDRDRGRGGGRDRDRCRD8.R<A.>N1F+1
+L8>D4R4R4R4R4,L8F+4R4R4R4R4
+*
+;=======================================
+;=           地球　そして～            =
+;=        --------------------         =
+;=        1991 (C) T.Ichikawa          =
+;=        ALL RIGHTS RESERVED.         =
+;=======================================
+
+T110O6L8N0FCFG4CFG4CFG4CFGAB-B-AAGGFFGGFFEEC     ,N1O3L8R1R1R1R1     ,N1O4L8R1R1R1R1
+FCFG4CFG4CFG4CFGAB-B-AAGGFFGGFFEEC     ,R1R1R1R1     ,F1E-1D1C1
+FCFG4CFG4CFG4CFGAB-B-AAGGFFGGFFEEC     ,F1E-1D1C1     ,F1E-1D1C1
+FCFG4CFG4CFG4CFGAB-B-AAGGFAB-B-AAGGF     ,N0F4.FF4.FE-4.E-E-4.E-D4.DD4.DC+4.C+C+4.C+     ,N0F4.FF4.FE-4.E-E-4.E-D4.DD4.DC+4.C+C+4.C+
+N1G1G4.N0CECEG>N1C1C1<     ,C4.CC4.CC4.CC4.CN1C1C1     ,C4.CC4.CC4.CC4.CN1C1C1
+T120L8N1O5A2ACFGA4B->C4<B-4N0AN1A2N0AN1AB-A>C4<B-N0F2N1F     ,L2O3N0FFEEE-E-DD     ,R1R1R1R1
+>C4<B-4A4G4B-4AF4N0C4N1CD2.EN0FN1F4ED4C4.     ,D-D-CC<BB>CC     ,R1R1R1R1
+N1A2ACFGA4B->C4FEFF2N0FN1FGAB-4A>CN0C2N1<<     ,L2O3N0FFEEE-E-DD     ,R1R1R1R1
+>>C4<B-4A4G4B-4AF4N0C4N1CD2.EN0FN1F4E4D4C+4<     ,D-D-CC<BB>CC+     ,R1R1R1R1
+>DEFRERCRDEFRERCRDEFRERGRG4F4E4C4<     ,L4DRRDCRRC<B-RRB->CRRC     ,R1R1R1R1
+>DEFRERCRDEFRERCRDEFRERGR>C4<B-4A4G4<     ,N0D2.DC2.C<B-2.B->C2C+2     ,O5L8N1FGARGRERFGARGRERFGARGR>CRE4D4C+4E4<
+>A1A1<     ,N1D1<D1>     ,>F+1F+1<
+;<END FLAG>--------------------------------------------------------------------
+
+*
+;=======================================
+;=          ボス出現アラーム           =
+;=        --------------------         =
+;=======================================
+t180
+
+o1,o2
+c8c8.r16.,c8c8.r16.
+*

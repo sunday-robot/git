@@ -1,0 +1,29 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:utility="clr-namespace:Olympus.LI.Triumph.Application.View.Utility"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="d"
+	x:Class="Olympus.LI.Triumph.Application.View.UiIlluminationDetailSettingPage"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight"
+	Width="370" Height="290" HorizontalAlignment="Left" VerticalAlignment="Top">
+    
+    <Page.Resources>
+        <utility:EnumBooleanConverter x:Key="cnvEnumBoolean"/>
+        <utility:EnumInt32Converter x:Key="cnvEnumInt32"/>
+    </Page.Resources>
+
+    <Grid Name="grdIlluminationDetailSettingPage" IsEnabled="{Binding Path=sUiController.Brightness.BrightnessDetailSettingWindowEnable, Mode=Default}" Stylus.IsPressAndHoldEnabled="False">
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="15"/>
+        </Grid.Effect>
+        <Rectangle Stroke="#FFB4B4B4" StrokeMiterLimit="2.75" RadiusX="4" RadiusY="4" Fill="{DynamicResource AcquisitionNormalBackgroundBrush}" Name="rctIlluminationDetailSettingPage" />
+        <Label VerticalAlignment="Top" Style="{DynamicResource TitleLabelStyle}" FontSize="21.333" x:Name="lblIlluminationDetailSettingPage" />
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,35,0,10">
+            <Frame Name="frmIlluminationDetailSettingPage" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" Width="345" Margin="1,0,0,0" />
+        </ScrollViewer>
+        <Grid Width="370" Height="290" Panel.ZIndex="100" Background="#000000" Opacity="0.5" Visibility="{Binding Path=sUiController.Brightness.BrightnessDetailSettingWindowShield, Mode=Default}"/>
+    </Grid>
+</Page>

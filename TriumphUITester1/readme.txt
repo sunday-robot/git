@@ -1,0 +1,15 @@
+TriumphのUIテストの自動化検証のための試作品のSolutionです。
+以下のProjectから成ります。
+・DsxApplication
+	Triumphの各コントロールを取得するクラス群です。
+・TestApplication
+	AutomationElementを取得するためのユーティリティクラス(FindUtil)と、
+	ボタンやチェックボックスなど各種コントロールに対応するクラス(AutomationElementのラッパークラス)群です。
+	(プロジェクト名がおかしいのは、当初はDsxApplicationのベースクラスTestApplicationを作成していたためです。
+	SolutionやProjectの構成見直しが必要と考えています。)
+・TestProgram
+	DsxApplicationを利用してTriumphのテストを行うプログラムのプロジェクトです。
+・IEController
+	(InternetExplorerをテスト対象として作成してみたもので、TriumphのUIテスト用のものではありません。)
+・IEControllerTest
+	(InternetExplorerをテスト対象として作成してみたもので、TriumphのUIテスト用のものではありません。)

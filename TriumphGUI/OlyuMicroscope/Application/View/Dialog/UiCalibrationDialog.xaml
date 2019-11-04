@@ -1,0 +1,246 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2006" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+    xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/composite-font"
+    xmlns:utility="clr-namespace:Olympus.LI.Triumph.Application.View.Utility"
+    x:Class="Olympus.LI.Triumph.Application.View.UiCalibrationDialog"
+    x:Name="wndCalibration"
+    Title="UiCalibrationDialog"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False" Topmost="False" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}" Width="560" Height="1080" WindowStartupLocation="CenterScreen"
+    Closing="WindowClosing">
+
+    <Window.Resources>
+        <utility:EnumBooleanConverter x:Key="cnvEnumBoolean"/>
+        <SolidColorBrush x:Key="TabControlNormalBorderBrush3" Color="#919B9C"/>
+        <LinearGradientBrush x:Key="TabControlPaneTopNormalBackground" EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#FFFCFCFE" Offset="0"/>
+            <GradientStop Color="#FFF4F3EE" Offset="1"/>
+        </LinearGradientBrush>
+        <Style x:Key="AquisitionNaviPanel_TabControlStyle" TargetType="{x:Type TabControl}">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="Padding" Value="4,4,4,4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TabControlNormalBorderBrush3}"/>
+            <Setter Property="Background" Value="{StaticResource TabControlPaneTopNormalBackground}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabControl}">
+                        <Grid ClipToBounds="true" SnapsToDevicePixels="true" KeyboardNavigation.TabNavigation="Local">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition x:Name="ColumnDefinition0"/>
+                                <ColumnDefinition Width="0" x:Name="ColumnDefinition1"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition x:Name="RowDefinition0" Height="Auto"/>
+                                <RowDefinition x:Name="RowDefinition1" Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TabPanel Margin="5,2,5,0" x:Name="HeaderPanel" Grid.Column="0" Grid.Row="0" IsItemsHost="true" Panel.ZIndex="1" KeyboardNavigation.TabIndex="1"/>
+                            <Rectangle x:Name="rectangle" Fill="{DynamicResource AcquisitionNormalBackgroundBrush}" HorizontalAlignment="Stretch" Height="Auto" Grid.Row="1" Stroke="#FFB4B4B4" VerticalAlignment="Stretch" Width="Auto"/>
+                            <Border Margin="5,0,5,0" x:Name="ContentPanel" Grid.Column="0" Grid.Row="1" KeyboardNavigation.DirectionalNavigation="Contained" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local" BorderBrush="{x:Null}" BorderThickness="0,0,1,1">
+                                <Border Visibility="Visible" BorderThickness="{TemplateBinding BorderThickness}">
+                                    <Border>
+                                        <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="{TemplateBinding Padding}" x:Name="PART_SelectedContentHost" ContentSource="SelectedContent"/>
+                                    </Border>
+                                </Border>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="TabStripPlacement" Value="Bottom">
+                                <Setter Property="Grid.Row" TargetName="HeaderPanel" Value="1"/>
+                                <Setter Property="Grid.Row" TargetName="ContentPanel" Value="0"/>
+                                <Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+                                <Setter Property="Height" TargetName="RowDefinition1" Value="Auto"/>
+                                <Setter Property="Margin" TargetName="HeaderPanel" Value="2,0,2,2"/>
+                                <Setter Property="Background" Value="{StaticResource TabControlPaneBottomNormalBackground}"/>
+                            </Trigger>
+                            <Trigger Property="TabStripPlacement" Value="Left">
+                                <Setter Property="Grid.Row" TargetName="HeaderPanel" Value="0"/>
+                                <Setter Property="Grid.Row" TargetName="ContentPanel" Value="0"/>
+                                <Setter Property="Grid.Column" TargetName="HeaderPanel" Value="0"/>
+                                <Setter Property="Grid.Column" TargetName="ContentPanel" Value="1"/>
+                                <Setter Property="Width" TargetName="ColumnDefinition0" Value="Auto"/>
+                                <Setter Property="Width" TargetName="ColumnDefinition1" Value="*"/>
+                                <Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+                                <Setter Property="Height" TargetName="RowDefinition1" Value="0"/>
+                                <Setter Property="Margin" TargetName="HeaderPanel" Value="2,2,-1,2"/>
+                                <Setter Property="Background" Value="{StaticResource TabControlPaneLeftNormalBackground}"/>
+                            </Trigger>
+                            <Trigger Property="TabStripPlacement" Value="Right">
+                                <Setter Property="Grid.Row" TargetName="HeaderPanel" Value="0"/>
+                                <Setter Property="Grid.Row" TargetName="ContentPanel" Value="0"/>
+                                <Setter Property="Grid.Column" TargetName="HeaderPanel" Value="1"/>
+                                <Setter Property="Grid.Column" TargetName="ContentPanel" Value="0"/>
+                                <Setter Property="Width" TargetName="ColumnDefinition0" Value="*"/>
+                                <Setter Property="Width" TargetName="ColumnDefinition1" Value="Auto"/>
+                                <Setter Property="Height" TargetName="RowDefinition0" Value="*"/>
+                                <Setter Property="Height" TargetName="RowDefinition1" Value="0"/>
+                                <Setter Property="Margin" TargetName="HeaderPanel" Value="-1,2,2,2"/>
+                                <Setter Property="Background" Value="{StaticResource TabControlPaneRightNormalBackground}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="AquisitionNaviPanelTabItemStyle" TargetType="{x:Type TabItem}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource TabItemFocusVisual}"/>
+            <Setter Property="Padding" Value="12,2,12,2"/>
+            <Setter Property="BorderThickness" Value="1,1,1,0"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TabControlNormalBorderBrush4}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+            <Setter Property="Background" Value="{StaticResource TabItemNormalBackground}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Border SnapsToDevicePixels="true" Width="Auto" Margin="-5,0,0,0">
+                            <Grid Margin="0" x:Name="grid">
+                                <Grid x:Name="Transform">
+                                    <Path x:Name="Path_1820" Width="Auto" Height="Auto" Stretch="Fill" StrokeThickness="0.5" StrokeMiterLimit="2.75" Stroke="#FF000000" Data="F1 M 1,25.2498L 1,3.4834C 1,2.11169 2.11194,1 3.4834,1L 165.041,1C 166.412,1 167.524,2.11169 167.524,3.4834C 167.524,4.8551 167.524,25.308 167.524,25.308L 1,25.2498 Z ">
+                                        <Path.Fill>
+                                            <LinearGradientBrush StartPoint="0.11483,1.26043" EndPoint="0.11483,-0.302841">
+                                                <GradientStop Color="#FFE8E8E8" Offset="0.005618"/>
+                                                <GradientStop Color="#FFB0B0B0" Offset="0.019494"/>
+                                                <GradientStop Color="#FF797979" Offset="0.112359"/>
+                                                <GradientStop Color="#FFA8A8A8" Offset="0.477528"/>
+                                                <GradientStop Color="#FFCFCFCE" Offset="0.505618"/>
+                                                <GradientStop Color="#FFE7E7E6" Offset="0.700086"/>
+                                                <GradientStop Color="#FFFFFFFF" Offset="0.910112"/>
+                                                <GradientStop Color="#FFB8B8B8" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Path.Fill>
+                                    </Path>
+                                </Grid>
+                                <Border HorizontalAlignment="Center" x:Name="border" VerticalAlignment="Stretch" Width="90.148" BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" VerticalAlignment="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" ContentSource="Header" RecognizesAccessKey="True"/>
+                                </Border>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="false">
+                                <Setter Property="Panel.ZIndex" Value="1"/>
+                                <Setter Property="VerticalAlignment" TargetName="border" Value="Bottom"/>
+                                <Setter Property="Margin" TargetName="border" Value="0,4,0,3"/>
+                                <Setter Property="VerticalAlignment" TargetName="Path_1820" Value="Bottom"/>
+                                <Setter Property="Height" TargetName="Path_1820" Value="18.8"/>
+                                <Setter Property="Stroke" TargetName="Path_1820" Value="Black"/>
+                                <Setter Property="Fill" TargetName="Path_1820">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0.0239596,1.34578" EndPoint="0.0239596,-0.729839">
+                                            <GradientStop Color="#FF474747" Offset="0.005618"/>
+                                            <GradientStop Color="#FF575757" Offset="0.0955"/>
+                                            <GradientStop Color="#FF393939" Offset="0.1996"/>
+                                            <GradientStop Color="#FF2F2F2F" Offset="0.5027"/>
+                                            <GradientStop Color="#FF424242" Offset="0.5056"/>
+                                            <GradientStop Color="#FF7D7D7D" Offset="0.8933"/>
+                                            <GradientStop Color="#FFB2B2B2" Offset="1"/>
+                                            <GradientStop Color="#FF1C1C1C" Offset="0.4831"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsMouseOver" Value="True"/>
+                                    <Condition Property="Selector.IsSelected" Value="False"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="HorizontalAlignment" TargetName="border" Value="Center"/>
+                                <Setter Property="Stroke" TargetName="Path_1820" Value="{DynamicResource OverStrokeBrush}"/>
+                            </MultiTrigger>
+                            <Trigger Property="IsSelected" Value="true">
+                                <Setter Property="Panel.ZIndex" Value="1"/>
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                                <Setter Property="VerticalAlignment" TargetName="border" Value="Bottom"/>
+                                <Setter Property="Margin" TargetName="border" Value="0,0,0,3"/>
+                                <Setter Property="Fill" TargetName="Path_1820" Value="{DynamicResource AquisitionNaviPanelTabSelectedFillBrush}"/>
+                                <Setter Property="Stroke" TargetName="Path_1820" Value="{DynamicResource AquisitionNaviPanelTabSelectedStrokeBrush}"/>
+                                <Setter Property="VerticalAlignment" TargetName="Path_1820" Value="Bottom"/>
+                                <Setter Property="Height" TargetName="Path_1820" Value="24.808"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                                <Setter Property="Opacity" TargetName="grid" Value="0.4"/>
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected" Value="true"/>
+                                    <Condition Property="TabStripPlacement" Value="Top"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Margin" Value="-2,-2,-2,-1"/>
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                                <Setter Property="Width" TargetName="border" Value="142.384"/>
+                                <Setter Property="VerticalAlignment" TargetName="border" Value="Bottom"/>
+                                <Setter Property="Margin" TargetName="border" Value="0,0,0,3"/>
+                                <Setter Property="Stroke" TargetName="Path_1820" Value="{DynamicResource AquisitionNaviPanelTabSelectedStrokeBrush}"/>
+                                <Setter Property="Fill" TargetName="Path_1820" Value="{DynamicResource AquisitionNaviPanelTabSelectedFillBrush}"/>
+                                <Setter Property="VerticalAlignment" TargetName="Path_1820" Value="Bottom"/>
+                                <Setter Property="Height" TargetName="Path_1820" Value="24.808"/>
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="LayoutRoot" Stylus.IsPressAndHoldEnabled="False">
+        <Path x:Name="pthSettingConditions" Canvas.Left="455.87" Canvas.Top="317.986" Stretch="Fill" Data="F1 M 1181.03,317.986L 1181.03,671.255C 1181.03,674.201 1178.65,676.589 1175.7,676.589L 461.204,676.589C 458.258,676.589 455.87,674.201 455.87,671.255L 455.87,317.986L 1181.03,317.986 Z " d:LayoutOverrides="VerticalAlignment">
+            <Path.Fill>
+                <Custom:LinearGradientBrush StartPoint="0.5,1.51388" EndPoint="0.5,-0.513885">
+                    <Custom:GradientStop Color="#FFFFFFFF" Offset="0.005618"/>
+                    <Custom:GradientStop Color="#FFB6EEFC" Offset="1"/>
+                    <Custom:GradientStop Color="#FFC6F1FC" Offset="0.781"/>
+                    <Custom:GradientStop Color="#FFC4F0FC" Offset="0.805"/>
+                    <Custom:GradientStop Color="#FFC1EFFC" Offset="0.842"/>
+                    <Custom:GradientStop Color="#FFBEEEFC" Offset="0.879"/>
+                </Custom:LinearGradientBrush>
+            </Path.Fill>
+            <Path.Effect>
+                <DropShadowEffect BlurRadius="15"/>
+            </Path.Effect>
+        </Path>
+        <Grid Height="40" VerticalAlignment="Top" MouseLeftButtonDown="MouseLeftButtonDownHandler">
+            <Path x:Name="pthHeaderCondition" Canvas.Left="551.403" Canvas.Top="127.965" Stretch="Fill" StrokeLineJoin="Round" Stroke="#CDFFFFFF" Data="F1 M 555.903,128.465L 1091.78,128.465C 1093.99,128.465 1095.78,130.256 1095.78,132.465L 1095.78,164.489L 551.903,164.489L 551.903,132.465C 551.903,130.256 553.694,128.465 555.903,128.465 Z ">
+                <Path.Fill>
+                    <Custom:LinearGradientBrush StartPoint="0.58864,9.15936" EndPoint="0.58864,-8.15937">
+                        <Custom:GradientStop Color="#CDEFFCFF" Offset="0.40678"/>
+                        <Custom:GradientStop Color="#CD192C34" Offset="0.495763"/>
+                        <Custom:GradientStop Color="#CDE9F9FF" Offset="0.584746"/>
+                    </Custom:LinearGradientBrush>
+                </Path.Fill>
+                <Path.Effect>
+                    <DropShadowEffect BlurRadius="15"/>
+                </Path.Effect>
+            </Path>
+            <Label x:Name="Label1" Content="Calibration Setting" BorderThickness="20,0,0,0" FontSize="22" FontWeight="Bold" Foreground="#FFFFFFFF"/>
+        </Grid>
+        <TabControl Style="{DynamicResource AquisitionNaviPanel_TabControlStyle}" Name="tabControl" Margin="20,60,20,20" SelectedIndex="{Binding Path=sUiController.Magnification.CurrentCalibrationTabIndex, Mode=Default}" IsEnabled="{Binding Path=sUiController.Magnification.CalibrationDialogTabEnable, Mode=Default}">
+            <TabItem Style="{DynamicResource AquisitionNaviPanelTabItemStyle}" x:Name="TabItem1" Header="Execute" Width="100" Padding="50" IsEnabled="{Binding Path=sUiController.Magnification.CalibrationExecuteTabEnable, Mode=Default}">
+                <StackPanel>
+                    <Frame Content="CalibrationMessage" Source="{Binding Path=sUiController.Layout.CalibrationMessageSource, Mode=Default}" x:Name="frmCalibrationMessage" NavigationUIVisibility="Hidden" Height="220"/>
+                    <Separator Height="10" />
+                    <Frame Content="CalibrationDetail" Source="{Binding Path=sUiController.Layout.CalibrationDetailSource, Mode=Default}" x:Name="frmCalibrationDetail" NavigationUIVisibility="Hidden" Height="740"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Style="{DynamicResource AquisitionNaviPanelTabItemStyle}" x:Name="TabItem2" Header="Change" Width="100" Margin="1,0,0,0" IsEnabled="{Binding Path=sUiController.Magnification.CalibrationChangeTabEnable, Mode=Default}">
+                <Grid>
+                    <Frame Content="CalibrationChange" Source="{Binding Path=sUiController.Layout.CalibrationChangeSource, Mode=Default}" x:Name="frmCalibrationChange" NavigationUIVisibility="Hidden"/>
+                </Grid>
+            </TabItem>
+            <TabItem Style="{DynamicResource AquisitionNaviPanelTabItemStyle}" x:Name="TabItem3" Header="History" Width="100" Margin="1,0,0,0" IsEnabled="{Binding Path=sUiController.Magnification.CalibrationHistoryTabEnable, Mode=Default}">
+                <Grid>
+                    <Frame Content="CalibrationHistory" Source="{Binding Path=sUiController.Layout.CalibrationHistorySource, Mode=Default}" x:Name="frmCalibrationHistory" NavigationUIVisibility="Hidden"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Grid VerticalAlignment="Bottom" Height="1041" Panel.ZIndex="100" Background="#000000" Opacity="0.5" Visibility="{Binding Path=sUiController.Magnification.CalibrationDialogShield, Mode=Default}"/>
+    </Grid>
+</Window>

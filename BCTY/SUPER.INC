@@ -1,0 +1,35 @@
+;
+;$Id: super.inc 0.01 92/05/29 20:17:34 Kazumi Rel $
+;
+
+SET		EQU	1
+OK		EQU	0
+NOT_ENOUGH_MEMORY	EQU	-1
+FILE_NOT_FOUND	EQU	-2
+FILE_ILLIGAL	EQU	-3
+TOO_MANY	EQU	-4
+PATTERN_ERASE	EQU	0
+PATTERN_BLUE	EQU	1
+PATTERN_RED	EQU	2
+PATTERN_GREEN	EQU	3
+PATTERN_INTEN	EQU	4
+PLANE_ERASE	EQU	000c0h
+PLANE_BLUE	EQU	0ffceh
+PLANE_RED	EQU	0ffcdh
+PLANE_GREEN	EQU	0ffcbh
+PLANE_INTEN	EQU	0ffc7h
+
+bfnt_header	STRUC
+id		DB	5 dup (?)
+col		DB	?
+ttl		DB	?
+num		DB	?
+Xdots		DW	?
+Ydots		DW	?
+START		DW	?
+END_		DW	?
+font_name	DB	8 dup (?)
+time		DD	?
+extSize		DW	?
+hdrSize		DW	?
+bfnt_header	ENDS
