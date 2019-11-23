@@ -1,8 +1,6 @@
 package c5backpropergation
 
 import common.div
-import common.minusAssign
-import common.times
 
 /**
  * 学習を行う(=更新可能なパラメータを持つ)レイヤー
@@ -30,19 +28,10 @@ abstract class LearnableLayer(
         batchCount++
     }
 
-    protected fun parameter(i:Int) = parameter[i]
+    protected fun parameter(i: Int) = parameter[i]
 
     protected fun addParameterGradient(i: Int, gradient: Float) {
         parameterGradientSum!![i] += gradient
-    }
-
-    /**
-     * 重み値を更新する。
-     */
-    fun update_(learningRate: Float) {
-        val k = learningRate / batchCount.toFloat()
-        parameter -= k * parameterGradientSum!!
-        parameterGradientSum = null
     }
 
     fun getAllParameter() = parameter

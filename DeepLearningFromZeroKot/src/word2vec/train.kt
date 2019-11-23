@@ -24,8 +24,11 @@ fun main() {
         })
     }
 
+    println(targetList)
+    println(contextList)
+
 //    model = SimpleCBOW(vocab_size, hidden_size)
-    val model = createSimpleSkipGram(vocab_size, hidden_size)
+//    val model = createSimpleSkipGram(vocab_size, hidden_size)
 //    val optimizer = Adam()
 //    val trainer = Trainer(model, optimizer)
 //

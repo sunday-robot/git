@@ -37,7 +37,6 @@ fun main() {
                 network.gradient(e.first, e.second)
             }
             optimizer.update(network)
-//            network.update(learningRate)
 //            log("epoch:${i + 1}/$epochCount, batch:${j + 1}/$batchCount")
             sw.lapse()
         }
